@@ -1,0 +1,63 @@
+import React, { useState } from 'react';
+
+const CARE_STEPS = [
+  { title: 'Registration', description: 'Create your account and add family member details in minutes.', icon: '📝' },
+  { title: 'Needs Assessment', description: 'Our team evaluates healthcare requirements and preferences.', icon: '🔍' },
+  { title: 'Provider Matching', description: 'Get connected with verified, trusted healthcare professionals.', icon: '🤝' },
+  { title: 'Service Coordination', description: 'We handle scheduling, transportation, and all logistics.', icon: '📅' },
+  { title: 'Follow-up Care', description: 'Continuous monitoring and support for ongoing health needs.', icon: '💙' },
+];
+
+const CareFlowSection: React.FC = () => {
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+
+  return (
+    <section className="py-24 px-6 sm:px-12 md:px-20 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 space-y-4">
+          <div className="inline-block px-4 py-2 bg-[#007FFF]/10 rounded-full">
+            <span className="text-[#007FFF] font-semibold text-sm">HOW IT WORKS</span>
+          </div>
+          
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#3A3F46] tracking-tight">
+            Your Care <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">Journey</span>
+          </h2>
+          
+          <p className="text-xl text-[#7A8A9E] max-w-3xl mx-auto">
+            Five simple steps to ensure your loved ones receive the best care possible.
+          </p>
+        </div>
+
+        <div className="relative">
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#283692] via-[#007FFF] to-[#283692] hidden lg:block" />
+          
+          <div className="space-y-8">
+            {CARE_STEPS.map((step, index) => (
+              <div 
+                key={index}
+                className={`relative flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 cursor-pointer`}
+                onClick={() => setActiveStep(activeStep === index ? null : index)}
+              >
+                <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
+                  <div className={`inline-block p-6 rounded-2xl bg-white border-2 ${activeStep === index ? 'border-[#007FFF] shadow-[0_8px_40px_rgba(0,127,255,0.2)]' : 'border-[#007FFF]/20 shadow-[0_4px_20px_rgba(0,0,0,0.05)]'} hover:border-[#007FFF] hover:shadow-[0_8px_40px_rgba(0,127,255,0.2)] transition-all`}>
+                    <div className="text-4xl mb-3">{step.icon}</div>
+                    <h3 className="text-2xl font-bold text-[#3A3F46] mb-2">{step.title}</h3>
+                    <p className="text-[#7A8A9E]">{step.description}</p>
+                  </div>
+                </div>
+
+                <div className="hidden lg:flex w-16 h-16 rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] items-center justify-center text-white font-bold text-xl shadow-lg z-10">
+                  {index + 1}
+                </div>
+
+                <div className="flex-1" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CareFlowSection;
