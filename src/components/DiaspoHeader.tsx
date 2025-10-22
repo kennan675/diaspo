@@ -35,13 +35,13 @@ const DiaspoHeader: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-        </div>{mobileMenuOpen && <div className="md:hidden mt-4 pb-4 space-y-3">
-            <Link to="/" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-            <a href="/#solutions" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>Solutions</a>
-            <Link to="/impact" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>Our Impact</Link>
-            <Link to="/hpod-kiosk" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>hPod Kiosk</Link>
-            <Link to="/about" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>About</Link>
-            <Link to="/contact" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+        </div>{mobileMenuOpen && <div className="md:hidden mt-4 pb-4 space-y-3 bg-gradient-to-br from-[#283692] to-[#007FFF] rounded-2xl p-6 shadow-lg">
+            <Link to="/" className="block text-white hover:text-white/80 font-medium" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+            <a href="/#solutions" className="block text-white hover:text-white/80 font-medium" onClick={() => setMobileMenuOpen(false)}>Solutions</a>
+            <Link to="/impact" className="block text-white hover:text-white/80 font-medium" onClick={() => setMobileMenuOpen(false)}>Our Impact</Link>
+            <Link to="/hpod-kiosk" className="block text-white hover:text-white/80 font-medium" onClick={() => setMobileMenuOpen(false)}>hPod Kiosk</Link>
+            <Link to="/about" className="block text-white hover:text-white/80 font-medium" onClick={() => setMobileMenuOpen(false)}>About</Link>
+            <Link to="/contact" className="block text-white hover:text-white/80 font-medium" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </div>}</nav>
     </header>;
 };
