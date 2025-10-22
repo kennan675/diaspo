@@ -66,9 +66,30 @@ const HPodKiosk: React.FC = () => {
           </div>
         </section>
 
-        {/* How It Works */}
+        {/* Video Section */}
         <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
           <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-white rounded-full border border-[#007FFF]/20 shadow-sm mb-4">
+                <span className="text-[#283692] font-semibold text-sm">🎥 Watch Demo</span>
+              </div>
+              <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">See H-POD in Action</h2>
+              <p className="text-xl text-[#7A8A9E]">Watch how our diagnostic kiosk transforms healthcare access</p>
+            </div>
+
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.15)] mb-20">
+              <div className="relative aspect-video bg-black">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/dAyfk6sqPcY"
+                  title="DiaspoCare H-POD - How It Works"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+
             <div className="text-center mb-16">
               <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">How It Works</h2>
               <p className="text-xl text-[#7A8A9E]">Simple, fast, and accurate health screening</p>

@@ -22,8 +22,8 @@ const HowItWorksVideo: React.FC = () => {
           <div className="relative aspect-video bg-black">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="DiaspoCare Platform Demo"
+              src="https://www.youtube.com/embed/dAyfk6sqPcY"
+              title="DiaspoCare - How It Works"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
