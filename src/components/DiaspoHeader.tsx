@@ -19,9 +19,11 @@ const DiaspoHeader: React.FC = () => {
 
           <div className="hidden md:flex items-center space-x-8">
             <a href="#home" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Home</a>
-            <a href="#services" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Services</a>
-            <a href="#providers" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Providers</a>
+            <a href="#solutions" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Solutions</a>
+            <a href="#impact" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Our Impact</a>
+            <a href="#hpod" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">hPod Kiosk</a>
             <a href="#about" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">About</a>
+            <a href="#contact" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Contact</a>
             <button className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#283692] to-[#007FFF] text-white font-semibold hover:shadow-xl hover:scale-105 transition-all">
               Get Started
             </button>
@@ -34,9 +36,11 @@ const DiaspoHeader: React.FC = () => {
           </button>
         </div>{mobileMenuOpen && <div className="md:hidden mt-4 pb-4 space-y-3">
             <a href="#home" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">Home</a>
-            <a href="#services" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">Services</a>
-            <a href="#providers" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">Providers</a>
+            <a href="#solutions" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">Solutions</a>
+            <a href="#impact" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">Our Impact</a>
+            <a href="#hpod" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">hPod Kiosk</a>
             <a href="#about" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">About</a>
+            <a href="#contact" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">Contact</a>
           </div>}</nav>
     </header>;
 };

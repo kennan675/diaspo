@@ -2,6 +2,8 @@ import React from 'react';
 import ScrollProgress from './ScrollProgress';
 import DiaspoHeader from './DiaspoHeader';
 import HeroSection from './HeroSection';
+import ZeroDiversionSection from './ZeroDiversionSection';
+import WhoUsesSection from './WhoUsesSection';
 import PartnersSection from './PartnersSection';
 import FeaturesSection from './FeaturesSection';
 import HowItWorksVideo from './HowItWorksVideo';
@@ -10,6 +12,7 @@ import CareFlowSection from './CareFlowSection';
 import TestimonialsSection from './TestimonialsSection';
 import TrustSection from './TrustSection';
 import MobileAppSection from './MobileAppSection';
+import AppDownloadSection from './AppDownloadSection';
 import FAQSection from './FAQSection';
 import BlogSection from './BlogSection';
 import NewsletterSection from './NewsletterSection';
@@ -25,6 +28,8 @@ const AppLayout: React.FC = () => {
       <DiaspoHeader />
       <main>
         <HeroSection />
+        <ZeroDiversionSection />
+        <WhoUsesSection />
         <PartnersSection />
         <FeaturesSection />
         <HowItWorksVideo />
@@ -33,6 +38,7 @@ const AppLayout: React.FC = () => {
         <TestimonialsSection />
         <TrustSection />
         <MobileAppSection />
+        <AppDownloadSection />
         <FAQSection />
         <BlogSection />
         <NewsletterSection />
