@@ -13,6 +13,10 @@ import TestimonialsSection from './TestimonialsSection';
 import TrustSection from './TrustSection';
 import MobileAppSection from './MobileAppSection';
 import AppDownloadSection from './AppDownloadSection';
+import ImpactSection from './ImpactSection';
+import DiaspoCauseSection from './DiaspoCauseSection';
+import HPodKioskSection from './HPodKioskSection';
+import AboutSection from './AboutSection';
 import FAQSection from './FAQSection';
 import BlogSection from './BlogSection';
 import NewsletterSection from './NewsletterSection';
@@ -38,6 +42,10 @@ const AppLayout: React.FC = () => {
         <TestimonialsSection />
         <TrustSection />
         <MobileAppSection />
+        <ImpactSection />
+        <DiaspoCauseSection />
+        <HPodKioskSection />
+        <AboutSection />
         <AppDownloadSection />
         <FAQSection />
         <BlogSection />
