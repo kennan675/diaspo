@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 const DiaspoHeader: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,21 +10,21 @@ const DiaspoHeader: React.FC = () => {
   }, []);
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
       <nav className="max-w-7xl mx-auto px-6 sm:px-12 md:px-20 py-4"><div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <img 
               src="/logo-full.png" 
               alt="DiaspoCare Logo" 
               className="h-10 w-auto"
             />
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Home</a>
-            <a href="#solutions" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Solutions</a>
-            <a href="#impact" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Our Impact</a>
-            <a href="#hpod" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">hPod Kiosk</a>
-            <a href="#about" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">About</a>
-            <a href="#contact" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Contact</a>
+            <Link to="/" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Home</Link>
+            <a href="/#solutions" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Solutions</a>
+            <Link to="/impact" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Our Impact</Link>
+            <Link to="/hpod-kiosk" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">hPod Kiosk</Link>
+            <Link to="/about" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">About</Link>
+            <Link to="/contact" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Contact</Link>
             <button className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#283692] to-[#007FFF] text-white font-semibold hover:shadow-xl hover:scale-105 transition-all">
               Get Started
             </button>
@@ -35,12 +36,12 @@ const DiaspoHeader: React.FC = () => {
             </svg>
           </button>
         </div>{mobileMenuOpen && <div className="md:hidden mt-4 pb-4 space-y-3">
-            <a href="#home" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">Home</a>
-            <a href="#solutions" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">Solutions</a>
-            <a href="#impact" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">Our Impact</a>
-            <a href="#hpod" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">hPod Kiosk</a>
-            <a href="#about" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">About</a>
-            <a href="#contact" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium">Contact</a>
+            <Link to="/" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+            <a href="/#solutions" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>Solutions</a>
+            <Link to="/impact" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>Our Impact</Link>
+            <Link to="/hpod-kiosk" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>hPod Kiosk</Link>
+            <Link to="/about" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>About</Link>
+            <Link to="/contact" className="block text-[#3A3F46] hover:text-[#007FFF] font-medium" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </div>}</nav>
     </header>;
 };

@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const HowItWorksVideo: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-
   return (
     <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-[#283692]/5 to-white">
       <div className="max-w-6xl mx-auto">
@@ -20,46 +18,16 @@ const HowItWorksVideo: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.15)] group">
-          <div className="relative aspect-video bg-gradient-to-br from-[#283692] to-[#007FFF]">
-            <img 
-              src="https://d64gsuwffb70l.cloudfront.net/68f82a42889eeaf16721e728_1761094251861_8d44f41e.webp"
-              alt="DiaspoCare Demo"
-              className="w-full h-full object-cover opacity-60"
-            />
-            
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="w-24 h-24 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:scale-110 hover:bg-white transition-all group-hover:shadow-[0_12px_40px_rgba(0,0,0,0.4)]"
-              >
-                {isPlaying ? (
-                  <svg className="w-12 h-12 text-[#283692]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-                  </svg>
-                ) : (
-                  <svg className="w-12 h-12 text-[#283692] ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                )}
-              </button>
-            </div>
-
-            {isPlaying && (
-              <div className="absolute inset-0 bg-black/80 flex items-center justify-center animate-fade-in">
-                <div className="text-white text-center space-y-4 p-8">
-                  <div className="text-6xl mb-4">🎥</div>
-                  <p className="text-2xl font-bold">Demo Video Coming Soon</p>
-                  <p className="text-lg text-white/80">Experience the full DiaspoCare platform</p>
-                  <button 
-                    onClick={() => setIsPlaying(false)}
-                    className="mt-4 px-6 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold hover:bg-white/30 transition-all"
-                  >
-                    Close Preview
-                  </button>
-                </div>
-              </div>
-            )}
+        <div className="relative rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.15)]">
+          <div className="relative aspect-video bg-black">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="DiaspoCare Platform Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
 
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
