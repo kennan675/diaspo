@@ -3,6 +3,7 @@ import ScrollProgress from './ScrollProgress';
 import DiaspoHeader from './DiaspoHeader';
 import HeroSection from './HeroSection';
 import ZeroDiversionSection from './ZeroDiversionSection';
+import CareCoordinationSection from './CareCoordinationSection';
 import WhoUsesSection from './WhoUsesSection';
 import PartnersSection from './PartnersSection';
 import FeaturesSection from './FeaturesSection';
@@ -33,6 +34,7 @@ const AppLayout: React.FC = () => {
       <main>
         <HeroSection />
         <HowItWorksVideo />
+        <CareCoordinationSection />
         <ZeroDiversionSection />
         <WhoUsesSection />
         <PartnersSection />

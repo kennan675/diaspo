@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Impact from "./pages/Impact";
 import HPodKiosk from "./pages/HPodKiosk";
 import Contact from "./pages/Contact";
+import CareCoordination from "./pages/CareCoordination";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/impact" element={<Impact />} />
             <Route path="/hpod-kiosk" element={<HPodKiosk />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/care-coordination" element={<CareCoordination />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
