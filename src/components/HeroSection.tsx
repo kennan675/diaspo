@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#3A3F46] leading-tight tracking-tight">
-            Caring from afar — <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">made simple</span>
+            Caring from afar <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">made simple</span>
           </h1>
           
           <p className="text-xl text-[#7A8A9E] leading-relaxed max-w-2xl">
