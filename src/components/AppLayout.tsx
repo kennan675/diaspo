@@ -32,11 +32,11 @@ const AppLayout: React.FC = () => {
       <DiaspoHeader />
       <main>
         <HeroSection />
+        <HowItWorksVideo />
         <ZeroDiversionSection />
         <WhoUsesSection />
         <PartnersSection />
         <FeaturesSection />
-        <HowItWorksVideo />
         <StatsSection />
         <CareFlowSection />
         <TestimonialsSection />

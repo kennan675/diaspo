@@ -81,7 +81,7 @@ const HPodKiosk: React.FC = () => {
               <div className="relative aspect-video bg-black">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/dAyfk6sqPcY"
+                  src="https://www.youtube.com/embed/dAyfk6sqPcY?rel=0&modestbranding=1"
                   title="DiaspoCare H-POD - How It Works"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
