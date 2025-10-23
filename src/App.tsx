@@ -12,6 +12,9 @@ import HPodKiosk from "./pages/HPodKiosk";
 import Contact from "./pages/Contact";
 import CareCoordination from "./pages/CareCoordination";
 import ProviderRegistration from "./pages/ProviderRegistration";
+import HealthcareFinancing from "./pages/HealthcareFinancing";
+import FamilyHealthWallet from "./pages/FamilyHealthWallet";
+import MDConnect from "./pages/MDConnect";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +34,9 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/care-coordination" element={<CareCoordination />} />
             <Route path="/provider-registration" element={<ProviderRegistration />} />
+            <Route path="/healthcare-financing" element={<HealthcareFinancing />} />
+            <Route path="/family-health-wallet" element={<FamilyHealthWallet />} />
+            <Route path="/md-connect" element={<MDConnect />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
