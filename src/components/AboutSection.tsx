@@ -61,6 +61,32 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
 
+        {/* Operating Countries */}
+        <div className="bg-white rounded-3xl p-12 mb-16 shadow-xl border border-[#007FFF]/10">
+          <h3 className="text-3xl font-bold text-[#3A3F46] mb-8 text-center">Where We Operate</h3>
+          <p className="text-lg text-[#7A8A9E] text-center mb-8 max-w-2xl mx-auto">
+            DiaspoCare currently operates in 4 countries, bridging healthcare gaps and connecting diaspora families with quality care.
+          </p>
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
+              <div className="text-5xl mb-3">🇰🇪</div>
+              <h4 className="font-bold text-[#3A3F46] text-xl">Kenya</h4>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
+              <div className="text-5xl mb-3">🇺🇬</div>
+              <h4 className="font-bold text-[#3A3F46] text-xl">Uganda</h4>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
+              <div className="text-5xl mb-3">🇬🇭</div>
+              <h4 className="font-bold text-[#3A3F46] text-xl">Ghana</h4>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
+              <div className="text-5xl mb-3">🇺🇸</div>
+              <h4 className="font-bold text-[#3A3F46] text-xl">USA</h4>
+            </div>
+          </div>
+        </div>
+
         {/* How We Deliver */}
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold text-[#3A3F46] mb-6">How DiaspoCare Delivers on its Promises</h3>

@@ -63,7 +63,7 @@ const HeroSection: React.FC = () => {
             </div>
             <div className="w-px h-12 bg-[#7A8A9E]/20" />
             <div>
-              <div className="text-3xl font-bold text-[#283692]">15+</div>
+              <div className="text-3xl font-bold text-[#283692]">4</div>
               <div className="text-sm text-[#7A8A9E]">Countries</div>
             </div>
           </div>

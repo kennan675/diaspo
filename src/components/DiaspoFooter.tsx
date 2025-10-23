@@ -17,6 +17,10 @@ const DiaspoFooter: React.FC = () => {
             <p className="text-white/70 leading-relaxed">
               Bridging distances, delivering care. Empowering diaspora families worldwide.
             </p>
+            <div className="pt-4">
+              <p className="text-xs text-white/50 font-semibold mb-2">Operating in:</p>
+              <p className="text-sm text-white/70">🇰🇪 Kenya  •  🇺🇬 Uganda  •  🇬🇭 Ghana  •  🇺🇸 USA</p>
+            </div>
             <div className="flex gap-4 pt-2">
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#007FFF] flex items-center justify-center transition-colors">
                 <span className="text-lg">𝕏</span>
