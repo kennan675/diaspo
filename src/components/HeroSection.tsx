@@ -70,11 +70,11 @@ const HeroSection: React.FC = () => {
         </div>
 
         <div className="relative hidden md:block">
-          <div className="relative rounded-3xl overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)] transform scale-110">
+          <div className="relative rounded-3xl overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)] h-[700px] flex items-center justify-center bg-white">
             <img 
               src="/hero-background.png"
               alt="DiaspoCare - Caring from afar"
-              className="w-full h-auto"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
