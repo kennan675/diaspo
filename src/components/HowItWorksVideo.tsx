@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const HowItWorksVideo: React.FC = () => {
+  const videoRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-[#283692]/5 to-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 space-y-4">
+        <div className={`text-center mb-12 space-y-4 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-block px-4 py-2 bg-[#283692]/10 rounded-full">
             <span className="text-[#283692] font-semibold text-sm">SEE IT IN ACTION</span>
           </div>
@@ -18,11 +42,14 @@ const HowItWorksVideo: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.15)]">
+        <div 
+          ref={videoRef}
+          className={`relative rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.15)] transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+        >
           <div className="relative aspect-video bg-black">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/dAyfk6sqPcY?rel=0&modestbranding=1"
+              src={`https://www.youtube.com/embed/dAyfk6sqPcY?rel=0&modestbranding=1${isVisible ? '&autoplay=1&mute=1' : ''}`}
               title="DiaspoCare - How It Works"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

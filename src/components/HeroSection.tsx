@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const HeroSection: React.FC = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 px-6 sm:px-12 md:px-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center pt-20 px-6 sm:px-12 md:px-20 overflow-hidden" style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
       <div className="absolute inset-0 bg-gradient-to-br from-[#283692]/5 via-[#007FFF]/5 to-purple-100/30 -z-10" />
       
       <div className="absolute top-20 right-10 w-72 h-72 bg-[#283692]/10 rounded-full blur-3xl animate-pulse" />

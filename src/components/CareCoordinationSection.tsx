@@ -1,16 +1,40 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Activity, HeartPulse, Eye, LifeBuoy, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const CareCoordinationSection: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-white via-[#283692]/5 to-[#007FFF]/5 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#007FFF]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#283692]/5 rounded-full blur-3xl" />
       
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
+      <div ref={sectionRef} className="max-w-7xl mx-auto relative z-10">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-block px-4 py-2 bg-white rounded-full border border-[#007FFF]/20 shadow-sm mb-4">
             <span className="text-[#283692] font-semibold text-sm">🔄 Comprehensive Care Model</span>
           </div>
@@ -34,7 +58,7 @@ const CareCoordinationSection: React.FC = () => {
           {/* Four Quadrants */}
           <div className="grid md:grid-cols-2 gap-6">
             {/* Assessment Quadrant */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-2 border-[#283692]/10 hover:border-[#283692]">
+            <div className={`group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 border-2 border-[#283692]/10 hover:border-[#283692] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '200ms' }}>
               <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-[#283692]/10 flex items-center justify-center group-hover:bg-[#283692] transition-colors">
                 <Activity className="w-6 h-6 text-[#283692] group-hover:text-white transition-colors" />
               </div>
@@ -60,7 +84,7 @@ const CareCoordinationSection: React.FC = () => {
             </div>
 
             {/* Treatment Quadrant */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-2 border-[#007FFF]/10 hover:border-[#007FFF]">
+            <div className={`group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 border-2 border-[#007FFF]/10 hover:border-[#007FFF] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '300ms' }}>
               <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-[#007FFF]/10 flex items-center justify-center group-hover:bg-[#007FFF] transition-colors">
                 <HeartPulse className="w-6 h-6 text-[#007FFF] group-hover:text-white transition-colors" />
               </div>
@@ -86,7 +110,7 @@ const CareCoordinationSection: React.FC = () => {
             </div>
 
             {/* Monitoring Quadrant */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-2 border-[#007FFF]/10 hover:border-[#007FFF]">
+            <div className={`group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 border-2 border-[#007FFF]/10 hover:border-[#007FFF] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '400ms' }}>
               <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-[#007FFF]/10 flex items-center justify-center group-hover:bg-[#007FFF] transition-colors">
                 <Eye className="w-6 h-6 text-[#007FFF] group-hover:text-white transition-colors" />
               </div>
@@ -112,7 +136,7 @@ const CareCoordinationSection: React.FC = () => {
             </div>
 
             {/* Support Quadrant */}
-            <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-2 border-[#283692]/10 hover:border-[#283692]">
+            <div className={`group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 border-2 border-[#283692]/10 hover:border-[#283692] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '500ms' }}>
               <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-[#283692]/10 flex items-center justify-center group-hover:bg-[#283692] transition-colors">
                 <LifeBuoy className="w-6 h-6 text-[#283692] group-hover:text-white transition-colors" />
               </div>
