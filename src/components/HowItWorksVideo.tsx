@@ -18,7 +18,7 @@ const HowItWorksVideo: React.FC = () => {
           // Pause the video by reloading iframe without autoplay
           if (iframeRef.current && isVisible) {
             const currentSrc = iframeRef.current.src;
-            iframeRef.current.src = currentSrc.replace('&autoplay=1&mute=1', '');
+            iframeRef.current.src = currentSrc.replace('&autoplay=1', '');
           }
         }
       },
@@ -61,25 +61,12 @@ const HowItWorksVideo: React.FC = () => {
             <iframe
               ref={iframeRef}
               className="w-full h-full"
-              src={`https://www.youtube.com/embed/dAyfk6sqPcY?rel=0&modestbranding=1${shouldAutoplay ? '&autoplay=1&mute=1' : ''}`}
+              src={`https://www.youtube.com/embed/dAyfk6sqPcY?rel=0&modestbranding=1${shouldAutoplay ? '&autoplay=1' : ''}`}
               title="DiaspoCare - How It Works"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-          </div>
-
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
-            <div className="flex items-center gap-4 text-white">
-              <div className="flex-1">
-                <h4 className="font-bold text-lg mb-1">Platform Overview</h4>
-                <p className="text-sm text-white/80">2:30 min • Product Demo</p>
-              </div>
-              <div className="flex gap-2">
-                <div className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-semibold">HD</div>
-                <div className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-semibold">EN</div>
-              </div>
-            </div>
           </div>
         </div>
 
