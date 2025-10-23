@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 const DiaspoHeader: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
@@ -20,7 +21,33 @@ const DiaspoHeader: React.FC = () => {
 
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Home</Link>
-            <a href="/#solutions" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Solutions</a>
+            
+            <div className="relative" onMouseEnter={() => setSolutionsOpen(true)} onMouseLeave={() => setSolutionsOpen(false)}>
+              <button className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium flex items-center gap-1">
+                Solutions
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {solutionsOpen && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50">
+                  <Link to="/care-coordination" className="block px-6 py-3 text-[#007FFF] hover:bg-[#007FFF]/5 transition-colors font-medium">
+                    Care Coordination
+                  </Link>
+                  <Link to="/healthcare-financing" className="block px-6 py-3 text-[#007FFF] hover:bg-[#007FFF]/5 transition-colors font-medium">
+                    Healthcare Financing App
+                  </Link>
+                  <Link to="/family-health-wallet" className="block px-6 py-3 text-[#007FFF] hover:bg-[#007FFF]/5 transition-colors font-medium">
+                    Family Health Wallet
+                  </Link>
+                  <Link to="/md-connect" className="block px-6 py-3 text-[#007FFF] hover:bg-[#007FFF]/5 transition-colors font-medium">
+                    MD Connect
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <Link to="/impact" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">Our Impact</Link>
             <Link to="/hpod-kiosk" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">hPod Kiosk</Link>
             <Link to="/about" className="text-[#3A3F46] hover:text-[#007FFF] transition-colors font-medium">About</Link>
@@ -37,7 +64,15 @@ const DiaspoHeader: React.FC = () => {
           </button>
         </div>{mobileMenuOpen && <div className="md:hidden mt-4 pb-4 space-y-3 bg-gradient-to-br from-[#283692] to-[#007FFF] rounded-2xl p-6 shadow-lg">
             <Link to="/" className="block text-white hover:text-white/80 font-medium" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-            <a href="/#solutions" className="block text-white hover:text-white/80 font-medium" onClick={() => setMobileMenuOpen(false)}>Solutions</a>
+            
+            <div className="space-y-2">
+              <div className="text-white font-semibold text-sm">Solutions</div>
+              <Link to="/care-coordination" className="block text-white/90 hover:text-white text-sm pl-4" onClick={() => setMobileMenuOpen(false)}>Care Coordination</Link>
+              <Link to="/healthcare-financing" className="block text-white/90 hover:text-white text-sm pl-4" onClick={() => setMobileMenuOpen(false)}>Healthcare Financing App</Link>
+              <Link to="/family-health-wallet" className="block text-white/90 hover:text-white text-sm pl-4" onClick={() => setMobileMenuOpen(false)}>Family Health Wallet</Link>
+              <Link to="/md-connect" className="block text-white/90 hover:text-white text-sm pl-4" onClick={() => setMobileMenuOpen(false)}>MD Connect</Link>
+            </div>
+            
             <Link to="/impact" className="block text-white hover:text-white/80 font-medium" onClick={() => setMobileMenuOpen(false)}>Our Impact</Link>
             <Link to="/hpod-kiosk" className="block text-white hover:text-white/80 font-medium" onClick={() => setMobileMenuOpen(false)}>hPod Kiosk</Link>
             <Link to="/about" className="block text-white hover:text-white/80 font-medium" onClick={() => setMobileMenuOpen(false)}>About</Link>
