@@ -70,7 +70,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         <div className="relative hidden md:block">
-          <div className="relative rounded-3xl overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+          <div className="relative rounded-3xl overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)] transform scale-110">
             <img 
               src="/hero-background.png"
               alt="DiaspoCare - Caring from afar"
