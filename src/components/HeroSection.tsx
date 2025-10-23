@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
               href="#app-download" 
               className="px-8 py-4 rounded-2xl bg-gradient-to-r from-[#283692] to-[#007FFF] text-white font-bold text-lg shadow-[0_4px_30px_rgba(0,127,255,0.3)] hover:shadow-[0_8px_40px_rgba(0,127,255,0.4)] hover:scale-105 transition-all text-center flex items-center justify-center gap-2"
             >
-              📱 Download DiaspoCare App (App Store / Google Play)
+              📱 Download DiaspoCare App
             </a>
             <p className="text-sm text-[#7A8A9E] text-center">For payers: diaspora, families, employers, cooperatives</p>
             
@@ -46,7 +46,7 @@ const HeroSection: React.FC = () => {
               href="/provider-registration"
               className="px-8 py-4 rounded-2xl border-2 border-[#007FFF] text-[#007FFF] font-bold text-lg hover:bg-[#007FFF]/5 hover:scale-105 transition-all text-center flex items-center justify-center gap-2"
             >
-              🌐 Join as a Provider (Web App)
+              🌐 Join as a Provider
             </a>
             <p className="text-sm text-[#7A8A9E] text-center">For pharmacies, clinics, hospitals, diagnostic laboratories</p>
           </div>
