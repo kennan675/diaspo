@@ -2,13 +2,24 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const HowItWorksVideo: React.FC = () => {
   const videoRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [shouldAutoplay, setShouldAutoplay] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          setShouldAutoplay(true);
+        } else {
+          // Video is out of view, stop autoplay
+          setShouldAutoplay(false);
+          // Pause the video by reloading iframe without autoplay
+          if (iframeRef.current && isVisible) {
+            const currentSrc = iframeRef.current.src;
+            iframeRef.current.src = currentSrc.replace('&autoplay=1&mute=1', '');
+          }
         }
       },
       { threshold: 0.3 }
@@ -23,7 +34,7 @@ const HowItWorksVideo: React.FC = () => {
         observer.unobserve(videoRef.current);
       }
     };
-  }, []);
+  }, [isVisible]);
 
   return (
     <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-[#283692]/5 to-white">
@@ -48,8 +59,9 @@ const HowItWorksVideo: React.FC = () => {
         >
           <div className="relative aspect-video bg-black">
             <iframe
+              ref={iframeRef}
               className="w-full h-full"
-              src={`https://www.youtube.com/embed/dAyfk6sqPcY?rel=0&modestbranding=1${isVisible ? '&autoplay=1&mute=1' : ''}`}
+              src={`https://www.youtube.com/embed/dAyfk6sqPcY?rel=0&modestbranding=1${shouldAutoplay ? '&autoplay=1&mute=1' : ''}`}
               title="DiaspoCare - How It Works"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
