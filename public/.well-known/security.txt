@@ -1,0 +1,6 @@
+Contact: mailto:security@diaspocare.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://diaspocare.com/.well-known/security.txt
+Policy: https://diaspocare.com/security-policy
+Acknowledgments: https://diaspocare.com/security-acknowledgments
