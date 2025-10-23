@@ -33,22 +33,22 @@ const HeroSection: React.FC = () => {
             Empowering diaspora families to access trusted healthcare for their loved ones back home.
           </p>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 items-start">
             <a 
               href="#app-download" 
-              className="px-8 py-4 rounded-2xl bg-gradient-to-r from-[#283692] to-[#007FFF] text-white font-bold text-lg shadow-[0_4px_30px_rgba(0,127,255,0.3)] hover:shadow-[0_8px_40px_rgba(0,127,255,0.4)] hover:scale-105 transition-all text-center flex items-center justify-center gap-2"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#283692] to-[#007FFF] text-white font-bold text-base shadow-[0_4px_30px_rgba(0,127,255,0.3)] hover:shadow-[0_8px_40px_rgba(0,127,255,0.4)] hover:scale-105 transition-all"
             >
               📱 Download DiaspoCare App
             </a>
-            <p className="text-sm text-[#7A8A9E] text-center">For payers: diaspora, families, employers, cooperatives</p>
+            <p className="text-sm text-[#7A8A9E]">For payers: diaspora, families, employers, cooperatives</p>
             
             <a 
               href="/provider-registration"
-              className="px-8 py-4 rounded-2xl border-2 border-[#007FFF] text-[#007FFF] font-bold text-lg hover:bg-[#007FFF]/5 hover:scale-105 transition-all text-center flex items-center justify-center gap-2"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-[#007FFF] text-[#007FFF] font-bold text-base hover:bg-[#007FFF]/5 hover:scale-105 transition-all"
             >
               🌐 Join as a Provider
             </a>
-            <p className="text-sm text-[#7A8A9E] text-center">For pharmacies, clinics, hospitals, diagnostic laboratories</p>
+            <p className="text-sm text-[#7A8A9E]">For pharmacies, clinics, hospitals, diagnostic laboratories</p>
           </div>
 
           <div className="flex items-center gap-8 pt-4">
