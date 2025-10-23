@@ -3,7 +3,7 @@ import { Smartphone, Download } from 'lucide-react';
 
 const AppDownloadSection: React.FC = () => {
   return (
-    <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white">
+    <section id="app-download" className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>

@@ -11,6 +11,7 @@ import Impact from "./pages/Impact";
 import HPodKiosk from "./pages/HPodKiosk";
 import Contact from "./pages/Contact";
 import CareCoordination from "./pages/CareCoordination";
+import ProviderRegistration from "./pages/ProviderRegistration";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/hpod-kiosk" element={<HPodKiosk />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/care-coordination" element={<CareCoordination />} />
+            <Route path="/provider-registration" element={<ProviderRegistration />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
