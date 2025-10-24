@@ -52,69 +52,6 @@ Visit `http://localhost:5173` to view the application.
 - **Icons**: Custom SVG icons
 - **Images**: AI-generated custom imagery
 
-## 📁 Project Structure
-
-\`\`\`
-src/
-├── components/
-│   ├── DiaspoHeader.tsx       # Navigation header
-│   ├── HeroSection.tsx        # Hero with CTA
-│   ├── FeaturesSection.tsx    # Service features grid
-│   ├── StatsSection.tsx       # Impact metrics
-│   ├── CareFlowSection.tsx    # Interactive timeline
-│   ├── TestimonialsSection.tsx # Customer reviews
-│   ├── TrustSection.tsx       # Trust badges
-│   ├── NewsletterSection.tsx  # Email signup
-│   ├── PartnersSection.tsx    # Partner logos
-│   ├── CTASection.tsx         # Call-to-action
-│   ├── DiaspoFooter.tsx       # Footer navigation
-│   ├── FloatingCTA.tsx        # Floating help button
-│   ├── FeatureCard.tsx        # Reusable card component
-│   └── AppLayout.tsx          # Main layout
-├── lib/
-│   └── constants.ts           # Brand constants & data
-├── index.css                  # Global styles
-└── main.tsx                   # App entry point
-\`\`\`
-
-## 🎨 Brand Design System
-
-### Colors
-- **Primary Purple**: `#283692`
-- **Primary Blue**: `#007FFF`
-- **Charcoal**: `#3A3F46`
-- **Grey**: `#7A8A9E`
-- **White**: `#FFFFFF`
-
-### Typography
-- **Font Family**: Poppins
-- **Headings**: Extra-bold, tracking-tight
-- **Body**: Regular weight, 1.65 line-height
-
-## 🌟 Key Sections
-
-1. **Hero Section**: Compelling headline with stats and dual CTAs
-2. **Partners**: Trusted organizations and credibility markers
-3. **Features**: 6 core services with interactive cards
-4. **Stats**: Impact metrics with animated counters
-5. **Care Flow**: 5-step interactive timeline
-6. **Testimonials**: Auto-rotating customer reviews
-7. **Trust**: Security badges and ratings
-8. **Newsletter**: Email subscription form
-9. **CTA**: Final conversion section
-10. **Footer**: Comprehensive navigation and links
-
-## 📊 Performance
-
-Target Lighthouse Scores:
-- ⚡ Performance: 90+
-- ♿ Accessibility: 90+
-- 🎯 Best Practices: 90+
-- 🔍 SEO: 90+
-
-## 🔧 Development
-
-\`\`\`bash
 # Run development server
 npm run dev
 
@@ -126,28 +63,5 @@ npm run preview
 
 # Lint code
 npm run lint
-\`\`\`
 
-## 🚢 Deployment
 
-The application is optimized for deployment on:
-- Vercel (recommended)
-- Netlify
-- AWS Amplify
-- Any static hosting service
-
-## 📝 License
-
-© 2025 DiaspoCare. All rights reserved.
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our contributing guidelines.
-
-## 💬 Support
-
-For support, email support@diaspocare.com or join our Slack channel.
-
----
-
-**Made with ❤️ for diaspora families worldwide**
