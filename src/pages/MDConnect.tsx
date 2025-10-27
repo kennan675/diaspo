@@ -3,6 +3,7 @@ import DiaspoHeader from '@/components/DiaspoHeader';
 import DiaspoFooter from '@/components/DiaspoFooter';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
+import YouTubeVideo from '@/components/YouTubeVideo';
 import { Video, Clock, Globe, Shield, CheckCircle, ArrowRight, Stethoscope } from 'lucide-react';
 
 const MDConnect: React.FC = () => {
@@ -224,6 +225,27 @@ const MDConnect: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Video Section */}
+        <section className="py-20 px-6 sm:px-12 md:px-20 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-[#283692]/10 rounded-full mb-4">
+                <span className="text-[#283692] font-semibold text-sm">TELEMEDICINE</span>
+              </div>
+              <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">
+                MD Connect <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">in Action</span>
+              </h2>
+              <p className="text-xl text-[#7A8A9E]">See how virtual consultations connect families with doctors</p>
+            </div>
+
+            <YouTubeVideo 
+              videoId="dAyfk6sqPcY"
+              title="DiaspoCare MD Connect Telemedicine"
+              autoplay={false}
+            />
           </div>
         </section>
 

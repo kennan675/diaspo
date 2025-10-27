@@ -4,6 +4,7 @@ import DiaspoFooter from '@/components/DiaspoFooter';
 import HPodKioskSection from '@/components/HPodKioskSection';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
+import YouTubeVideo from '@/components/YouTubeVideo';
 import { Stethoscope, Activity, Heart, Shield, Clock, MapPin } from 'lucide-react';
 
 const HPodKiosk: React.FC = () => {
@@ -74,21 +75,15 @@ const HPodKiosk: React.FC = () => {
                 <span className="text-[#283692] font-semibold text-sm">🎥 Watch Demo</span>
               </div>
               <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">See H-POD in Action</h2>
-              <p className="text-xl text-[#7A8A9E]">Watch how our diagnostic kiosk transforms healthcare access</p>
+              <p className="text-xl text-[#7A8A9E]">Watch how our diagnostic kiosk transforms healthcare access - click play to watch</p>
             </div>
 
-            <div className="relative rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.15)] mb-20">
-              <div className="relative aspect-video bg-black">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/dAyfk6sqPcY?rel=0&modestbranding=1"
-                  title="DiaspoCare H-POD - How It Works"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
+            <YouTubeVideo 
+              videoId="dAyfk6sqPcY"
+              title="DiaspoCare H-POD - How It Works"
+              autoplay={false}
+              className="mb-20"
+            />
 
             <div className="text-center mb-16">
               <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">How It Works</h2>

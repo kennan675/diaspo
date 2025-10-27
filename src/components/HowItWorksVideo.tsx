@@ -1,43 +1,33 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import YouTubeVideo from './YouTubeVideo';
 
 const HowItWorksVideo: React.FC = () => {
-  const videoRef = useRef<HTMLDivElement>(null);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [shouldAutoplay, setShouldAutoplay] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          setShouldAutoplay(true);
-        } else {
-          // Video is out of view, stop autoplay
-          setShouldAutoplay(false);
-          // Pause the video by reloading iframe without autoplay
-          if (iframeRef.current && isVisible) {
-            const currentSrc = iframeRef.current.src;
-            iframeRef.current.src = currentSrc.replace('&autoplay=1', '');
-          }
         }
       },
       { threshold: 0.3 }
     );
 
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
 
     return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
       }
     };
-  }, [isVisible]);
+  }, []);
 
   return (
-    <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-[#283692]/5 to-white">
+    <section ref={sectionRef} className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-[#283692]/5 to-white">
       <div className="max-w-6xl mx-auto">
         <div className={`text-center mb-12 space-y-4 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-block px-4 py-2 bg-[#283692]/10 rounded-full">
@@ -49,25 +39,16 @@ const HowItWorksVideo: React.FC = () => {
           </h2>
           
           <p className="text-xl text-[#7A8A9E] max-w-3xl mx-auto">
-            See how easy it is to coordinate healthcare for your loved ones
+            See how easy it is to coordinate healthcare for your loved ones - click play to watch
           </p>
         </div>
 
-        <div 
-          ref={videoRef}
-          className={`relative rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.15)] transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-        >
-          <div className="relative aspect-video bg-black">
-            <iframe
-              ref={iframeRef}
-              className="w-full h-full"
-              src={`https://www.youtube.com/embed/dAyfk6sqPcY?rel=0&modestbranding=1${shouldAutoplay ? '&autoplay=1' : ''}`}
-              title="DiaspoCare - How It Works"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <YouTubeVideo 
+            videoId="dAyfk6sqPcY"
+            title="DiaspoCare - How It Works"
+            autoplay={false}
+          />
         </div>
 
         <div className="mt-8 grid sm:grid-cols-3 gap-6">

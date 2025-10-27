@@ -4,6 +4,7 @@ import DiaspoFooter from '@/components/DiaspoFooter';
 import AboutSection from '@/components/AboutSection';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
+import YouTubeVideo from '@/components/YouTubeVideo';
 
 const About: React.FC = () => {
   return (
@@ -13,6 +14,27 @@ const About: React.FC = () => {
       <main className="pt-20">
         <AboutSection />
         
+        {/* Video Section */}
+        <section className="py-20 px-6 sm:px-12 md:px-20 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-[#283692]/10 rounded-full mb-4">
+                <span className="text-[#283692] font-semibold text-sm">OUR STORY</span>
+              </div>
+              <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">
+                Learn About <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">DiaspoCare</span>
+              </h2>
+              <p className="text-xl text-[#7A8A9E]">Discover how we're transforming healthcare for diaspora families</p>
+            </div>
+
+            <YouTubeVideo 
+              videoId="dAyfk6sqPcY"
+              title="About DiaspoCare"
+              autoplay={false}
+            />
+          </div>
+        </section>
+
         {/* Additional Content Section */}
         <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
           <div className="max-w-7xl mx-auto">
