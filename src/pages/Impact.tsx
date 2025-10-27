@@ -15,6 +15,27 @@ const Impact: React.FC = () => {
       <ScrollProgress />
       <DiaspoHeader />
       <main className="pt-20">
+        {/* Impact Video Section - FIRST */}
+        <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#283692]/5">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <div className="inline-block px-4 py-2 bg-[#283692]/10 rounded-full mb-4">
+                <span className="text-[#283692] font-semibold text-sm">🎥 OUR IMPACT</span>
+              </div>
+              <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-4">
+                See Our <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">Real Impact</span>
+              </h2>
+              <p className="text-xl text-[#7A8A9E]">Watch how DiaspoCare is changing lives across Africa</p>
+            </div>
+
+            <YouTubeVideo 
+              videoId="ldJ0dD1aqj8"
+              title="DiaspoCare Impact Stories"
+              autoplay={false}
+            />
+          </div>
+        </section>
+
         <ImpactSection />
 
         {/* Detailed Impact Stories */}
@@ -66,28 +87,6 @@ const Impact: React.FC = () => {
         </section>
 
         <TestimonialsSection />
-
-        {/* Impact Video Section */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-block px-4 py-2 bg-[#283692]/10 rounded-full mb-4">
-                <span className="text-[#283692] font-semibold text-sm">REAL IMPACT</span>
-              </div>
-              <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">
-                See Our <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">Impact</span>
-              </h2>
-              <p className="text-xl text-[#7A8A9E]">Watch how DiaspoCare is changing lives across Africa</p>
-            </div>
-
-            <YouTubeVideo 
-              videoId="dAyfk6sqPcY"
-              title="DiaspoCare Impact Stories"
-              autoplay={false}
-            />
-          </div>
-        </section>
-
         <DiaspoCauseSection />
 
         {/* Milestones */}

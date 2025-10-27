@@ -13,6 +13,27 @@ const HPodKiosk: React.FC = () => {
       <ScrollProgress />
       <DiaspoHeader />
       <main className="pt-20">
+        {/* Video Section - FIRST */}
+        <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <div className="inline-block px-4 py-2 bg-[#283692]/10 rounded-full mb-4">
+                <span className="text-[#283692] font-semibold text-sm">🎥 WATCH DEMO</span>
+              </div>
+              <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-4">
+                See H-POD <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">in Action</span>
+              </h2>
+              <p className="text-xl text-[#7A8A9E]">Watch how our diagnostic kiosk transforms healthcare access</p>
+            </div>
+
+            <YouTubeVideo 
+              videoId="dAyfk6sqPcY"
+              title="DiaspoCare H-POD - How It Works"
+              autoplay={false}
+            />
+          </div>
+        </section>
+
         <HPodKioskSection />
 
         {/* Technical Specifications */}
@@ -67,24 +88,9 @@ const HPodKiosk: React.FC = () => {
           </div>
         </section>
 
-        {/* Video Section */}
+        {/* How It Works */}
         <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-block px-4 py-2 bg-white rounded-full border border-[#007FFF]/20 shadow-sm mb-4">
-                <span className="text-[#283692] font-semibold text-sm">🎥 Watch Demo</span>
-              </div>
-              <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">See H-POD in Action</h2>
-              <p className="text-xl text-[#7A8A9E]">Watch how our diagnostic kiosk transforms healthcare access - click play to watch</p>
-            </div>
-
-            <YouTubeVideo 
-              videoId="dAyfk6sqPcY"
-              title="DiaspoCare H-POD - How It Works"
-              autoplay={false}
-              className="mb-20"
-            />
-
             <div className="text-center mb-16">
               <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">How It Works</h2>
               <p className="text-xl text-[#7A8A9E]">Simple, fast, and accurate health screening</p>
