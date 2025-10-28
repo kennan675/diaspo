@@ -3,7 +3,6 @@ import DiaspoHeader from '@/components/DiaspoHeader';
 import DiaspoFooter from '@/components/DiaspoFooter';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
-import YouTubeVideo from '@/components/YouTubeVideo';
 import { Users, UserCheck, Network, Phone, FileText, Activity, Eye, Heart, ArrowRight } from 'lucide-react';
 
 const CareCoordination: React.FC = () => {
@@ -18,17 +17,6 @@ const CareCoordination: React.FC = () => {
           <div className="max-w-4xl mx-auto relative z-10 text-center">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6">Care Coordination</h1>
             <p className="text-2xl font-semibold mb-4">Caring from afar, Made simple with DiaspoCare.</p>
-          </div>
-        </section>
-
-        {/* Video Section */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <YouTubeVideo 
-              videoId="dAyfk6sqPcY"
-              title="DiaspoCare Care Coordination"
-              autoplay={false}
-            />
           </div>
         </section>
 
