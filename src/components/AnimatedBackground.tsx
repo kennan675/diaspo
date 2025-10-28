@@ -29,27 +29,27 @@ const AnimatedBackground: React.FC = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Create particles
-    const particleCount = 80;
+    // Create particles - reduced count for better performance
+    const particleCount = 30;
     particlesRef.current = Array.from({ length: particleCount }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
-      size: Math.random() * 3 + 1,
-      opacity: Math.random() * 0.5 + 0.2,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      size: Math.random() * 2 + 1,
+      opacity: Math.random() * 0.4 + 0.1,
     }));
 
+    let frameCount = 0;
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      frameCount++;
+      // Only update every 2nd frame for 30fps instead of 60fps
+      if (frameCount % 2 !== 0) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+        return;
+      }
 
-      // Draw gradient background
-      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, 'rgba(40, 54, 146, 0.03)');
-      gradient.addColorStop(0.5, 'rgba(0, 127, 255, 0.05)');
-      gradient.addColorStop(1, 'rgba(147, 51, 234, 0.03)');
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles
       particlesRef.current.forEach((particle, i) => {
@@ -67,18 +67,18 @@ const AnimatedBackground: React.FC = () => {
         ctx.fillStyle = `rgba(0, 127, 255, ${particle.opacity})`;
         ctx.fill();
 
-        // Draw connections
+        // Draw connections - reduced distance check for better performance
         particlesRef.current.slice(i + 1).forEach((otherParticle) => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 150) {
+          if (distance < 120) {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(0, 127, 255, ${0.2 * (1 - distance / 150)})`;
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = `rgba(0, 127, 255, ${0.15 * (1 - distance / 120)})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         });
