@@ -5,6 +5,7 @@ import DiaspoFooter from '@/components/DiaspoFooter';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
 import YouTubeVideo from '@/components/YouTubeVideo';
+import PartnersCarousel from '@/components/PartnersCarousel';
 import { Shield, DollarSign, Smartphone, CreditCard, Bell, Home, CheckCircle, ArrowRight } from 'lucide-react';
 
 const HealthcareFinancing: React.FC = () => {
@@ -280,22 +281,19 @@ const HealthcareFinancing: React.FC = () => {
 
         {/* Partners Section */}
         <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5">
-          <div className="max-w-6xl mx-auto text-center">
+          <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-extrabold text-[#283692] mb-4">
               SOME OF OUR PARTNERS YOU CAN ACCESS THROUGH THE APP
             </h2>
-            <p className="text-lg text-[#3A3F46] mb-12">Over 1900 Partners</p>
+            <p className="text-lg text-[#3A3F46] mb-8">Over 1900 Partners</p>
             
-            <div className="flex justify-center items-center gap-16 flex-wrap mb-12">
-              <div className="text-6xl">🏥</div>
-              <div className="text-6xl">💊</div>
-              <div className="text-6xl">🏪</div>
-              <div className="text-6xl">🏨</div>
-            </div>
+            <PartnersCarousel />
 
-            <a href="https://supporter.diaspocare.com" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-3 rounded-xl bg-[#0066FF] text-white font-bold hover:bg-[#0052CC] transition-all hover:scale-105">
-              Get Started
-            </a>
+            <div className="mt-8">
+              <a href="https://supporter.diaspocare.com" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-3 rounded-xl bg-[#0066FF] text-white font-bold hover:bg-[#0052CC] transition-all hover:scale-105">
+                Get Started
+              </a>
+            </div>
           </div>
         </section>
 
