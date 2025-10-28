@@ -41,8 +41,8 @@ const MDConnect: React.FC = () => {
             </div>
 
             <YouTubeVideo 
-              videoId="dAyfk6sqPcY"
-              title="DiaspoCare MD Connect Telemedicine"
+              videoId="X5bQ8kANiEg"
+              title="GoodLife Pharmacy Endorses DiaspoCare"
               autoplay={false}
             />
           </div>

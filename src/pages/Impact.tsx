@@ -29,8 +29,8 @@ const Impact: React.FC = () => {
             </div>
 
             <YouTubeVideo 
-              videoId="ldJ0dD1aqj8"
-              title="DiaspoCare Impact Stories"
+              videoId="St6o-UeDah0"
+              title="Goodlife X DiaspoCare Partnership"
               autoplay={false}
             />
           </div>

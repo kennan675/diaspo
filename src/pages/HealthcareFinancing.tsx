@@ -50,8 +50,8 @@ const HealthcareFinancing: React.FC = () => {
             </div>
 
             <YouTubeVideo 
-              videoId="dAyfk6sqPcY"
-              title="DiaspoCare Healthcare Financing"
+              videoId="JAMFPJcqMYg"
+              title="Serge-Alain Wandji - DiaspoCare Co-founder"
               autoplay={false}
             />
           </div>
