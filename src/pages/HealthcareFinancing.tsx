@@ -4,6 +4,7 @@ import DiaspoHeader from '@/components/DiaspoHeader';
 import DiaspoFooter from '@/components/DiaspoFooter';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
+import YouTubeVideo from '@/components/YouTubeVideo';
 import { Smartphone, DollarSign, Shield, Users, CheckCircle, ArrowRight, Heart, Activity, Eye, Pill } from 'lucide-react';
 
 const services = [
@@ -110,21 +111,38 @@ const HealthcareFinancing: React.FC = () => {
         {/* Testimonials */}
         <section className="py-16 px-6 sm:px-12 md:px-20 bg-white">
           <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-extrabold text-[#3A3F46] mb-12 text-center">
+              Success <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">Stories</span>
+            </h2>
             <div className="grid md:grid-cols-2 gap-8">
               {/* Testimonial 1 */}
-              <div className="bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5 rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-[#3A3F46] mb-4">Happy Mom Story</h3>
-                <p className="text-[#7A8A9E] leading-relaxed">
-                  Mama Moraa is a happy and proud mom! Although his son lives in the United States, he is able to make sure his mom, back in Kenya receives the best heath care through DiaspoCare. This is what she has to say
-                </p>
+              <div className="space-y-4">
+                <YouTubeVideo 
+                  videoId="St6o-UeDah0"
+                  title="Mama Moraa - Happy Mom Story"
+                  autoplay={false}
+                />
+                <div className="bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5 rounded-2xl p-6">
+                  <h3 className="text-xl font-bold text-[#3A3F46] mb-3">Happy Mom Story</h3>
+                  <p className="text-[#7A8A9E] leading-relaxed">
+                    Mama Moraa is a happy and proud mom! Although his son lives in the United States, he is able to make sure his mom, back in Kenya receives the best heath care through DiaspoCare. This is what she has to say
+                  </p>
+                </div>
               </div>
 
               {/* Testimonial 2 */}
-              <div className="bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5 rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-[#3A3F46] mb-4">David's Success Story</h3>
-                <p className="text-[#7A8A9E] leading-relaxed">
-                  David, living in the United States, joined DiaspoCare at a time when he was struggling to arrange quality healthcare for his loved ones back home. He uses DiaspoCare to access and pay for almost all the healthcare needs of his loved ones. Whether his loved ones need medication from a pharmacy, routine check up, consult with a doctor on phone, or even have someone visit them at the comfort of their homes. They got all this and MORE, thanks to David joining DiaspoCare as a Supporter and adding them as Beneficiaries.
-                </p>
+              <div className="space-y-4">
+                <YouTubeVideo 
+                  videoId="ldJ0dD1aqj8"
+                  title="David's Success Story"
+                  autoplay={false}
+                />
+                <div className="bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5 rounded-2xl p-6">
+                  <h3 className="text-xl font-bold text-[#3A3F46] mb-3">David's Success Story</h3>
+                  <p className="text-[#7A8A9E] leading-relaxed">
+                    David, living in the United States, joined DiaspoCare at a time when he was struggling to arrange quality healthcare for his loved ones back home. He uses DiaspoCare to access and pay for almost all the healthcare needs of his loved ones. Whether his loved ones need medication from a pharmacy, routine check up, consult with a doctor on phone, or even have someone visit them at the comfort of their homes. They got all this and MORE, thanks to David joining DiaspoCare as a Supporter and adding them as Beneficiaries.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
