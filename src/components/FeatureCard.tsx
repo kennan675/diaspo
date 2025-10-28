@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface FeatureCardProps {
   title: string;
   description: string;
   icon: string;
+  link: string;
   index: number;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, index }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, link, index }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
-      className="group relative p-8 rounded-2xl bg-white/90 backdrop-blur-enhanced border border-[#007FFF]/10 shadow-[0_4px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_50px_rgba(0,127,255,0.25)] transition-all duration-500 hover:-translate-y-3 cursor-pointer hover-lift overflow-hidden"
+    <Link
+      to={link}
+      className="group relative p-8 rounded-2xl bg-white/90 backdrop-blur-enhanced border border-[#007FFF]/10 shadow-[0_4px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_50px_rgba(0,127,255,0.25)] transition-all duration-500 hover:-translate-y-3 cursor-pointer hover-lift overflow-hidden block"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{ animationDelay: `${index * 100}ms` }}
@@ -46,7 +49,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, ind
           </svg>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

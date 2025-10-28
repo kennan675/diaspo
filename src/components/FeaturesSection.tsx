@@ -31,6 +31,7 @@ const FeaturesSection: React.FC = () => {
               title={feature.title}
               description={feature.description}
               icon={feature.icon}
+              link={feature.link}
               index={index}
             />
           ))}

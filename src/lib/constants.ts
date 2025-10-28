@@ -12,31 +12,37 @@ export const FEATURES = [
     title: 'Appointment Scheduling',
     description: 'Book medical appointments for your loved ones with verified healthcare providers.',
     icon: 'https://d64gsuwffb70l.cloudfront.net/68f82a42889eeaf16721e728_1761094252867_035f33c2.webp',
+    link: '/care-coordination',
   },
   {
     title: 'Transportation Assistance',
     description: 'Reliable transport to and from medical facilities, ensuring safe and timely care.',
     icon: 'https://d64gsuwffb70l.cloudfront.net/68f82a42889eeaf16721e728_1761094256589_9e1407ac.webp',
+    link: '/care-coordination',
   },
   {
     title: 'Wallets (Susu)',
     description: 'Secure digital wallets for healthcare payments and family financial support.',
     icon: 'https://d64gsuwffb70l.cloudfront.net/68f82a42889eeaf16721e728_1761094259039_46d9cf5f.webp',
+    link: '/healthcare-financing',
   },
   {
     title: 'Refill & Delivery',
     description: 'Prescription refills and home delivery service for ongoing medication needs.',
     icon: 'https://d64gsuwffb70l.cloudfront.net/68f82a42889eeaf16721e728_1761094260295_d06b5ba4.webp',
+    link: '/family-health-wallet',
   },
   {
     title: 'Telehealth',
     description: 'Virtual consultations connecting diaspora families with healthcare professionals.',
     icon: 'https://d64gsuwffb70l.cloudfront.net/68f82a42889eeaf16721e728_1761094261056_7b04e094.webp',
+    link: '/md-connect',
   },
   {
     title: 'Diagnostics (H-POD)',
     description: 'Advanced diagnostic services and health monitoring for comprehensive care.',
     icon: 'https://d64gsuwffb70l.cloudfront.net/68f82a42889eeaf16721e728_1761094261778_9c3c42ff.webp',
+    link: '/hpod-kiosk',
   },
 ];
 
