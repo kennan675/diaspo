@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, Eye, BookOpen, Users } from 'lucide-react';
+import PartnersCarousel from './PartnersCarousel';
 
 const AboutSection: React.FC = () => {
   return (
@@ -90,9 +91,14 @@ const AboutSection: React.FC = () => {
         {/* How We Deliver */}
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold text-[#3A3F46] mb-6">How DiaspoCare Delivers on its Promises</h3>
-          <p className="text-lg text-[#7A8A9E] max-w-3xl mx-auto mb-12">
+          <p className="text-lg text-[#7A8A9E] max-w-3xl mx-auto mb-8">
             Partnerships are a crucial pillar in DiaspoCare's strategy. Led by the commitment to ensure our clients receive holistic and innovative medical care, DiaspoCare's partnership network is driven by the nature of DiaspoCare's work, the environment of its operations, and its health care cost-reduction goals.
           </p>
+
+          {/* Partners Carousel */}
+          <div className="mb-12">
+            <PartnersCarousel />
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-6 rounded-2xl bg-white shadow-lg border border-[#007FFF]/10">
