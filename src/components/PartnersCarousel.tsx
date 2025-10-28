@@ -1,24 +1,24 @@
 import React from 'react';
 
 const partners = [
-  { name: 'CP Kenya', logo: 'https://logo.clearbit.com/cpkenya.com' },
-  { name: 'Ecobank', logo: 'https://seeklogo.com/images/E/ecobank-logo-7D8B8E0F7E-seeklogo.com.png' },
-  { name: 'Equity Bank', logo: 'https://logo.clearbit.com/equitybankgroup.com' },
+  { name: 'CP Kenya', logo: '/partners/cp-kenya.png' },
+  { name: 'Ecobank', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Ecobank_logo.svg/2560px-Ecobank_logo.svg.png' },
+  { name: 'Equity Bank', logo: '/partners/equity-bank.png' },
   { name: 'Equity Afia', logo: 'https://equityafya.co.ke/wp-content/uploads/2022/02/Equity-Afya-Logo.png' },
-  { name: 'FRETT Technologies', logo: 'https://logo.clearbit.com/frett.com' },
-  { name: 'GoodLife Pharmacy', logo: 'https://logo.clearbit.com/goodlife.co.ke' },
-  { name: 'HealthX', logo: 'https://logo.clearbit.com/healthx.africa' },
-  { name: 'Kenya Pharmaceutical Association', logo: 'https://logo.clearbit.com/kpa.or.ke' },
-  { name: 'NephroMed', logo: 'https://logo.clearbit.com/nephromed.co.ke' },
-  { name: 'Paystack', logo: 'https://logo.clearbit.com/paystack.com' },
-  { name: 'SASAdoctor', logo: 'https://logo.clearbit.com/sasadoctor.com' },
-  { name: 'SPROXIL', logo: 'https://logo.clearbit.com/sproxil.com' },
-  { name: 'tingg by Cellulant', logo: 'https://logo.clearbit.com/tingg.africa' },
-  { name: 'BYON8', logo: 'https://logo.clearbit.com/byon8.com' },
-  { name: 'Bliss Healthcare', logo: 'https://logo.clearbit.com/blisshealthcare.co.ke' },
-  { name: 'Dovey Pharma', logo: 'https://logo.clearbit.com/doveypharma.com' },
-  { name: 'Orion Healthcare', logo: 'https://logo.clearbit.com/orionhealthcare.co.ke' },
-  { name: 'SBAR', logo: 'https://logo.clearbit.com/sbar.co.ke' },
+  { name: 'FRETT Technologies', logo: '/partners/frett.png' },
+  { name: 'GoodLife Pharmacy', logo: 'https://www.goodlife.co.ke/wp-content/uploads/2023/03/cropped-Goodlife-logo.png' },
+  { name: 'HealthX', logo: '/partners/healthx.png' },
+  { name: 'Kenya Pharmaceutical Association', logo: '/partners/kpa.png' },
+  { name: 'NephroMed', logo: '/partners/nephromed.png' },
+  { name: 'Paystack', logo: 'https://assets-global.website-files.com/5d9bc5d562ffc2869b470941/5e1c8e2197422d6c93b2c4cf_paystack-icon-blue.png' },
+  { name: 'SASAdoctor', logo: '/partners/sasadoctor.png' },
+  { name: 'SPROXIL', logo: '/partners/sproxil.png' },
+  { name: 'tingg by Cellulant', logo: '/partners/tingg.png' },
+  { name: 'BYON8', logo: '/partners/byon8.png' },
+  { name: 'Bliss Healthcare', logo: '/partners/bliss.png' },
+  { name: 'Dovey Pharma', logo: '/partners/dovey.png' },
+  { name: 'Orion Healthcare', logo: '/partners/orion.png' },
+  { name: 'SBAR', logo: '/partners/sbar.png' },
 ];
 
 const PartnersCarousel: React.FC = () => {
@@ -38,7 +38,7 @@ const PartnersCarousel: React.FC = () => {
         }
 
         .animate-scroll {
-          animation: scroll 40s linear infinite;
+          animation: scroll 20s linear infinite;
         }
 
         .animate-scroll:hover {
