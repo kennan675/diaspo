@@ -51,8 +51,8 @@ const HealthcareFinancing: React.FC = () => {
             {/* Video */}
             <div className="max-w-4xl mx-auto">
               <YouTubeVideo 
-                videoId="dAyfk6sqPcY"
-                title="Mr. David Kasonga, Head of Retail for GoodLife Pharmacy"
+                videoId="X5bQ8kANiEg"
+                title="GoodLife Pharmacy - DiaspoCare Partnership"
                 autoplay={false}
               />
             </div>
@@ -311,7 +311,7 @@ const HealthcareFinancing: React.FC = () => {
               </div>
               <div>
                 <YouTubeVideo 
-                  videoId="St6o-UeDah0"
+                  videoId="SdQ5xnvFeGw"
                   title="Peris Moraa Testimonial"
                   autoplay={false}
                 />
@@ -322,7 +322,7 @@ const HealthcareFinancing: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="order-2 md:order-1">
                 <YouTubeVideo 
-                  videoId="ldJ0dD1aqj8"
+                  videoId="q6QJd6MCowM"
                   title="David Mukaria - How to Care for your Sick Mom"
                   autoplay={false}
                 />
