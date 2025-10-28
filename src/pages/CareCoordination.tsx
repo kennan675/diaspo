@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import DiaspoHeader from '@/components/DiaspoHeader';
 import DiaspoFooter from '@/components/DiaspoFooter';
 import ScrollProgress from '@/components/ScrollProgress';
@@ -202,10 +203,10 @@ const CareCoordination: React.FC = () => {
             <p className="text-xl mb-8 text-white/90">
               Give your loved ones comprehensive care with DiaspoCare
             </p>
-            <button className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-[#283692] font-bold text-lg hover:bg-white/90 transition-all hover:scale-105">
+            <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-[#283692] font-bold text-lg hover:bg-white/90 transition-all hover:scale-105">
               Get Started Today
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </Link>
           </div>
         </section>
       </main>
