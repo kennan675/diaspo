@@ -39,10 +39,9 @@ const CareFlowSection: React.FC = () => {
                 onClick={() => setActiveStep(activeStep === index ? null : index)}
               >
                 <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                  <div className={`inline-block p-4 rounded-xl bg-white border-2 ${activeStep === index ? 'border-[#007FFF] shadow-[0_4px_20px_rgba(0,127,255,0.2)]' : 'border-[#007FFF]/20 shadow-[0_2px_10px_rgba(0,0,0,0.05)]'} hover:border-[#007FFF] hover:shadow-[0_4px_20px_rgba(0,127,255,0.2)] transition-all`}>
-                    <div className="text-3xl mb-2">{step.icon}</div>
-                    <h3 className="text-xl font-bold text-[#3A3F46] mb-1">{step.title}</h3>
-                    <p className="text-sm text-[#7A8A9E]">{step.description}</p>
+                  <div className={`inline-block p-3 rounded-lg bg-white border-2 ${activeStep === index ? 'border-[#007FFF] shadow-[0_4px_20px_rgba(0,127,255,0.2)]' : 'border-[#007FFF]/20 shadow-[0_2px_10px_rgba(0,0,0,0.05)]'} hover:border-[#007FFF] hover:shadow-[0_4px_20px_rgba(0,127,255,0.2)] transition-all`}>
+                    <h3 className="text-lg font-bold text-[#3A3F46] mb-1">{step.title}</h3>
+                    <p className="text-xs text-[#7A8A9E]">{step.description}</p>
                   </div>
                 </div>
 
