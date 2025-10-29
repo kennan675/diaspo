@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 20%;
+
+    /* Healthcare-inspired teal/blue primary */
+    --primary: 186 70% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm coral accent for care/compassion */
+    --secondary: 16 85% 62%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 45%;
+
+    /* Soft teal accent */
+    --accent: 174 62% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 90%;
+    --input: 210 15% 90%;
+    --ring: 186 70% 48%;
+
+    --radius: 1rem;
+
+    /* Healthcare gradients - calming and trustworthy */
+    --gradient-primary: linear-gradient(135deg, hsl(186, 70%, 48%), hsl(174, 62%, 47%));
+    --gradient-warm: linear-gradient(135deg, hsl(16, 85%, 62%), hsl(30, 80%, 55%));
+    --gradient-soft: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(186, 40%, 98%));
+    --gradient-care: linear-gradient(135deg, hsl(186, 70%, 48%), hsl(16, 85%, 62%));
+
+    /* Soft, professional shadows */
+    --shadow-glow: 0 0 80px hsl(186, 70%, 48%, 0.2);
+    --shadow-warm-glow: 0 0 80px hsl(16, 85%, 62%, 0.2);
+    --shadow-soft: 0 20px 60px -10px hsl(186, 30%, 40%, 0.08);
+
+    /* Smooth, caring animations */
+    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-gentle: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

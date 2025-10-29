@@ -33,7 +33,7 @@ const CarePulse = ({ position, scale }: { position: [number, number, number]; sc
       <mesh ref={meshRef} position={position} scale={scale}>
         <torusGeometry args={[1, 0.15, 16, 100]} />
         <MeshDistortMaterial
-          color="#007FFF"
+          color="#0ea5e9"
           attach="material"
           distort={0.15}
           speed={2}
@@ -105,7 +105,7 @@ const HealthParticles = () => {
       </bufferGeometry>
       <pointsMaterial
         size={0.04}
-        color="#007FFF"
+        color="#0ea5e9"
         sizeAttenuation
         transparent
         opacity={0.4}
@@ -115,9 +115,9 @@ const HealthParticles = () => {
   );
 };
 
-export const DiaspoAnimatedBackground = () => {
+export const AnimatedBackground = () => {
   return (
-    <div className="fixed inset-0 w-full h-full bg-gradient-to-br from-white via-cyan-50/20 to-blue-50/30" style={{ zIndex: -1 }}>
+    <div className="fixed inset-0 w-full h-full bg-gradient-to-br from-white via-cyan-50/20 to-blue-50/30">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 60 }}
         style={{ background: "transparent" }}
