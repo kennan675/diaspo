@@ -44,7 +44,8 @@ const PartnersCarousel: React.FC = () => {
         }
 
         .animate-scroll {
-          animation: scroll 20s linear infinite;
+          animation: scroll 30s linear infinite;
+          will-change: transform;
         }
 
         .animate-scroll:hover {

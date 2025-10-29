@@ -13,10 +13,6 @@ const TestimonialsSection: React.FC = () => {
 
   return (
     <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
-      </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-16 space-y-4">

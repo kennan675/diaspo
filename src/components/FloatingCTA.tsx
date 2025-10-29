@@ -8,7 +8,7 @@ const FloatingCTA: React.FC = () => {
     const handleScroll = () => {
       setIsVisible(window.scrollY > 800);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -17,7 +17,7 @@ const FloatingCTA: React.FC = () => {
   return (
     <div className="fixed bottom-8 right-8 z-50">
       {isExpanded ? (
-        <div className="bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] p-6 w-80 animate-fade-in border border-[#007FFF]/20">
+        <div className="bg-white rounded-2xl shadow-lg p-6 w-80 border border-[#007FFF]/20">
           <button 
             onClick={() => setIsExpanded(false)}
             className="absolute top-4 right-4 text-[#7A8A9E] hover:text-[#3A3F46]"
@@ -43,7 +43,7 @@ const FloatingCTA: React.FC = () => {
       ) : (
         <button
           onClick={() => setIsExpanded(true)}
-          className="w-16 h-16 rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] text-white shadow-[0_8px_30px_rgba(0,127,255,0.4)] hover:shadow-[0_12px_40px_rgba(0,127,255,0.5)] hover:scale-110 transition-all flex items-center justify-center text-2xl animate-bounce"
+          className="w-16 h-16 rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center text-2xl"
         >
           💬
         </button>

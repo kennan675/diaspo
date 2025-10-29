@@ -1,5 +1,4 @@
 import React from 'react';
-import ScrollProgress from './ScrollProgress';
 import DiaspoHeader from './DiaspoHeader';
 import HeroSection from './HeroSection';
 import ZeroDiversionSection from './ZeroDiversionSection';
@@ -7,7 +6,6 @@ import WhoUsesSection from './WhoUsesSection';
 import PartnersSection from './PartnersSection';
 import FeaturesSection from './FeaturesSection';
 import HowItWorksVideo from './HowItWorksVideo';
-import StatsSection from './StatsSection';
 import CareFlowSection from './CareFlowSection';
 import TestimonialsSection from './TestimonialsSection';
 import MobileAppSection from './MobileAppSection';
@@ -23,7 +21,6 @@ import BackToTop from './BackToTop';
 const AppLayout: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
-      <ScrollProgress />
       <DiaspoHeader />
       <main>
         <HeroSection />
@@ -32,7 +29,6 @@ const AppLayout: React.FC = () => {
         <WhoUsesSection />
         <PartnersSection />
         <FeaturesSection />
-        <StatsSection />
         <CareFlowSection />
         <TestimonialsSection />
         <MobileAppSection />

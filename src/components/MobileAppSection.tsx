@@ -3,15 +3,10 @@ import React from 'react';
 const MobileAppSection: React.FC = () => {
   return (
     <section id="app-download" className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] via-[#007FFF] to-[#283692] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-white rounded-full blur-3xl" />
-      </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 text-white">
-            <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+            <div className="inline-block px-4 py-2 bg-white/20 rounded-full">
               <span className="font-semibold text-sm">COMING SOON</span>
             </div>
 
@@ -26,7 +21,7 @@ const MobileAppSection: React.FC = () => {
             <div className="space-y-4">
               {['Real-time notifications', 'Secure messaging with providers', 'Document uploads & storage', 'Offline mode support'].map((feature, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -74,11 +69,8 @@ const MobileAppSection: React.FC = () => {
               <img 
                 src="https://d64gsuwffb70l.cloudfront.net/68f82a42889eeaf16721e728_1761094609266_0d4dcc6a.webp"
                 alt="DiaspoCare Mobile App"
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-full h-auto drop-shadow-lg"
               />
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center animate-bounce-slow">
-                <span className="text-4xl">📱</span>
-              </div>
             </div>
           </div>
         </div>

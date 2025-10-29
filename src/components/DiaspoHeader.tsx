@@ -9,7 +9,7 @@ const DiaspoHeader: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (closeTimerRef.current) {
@@ -51,7 +51,7 @@ const DiaspoHeader: React.FC = () => {
   const toggleSolutions = () => {
     setSolutionsOpen(!solutionsOpen);
   };
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
+  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 shadow-lg' : 'bg-transparent'}`}>
       <nav className="max-w-7xl mx-auto px-6 sm:px-12 md:px-20 py-4"><div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <img 
