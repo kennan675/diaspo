@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
 import ScrollToTop from "@/components/ScrollToTop";
+import { DiaspoAnimatedBackground } from "@/components/DiaspoAnimatedBackground";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Impact from "./pages/Impact";
@@ -24,6 +25,7 @@ const App = () => (
   <ThemeProvider defaultTheme="light">
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <DiaspoAnimatedBackground />
         <Toaster />
         <Sonner />
         <BrowserRouter>
