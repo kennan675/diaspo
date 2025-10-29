@@ -15,7 +15,6 @@ import DiaspoCauseSection from './DiaspoCauseSection';
 import HPodKioskSection from './HPodKioskSection';
 import AboutSection from './AboutSection';
 import FAQSection from './FAQSection';
-import BlogSection from './BlogSection';
 import NewsletterSection from './NewsletterSection';
 import DiaspoFooter from './DiaspoFooter';
 import FloatingCTA from './FloatingCTA';
@@ -41,7 +40,6 @@ const AppLayout: React.FC = () => {
         <HPodKioskSection />
         <AboutSection />
         <FAQSection />
-        <BlogSection />
         <NewsletterSection />
       </main>
       <DiaspoFooter />
