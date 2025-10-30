@@ -3,7 +3,8 @@ import React from 'react';
 const HeroSection: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white to-gray-50 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-center [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]" />
+      {/* Pure CSS Grid Pattern */}
+      <div className="absolute inset-0 [background-image:linear-gradient(to_right,#00000010_1px,transparent_1px),linear-gradient(to_bottom,#00000010_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]" />
       
       <div className="max-w-6xl mx-auto w-full relative z-10 text-center">
         {/* Logo */}
