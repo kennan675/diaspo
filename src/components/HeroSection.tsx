@@ -75,3 +75,5 @@ const HeroSection: React.FC = () => {
     </section>
   );
 };
+
+export default HeroSection;
