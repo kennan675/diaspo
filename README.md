@@ -50,7 +50,6 @@ Visit `http://localhost:5173` to view the application.
 - **Build Tool**: Vite
 - **Font**: Poppins (Google Fonts)
 - **Icons**: Custom SVG icons
-- **Images**: AI-generated custom imagery
 
 # Run development server
 npm run dev
