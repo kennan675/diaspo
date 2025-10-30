@@ -1,4 +1,4 @@
-mport React from 'react';
+import React from 'react';
 import { Phone, Mail } from 'lucide-react';
 
 const DiaspoFooter: React.FC = () => {
