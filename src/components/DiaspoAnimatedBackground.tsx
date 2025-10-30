@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, MeshDistortMaterial, Sphere } from "@react-three/drei";
-import { useRef } from "react";
+import { useRef, Suspense } from "react";
 import { Mesh } from "three";
 import * as THREE from "three";
 
@@ -33,7 +33,7 @@ const CarePulse = ({ position, scale }: { position: [number, number, number]; sc
       <mesh ref={meshRef} position={position} scale={scale}>
         <torusGeometry args={[1, 0.15, 16, 100]} />
         <MeshDistortMaterial
-          color="#007FFF"
+          color="#0ea5e9"
           attach="material"
           distort={0.15}
           speed={2}
@@ -105,7 +105,7 @@ const HealthParticles = () => {
       </bufferGeometry>
       <pointsMaterial
         size={0.04}
-        color="#007FFF"
+        color="#0ea5e9"
         sizeAttenuation
         transparent
         opacity={0.4}
@@ -116,52 +116,59 @@ const HealthParticles = () => {
 };
 
 export const DiaspoAnimatedBackground = () => {
+  // clamp DPR to avoid rendering too heavy on very large screens
+  const getDPR = () => Math.min(2, typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1);
+
   return (
-    <div className="fixed inset-0 w-full h-full bg-gradient-to-br from-white via-cyan-50/20 to-blue-50/30" style={{ zIndex: -1 }}>
-      <Canvas
-        camera={{ position: [0, 0, 10], fov: 60 }}
-        style={{ background: "transparent" }}
-      >
-        {/* Soft, professional lighting */}
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[5, 5, 5]} intensity={0.8} color="#ffffff" />
-        <directionalLight position={[-5, -5, -5]} intensity={0.2} color="#0ea5e9" />
-        <pointLight position={[0, 0, 5]} intensity={0.3} color="#0ea5e9" />
-        <pointLight position={[5, 5, 0]} intensity={0.2} color="#3b82f6" />
+    // pointer-events-none keeps interactions on top of canvas usable
+    <div className="fixed inset-0 w-full h-full bg-gradient-to-br from-white via-cyan-50/20 to-blue-50/30 pointer-events-none" style={{ zIndex: -1 }}>
+      <Suspense fallback={null}>
+        <Canvas
+          camera={{ position: [0, 0, 10], fov: 60 }}
+          style={{ background: "transparent" }}
+          dpr={getDPR()}
+        >
+          {/* Soft, professional lighting */}
+          <ambientLight intensity={0.6} />
+          <directionalLight position={[5, 5, 5]} intensity={0.8} color="#ffffff" />
+          <directionalLight position={[-5, -5, -5]} intensity={0.2} color="#0ea5e9" />
+          <pointLight position={[0, 0, 5]} intensity={0.3} color="#0ea5e9" />
+          <pointLight position={[5, 5, 0]} intensity={0.2} color="#3b82f6" />
 
-        {/* Heartbeat/pulse spheres - representing care and vitality */}
-        <HeartbeatSphere position={[-4, 2, -2]} scale={1.4} color="#0ea5e9" />
-        <HeartbeatSphere position={[4, -1.5, -3]} scale={1.1} color="#ffffff" />
-        <HeartbeatSphere position={[0, 3, 1]} scale={0.9} color="#3b82f6" />
-        <HeartbeatSphere position={[-2, -2, 0]} scale={1.2} color="#1e40af" />
-        
-        {/* White and light blue accents */}
-        <HeartbeatSphere position={[3, 2, -1]} scale={0.8} color="#ffffff" />
-        <HeartbeatSphere position={[-3, -1, 2]} scale={0.7} color="#60a5fa" />
+          {/* Heartbeat/pulse spheres - representing care and vitality */}
+          <HeartbeatSphere position={[-4, 2, -2]} scale={1.4} color="#0ea5e9" />
+          <HeartbeatSphere position={[4, -1.5, -3]} scale={1.1} color="#ffffff" />
+          <HeartbeatSphere position={[0, 3, 1]} scale={0.9} color="#3b82f6" />
+          <HeartbeatSphere position={[-2, -2, 0]} scale={1.2} color="#1e40af" />
+          
+          {/* White and light blue accents */}
+          <HeartbeatSphere position={[3, 2, -1]} scale={0.8} color="#ffffff" />
+          <HeartbeatSphere position={[-3, -1, 2]} scale={0.7} color="#60a5fa" />
 
-        {/* Pulse rings - representing healthcare monitoring */}
-        <CarePulse position={[2, 1, -2]} scale={0.8} />
-        <CarePulse position={[-2, 0, 1]} scale={1} />
-        <CarePulse position={[0, -2, -1]} scale={0.6} />
+          {/* Pulse rings - representing healthcare monitoring */}
+          <CarePulse position={[2, 1, -2]} scale={0.8} />
+          <CarePulse position={[-2, 0, 1]} scale={1} />
+          <CarePulse position={[0, -2, -1]} scale={0.6} />
 
-        {/* Soft clouds - representing safety and comfort */}
-        <SoftCloud position={[-5, 3, -5]} scale={2} color="#ffffff" />
-        <SoftCloud position={[5, -2, -4]} scale={1.8} color="#bfdbfe" />
-        <SoftCloud position={[0, 4, -6]} scale={2.2} color="#0ea5e9" />
-        <SoftCloud position={[4, 1, -3]} scale={1.5} color="#dbeafe" />
+          {/* Soft clouds - representing safety and comfort */}
+          <SoftCloud position={[-5, 3, -5]} scale={2} color="#ffffff" />
+          <SoftCloud position={[5, -2, -4]} scale={1.8} color="#bfdbfe" />
+          <SoftCloud position={[0, 4, -6]} scale={2.2} color="#0ea5e9" />
+          <SoftCloud position={[4, 1, -3]} scale={1.5} color="#dbeafe" />
 
-        {/* Particle system - subtle health vitality */}
-        <HealthParticles />
+          {/* Particle system - subtle health vitality */}
+          <HealthParticles />
 
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          autoRotate
-          autoRotateSpeed={0.3}
-          maxPolarAngle={Math.PI / 1.8}
-          minPolarAngle={Math.PI / 2.5}
-        />
-      </Canvas>
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            autoRotate
+            autoRotateSpeed={0.3}
+            maxPolarAngle={Math.PI / 1.8}
+            minPolarAngle={Math.PI / 2.5}
+          />
+        </Canvas>
+      </Suspense>
 
       {/* Gradient overlays for depth and warmth */}
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-white/50 pointer-events-none" />
