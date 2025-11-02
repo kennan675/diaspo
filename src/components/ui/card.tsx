@@ -1,5 +1,4 @@
 import * as React from "react"
-
 import { cn } from "@/lib/utils"
 
 const Card = React.forwardRef<
@@ -9,8 +8,9 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border border-border/40 bg-background shadow-sm",
-      className
+      "rounded-3xl border-2 border-border/40 bg-card/80 text-card-foreground shadow-soft backdrop-blur-sm transition-all duration-500",
+      "hover:border-primary/50 hover:shadow-medium",
+      className,
     )}
     {...props}
   />
@@ -23,7 +23,7 @@ const CardHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    className={cn("flex flex-col space-y-2 p-8", className)}
     {...props}
   />
 ))
@@ -35,10 +35,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight text-foreground",
-      className
-    )}
+    className={cn("text-2xl font-display font-semibold tracking-tight", className)}
     {...props}
   />
 ))
@@ -50,7 +47,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn("text-base text-muted-foreground leading-relaxed", className)}
     {...props}
   />
 ))
@@ -60,7 +57,11 @@ const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+  <div
+    ref={ref}
+    className={cn("p-8 pt-0", className)}
+    {...props}
+  />
 ))
 CardContent.displayName = "CardContent"
 
@@ -70,7 +71,7 @@ const CardFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
+    className={cn("flex items-center p-8 pt-0", className)}
     {...props}
   />
 ))

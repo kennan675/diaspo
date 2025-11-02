@@ -1,46 +1,27 @@
 import React from 'react';
-import DiaspoHeader from './DiaspoHeader';
-import HeroSection from './HeroSection';
-import ZeroDiversionSection from './ZeroDiversionSection';
-import WhoUsesSection from './WhoUsesSection';
-import PartnersSection from './PartnersSection';
-import FeaturesSection from './FeaturesSection';
-import HowItWorksVideo from './HowItWorksVideo';
-import CareFlowSection from './CareFlowSection';
-import TestimonialsSection from './TestimonialsSection';
-import MobileAppSection from './MobileAppSection';
-import DiaspoCauseSection from './DiaspoCauseSection';
-import HPodKioskSection from './HPodKioskSection';
-import AboutSection from './AboutSection';
-import FAQSection from './FAQSection';
-import NewsletterSection from './NewsletterSection';
-import DiaspoFooter from './DiaspoFooter';
-import FloatingCTA from './FloatingCTA';
-import BackToTop from './BackToTop';
+
+import Footer from './Footer';
+import Hero from './Hero';
+import Navigation from './Navigation';
+import Stats from './Stats';
+import Testimonials from './Testimonials';
+import TrustBadges from './TrustBadges';
+import VideoSection from './VideoSection';
+import Features from './Features';
 
 const AppLayout: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <DiaspoHeader />
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation />
       <main>
-        <HeroSection />
-        <HowItWorksVideo />
-        <ZeroDiversionSection />
-        <WhoUsesSection />
-        <PartnersSection />
-        <FeaturesSection />
-        <CareFlowSection />
-        <TestimonialsSection />
-        <MobileAppSection />
-        <DiaspoCauseSection />
-        <HPodKioskSection />
-        <AboutSection />
-        <FAQSection />
-        <NewsletterSection />
+        <Hero />
+        <TrustBadges />
+        <Features />
+        <Stats />
+        <VideoSection />
+        <Testimonials />
       </main>
-      <DiaspoFooter />
-      <FloatingCTA />
-      <BackToTop />
+      <Footer />
     </div>
   );
 };
