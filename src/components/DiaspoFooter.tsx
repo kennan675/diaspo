@@ -1,7 +1,6 @@
-import React from 'react';
 import { Phone, Mail } from 'lucide-react';
 
-const DiaspoFooter: React.FC = () => {
+const DiaspoFooter = () => {
   return (
     <footer className="bg-[#3A3F46] text-white py-16 px-6 sm:px-12 md:px-20">
       <div className="max-w-7xl mx-auto">
