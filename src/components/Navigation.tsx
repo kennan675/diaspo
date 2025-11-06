@@ -16,12 +16,11 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "Solutions", href: "#solutions" },
-    { label: "Our Impact", href: "#impact" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+  const links = [
+    { href: "#home", label: "Home" },
+    { href: "#care-journey", label: "Care Journey" },
+    { href: "#regions", label: "Where We Operate" },
+    { href: "/impact", label: "Our Impact" },
   ];
 
   return (
@@ -34,30 +33,32 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <a className="group flex items-center" href="#home">
-            <img
-              src="/logo-full.png"
-              alt="DiaspoCare logo"
-              className="h-10 w-auto transition-transform duration-500 group-hover:scale-105"
-            />
+          <a className="group flex items-center gap-3 text-lg font-semibold" href="#home">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary text-primary-foreground shadow-soft group-hover:shadow-medium">
+              DC
+            </span>
+            <span className="text-xl tracking-[0.2em] uppercase text-foreground/80 transition-colors duration-500 group-hover:text-primary">
+              DiaspoCare
+            </span>
           </a>
 
-          <div className="hidden items-center space-x-1 lg:flex">
-            {navItems.map((item, index) => (
+          <nav className="hidden items-center gap-8 md:flex">
+            {links.map((link) => (
               <a
-                key={item.label}
-                href={item.href}
-                className="group relative rounded-xl px-5 py-2.5 text-sm font-semibold text-foreground transition-all duration-300 hover:bg-primary/5 hover:text-primary"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                key={link.href}
+                href={link.href}
+                className="relative text-sm font-semibold text-foreground/80 transition-all duration-500 hover:text-primary"
               >
-                {item.label}
-                <span className="absolute bottom-1 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-1/2" />
+                <span className="relative z-10">{link.label}</span>
+                <span className="absolute inset-x-0 bottom-0 h-px scale-x-0 bg-gradient-to-r from-primary to-secondary transition-transform duration-500 group-hover:scale-x-100" />
               </a>
             ))}
-          </div>
-
-          <div className="hidden lg:block">
-            <Button variant="hero" className="font-bold shadow-medium hover:shadow-glow">
+          </nav>
+          <div className="hidden items-center gap-4 md:flex">
+            <Button variant="glass" size="lg" className="text-sm font-semibold">
+              Talk to Care Support
+            </Button>
+            <Button variant="hero" size="lg" className="text-sm font-semibold">
               Get Started
             </Button>
           </div>
@@ -73,24 +74,27 @@ const Navigation = () => {
 
         {isOpen && (
           <div className="animate-fade-in rounded-b-3xl border-t-2 border-border/50 bg-background/95 py-6 shadow-large backdrop-blur-premium lg:hidden">
-            <div className="flex flex-col space-y-2">
-              {navItems.map((item, index) => (
+            <nav className="space-y-6">
+              {links.map((link) => (
                 <a
-                  key={item.label}
-                  href={item.href}
+                  key={link.href}
+                  href={link.href}
                   className="animate-fade-in-left opacity-0 rounded-xl border-l-4 border-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  style={{ animationDelay: `${links.indexOf(link) * 0.1}s` }}
                   onClick={() => setIsOpen(false)}
                 >
-                  {item.label}
+                  {link.label}
                 </a>
               ))}
               <div className="animate-fade-in opacity-0 px-6 pt-4" style={{ animationDelay: "0.5s" }}>
-                <Button variant="hero" className="w-full py-6 text-base font-bold">
+                <Button variant="glass" size="lg" className="w-full justify-center text-base font-semibold">
+                  Talk to Care Support
+                </Button>
+                <Button variant="hero" size="lg" className="w-full justify-center text-base font-semibold">
                   Get Started
                 </Button>
               </div>
-            </div>
+            </nav>
           </div>
         )}
       </div>
