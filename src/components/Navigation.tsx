@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 
@@ -48,6 +48,14 @@ const Navigation = () => {
   const handleMouseLeave = () => {
     closeTimerRef.current = window.setTimeout(() => setSolutionsOpen(false), 250);
   };
+
+  const openCareSupport = useCallback(() => {
+    if (window.Tawk_API?.maximize) {
+      window.Tawk_API.maximize();
+    } else {
+      window.location.href = "/contact";
+    }
+  }, []);
 
   return (
     <nav
@@ -119,11 +127,22 @@ const Navigation = () => {
           </div>
 
           <div className="hidden items-center gap-4 lg:flex">
-            <Button variant="glass" size="lg" className="text-sm font-semibold">
+            <Button
+              type="button"
+              variant="glass"
+              size="lg"
+              onClick={openCareSupport}
+              className="text-sm font-semibold text-primary transition-shadow hover:shadow-[0_0_28px_rgba(88,140,255,0.45)] hover:shadow-primary/40"
+            >
               Talk to Care Support
             </Button>
-            <Button variant="hero" size="lg" className="text-sm font-semibold">
-              Get Started
+            <Button
+              asChild
+              variant="hero"
+              size="lg"
+              className="text-sm font-semibold transition-shadow hover:shadow-[0_0_32px_rgba(33,123,255,0.5)] hover:shadow-secondary/40"
+            >
+              <Link to="/care-coordination">Get Started</Link>
             </Button>
           </div>
 
@@ -171,11 +190,27 @@ const Navigation = () => {
               </Link>
 
               <div className="pt-4">
-                <Button variant="glass" size="lg" className="mb-3 w-full justify-center text-base font-semibold">
+                <Button
+                  type="button"
+                  variant="glass"
+                  size="lg"
+                  onClick={() => {
+                    openCareSupport();
+                    setIsOpen(false);
+                  }}
+                  className="mb-3 w-full justify-center text-base font-semibold text-primary transition-shadow hover:shadow-[0_0_28px_rgba(88,140,255,0.45)] hover:shadow-primary/40"
+                >
                   Talk to Care Support
                 </Button>
-                <Button variant="hero" size="lg" className="w-full justify-center text-base font-semibold">
-                  Get Started
+                <Button
+                  asChild
+                  variant="hero"
+                  size="lg"
+                  className="w-full justify-center text-base font-semibold transition-shadow hover:shadow-[0_0_32px_rgba(33,123,255,0.5)] hover:shadow-secondary/40"
+                >
+                  <Link to="/care-coordination" onClick={() => setIsOpen(false)}>
+                    Get Started
+                  </Link>
                 </Button>
               </div>
             </nav>

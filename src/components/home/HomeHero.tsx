@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ArrowRight, MessageCircle, Shield, Sparkles } from "lucide-react";
 
 import heroImage from "@/assets/family-care.jpg";
@@ -11,6 +11,14 @@ const HomeHero = () => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleTalkToSupport = useCallback(() => {
+    if (window.Tawk_API?.maximize) {
+      window.Tawk_API.maximize();
+    } else {
+      window.location.href = "/contact";
+    }
   }, []);
 
   return (
@@ -64,13 +72,14 @@ const HomeHero = () => {
               Explore DiaspoCare Solutions
               <ArrowRight className="h-5 w-5" />
             </a>
-            <a
-              href="/contact"
+            <button
+              type="button"
+              onClick={handleTalkToSupport}
               className="group inline-flex items-center justify-center gap-3 rounded-2xl border border-white/40 bg-white/10 px-8 py-6 text-base font-semibold text-white backdrop-blur transition-all duration-300 hover:border-white/60 hover:bg-white/20"
             >
               <MessageCircle className="h-5 w-5 transition-transform group-hover:scale-110" />
               Talk to Care Support
-            </a>
+            </button>
           </div>
 
           <div className="grid gap-4 rounded-3xl bg-white/12 p-6 backdrop-blur shadow-soft sm:grid-cols-2">

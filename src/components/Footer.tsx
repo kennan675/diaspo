@@ -45,15 +45,22 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-primary via-secondary to-accent text-primary-foreground">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-[#061131] via-[#0b1f4b] to-[#132f6f] text-primary-foreground">
       <div className="absolute inset-0 opacity-10">
         <div
           className="absolute inset-0"
-          style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "40px 40px" }}
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 2px 2px, rgba(255,255,255,0.35) 1px, transparent 0), radial-gradient(circle at 20px 20px, rgba(17,63,178,0.25) 1px, transparent 0)",
+            backgroundSize: "42px 42px",
+          }}
         />
       </div>
-      <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-primary-foreground/10 blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "3s" }} />
+      <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-[rgba(51,123,255,0.35)] blur-3xl animate-float" />
+      <div
+        className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-[rgba(28,178,255,0.28)] blur-3xl animate-float"
+        style={{ animationDelay: "3s" }}
+      />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 py-12 lg:grid-cols-12 lg:gap-10">
@@ -71,23 +78,23 @@ const Footer = () => {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="group relative flex h-11 w-11 items-center justify-center rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-primary-foreground/60 hover:shadow-glow"
+                  className="group relative flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/5 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[#7fb7ff] hover:shadow-glow"
                 >
                   <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <Icon className="relative z-10 h-5 w-5 transition-transform group-hover:scale-110" />
+                  <Icon className="relative z-10 h-5 w-5 text-white transition-transform group-hover:scale-110" />
                 </a>
               ))}
             </div>
 
-            <div className="max-w-md rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-5 backdrop-blur">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary-foreground/60">Stay updated</p>
+            <div className="max-w-md rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/60">Stay updated</p>
               <div className="mt-3 flex gap-2">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 rounded-xl border border-primary-foreground/20 bg-transparent px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/50 transition-all focus:border-primary-foreground/60 focus:outline-none"
+                  className="flex-1 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 transition-all focus:border-white/60 focus:outline-none"
                 />
-                <Button variant="glass" size="icon" className="h-12 w-12 rounded-xl">
+                <Button variant="glass" size="icon" className="h-12 w-12 rounded-xl bg-gradient-to-br from-[#2f66ff] to-[#51a3ff] text-white shadow-glow">
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </div>
@@ -95,7 +102,7 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="mb-5 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-primary-foreground/60">
+            <h4 className="mb-5 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-[#8fb7ff]">
               <span className="h-6 w-1 rounded-full bg-accent" /> Company
             </h4>
             <ul className="space-y-3 text-sm">
@@ -103,9 +110,9 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.to}
-                    className="group inline-flex items-center gap-2 text-primary-foreground/80 transition-all duration-200 hover:translate-x-2 hover:text-primary-foreground"
+                    className="group inline-flex items-center gap-2 text-white/80 transition-all duration-200 hover:translate-x-2 hover:text-white"
                   >
-                    <span className="h-px w-0 bg-accent transition-all duration-200 group-hover:w-4" />
+                    <span className="h-px w-0 bg-[#7fb7ff] transition-all duration-200 group-hover:w-4" />
                     {link.label}
                   </a>
                 </li>
@@ -114,17 +121,17 @@ const Footer = () => {
           </div>
 
           <div className="space-y-5 lg:col-span-5">
-            <h4 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-primary-foreground/60">
+            <h4 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-[#8fb7ff]">
               <span className="h-6 w-1 rounded-full bg-accent" /> Offices & Support
             </h4>
-            <div className="space-y-4 rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-5 backdrop-blur">
+            <div className="space-y-4 rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur">
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary-foreground/10">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white/10 text-white">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-[0.24em] text-primary-foreground/60">Email</p>
-                  <a href="mailto:hello@diaspocare.com" className="font-semibold text-primary-foreground transition-colors hover:text-white">
+                  <p className="text-xs uppercase tracking-[0.24em] text-white/60">Email</p>
+                  <a href="mailto:hello@diaspocare.com" className="font-semibold text-white transition-colors hover:text-[#7fb7ff]">
                     hello@diaspocare.com
                   </a>
                 </div>
@@ -132,23 +139,23 @@ const Footer = () => {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 {offices.map((office) => (
-                  <div key={office.country} className="rounded-xl border border-primary-foreground/10 bg-primary-foreground/5 p-4 text-sm">
-                    <p className="text-xs uppercase tracking-[0.24em] text-primary-foreground/60">{office.country}</p>
-                    <div className="mt-2 space-y-1 font-semibold text-primary-foreground/90">
+                  <div key={office.country} className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white">
+                    <p className="text-xs uppercase tracking-[0.24em] text-white/60">{office.country}</p>
+                    <div className="mt-2 space-y-1 font-semibold text-white/90">
                       {office.address.map((line) => (
                         <div key={line}>{line}</div>
                       ))}
                     </div>
                     <a
                       href={`tel:${office.phone.replace(/[^+\d]/g, "")}`}
-                      className="mt-3 block text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground/70 transition-colors hover:text-white"
+                      className="mt-3 block text-xs font-semibold uppercase tracking-[0.24em] text-white/70 transition-colors hover:text-[#7fb7ff]"
                     >
                       {office.phone}
                     </a>
                     {office.secondaryPhone && (
                       <a
                         href={`tel:${office.secondaryPhone.replace(/[^+\d]/g, "")}`}
-                        className="block text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground/70 transition-colors hover:text-white"
+                        className="block text-xs font-semibold uppercase tracking-[0.24em] text-white/70 transition-colors hover:text-[#7fb7ff]"
                       >
                         {office.secondaryPhone}
                       </a>
@@ -161,21 +168,21 @@ const Footer = () => {
         </div>
 
         <div className="border-t-2 border-primary-foreground/20 py-8">
-          <div className="flex flex-col items-center justify-between gap-3 text-xs text-primary-foreground/70 md:flex-row">
+          <div className="flex flex-col items-center justify-between gap-3 text-xs text-white/70 md:flex-row">
             <p className="text-center md:text-left">
               &copy; {currentYear} DiaspoCare. All rights reserved. Made with
               <Heart className="mx-1 inline h-4 w-4 animate-pulse text-accent" fill="currentColor" /> for families everywhere.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6">
-              <a href="#" className="transition-colors hover:text-primary-foreground">
+              <a href="#" className="transition-colors hover:text-white">
                 Privacy Policy
               </a>
               <span className="text-primary-foreground/30">·</span>
-              <a href="#" className="transition-colors hover:text-primary-foreground">
+              <a href="#" className="transition-colors hover:text-white">
                 Terms of Service
               </a>
               <span className="text-primary-foreground/30">·</span>
-              <a href="#" className="transition-colors hover:text-primary-foreground">
+              <a href="#" className="transition-colors hover:text-white">
                 Cookie Policy
               </a>
             </div>
