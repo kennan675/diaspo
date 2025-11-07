@@ -1,5 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
+const callNumber = '+15551234567';
+const liveChatUrl = 'https://calendly.com/diaspocare/support';
+const emailAddress = 'support@diaspocare.com';
+
+const trackContactEvent = (action: string) => {
+  const gtag = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
+  if (gtag) {
+    gtag('event', 'contact_click', {
+      event_category: 'engagement',
+      event_label: action,
+    });
+  }
+};
+
 const FloatingCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -29,20 +43,37 @@ const FloatingCTA: React.FC = () => {
           <p className="text-[#7A8A9E] mb-4 text-sm">Our care coordinators are ready to assist you.</p>
           
           <div className="space-y-2">
-            <button className="w-full px-4 py-3 rounded-xl bg-gradient-to-r from-[#283692] to-[#007FFF] text-white font-semibold hover:shadow-lg transition-all">
+            <a
+              href={`tel:${callNumber}`}
+              onClick={() => trackContactEvent('call_now')}
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#283692] to-[#007FFF] text-white font-semibold hover:shadow-lg transition-all"
+            >
               📞 Call Now
-            </button>
-            <button className="w-full px-4 py-3 rounded-xl border-2 border-[#007FFF] text-[#007FFF] font-semibold hover:bg-[#007FFF]/5 transition-all">
+            </a>
+            <a
+              href={liveChatUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackContactEvent('live_chat')}
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-[#007FFF] text-[#007FFF] font-semibold hover:bg-[#007FFF]/5 transition-all"
+            >
               💬 Live Chat
-            </button>
-            <button className="w-full px-4 py-3 rounded-xl border-2 border-[#007FFF] text-[#007FFF] font-semibold hover:bg-[#007FFF]/5 transition-all">
+            </a>
+            <a
+              href={`mailto:${emailAddress}`}
+              onClick={() => trackContactEvent('email_us')}
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-[#007FFF] text-[#007FFF] font-semibold hover:bg-[#007FFF]/5 transition-all"
+            >
               📧 Email Us
-            </button>
+            </a>
           </div>
         </div>
       ) : (
         <button
-          onClick={() => setIsExpanded(true)}
+          onClick={() => {
+            setIsExpanded(true);
+            trackContactEvent('open_floating_cta');
+          }}
           className="w-16 h-16 rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center text-2xl"
         >
           💬

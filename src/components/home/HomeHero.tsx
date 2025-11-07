@@ -67,7 +67,7 @@ const HomeHero = () => {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <a
               href="/care-coordination"
-              className="inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-primary to-secondary px-8 py-6 text-base font-semibold text-primary-foreground shadow-medium transition-all duration-300 hover:shadow-large"
+              className="inline-flex items-center justify-center gap-3 rounded-2xl border border-white/60 bg-white px-8 py-6 text-base font-semibold text-primary shadow-large transition-all duration-300 hover:-translate-y-1 hover:bg-white/95"
             >
               Explore DiaspoCare Solutions
               <ArrowRight className="h-5 w-5" />
@@ -82,51 +82,82 @@ const HomeHero = () => {
             </button>
           </div>
 
-          <div className="grid gap-4 rounded-3xl bg-white/12 p-6 backdrop-blur shadow-soft sm:grid-cols-2">
-            <div className="flex items-start gap-3">
-              <div className="rounded-2xl bg-white/15 p-3">
-                <Shield className="h-5 w-5 text-white" />
-              </div>
+          <div className="rounded-3xl bg-white/12 p-6 backdrop-blur shadow-soft">
+            <div className="flex items-start justify-between gap-6">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/70">Zero diversion promise</p>
-                <p className="mt-2 text-base font-semibold text-white">Every dollar you send lands with verified clinics, pharmacies, and clinicians in Kenya, Ghana, Nigeria, and the US.</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/70">Download the app</p>
+                <h3 className="mt-2 text-2xl font-semibold text-white">Take DiaspoCare with you wherever you go</h3>
+                <p className="mt-3 max-w-xl text-sm text-white/85">
+                  Approve care, receive live updates, and message coordinators directly from your phone.
+                </p>
               </div>
             </div>
-            <div className="rounded-2xl border border-white/20 bg-white/10 p-4 text-sm text-white/80">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/70">Everything in one platform</p>
-              <ul className="mt-2 space-y-2 text-white/80">
-                <li>• Fund care with real-time transaction tracking.</li>
-                <li>• Coordinate visits, labs, and medication from anywhere.</li>
-                <li>• Follow every update through the DiaspoCare family dashboard.</li>
-              </ul>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.diaspocare.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 rounded-2xl bg-[#1B1B1B] px-4 py-3 text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-large"
+              >
+                <svg className="h-6 w-6" viewBox="30 336.7 120 129.2" xmlns="http://www.w3.org/2000/svg"><path fill="#FFD400" d="M30 336.7v129.2l82.1-64.6"/><path fill="#FF3333" d="M30 336.7l82.1 64.6 20.9-12.2c6-3.5 6-9.2 0-12.7l-20.9-12.2"/><path fill="#48FF48" d="M30 465.9l82.1-64.6 20.9 12.2c6 3.5 6 9.2 0 12.7l-20.9 12.2"/><path fill="#3BCCFF" d="M30 336.7l82.1 64.6-12.2 9.6"/></svg>
+                <div className="text-left">
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">Get it on</p>
+                  <p className="text-sm font-semibold">Google Play</p>
+                </div>
+              </a>
+              <a
+                href="https://apps.apple.com/us/app/diaspocare-supporter/id1578303718"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 rounded-2xl bg-white px-4 py-3 text-[#0B1A39] shadow-md ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-large"
+              >
+                <svg className="h-7 w-7" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.4-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.6-19.7-76.8-19.7-56.6.9-116.6 41.7-116.6 124.5 0 28.5 5.2 57.4 15.6 87.5 13.9 36.7 64.2 126.5 116.6 125 27.3-.7 46.6-19.3 82-19.3 34.7 0 52.8 19.3 82.8 19.3 52.6-.7 98.3-82.5 112.1-119.2-71.3-32.9-67.9-96.2-67.9-109.4zM256 102.7c26.6-32.1 24.2-61.4 23.4-71.7-23.1 1.3-49.8 15.4-64.9 34.7-17.1 21.9-27 48.8-24.8 76.1 26.3 2 50.7-11.5 66.3-39.1z"/></svg>
+                <div className="text-left">
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-[#0B1A39]/50">Download on the</p>
+                  <p className="text-sm font-semibold">App Store</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
 
         <div className="relative hidden h-full justify-end lg:flex">
-          <div className="relative w-full max-w-[420px] overflow-hidden rounded-[32px] border border-white/20 bg-white/10 p-8 backdrop-blur shadow-large">
-            <div className="space-y-6 text-white/85">
+          <div className="relative w-full max-w-[420px] overflow-hidden rounded-[32px] border border-white/25 bg-white/12 p-8 backdrop-blur shadow-large">
+            <div className="space-y-6 text-white/90">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/60">Live Care Timeline</p>
-                <p className="mt-3 text-3xl font-semibold text-white">Transparent updates your whole family trusts.</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/60">Built for confidence</p>
+                <p className="mt-3 text-3xl font-semibold text-white">Everything in one platform. Zero diversion rate.</p>
               </div>
-              <ul className="space-y-4 text-sm">
-                <li className="rounded-2xl bg-white/12 p-4">
-                  <p className="text-white font-semibold">Today, 09:30</p>
-                  <p>Mary's routine labs reviewed. Care coordinator shared follow-up plan.</p>
-                </li>
-                <li className="rounded-2xl bg-white/12 p-4">
-                  <p className="text-white font-semibold">Yesterday, 18:10</p>
-                  <p>Medication refill delivered to family home in Accra.</p>
-                </li>
-                <li className="rounded-2xl bg-white/12 p-4">
-                  <p className="text-white font-semibold">Wed, 14:05</p>
-                  <p>Virtual MD Connect consult completed with cardiologist in Nairobi.</p>
-                </li>
-              </ul>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3 rounded-2xl border border-white/20 bg-white/10 p-4">
+                  <div className="rounded-2xl bg-white/15 p-3">
+                    <Sparkles className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/70">Unified Care Hub</p>
+                    <p className="mt-2 text-sm text-white/85">
+                      Access verified providers, approve payments, monitor outcomes, and coordinate support in one secure experience for the whole family.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 rounded-2xl border border-white/20 bg-white/10 p-4">
+                  <div className="rounded-2xl bg-white/15 p-3">
+                    <Shield className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/70">Zero Diversion Promise</p>
+                    <p className="mt-2 text-sm text-white/85">
+                      DiaspoCare audits every transaction. Funds are locked to medical services, pharmacies, labs, and clinicians you approve.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="absolute -left-10 top-1/2 h-52 w-52 -translate-y-1/2 rounded-full bg-white/10 blur-3xl" />
-            <div className="absolute -bottom-6 -right-6 h-40 w-40 rounded-full bg-accent/20 blur-2xl" />
+            <div className="absolute -bottom-6 -right-6 h-40 w-40 rounded-full bg-accent/25 blur-2xl" />
           </div>
         </div>
       </div>

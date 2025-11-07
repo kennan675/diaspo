@@ -40,7 +40,7 @@ const HeroSection: React.FC = () => {
               Download DiaspoCare App
             </a>
             <a
-              href="/contact"
+              href="tel:+16124400892"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#0066FF]/30 bg-white/80 px-8 py-4 text-base font-semibold text-[#0066FF] shadow-sm backdrop-blur transition hover:border-[#0066FF]/50 hover:text-[#004fcb]"
             >
               <PhoneCall className="h-5 w-5" />
@@ -49,26 +49,26 @@ const HeroSection: React.FC = () => {
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:max-w-lg">
-            <div className="rounded-2xl border border-white/60 bg-white/85 p-5 shadow-sm backdrop-blur">
+            <div className="rounded-2xl border border-white/60 bg-white/90 p-6 shadow-md backdrop-blur">
               <div className="flex items-center gap-3 text-[#0B1A39]">
                 <ShieldCheck className="h-6 w-6 text-[#18A0FB]" />
                 <span className="text-sm font-semibold uppercase tracking-wide text-[#0B1A39]/60">
-                  Zero diversion promise
+                  Zero Diversion Promise
                 </span>
               </div>
               <p className="mt-3 text-base font-semibold text-[#0B1A39]">
-                Every shilling funds verified clinics, providers, and medication back home.
+                Every dollar supports verified providers—no middlemen, no diversion, just trusted care.
               </p>
             </div>
-            <div className="rounded-2xl border border-white/60 bg-white/85 p-5 shadow-sm backdrop-blur">
+            <div className="rounded-2xl border border-white/60 bg-white/90 p-6 shadow-md backdrop-blur">
               <div className="flex items-center gap-3 text-[#0B1A39]">
                 <Users2 className="h-6 w-6 text-[#18A0FB]" />
                 <span className="text-sm font-semibold uppercase tracking-wide text-[#0B1A39]/60">
-                  Families first
+                  Everything in One Platform
                 </span>
               </div>
               <p className="mt-3 text-base font-semibold text-[#0B1A39]">
-                50K+ families served, 2K+ providers, 4 countries—personalised support that travels.
+                Consults, coordination, medication, and monitoring—streamlined in a single DiaspoCare hub.
               </p>
             </div>
           </div>
@@ -76,50 +76,50 @@ const HeroSection: React.FC = () => {
 
         <div className="relative w-full max-w-xl lg:w-1/2">
           <div className="absolute inset-0 -z-10 rounded-[44px] bg-gradient-to-br from-[#e3ebff] via-white to-[#f5faff] blur-2xl" />
-          <div className="relative flex h-full flex-col justify-between gap-8 overflow-hidden rounded-[36px] border border-white/70 bg-white/90 p-8 shadow-2xl backdrop-blur">
+          <div className="relative flex h-full flex-col justify-between gap-8 overflow-hidden rounded-[36px] border border-white/70 bg-white/95 p-8 shadow-2xl backdrop-blur">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#0B1A39]/60">
-                  Real-time care updates
+                  Download the app
                 </p>
-                <p className="mt-3 text-2xl font-bold text-[#0B1A39]">Know exactly how your loved ones are doing</p>
+                <p className="mt-3 text-2xl font-bold text-[#0B1A39]">Stay in control of care anytime, anywhere</p>
               </div>
               <span className="rounded-full bg-[#E6F3FF] px-4 py-2 text-sm font-semibold text-[#0066FF]">
-                Live support
+                Instant updates
               </span>
             </div>
 
-            <div className="space-y-4">
-              {[{
-                title: 'On-demand doctor consults',
-                description: 'Book voice, video, or chat visits with licensed providers and receive e-prescriptions instantly.'
-              }, {
-                title: 'Dedicated care coordinators',
-                description: 'Follow-ups, lab logistics, and medication deliveries are handled end-to-end for your family.'
-              }, {
-                title: 'Transparent family updates',
-                description: 'Track vitals, appointments, and care summaries so everyone stays informed.'
-              }].map((item) => (
-                <div key={item.title} className="flex items-start gap-4 rounded-2xl bg-[#F5FAFF] px-5 py-4">
-                  <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-[#18A0FB]" />
-                  <div>
-                    <p className="text-sm font-semibold text-[#0B1A39]">{item.title}</p>
-                    <p className="text-sm text-[#0B1A39]/60">{item.description}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="rounded-2xl border border-[#E6EEFF] bg-[#F7FAFF] p-6">
+              <p className="text-sm text-[#0B1A39]/70">
+                Manage authorizations, monitor appointments, view prescriptions, and chat with coordinators in real time from the DiaspoCare Supporter App.
+              </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-8 border-t border-[#E6EEFF] pt-6 text-left">
-              <div>
-                <p className="text-3xl font-bold text-[#0066FF]">50K+</p>
-                <p className="text-sm text-[#0B1A39]/60">Diaspora families protected</p>
-              </div>
-              <div className="h-12 w-px bg-[#E1EAFF]" />
-              <div>
-                <p className="text-3xl font-bold text-[#0B1A39]">2K+</p>
-                <p className="text-sm text-[#0B1A39]/60">Verified providers delivering care</p>
-              </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.diaspocare.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 rounded-xl bg-[#1B1B1B] px-4 py-3 text-white shadow-md transition hover:-translate-y-1"
+              >
+                <svg className="h-6 w-6" viewBox="30 336.7 120 129.2" xmlns="http://www.w3.org/2000/svg"><path fill="#FFD400" d="M30 336.7v129.2l82.1-64.6"/><path fill="#FF3333" d="M30 336.7l82.1 64.6 20.9-12.2c6-3.5 6-9.2 0-12.7l-20.9-12.2"/><path fill="#48FF48" d="M30 465.9l82.1-64.6 20.9 12.2c6 3.5 6 9.2 0 12.7l-20.9 12.2"/><path fill="#3BCCFF" d="M30 336.7l82.1 64.6-12.2 9.6"/></svg>
+                <div className="text-left">
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">Get it on</p>
+                  <p className="text-sm font-semibold">Google Play</p>
+                </div>
+              </a>
+              <a
+                href="https://apps.apple.com/us/app/diaspocare-supporter/id1578303718"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 rounded-xl bg-white px-4 py-3 text-[#0B1A39] shadow-md ring-1 ring-[#E6EEFF] transition hover:-translate-y-1"
+              >
+                <svg className="h-7 w-7" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.4-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.6-19.7-76.8-19.7-56.6.9-116.6 41.7-116.6 124.5 0 28.5 5.2 57.4 15.6 87.5 13.9 36.7 64.2 126.5 116.6 125 27.3-.7 46.6-19.3 82-19.3 34.7 0 52.8 19.3 82.8 19.3 52.6-.7 98.3-82.5 112.1-119.2-71.3-32.9-67.9-96.2-67.9-109.4zM256 102.7c26.6-32.1 24.2-61.4 23.4-71.7-23.1 1.3-49.8 15.4-64.9 34.7-17.1 21.9-27 48.8-24.8 76.1 26.3 2 50.7-11.5 66.3-39.1z"/></svg>
+                <div className="text-left">
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-[#0B1A39]/50">Download on the</p>
+                  <p className="text-sm font-semibold">App Store</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
