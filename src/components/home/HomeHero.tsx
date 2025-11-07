@@ -57,14 +57,20 @@ const HomeHero = () => {
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button variant="hero" size="lg" className="group px-8 py-6 text-base">
+            <a
+              href="/care-coordination"
+              className="inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-primary to-secondary px-8 py-6 text-base font-semibold text-primary-foreground shadow-medium transition-all duration-300 hover:shadow-large"
+            >
               Get Started
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="glass" size="lg" className="group px-8 py-6 text-base">
+              <ArrowRight className="h-5 w-5" />
+            </a>
+            <a
+              href="/contact"
+              className="group inline-flex items-center justify-center gap-3 rounded-2xl border border-white/40 bg-white/10 px-8 py-6 text-base font-semibold text-white backdrop-blur transition-all duration-300 hover:border-white/60 hover:bg-white/20"
+            >
               <MessageCircle className="h-5 w-5 transition-transform group-hover:scale-110" />
               Talk to Care Support
-            </Button>
+            </a>
           </div>
 
           <div className="grid gap-4 rounded-3xl bg-white/12 p-6 backdrop-blur shadow-soft sm:grid-cols-2">
