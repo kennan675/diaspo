@@ -61,8 +61,8 @@ const Navigation = () => {
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/90 backdrop-blur-premium border-b border-border/60 shadow-medium"
-          : "bg-gradient-to-b from-background/80 to-transparent"
+          ? "bg-white/95 backdrop-blur-premium border-b border-border/60 shadow-medium"
+          : "bg-white/90"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +71,7 @@ const Navigation = () => {
             <img
               src="/logo-full.png"
               alt="DiaspoCare"
-              className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 

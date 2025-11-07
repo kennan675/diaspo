@@ -53,7 +53,7 @@ const HeroSection: React.FC = () => {
               <div className="flex items-center gap-3 text-[#0B1A39]">
                 <ShieldCheck className="h-6 w-6 text-[#18A0FB]" />
                 <span className="text-sm font-semibold uppercase tracking-wide text-[#0B1A39]/60">
-                  Zero Diversion Promise
+                  Zero Diversion of Funds
                 </span>
               </div>
               <p className="mt-3 text-base font-semibold text-[#0B1A39]">

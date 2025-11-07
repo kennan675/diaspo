@@ -66,7 +66,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-12 py-12 lg:grid-cols-12 lg:gap-10">
           <div className="space-y-6 lg:col-span-4">
             <div className="flex flex-col gap-4">
-              <img src="/logo-full.png" alt="DiaspoCare" className="h-12 w-auto" />
+              <img src="/logo-full.png" alt="DiaspoCare" className="h-12 w-auto object-contain" />
               <p className="max-w-sm text-base leading-relaxed text-[#3b4b62]">
                 DiaspoCare connects the African diaspora to verified clinics, pharmacists, and specialists, ensuring every contribution turns into trusted care back home.
               </p>

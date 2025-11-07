@@ -116,7 +116,7 @@ const HomeHero = () => {
             <div className="space-y-6 text-white/90">
               <div>
                 <p className="text-3xl font-semibold">
-                  <span className="font-bold text-white">CARING FROM A FAR</span>
+                  <span className="font-bold text-white">CARING FROM AFAR</span>
                   <span className="font-bold text-[#1a73e8]">, MADE SIMPLE</span>
                 </p>
               </div>
@@ -139,7 +139,7 @@ const HomeHero = () => {
                     <Shield className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/70">Zero diversion rate</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/70">Zero diversion of funds</p>
                     <p className="mt-2 text-sm text-white/85">
                       DiaspoCare audits every transaction. Funds are locked to medical services, pharmacies, labs, and clinicians you approve.
                     </p>

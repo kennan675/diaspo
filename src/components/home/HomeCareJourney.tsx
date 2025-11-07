@@ -41,18 +41,18 @@ const HomeCareJourney = () => {
         <div className="relative mt-16">
           <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-primary/0 via-primary/30 to-accent/0 md:block" />
           <div className="space-y-10">
-            {CARE_STEPS.map((step, index) => (
+            {CARE_STEPS.map((step) => (
               <article
                 key={step.need}
                 className="group relative grid gap-8 overflow-hidden rounded-3xl border border-border/60 bg-background/90 px-6 py-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow md:grid-cols-2 md:px-10"
               >
                 <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <div className="flex flex-col gap-4 text-left">
-                  <span className="text-xs font-semibold uppercase tracking-[0.32em] text-foreground/60">Need {index + 1}</span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.32em] text-foreground/60">Challenge</span>
                   <p className="text-xl font-semibold text-foreground">{step.need}</p>
                 </div>
                 <div className="flex flex-col gap-3 text-left md:text-right">
-                  <span className="text-xs font-semibold uppercase tracking-[0.32em] text-primary">DiaspoCare Solution</span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.32em] text-primary">Solution</span>
                   <p className="text-lg text-foreground/80">{step.solution}</p>
                 </div>
               </article>
