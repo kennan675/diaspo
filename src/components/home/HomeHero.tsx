@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, MessageCircle, Shield, Sparkles } from "lucide-react";
 
-import heroImage from "@/assets/hero-healthcare.jpg";
+import heroImage from "@/assets/family-care.jpg";
 import { Button } from "@/components/ui/button";
 
 const HomeHero = () => {

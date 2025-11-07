@@ -1,4 +1,4 @@
-import { ArrowRight, Facebook, Heart, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { ArrowRight, Facebook, Heart, Instagram, Linkedin, Mail, MapPin, Twitter } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -56,36 +56,36 @@ const Footer = () => {
       <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "3s" }} />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 py-16 md:grid-cols-2 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <h3 className="mb-6 flex items-center gap-2 text-4xl font-display font-bold">
-              <Heart className="h-8 w-8 animate-pulse text-accent" fill="currentColor" /> DiaspoCare
-            </h3>
-            <p className="mb-8 max-w-md text-lg leading-relaxed text-primary-foreground/90">
-              Connecting the diaspora to quality healthcare. Making it simple to care for your loved ones from afar with compassion and excellence.
-            </p>
+        <div className="grid grid-cols-1 gap-12 py-12 lg:grid-cols-12 lg:gap-10">
+          <div className="space-y-6 lg:col-span-4">
+            <div className="flex flex-col gap-4">
+              <img src="/logo-full.png" alt="DiaspoCare" className="h-12 w-auto" />
+              <p className="max-w-sm text-base leading-relaxed text-primary-foreground/90">
+                DiaspoCare connects the African diaspora to verified clinics, pharmacists, and specialists, ensuring every contribution turns into trusted care back home.
+              </p>
+            </div>
 
-            <div className="mb-8 flex gap-4">
+            <div className="flex flex-wrap gap-3">
               {socialLinks.map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="group relative flex h-12 w-12 items-center justify-center rounded-xl border-2 border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-md transition-all duration-500 hover:scale-110 hover:border-primary-foreground/60 hover:shadow-glow"
+                  className="group relative flex h-11 w-11 items-center justify-center rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-primary-foreground/60 hover:shadow-glow"
                 >
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <Icon className="relative z-10 h-5 w-5 transition-transform group-hover:scale-110" />
                 </a>
               ))}
             </div>
 
-            <div className="max-w-md">
-              <p className="mb-3 text-sm font-semibold">Stay Updated</p>
-              <div className="flex gap-2">
+            <div className="max-w-md rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-5 backdrop-blur">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary-foreground/60">Stay updated</p>
+              <div className="mt-3 flex gap-2">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 rounded-xl border-2 border-primary-foreground/20 bg-primary-foreground/10 px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/50 transition-all focus:border-primary-foreground/60 focus:outline-none backdrop-blur-md"
+                  className="flex-1 rounded-xl border border-primary-foreground/20 bg-transparent px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/50 transition-all focus:border-primary-foreground/60 focus:outline-none"
                 />
                 <Button variant="glass" size="icon" className="h-12 w-12 rounded-xl">
                   <ArrowRight className="h-5 w-5" />
@@ -94,18 +94,18 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-4">
-            <h4 className="mb-6 flex items-center gap-2 text-lg font-bold">
+          <div className="lg:col-span-3">
+            <h4 className="mb-5 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-primary-foreground/60">
               <span className="h-6 w-1 rounded-full bg-accent" /> Company
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-sm">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.to}
-                    className="group inline-flex items-center gap-2 text-primary-foreground/80 transition-all duration-300 hover:translate-x-2 hover:text-primary-foreground"
+                    className="group inline-flex items-center gap-2 text-primary-foreground/80 transition-all duration-200 hover:translate-x-2 hover:text-primary-foreground"
                   >
-                    <span className="h-px w-0 bg-accent transition-all duration-300 group-hover:w-4" />
+                    <span className="h-px w-0 bg-accent transition-all duration-200 group-hover:w-4" />
                     {link.label}
                   </a>
                 </li>
@@ -113,54 +113,55 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="lg:col-span-5">
-            <h4 className="mb-6 flex items-center gap-2 text-lg font-bold">
+          <div className="space-y-5 lg:col-span-5">
+            <h4 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-primary-foreground/60">
               <span className="h-6 w-1 rounded-full bg-accent" /> Offices & Support
             </h4>
-            <ul className="space-y-4">
-              <li className="group flex items-start gap-3">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary-foreground/10 transition-transform group-hover:scale-110">
+            <div className="space-y-4 rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-5 backdrop-blur">
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary-foreground/10">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="mb-1 text-xs text-primary-foreground/70">Email</div>
-                  <a href="mailto:hello@diaspocare.com" className="font-semibold transition-colors hover:text-primary-foreground">
+                  <p className="text-xs uppercase tracking-[0.24em] text-primary-foreground/60">Email</p>
+                  <a href="mailto:hello@diaspocare.com" className="font-semibold text-primary-foreground transition-colors hover:text-white">
                     hello@diaspocare.com
                   </a>
                 </div>
-              </li>
-              {offices.map((office) => (
-                <li key={office.country} className="group flex items-start gap-3">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary-foreground/10 transition-transform group-hover:scale-110">
-                    <MapPin className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="mb-1 text-xs text-primary-foreground/70">{office.country}</div>
-                    <div className="font-semibold leading-relaxed">
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {offices.map((office) => (
+                  <div key={office.country} className="rounded-xl border border-primary-foreground/10 bg-primary-foreground/5 p-4 text-sm">
+                    <p className="text-xs uppercase tracking-[0.24em] text-primary-foreground/60">{office.country}</p>
+                    <div className="mt-2 space-y-1 font-semibold text-primary-foreground/90">
                       {office.address.map((line) => (
                         <div key={line}>{line}</div>
                       ))}
                     </div>
-                    <a href={`tel:${office.phone.replace(/[^+\d]/g, "")}`} className="mt-2 block text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                    <a
+                      href={`tel:${office.phone.replace(/[^+\d]/g, "")}`}
+                      className="mt-3 block text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground/70 transition-colors hover:text-white"
+                    >
                       {office.phone}
                     </a>
                     {office.secondaryPhone && (
                       <a
                         href={`tel:${office.secondaryPhone.replace(/[^+\d]/g, "")}`}
-                        className="block text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
+                        className="block text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground/70 transition-colors hover:text-white"
                       >
                         {office.secondaryPhone}
                       </a>
                     )}
                   </div>
-                </li>
-              ))}
-            </ul>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="border-t-2 border-primary-foreground/20 py-8">
-          <div className="flex flex-col items-center justify-between gap-4 text-sm text-primary-foreground/70 md:flex-row">
+          <div className="flex flex-col items-center justify-between gap-3 text-xs text-primary-foreground/70 md:flex-row">
             <p className="text-center md:text-left">
               &copy; {currentYear} DiaspoCare. All rights reserved. Made with
               <Heart className="mx-1 inline h-4 w-4 animate-pulse text-accent" fill="currentColor" /> for families everywhere.
