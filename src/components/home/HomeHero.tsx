@@ -68,9 +68,8 @@ const HomeHero = () => {
             <button
               type="button"
               onClick={handleTalkToSupport}
-              className="group inline-flex items-center justify-center gap-3 rounded-2xl border border-white/40 bg-white/10 px-8 py-6 text-base font-semibold text-white backdrop-blur transition-all duration-300 hover:border-white/60 hover:bg-white/20"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/40 bg-white/10 px-8 py-6 text-base font-semibold text-white backdrop-blur transition-all duration-300 hover:border-white/60 hover:bg-white/20"
             >
-              <MessageCircle className="h-5 w-5 transition-transform group-hover:scale-110" />
               Talk to Care Support
             </button>
           </div>
@@ -119,8 +118,10 @@ const HomeHero = () => {
           <div className="relative w-full max-w-[420px] overflow-hidden rounded-[32px] border border-white/25 bg-white/12 p-8 backdrop-blur shadow-large">
             <div className="space-y-6 text-white/90">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/60">Built for confidence</p>
-                <p className="mt-3 text-3xl font-semibold text-white">Stay in control with transparent, end-to-end care.</p>
+                <p className="text-3xl font-semibold">
+                  <span className="font-bold text-white">CARING FROM A FAR</span>
+                  <span className="font-bold text-primary">, MADE SIMPLE</span>
+                </p>
               </div>
 
               <div className="space-y-4">
