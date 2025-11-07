@@ -8,15 +8,22 @@ import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
 import YouTubeVideo from '@/components/YouTubeVideo';
 import { TrendingUp, Users, Heart, Globe } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const Impact: React.FC = () => {
+  const scope = React.useRef<HTMLDivElement | null>(null);
+  useScrollReveal(scope);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div ref={scope} className="min-h-screen bg-white">
       <ScrollProgress />
       <DiaspoHeader />
       <main className="pt-20">
         {/* Impact Video Section - FIRST */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#283692]/5">
+        <section
+          className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#283692]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-10">
               <div className="inline-block px-4 py-2 bg-[#283692]/10 rounded-full mb-4">
@@ -36,10 +43,15 @@ const Impact: React.FC = () => {
           </div>
         </section>
 
-        <ImpactSection />
+        <div data-animate="fade-up">
+          <ImpactSection />
+        </div>
 
         {/* Detailed Impact Stories */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
+        <section
+          className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">
@@ -86,11 +98,15 @@ const Impact: React.FC = () => {
           </div>
         </section>
 
-        <TestimonialsSection />
-        <DiaspoCauseSection />
+        <div data-animate="fade-up">
+          <TestimonialsSection />
+        </div>
+        <div data-animate="fade-up">
+          <DiaspoCauseSection />
+        </div>
 
         {/* Milestones */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-20 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">Our Journey</h2>

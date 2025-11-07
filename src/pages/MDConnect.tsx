@@ -3,14 +3,21 @@ import DiaspoHeader from '@/components/DiaspoHeader';
 import DiaspoFooter from '@/components/DiaspoFooter';
 import BackToTop from '@/components/BackToTop';
 import { UserPlus, FileText, Upload, MessageSquare, Shield, HelpCircle, Heart, Pill, Scan, ClipboardList, ArrowRight } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const MDConnect: React.FC = () => {
+  const scope = React.useRef<HTMLDivElement | null>(null);
+  useScrollReveal(scope);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div ref={scope} className="min-h-screen bg-white">
       <DiaspoHeader />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative py-32 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] via-[#007FFF] to-[#283692] text-white overflow-hidden">
+        <section
+          className="relative py-32 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] via-[#007FFF] to-[#283692] text-white overflow-hidden"
+          data-animate="fade-up"
+        >
           {/* Background image overlay */}
           <div className="absolute inset-0 bg-black/30"></div>
           
@@ -34,7 +41,11 @@ const MDConnect: React.FC = () => {
         </section>
 
         {/* What is DiaspoCare MD Connect Section */}
-        <section id="learn-more" className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-white to-[#007FFF]/5">
+        <section
+          id="learn-more"
+          className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-white to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-8">
               What is <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">DiaspoCare MD Connect?</span>
@@ -73,7 +84,7 @@ const MDConnect: React.FC = () => {
         </section>
 
         {/* How It Works Section */}
-        <section className="py-24 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-24 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-16">
               <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">How It Works</span>
@@ -124,7 +135,7 @@ const MDConnect: React.FC = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#F8F9FA] to-white">
+        <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#F8F9FA] to-white" data-animate="fade-up">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-16">
               <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">Frequently Asked Questions</span>
@@ -165,7 +176,10 @@ const MDConnect: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white relative overflow-hidden">
+        <section
+          className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white relative overflow-hidden"
+          data-animate="fade-up"
+        >
           <div className="absolute inset-0 opacity-10">
             <Heart className="absolute top-10 right-20 w-32 h-32" />
             <Heart className="absolute bottom-10 left-20 w-24 h-24" />

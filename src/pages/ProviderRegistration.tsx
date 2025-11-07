@@ -4,6 +4,7 @@ import DiaspoFooter from '@/components/DiaspoFooter';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
 import { Building2, User, Mail, Phone, MapPin, FileText, CheckCircle } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const ProviderRegistration: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -45,13 +46,19 @@ const ProviderRegistration: React.FC = () => {
     });
   };
 
+  const scope = React.useRef<HTMLDivElement | null>(null);
+  useScrollReveal(scope);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div ref={scope} className="min-h-screen bg-white">
       <ScrollProgress />
       <DiaspoHeader />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white">
+        <section
+          className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white"
+          data-animate="fade-up"
+        >
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-4">
               <span className="font-semibold text-sm">🌐 Provider Registration</span>
@@ -66,7 +73,10 @@ const ProviderRegistration: React.FC = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-12 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
+        <section
+          className="py-12 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-[#3A3F46] text-center mb-8">Why Join DiaspoCare?</h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -90,7 +100,7 @@ const ProviderRegistration: React.FC = () => {
         </section>
 
         {/* Registration Form */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-20 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-3xl shadow-2xl border border-[#007FFF]/10 p-8 md:p-12">
               <h2 className="text-3xl font-bold text-[#3A3F46] mb-8 text-center">Provider Application Form</h2>
@@ -329,7 +339,10 @@ const ProviderRegistration: React.FC = () => {
         </section>
 
         {/* Support Section */}
-        <section className="py-12 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
+        <section
+          className="py-12 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl font-bold text-[#3A3F46] mb-4">Have Questions?</h3>
             <p className="text-[#7A8A9E] mb-6">

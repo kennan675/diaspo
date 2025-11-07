@@ -3,14 +3,21 @@ import DiaspoHeader from '@/components/DiaspoHeader';
 import DiaspoFooter from '@/components/DiaspoFooter';
 import BackToTop from '@/components/BackToTop';
 import { Wallet, DollarSign, Settings, Users2, Eye, Clock, ArrowRight, Sparkles, Star } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const FamilyHealthWallet: React.FC = () => {
+  const scope = React.useRef<HTMLDivElement | null>(null);
+  useScrollReveal(scope);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div ref={scope} className="min-h-screen bg-white">
       <DiaspoHeader />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-white to-[#007FFF]/5 relative overflow-hidden">
+        <section
+          className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-white to-[#007FFF]/5 relative overflow-hidden"
+          data-animate="fade-up"
+        >
           {/* Decorative background elements */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#007FFF]/5 rounded-full filter blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#283692]/5 rounded-full filter blur-3xl"></div>
@@ -49,7 +56,7 @@ const FamilyHealthWallet: React.FC = () => {
 
 
         {/* Why You Should Have Section */}
-        <section className="py-24 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-24 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-[#3A3F46] mb-16 text-center">
               Why You Should Have a <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">Family Health Wallet</span>
@@ -127,7 +134,10 @@ const FamilyHealthWallet: React.FC = () => {
 
 
         {/* Bottom CTA Section */}
-        <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#F8F9FA] to-white relative overflow-hidden">
+        <section
+          className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#F8F9FA] to-white relative overflow-hidden"
+          data-animate="fade-up"
+        >
           {/* Decorative elements */}
           <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#007FFF]/5 rounded-full filter blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-[#283692]/5 rounded-full filter blur-3xl"></div>

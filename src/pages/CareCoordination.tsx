@@ -5,15 +5,22 @@ import DiaspoFooter from '@/components/DiaspoFooter';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
 import { Users, UserCheck, Network, Phone, FileText, Activity, Eye, Heart, ArrowRight } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const CareCoordination: React.FC = () => {
+  const scope = React.useRef<HTMLDivElement | null>(null);
+  useScrollReveal(scope);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div ref={scope} className="min-h-screen bg-white">
       <ScrollProgress />
       <DiaspoHeader />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white relative overflow-hidden">
+        <section
+          className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white relative overflow-hidden"
+          data-animate="fade-up"
+        >
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="max-w-4xl mx-auto relative z-10 text-center">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6">Care Coordination</h1>
@@ -22,7 +29,10 @@ const CareCoordination: React.FC = () => {
         </section>
 
         {/* Introduction */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5">
+        <section
+          className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-[#7A8A9E] leading-relaxed mb-6">
               When you live far from home, caring for your loved ones' health can feel overwhelming.
@@ -37,7 +47,7 @@ const CareCoordination: React.FC = () => {
         </section>
 
         {/* One Team, One Plan, One Trusted Network */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-12 text-center">
               One Team, One Plan, <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">One Trusted Network</span>
@@ -72,7 +82,10 @@ const CareCoordination: React.FC = () => {
         </section>
 
         {/* How It Works */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-[#007FFF]/5 to-white">
+        <section
+          className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-[#007FFF]/5 to-white"
+          data-animate="fade-up"
+        >
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-12 text-center">
               How <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">It Works</span>
@@ -115,7 +128,7 @@ const CareCoordination: React.FC = () => {
         </section>
 
         {/* Specialized Support */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-8">
               Specialized Support for <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">Chronic Conditions</span>
@@ -141,7 +154,10 @@ const CareCoordination: React.FC = () => {
         </section>
 
         {/* Medical Second Opinions */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5">
+        <section
+          className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-6">
               Peace of Mind with <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">Medical Second Opinions</span>
@@ -156,7 +172,7 @@ const CareCoordination: React.FC = () => {
         </section>
 
         {/* Why Choose DiaspoCare */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-12 text-center">
               Why Choose DiaspoCare for <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">Care Coordination?</span>
@@ -197,7 +213,10 @@ const CareCoordination: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white">
+        <section
+          className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white"
+          data-animate="fade-up"
+        >
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-extrabold mb-6">Start Care Coordination Today</h2>
             <p className="text-xl mb-8 text-white/90">

@@ -4,15 +4,22 @@ import DiaspoFooter from '@/components/DiaspoFooter';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
 import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const Contact: React.FC = () => {
+  const scope = React.useRef<HTMLDivElement | null>(null);
+  useScrollReveal(scope);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div ref={scope} className="min-h-screen bg-white">
       <ScrollProgress />
       <DiaspoHeader />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
+        <section
+          className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-7xl mx-auto text-center">
             <div className="inline-block px-4 py-2 bg-white rounded-full border border-[#007FFF]/20 shadow-sm mb-4">
               <span className="text-[#283692] font-semibold text-sm">💬 Get In Touch</span>
@@ -27,7 +34,7 @@ const Contact: React.FC = () => {
         </section>
 
         {/* Contact Information */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-20 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               {/* Phone Numbers */}
@@ -172,7 +179,10 @@ const Contact: React.FC = () => {
         </section>
 
         {/* Map Section (Placeholder) */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
+        <section
+          className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-4">Our Locations</h2>

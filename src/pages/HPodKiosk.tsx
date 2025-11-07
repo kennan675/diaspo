@@ -4,16 +4,22 @@ import DiaspoFooter from '@/components/DiaspoFooter';
 import BackToTop from '@/components/BackToTop';
 import YouTubeVideo from '@/components/YouTubeVideo';
 import { Activity, Video, Cloud, Gauge, DollarSign, Award, Building2, MapPin, Pill, Building, GraduationCap, Users, ChevronDown, ChevronUp } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const HPodKiosk: React.FC = () => {
   const [parametersExpanded, setParametersExpanded] = useState(false);
+  const scope = React.useRef<HTMLDivElement | null>(null);
+  useScrollReveal(scope);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div ref={scope} className="min-h-screen bg-white">
       <DiaspoHeader />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative py-32 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#2D2D2D] via-[#1a1a1a] to-[#000000] text-white overflow-hidden">
+        <section
+          className="relative py-32 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#2D2D2D] via-[#1a1a1a] to-[#000000] text-white overflow-hidden"
+          data-animate="fade-up"
+        >
           {/* Dark background image overlay */}
           <div className="absolute inset-0 bg-black/50"></div>
           
@@ -48,7 +54,10 @@ const HPodKiosk: React.FC = () => {
         </section>
 
         {/* Video Section */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5">
+        <section
+          className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-10">
               <div className="inline-block px-4 py-2 bg-[#283692]/10 rounded-full mb-4">
@@ -69,7 +78,7 @@ const HPodKiosk: React.FC = () => {
         </section>
 
         {/* What is hPod Section */}
-        <section className="py-24 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-24 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-8">
               What is <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">hPod?</span>
@@ -109,7 +118,10 @@ const HPodKiosk: React.FC = () => {
         </section>
 
         {/* Key Features Section */}
-        <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-white to-[#007FFF]/5">
+        <section
+          className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-white to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-16">
               Key Features of <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">hPod</span>
@@ -186,7 +198,7 @@ const HPodKiosk: React.FC = () => {
         </section>
 
         {/* Full List of Parameters - Expandable */}
-        <section className="py-12 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-12 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-6xl mx-auto">
             <button
               onClick={() => setParametersExpanded(!parametersExpanded)}
@@ -340,7 +352,10 @@ const HPodKiosk: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white">
+        <section
+          className="py-24 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white"
+          data-animate="fade-up"
+        >
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl sm:text-5xl font-extrabold mb-6">
               Ready to Bring hPod to Your Community?

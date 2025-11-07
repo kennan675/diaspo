@@ -7,15 +7,22 @@ import BackToTop from '@/components/BackToTop';
 import YouTubeVideo from '@/components/YouTubeVideo';
 import PartnersCarousel from '@/components/PartnersCarousel';
 import { Shield, DollarSign, Smartphone, CreditCard, Bell, Home, CheckCircle, ArrowRight } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const HealthcareFinancing: React.FC = () => {
+  const scope = React.useRef<HTMLDivElement | null>(null);
+  useScrollReveal(scope);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div ref={scope} className="min-h-screen bg-white">
       <ScrollProgress />
       <DiaspoHeader />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-32 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-white to-[#007FFF]/5">
+        <section
+          className="py-32 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-white to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-6xl md:text-7xl font-extrabold text-[#283692] mb-6">
               Healthcare Financing
@@ -37,7 +44,7 @@ const HealthcareFinancing: React.FC = () => {
         </section>
 
         {/* Why Use Section with Video */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl font-extrabold text-[#283692] mb-8 text-center">
               Why Use the HealthCare Financing App?
@@ -61,7 +68,10 @@ const HealthcareFinancing: React.FC = () => {
         </section>
 
         {/* How DiaspoCare Guarantees Quality */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5">
+        <section
+          className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-extrabold text-[#283692] mb-12 text-center">
               HOW DIASPOCARE GUARANTEES QUALITY HEALTHCARE FOR YOUR LOVED ONES
@@ -138,7 +148,7 @@ const HealthcareFinancing: React.FC = () => {
         </section>
 
         {/* Part of the Benefits */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-[#283692] mb-6">Part of the benefits</h2>
             <p className="text-lg text-[#3A3F46] leading-relaxed mb-4">
@@ -152,7 +162,10 @@ const HealthcareFinancing: React.FC = () => {
         </section>
 
         {/* How to Register */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5">
+        <section
+          className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-extrabold text-[#283692] mb-4">
@@ -214,7 +227,7 @@ const HealthcareFinancing: React.FC = () => {
         </section>
 
         {/* Key Health Services */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-extrabold text-[#283692] mb-12 text-center">
               SOME KEY HEALTH SERVICES & PACKAGES AVAILABLE THROUGH THE APP
@@ -280,7 +293,10 @@ const HealthcareFinancing: React.FC = () => {
         </section>
 
         {/* Partners Section */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5">
+        <section
+          className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-extrabold text-[#283692] mb-4">
               SOME OF OUR PARTNERS YOU CAN ACCESS THROUGH THE APP
@@ -298,7 +314,7 @@ const HealthcareFinancing: React.FC = () => {
         </section>
 
         {/* Testimonials */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white">
+        <section className="py-16 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
           <div className="max-w-6xl mx-auto space-y-16">
             {/* Testimonial 1 - Mama Moraa */}
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -335,7 +351,10 @@ const HealthcareFinancing: React.FC = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-[#283692] text-white">
+        <section
+          className="py-20 px-6 sm:px-12 md:px-20 bg-[#283692] text-white"
+          data-animate="fade-up"
+        >
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl font-extrabold mb-4">Sign up as a supporter</h2>
             <p className="text-xl mb-8">Support the health of your loved ones</p>

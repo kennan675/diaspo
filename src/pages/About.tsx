@@ -5,15 +5,22 @@ import AboutSection from '@/components/AboutSection';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
 import YouTubeVideo from '@/components/YouTubeVideo';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const About: React.FC = () => {
+  const scope = React.useRef<HTMLDivElement | null>(null);
+  useScrollReveal(scope);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div ref={scope} className="min-h-screen bg-white">
       <ScrollProgress />
       <DiaspoHeader />
       <main className="pt-20">
         {/* Video Section - FIRST */}
-        <section className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#283692]/5">
+        <section
+          className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#283692]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-10">
               <div className="inline-block px-4 py-2 bg-[#283692]/10 rounded-full mb-4">
@@ -33,10 +40,15 @@ const About: React.FC = () => {
           </div>
         </section>
 
-        <AboutSection />
+        <div data-animate="fade-up">
+          <AboutSection />
+        </div>
         
         {/* Additional Content Section */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
+        <section
+          className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5"
+          data-animate="fade-up"
+        >
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-extrabold text-[#3A3F46] mb-12 text-center">
               Through the DiaspoCare App
@@ -53,7 +65,10 @@ const About: React.FC = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white">
+        <section
+          className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white"
+          data-animate="fade-up"
+        >
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-extrabold mb-6">Ready to Get Started?</h2>
             <p className="text-xl mb-8 text-white/90">
