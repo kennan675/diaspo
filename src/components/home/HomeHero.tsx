@@ -65,13 +65,6 @@ const HomeHero = () => {
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a
-              href="/care-coordination"
-              className="inline-flex items-center justify-center gap-3 rounded-2xl border border-white/60 bg-white px-8 py-6 text-base font-semibold text-primary shadow-large transition-all duration-300 hover:-translate-y-1 hover:bg-white/95"
-            >
-              Explore DiaspoCare Solutions
-              <ArrowRight className="h-5 w-5" />
-            </a>
             <button
               type="button"
               onClick={handleTalkToSupport}
@@ -127,7 +120,7 @@ const HomeHero = () => {
             <div className="space-y-6 text-white/90">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/60">Built for confidence</p>
-                <p className="mt-3 text-3xl font-semibold text-white">Everything in one platform. Zero diversion rate.</p>
+                <p className="mt-3 text-3xl font-semibold text-white">Stay in control with transparent, end-to-end care.</p>
               </div>
 
               <div className="space-y-4">
@@ -136,7 +129,7 @@ const HomeHero = () => {
                     <Sparkles className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/70">Unified Care Hub</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/70">Everything in one platform</p>
                     <p className="mt-2 text-sm text-white/85">
                       Access verified providers, approve payments, monitor outcomes, and coordinate support in one secure experience for the whole family.
                     </p>
@@ -148,7 +141,7 @@ const HomeHero = () => {
                     <Shield className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/70">Zero Diversion Promise</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/70">Zero diversion rate</p>
                     <p className="mt-2 text-sm text-white/85">
                       DiaspoCare audits every transaction. Funds are locked to medical services, pharmacies, labs, and clinicians you approve.
                     </p>
