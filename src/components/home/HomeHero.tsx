@@ -45,15 +45,15 @@ const HomeHero = () => {
       <div className="container relative z-20 mx-auto grid gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
         <div className="space-y-8 text-primary-foreground">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-white/10 px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/80 backdrop-blur">
-            <Sparkles className="h-4 w-4" /> Diaspora-first healthcare platform
+            <Sparkles className="h-4 w-4" /> All-in-one care for families across borders
           </span>
 
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.75rem]">
-            Take Care of Your Family Back Home — From Anywhere
+            The safest way to fund, coordinate, and verify care back home
           </h1>
 
           <p className="max-w-2xl text-lg text-white/85 sm:text-xl">
-            Healthcare financing, care coordination, and trusted providers you can rely on. Give your loved ones consistent, transparent care — no matter the distance.
+            DiaspoCare unifies transparent payments, concierge care coordination, and vetted providers so every contribution becomes reliable healthcare for the people you love.
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -61,7 +61,7 @@ const HomeHero = () => {
               href="/care-coordination"
               className="inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-primary to-secondary px-8 py-6 text-base font-semibold text-primary-foreground shadow-medium transition-all duration-300 hover:shadow-large"
             >
-              Get Started
+              Explore DiaspoCare Solutions
               <ArrowRight className="h-5 w-5" />
             </a>
             <a
@@ -79,12 +79,17 @@ const HomeHero = () => {
                 <Shield className="h-5 w-5 text-white" />
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/70">2000+ providers</p>
-                <p className="mt-2 text-base font-semibold text-white">Handpicked clinics, pharmacies, and specialists across Africa & the US.</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/70">Zero diversion promise</p>
+                <p className="mt-2 text-base font-semibold text-white">Every dollar you send lands with verified clinics, pharmacies, and clinicians in Kenya, Ghana, Nigeria, and the US.</p>
               </div>
             </div>
             <div className="rounded-2xl border border-white/20 bg-white/10 p-4 text-sm text-white/80">
-              "DiaspoCare keeps my mum's care coordinated between Nairobi and Houston without missing a single update." — Wambui, Diaspora caregiver
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/70">Everything in one platform</p>
+              <ul className="mt-2 space-y-2 text-white/80">
+                <li>• Fund care with real-time transaction tracking.</li>
+                <li>• Coordinate visits, labs, and medication from anywhere.</li>
+                <li>• Follow every update through the DiaspoCare family dashboard.</li>
+              </ul>
             </div>
           </div>
         </div>

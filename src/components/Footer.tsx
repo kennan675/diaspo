@@ -6,20 +6,42 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Facebook, label: "Facebook", href: "#" },
-    { icon: Twitter, label: "Twitter", href: "#" },
-    { icon: Linkedin, label: "LinkedIn", href: "#" },
-    { icon: Instagram, label: "Instagram", href: "#" },
+    { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/diaspocare" },
+    { icon: Twitter, label: "Twitter", href: "https://twitter.com/diaspocare" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/diaspocare" },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/diaspocare" },
   ];
 
-  const quickLinks = ["About Us", "Solutions", "Our Impact", "Blog", "Careers", "Press"];
-  const services = [
-    "Doctor Consults",
-    "Care Coordination",
-    "Lab Services",
-    "Medication Delivery",
-    "Health Monitoring",
-    "Family Updates",
+  const quickLinks = [
+    { label: "About", to: "/our-story" },
+    { label: "Solutions", to: "/care-coordination" },
+    { label: "Our Impact", to: "/our-impact" },
+    { label: "hPod Kiosk", to: "/hpod-kiosk" },
+    { label: "Contact", to: "/contact" },
+  ];
+
+  const offices = [
+    {
+      country: "United States",
+      address: ["2147 University Avenue West, Suite 105", "St. Paul, MN 55114"],
+      phone: "+1 612 440 0892",
+    },
+    {
+      country: "Kenya",
+      address: ["Cosy Nook, Muguga Green", "Westlands, Nairobi"],
+      phone: "+254 700 771 125",
+      secondaryPhone: "+254 700 773 074",
+    },
+    {
+      country: "Ghana",
+      address: ["48 IPS Road - East Legon", "Accra, Ghana"],
+      phone: "+233 55 042 5321",
+    },
+    {
+      country: "Nigeria",
+      address: ["No. 4 Udosen Uko Street", "Uyo, Akwa Ibom State"],
+      phone: "+234 805 840 8055",
+    },
   ];
 
   return (
@@ -72,47 +94,28 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-4">
             <h4 className="mb-6 flex items-center gap-2 text-lg font-bold">
-              <span className="h-6 w-1 rounded-full bg-accent" /> Quick Links
+              <span className="h-6 w-1 rounded-full bg-accent" /> Company
             </h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
-                <li key={link}>
+                <li key={link.label}>
                   <a
-                    href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={link.to}
                     className="group inline-flex items-center gap-2 text-primary-foreground/80 transition-all duration-300 hover:translate-x-2 hover:text-primary-foreground"
                   >
                     <span className="h-px w-0 bg-accent transition-all duration-300 group-hover:w-4" />
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-5">
             <h4 className="mb-6 flex items-center gap-2 text-lg font-bold">
-              <span className="h-6 w-1 rounded-full bg-accent" /> Services
-            </h4>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service}>
-                  <a
-                    href="#"
-                    className="group inline-flex items-center gap-2 text-primary-foreground/80 transition-all duration-300 hover:translate-x-2 hover:text-primary-foreground"
-                  >
-                    <span className="h-px w-0 bg-accent transition-all duration-300 group-hover:w-4" />
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-3">
-            <h4 className="mb-6 flex items-center gap-2 text-lg font-bold">
-              <span className="h-6 w-1 rounded-full bg-accent" /> Contact Us
+              <span className="h-6 w-1 rounded-full bg-accent" /> Offices & Support
             </h4>
             <ul className="space-y-4">
               <li className="group flex items-start gap-3">
@@ -121,27 +124,37 @@ const Footer = () => {
                 </div>
                 <div>
                   <div className="mb-1 text-xs text-primary-foreground/70">Email</div>
-                  <div className="font-semibold">support@diaspocare.com</div>
+                  <a href="mailto:hello@diaspocare.com" className="font-semibold transition-colors hover:text-primary-foreground">
+                    hello@diaspocare.com
+                  </a>
                 </div>
               </li>
-              <li className="group flex items-start gap-3">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary-foreground/10 transition-transform group-hover:scale-110">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <div>
-                  <div className="mb-1 text-xs text-primary-foreground/70">Phone</div>
-                  <div className="font-semibold">+1 (555) 123-4567</div>
-                </div>
-              </li>
-              <li className="group flex items-start gap-3">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary-foreground/10 transition-transform group-hover:scale-110">
-                  <MapPin className="h-5 w-5" />
-                </div>
-                <div>
-                  <div className="mb-1 text-xs text-primary-foreground/70">Office</div>
-                  <div className="font-semibold">San Francisco, CA</div>
-                </div>
-              </li>
+              {offices.map((office) => (
+                <li key={office.country} className="group flex items-start gap-3">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary-foreground/10 transition-transform group-hover:scale-110">
+                    <MapPin className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <div className="mb-1 text-xs text-primary-foreground/70">{office.country}</div>
+                    <div className="font-semibold leading-relaxed">
+                      {office.address.map((line) => (
+                        <div key={line}>{line}</div>
+                      ))}
+                    </div>
+                    <a href={`tel:${office.phone.replace(/[^+\d]/g, "")}`} className="mt-2 block text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                      {office.phone}
+                    </a>
+                    {office.secondaryPhone && (
+                      <a
+                        href={`tel:${office.secondaryPhone.replace(/[^+\d]/g, "")}`}
+                        className="block text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
+                      >
+                        {office.secondaryPhone}
+                      </a>
+                    )}
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
