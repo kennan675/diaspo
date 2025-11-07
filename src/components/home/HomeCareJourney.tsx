@@ -1,4 +1,4 @@
-but rather const CARE_STEPS = [
+const CARE_STEPS = [
   {
     need: "Money sent home is used for other things",
     solution: "Healthcare Financing App ensures every contribution pays for visits, medication, and follow-ups as intended.",
