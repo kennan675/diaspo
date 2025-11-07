@@ -2,9 +2,9 @@ import { Phone, Mail } from 'lucide-react';
 
 const DiaspoFooter = () => {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-[#e9f0ff] via-[#f3f7ff] to-[#f7fbff] text-[#1f2a37] py-16 px-6 sm:px-12 md:px-20">
-      <div className="absolute inset-0 opacity-60">
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.25), transparent 55%), radial-gradient(circle at 80% 80%, rgba(0, 178, 255, 0.15), transparent 60%)' }} />
+    <footer className="relative overflow-hidden bg-gradient-to-br from-white via-[#f6faff] to-[#eef5ff] text-[#1f2a37] py-16 px-6 sm:px-12 md:px-20">
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 12% 18%, rgba(0, 119, 255, 0.18), transparent 58%), radial-gradient(circle at 78% 82%, rgba(0, 187, 255, 0.12), transparent 62%)' }} />
       </div>
 
       <div className="relative max-w-7xl mx-auto">
@@ -17,12 +17,12 @@ const DiaspoFooter = () => {
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-[#3c4a5e] leading-relaxed">
+            <p className="text-[#42546b] leading-relaxed">
               Bridging distances, delivering care. Empowering diaspora families worldwide.
             </p>
             <div className="pt-4">
-              <p className="text-xs text-[#4e5d73]/70 font-semibold mb-2">Operating in:</p>
-              <p className="text-sm text-[#3c4a5e]">🇰🇪 Kenya  •  🇺🇬 Uganda  •  🇬🇭 Ghana  •  🇺🇸 USA</p>
+              <p className="text-xs text-[#55657c]/70 font-semibold mb-2">Operating in:</p>
+              <p className="text-sm text-[#42546b]">🇰🇪 Kenya  •  🇺🇬 Uganda  •  🇬🇭 Ghana  •  🇺🇸 USA</p>
             </div>
             <div className="flex gap-4 pt-2">
               <a href="#" className="w-10 h-10 rounded-full bg-white/70 hover:bg-white flex items-center justify-center transition-colors text-[#1f2a37] shadow-sm">
