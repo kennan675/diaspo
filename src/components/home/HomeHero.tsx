@@ -27,12 +27,12 @@ const HomeHero = () => {
       data-animate="fade-up"
     >
       <div className="absolute inset-0 z-0 overflow-hidden rounded-[48px]">
-        <div className="absolute inset-0 z-[5] bg-gradient-to-br from-[#0c1b3c] via-[#13254a] to-[#1e3760]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0c1b3c] via-[#13254a] to-[#1e3760]" />
         <div
-          className={`absolute inset-0 z-10 bg-gradient-to-br from-primary/75 via-secondary/65 to-accent/55 mix-blend-multiply transition-opacity duration-600 ${imageLoaded ? "opacity-80" : "opacity-60"}`}
+          className={`absolute inset-0 z-10 bg-gradient-to-br from-primary/70 via-secondary/55 to-accent/50 mix-blend-multiply transition-opacity duration-600 ${imageLoaded ? "opacity-35" : "opacity-65"}`}
         />
         <div
-          className={`absolute inset-0 z-[11] transition-opacity duration-700 ${imageLoaded ? "opacity-40" : "opacity-20"}`}
+          className={`absolute inset-0 z-[11] transition-opacity duration-700 ${imageLoaded ? "opacity-25" : "opacity-35"}`}
           style={{
             backgroundImage:
               "radial-gradient(circle at 15% 20%, hsl(var(--primary-glow)) 0%, transparent 50%), radial-gradient(circle at 85% 60%, hsl(var(--secondary)) 0%, transparent 50%)",
@@ -46,7 +46,7 @@ const HomeHero = () => {
           fetchPriority="high"
           src={heroImage}
           alt="Warm African caregiving scene"
-          className="h-full w-full scale-110 object-cover object-center"
+          className="relative z-[12] h-full w-full scale-110 object-cover object-center"
           style={{ transform: `translateY(${scrollY * 0.12}px)` }}
         />
       </div>
