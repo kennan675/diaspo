@@ -13,7 +13,7 @@ const KEY_STATS = [
 
 const HomeStats = () => {
   return (
-    <section className="relative py-24" data-animate="fade-up">
+    <section className="relative py-24 bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-white" data-animate="fade-up">
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/8 via-secondary/5 to-accent/10 blur-3xl" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
