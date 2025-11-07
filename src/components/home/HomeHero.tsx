@@ -1,11 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
-import { ArrowRight, MessageCircle, Shield, Sparkles } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Shield, Sparkles } from "lucide-react";
 
 import heroImage from "@/assets/family-care.jpg";
-import { Button } from "@/components/ui/button";
 
 const HomeHero = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const imageRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -13,11 +14,9 @@ const HomeHero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleTalkToSupport = useCallback(() => {
-    if (window.Tawk_API?.maximize) {
-      window.Tawk_API.maximize();
-    } else {
-      window.location.href = "/contact";
+  useEffect(() => {
+    if (imageRef.current?.complete) {
+      setImageLoaded(true);
     }
   }, []);
 
@@ -28,15 +27,21 @@ const HomeHero = () => {
       data-animate="fade-up"
     >
       <div className="absolute inset-0 z-0 overflow-hidden rounded-[48px]">
-        <div className="absolute inset-0 z-10 bg-gradient-to-br from-primary/90 via-secondary/80 to-accent/70 mix-blend-multiply" />
         <div
-          className="absolute inset-0 z-[11] opacity-40"
+          className={`absolute inset-0 z-10 bg-gradient-to-br from-primary/80 via-secondary/70 to-accent/60 mix-blend-multiply transition-opacity duration-500 ${imageLoaded ? "opacity-80" : "opacity-0"}`}
+        />
+        <div
+          className={`absolute inset-0 z-[11] transition-opacity duration-700 ${imageLoaded ? "opacity-40" : "opacity-0"}`}
           style={{
             backgroundImage:
               "radial-gradient(circle at 15% 20%, hsl(var(--primary-glow)) 0%, transparent 50%), radial-gradient(circle at 85% 60%, hsl(var(--secondary)) 0%, transparent 50%)",
           }}
         />
         <img
+          ref={imageRef}
+          onLoad={() => setImageLoaded(true)}
+          loading="eager"
+          fetchPriority="high"
           src={heroImage}
           alt="Warm African caregiving scene"
           className="h-full w-full scale-110 object-cover object-center"
@@ -51,7 +56,7 @@ const HomeHero = () => {
       </div>
 
       <div className="container relative z-20 mx-auto grid gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
-        <div className="space-y-8 text-primary-foreground">
+        <div className="flex flex-col gap-8 text-primary-foreground">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-white/10 px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/80 backdrop-blur">
             <Sparkles className="h-4 w-4" /> All-in-one care for families across borders
           </span>
@@ -64,17 +69,7 @@ const HomeHero = () => {
             DiaspoCare unifies transparent payments, concierge care coordination, and vetted providers so every contribution becomes reliable healthcare for the people you love.
           </p>
 
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <button
-              type="button"
-              onClick={handleTalkToSupport}
-              className="inline-flex items-center justify-center rounded-2xl border border-white/40 bg-white/10 px-8 py-6 text-base font-semibold text-white backdrop-blur transition-all duration-300 hover:border-white/60 hover:bg-white/20"
-            >
-              Talk to Care Support
-            </button>
-          </div>
-
-          <div className="rounded-3xl bg-white/12 p-6 backdrop-blur shadow-soft">
+          <div className="rounded-3xl bg-white/12 p-6 backdrop-blur shadow-soft lg:mt-auto lg:self-start">
             <div className="flex items-start justify-between gap-6">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/70">Download the app</p>
@@ -120,7 +115,7 @@ const HomeHero = () => {
               <div>
                 <p className="text-3xl font-semibold">
                   <span className="font-bold text-white">CARING FROM A FAR</span>
-                  <span className="font-bold text-primary">, MADE SIMPLE</span>
+                  <span className="font-bold text-[#1a73e8]">, MADE SIMPLE</span>
                 </p>
               </div>
 
