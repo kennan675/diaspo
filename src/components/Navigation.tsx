@@ -59,13 +59,12 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link to="/" className="group flex items-center gap-3 text-lg font-semibold">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary text-primary-foreground shadow-soft transition-transform duration-300 group-hover:scale-105">
-              DC
-            </span>
-            <span className="text-xl tracking-[0.2em] uppercase text-foreground/80 transition-colors duration-500 group-hover:text-primary">
-              DiaspoCare
-            </span>
+          <Link to="/" className="group flex items-center gap-3">
+            <img
+              src="/logo-full.png"
+              alt="DiaspoCare"
+              className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           <div className="hidden items-center gap-8 lg:flex">
