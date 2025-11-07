@@ -117,7 +117,8 @@ const HomeHero = () => {
               <div>
                 <p className="text-3xl font-semibold">
                   <span className="font-bold text-white">CARING FROM AFAR</span>
-                  <span className="font-bold text-[#1a73e8]">, MADE SIMPLE</span>
+                  <span className="font-bold text-white">, </span>
+                  <span className="font-bold text-[#1a73e8]">MADE SIMPLE</span>
                 </p>
               </div>
 

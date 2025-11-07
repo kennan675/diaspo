@@ -95,7 +95,7 @@ const Navigation = () => {
               </button>
 
               {solutionsOpen && (
-                <div className="absolute left-0 top-full mt-4 w-64 overflow-hidden rounded-2xl border border-border/60 bg-background/95 shadow-large backdrop-blur">
+                <div className="absolute left-0 top-full mt-4 w-64 overflow-hidden rounded-2xl border border-border/50 bg-white shadow-large">
                   <div className="p-2">
                     {solutionsLinks.map((link) => (
                       <Link
