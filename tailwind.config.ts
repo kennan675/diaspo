@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import animate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -15,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Playfair Display", "Georgia", "serif"],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -93,17 +92,15 @@ export default {
           "0%": { transform: "scale(0.9)", opacity: "0" },
           "100%": { transform: "scale(1)", opacity: "1" },
         },
-        float: {
+        "float": {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-20px)" },
         },
         "pulse-glow": {
           "0%, 100%": { boxShadow: "0 0 20px hsl(var(--primary) / 0.4)" },
-          "50%": {
-            boxShadow: "0 0 60px hsl(var(--secondary) / 0.6), 0 0 100px hsl(var(--accent) / 0.4)",
-          },
+          "50%": { boxShadow: "0 0 60px hsl(var(--secondary) / 0.6), 0 0 100px hsl(var(--accent) / 0.4)" },
         },
-        shimmer: {
+        "shimmer": {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
@@ -115,9 +112,9 @@ export default {
         "fade-in-left": "fade-in-left 0.8s ease-out forwards",
         "fade-in-right": "fade-in-right 0.8s ease-out forwards",
         "scale-in": "scale-in 0.6s ease-out forwards",
-        float: "float 6s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
-        shimmer: "shimmer 3s linear infinite",
+        "shimmer": "shimmer 3s linear infinite",
       },
       boxShadow: {
         soft: "0 2px 10px -2px hsl(var(--primary) / 0.08), 0 8px 24px -4px hsl(var(--primary) / 0.12)",
@@ -128,5 +125,5 @@ export default {
       },
     },
   },
-  plugins: [animate],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
