@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Shield, Sparkles } from "lucide-react";
 
-const HERO_TEXTURE_URL = "/images/pexels-danielabsi-952670.jpg";
+import heroImage from "@/assets/family-care.jpg";
 
 const HomeHero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -27,12 +27,9 @@ const HomeHero = () => {
       data-animate="fade-up"
     >
       <div className="absolute inset-0 z-0 overflow-hidden rounded-[48px]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0c1b3c] via-[#13254a] to-[#1e3760] opacity-70" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-br from-primary/90 via-secondary/80 to-accent/70 mix-blend-multiply" />
         <div
-          className={`absolute inset-0 z-10 bg-gradient-to-br from-primary/60 via-secondary/45 to-accent/35 mix-blend-multiply transition-opacity duration-600 ${imageLoaded ? "opacity-25" : "opacity-55"}`}
-        />
-        <div
-          className={`absolute inset-0 z-[11] transition-opacity duration-700 ${imageLoaded ? "opacity-18" : "opacity-28"}`}
+          className="absolute inset-0 z-[11] opacity-40"
           style={{
             backgroundImage:
               "radial-gradient(circle at 15% 20%, hsl(var(--primary-glow)) 0%, transparent 50%), radial-gradient(circle at 85% 60%, hsl(var(--secondary)) 0%, transparent 50%)",
@@ -44,7 +41,7 @@ const HomeHero = () => {
           onError={() => setImageLoaded(true)}
           loading="eager"
           fetchPriority="high"
-          src={HERO_TEXTURE_URL}
+          src={heroImage}
           alt="Warm African caregiving scene"
           className="relative z-[12] h-full w-full scale-110 object-cover object-center"
           style={{ transform: `translateY(${scrollY * 0.12}px)` }}
