@@ -27,12 +27,19 @@ const InitialLoader = ({ hidden }: InitialLoaderProps) => {
       }`}
     >
       <div className="relative flex h-32 w-32 items-center justify-center">
+        <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_25%_25%,rgba(88,140,255,0.25),transparent_60%)] blur-2xl opacity-80" />
+        <span className="absolute h-28 w-28 rounded-full border border-white/10 shadow-[0_0_50px_rgba(30,100,255,0.35)]" />
+        <span className="absolute h-24 w-24 rounded-full bg-gradient-to-br from-primary/35 via-secondary/30 to-accent/35 blur-xl animate-pulse" />
+        <span className="absolute h-20 w-20 rounded-full border border-white/20 bg-white/5 animate-ping" />
         {ringStyles.map((cls, index) => (
           <span key={`ring-${index}`} className={cls} />
         ))}
         <img src="/images/dc-loader.png" alt="DiaspoCare logo" className="relative h-16 w-16 object-contain" />
       </div>
-      <p className="mt-8 text-xs font-semibold uppercase tracking-[0.4em] text-white/70">preparing care</p>
+      <p className="mt-8 text-xs font-semibold uppercase tracking-[0.45em] text-white/75">
+        preparing care
+        <span className="ml-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-primary to-accent align-middle animate-pulse" />
+      </p>
       <span className="sr-only">Loading DiaspoCare experience</span>
     </div>
   );
