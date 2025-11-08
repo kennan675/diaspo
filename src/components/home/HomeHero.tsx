@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, Shield, Sparkles } from "lucide-react";
+import { Shield, Sparkles } from "lucide-react";
 
-import heroImage from "@/assets/hero-healthcare.jpg";
+import heroImage from "@/assets/family-care.jpg";
 
 const HomeHero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -23,11 +23,11 @@ const HomeHero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden rounded-[48px] bg-gradient-to-br from-primary/8 via-background to-secondary/12 px-4 py-32 sm:px-6 lg:px-10"
+      className="relative flex min-h-[90vh] items-center overflow-hidden rounded-[48px] bg-gradient-to-br from-primary/5 via-background to-secondary/10 px-4 py-32 sm:px-6 lg:px-10"
       data-animate="fade-up"
     >
       <div className="absolute inset-0 z-0 overflow-hidden rounded-[48px]">
-        <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#06112d]/70 via-[#12244f]/65 to-[#114073]/55 mix-blend-multiply" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-br from-primary/90 via-secondary/80 to-accent/70 mix-blend-multiply" />
         <div
           className="absolute inset-0 z-[11] opacity-40"
           style={{
@@ -49,39 +49,24 @@ const HomeHero = () => {
       </div>
 
       <div className="absolute inset-0 z-10 pointer-events-none">
-        <div className="animate-float absolute left-[-8%] top-[12%] h-80 w-80 rounded-full bg-primary/30 blur-3xl" />
-        <div className="animate-float absolute right-[0%] top-[28%] h-96 w-96 rounded-full bg-accent/25 blur-3xl" style={{ animationDelay: "2s" }} />
-        <div className="animate-float absolute bottom-[6%] left-[32%] h-72 w-72 rounded-full bg-secondary/25 blur-3xl" style={{ animationDelay: "4s" }} />
+        <div className="animate-float absolute left-[-10%] top-[15%] h-80 w-80 rounded-full bg-primary/20 blur-3xl" />
+        <div className="animate-float absolute right-[5%] top-[25%] h-96 w-96 rounded-full bg-accent/20 blur-3xl" style={{ animationDelay: "2s" }} />
+        <div className="animate-float absolute bottom-[10%] left-[35%] h-72 w-72 rounded-full bg-secondary/20 blur-3xl" style={{ animationDelay: "4s" }} />
       </div>
 
       <div className="container relative z-20 mx-auto grid gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
-        <div className="flex flex-col gap-8 text-white">
-          <span className="inline-flex items-center gap-2 self-start rounded-full border border-white/15 bg-white/10 px-6 py-3 text-xs font-semibold uppercase tracking-[0.32em] text-white/80 backdrop-blur">
-            <Sparkles className="h-4 w-4" /> Trusted by diaspora families in 4 countries
+        <div className="flex flex-col gap-8 text-primary-foreground">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-white/10 px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/80 backdrop-blur">
+            <Sparkles className="h-4 w-4" /> All-in-one care for families across borders
           </span>
 
-          <h1 className="max-w-3xl font-display text-[2.9rem] font-bold leading-tight tracking-tight text-white sm:text-[3.5rem] lg:text-[4rem]">
-            Fund care from anywhere. Keep loved ones healthy back home.
+          <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.75rem]">
+            The safest way to fund, coordinate, and verify care back home
           </h1>
 
           <p className="max-w-2xl text-lg text-white/85 sm:text-xl">
-            DiaspoCare connects you with verified clinics, dedicated care concierges, and transparent payment tools so every shilling delivers real treatment.
+            DiaspoCare unifies transparent payments, concierge care coordination, and vetted providers so every contribution becomes reliable healthcare for the people you love.
           </p>
-
-          <div className="flex flex-wrap items-center gap-4 pt-2">
-            <a
-              href="/care-coordination"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent px-8 py-4 text-sm font-semibold text-white shadow-large transition-transform duration-300 hover:-translate-y-0.5"
-            >
-              Start Care Coordination
-            </a>
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10"
-            >
-              <MessageCircle className="h-4 w-4" /> Book a Call
-            </a>
-          </div>
 
           <div className="rounded-3xl bg-white/12 p-6 backdrop-blur shadow-soft lg:mt-auto lg:self-start">
             <div className="flex items-start justify-between gap-6">
@@ -127,8 +112,11 @@ const HomeHero = () => {
           <div className="relative w-full max-w-[420px] overflow-hidden rounded-[32px] border border-white/25 bg-white/12 p-8 backdrop-blur shadow-large">
             <div className="space-y-6 text-white/90">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.4em] text-white/70">Care concierge snapshots</p>
-                <h3 className="mt-3 text-3xl font-semibold text-white">Your loved one. Our priority. Every step.</h3>
+                <p className="text-3xl font-semibold">
+                  <span className="font-bold text-white">CARING FROM AFAR</span>
+                  <span className="font-bold text-white">, </span>
+                  <span className="font-bold text-[#1a73e8]">MADE SIMPLE</span>
+                </p>
               </div>
 
               <div className="space-y-4">
@@ -139,7 +127,7 @@ const HomeHero = () => {
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/70">Everything in one platform</p>
                     <p className="mt-2 text-sm text-white/85">
-                      Approve referrals, see medication status, and view case updates in one secure support hub.
+                      Access verified providers, approve payments, monitor outcomes, and coordinate support in one secure experience for the whole family.
                     </p>
                   </div>
                 </div>
