@@ -57,6 +57,10 @@ const Navigation = () => {
     }
   }, []);
 
+  const handleMobileDrawerToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
@@ -147,73 +151,82 @@ const Navigation = () => {
           </div>
 
           <button
-            className="rounded-xl border border-border/60 p-2.5 text-foreground transition-all duration-300 hover:border-primary/60 hover:bg-primary/10 hover:text-primary lg:hidden"
-            onClick={() => setIsOpen((prev) => !prev)}
+            className={`group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-border/40 bg-white/80 text-foreground shadow-soft transition-all duration-500 hover:border-primary/50 hover:shadow-glow lg:hidden ${
+              isOpen ? "scale-95 bg-primary/10" : ""
+            }`}
+            onClick={handleMobileDrawerToggle}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <span className="absolute inset-0 rounded-full bg-gradient-to-br from-white/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            {isOpen ? (
+              <X className="relative h-6 w-6 text-primary transition-transform duration-500 group-hover:rotate-90" />
+            ) : (
+              <Menu className="relative h-6 w-6 transition-transform duration-500 group-hover:rotate-12" />
+            )}
           </button>
         </div>
 
         {isOpen && (
-          <div className="animate-fade-in rounded-3xl border border-border/60 bg-background/95 py-6 shadow-large backdrop-blur lg:hidden">
-            <nav className="space-y-4 px-6 text-sm font-semibold text-foreground/80">
-              <Link to="/" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
-                Home
-              </Link>
+          <div className="fixed inset-0 z-40 bg-slate-900/30 backdrop-blur-sm transition-opacity duration-300 lg:hidden" onClick={handleMobileDrawerToggle}>
+            <div className="fixed top-24 right-4 z-50 w-[min(90vw,320px)] translate-x-0 rounded-3xl border border-border/40 bg-white/95 py-6 shadow-2xl transition-transform duration-300">
+              <nav className="space-y-4 px-6 text-sm font-semibold text-foreground/80" onClick={(event) => event.stopPropagation()}>
+                <Link to="/" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={handleMobileDrawerToggle}>
+                  Home
+                </Link>
 
-              <div className="space-y-2">
-                <p className="px-4 text-xs font-semibold uppercase tracking-[0.3em] text-foreground/50">Solutions</p>
-                {solutionsLinks.map((link) => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className="block rounded-xl px-4 py-3 text-foreground/70 transition-colors hover:bg-primary/10 hover:text-primary"
-                    onClick={() => setIsOpen(false)}
+                <div className="space-y-2">
+                  <p className="px-4 text-xs font-semibold uppercase tracking-[0.3em] text-foreground/50">Solutions</p>
+                  {solutionsLinks.map((link) => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className="block rounded-xl px-4 py-3 text-foreground/70 transition-colors hover:bg-primary/10 hover:text-primary"
+                      onClick={handleMobileDrawerToggle}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+
+                <Link to="/impact" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={handleMobileDrawerToggle}>
+                  Our Impact
+                </Link>
+                <Link to="/hpod-kiosk" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={handleMobileDrawerToggle}>
+                  hPod Kiosk
+                </Link>
+                <Link to="/about" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={handleMobileDrawerToggle}>
+                  About
+                </Link>
+                <Link to="/contact" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={handleMobileDrawerToggle}>
+                  Contact
+                </Link>
+
+                <div className="pt-4 space-y-3">
+                  <Button
+                    type="button"
+                    variant="glass"
+                    size="lg"
+                    onClick={() => {
+                      openCareSupport();
+                      handleMobileDrawerToggle();
+                    }}
+                    className="w-full justify-center text-sm font-semibold text-primary transition-shadow hover:shadow-[0_0_28px_rgba(88,140,255,0.45)] hover:shadow-primary/40"
                   >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-
-              <Link to="/impact" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
-                Our Impact
-              </Link>
-              <Link to="/hpod-kiosk" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
-                hPod Kiosk
-              </Link>
-              <Link to="/about" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
-                About
-              </Link>
-              <Link to="/contact" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
-                Contact
-              </Link>
-
-              <div className="pt-4">
-                <Button
-                  type="button"
-                  variant="glass"
-                  size="lg"
-                  onClick={() => {
-                    openCareSupport();
-                    setIsOpen(false);
-                  }}
-                  className="mb-3 w-full justify-center text-base font-semibold text-primary transition-shadow hover:shadow-[0_0_28px_rgba(88,140,255,0.45)] hover:shadow-primary/40"
-                >
-                  Talk to Care Support
-                </Button>
-                <Button
-                  asChild
-                  variant="hero"
-                  size="lg"
-                  className="w-full justify-center text-base font-semibold transition-shadow hover:shadow-[0_0_32px_rgba(33,123,255,0.5)] hover:shadow-secondary/40"
-                >
-                  <Link to="/care-coordination" onClick={() => setIsOpen(false)}>
-                    Get Started
-                  </Link>
-                </Button>
-              </div>
-            </nav>
+                    Talk to Care Support
+                  </Button>
+                  <Button
+                    asChild
+                    variant="hero"
+                    size="lg"
+                    className="w-full justify-center text-sm font-semibold transition-shadow hover:shadow-[0_0_32px_rgba(33,123,255,0.5)] hover:shadow-secondary/40"
+                  >
+                    <Link to="/care-coordination" onClick={handleMobileDrawerToggle}>
+                      Get Started
+                    </Link>
+                  </Button>
+                </div>
+              </nav>
+            </div>
           </div>
         )}
       </div>
