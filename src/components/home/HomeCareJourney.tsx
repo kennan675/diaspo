@@ -4,9 +4,9 @@ const CARE_STEPS = [
     solution: "Healthcare Financing App ensures every contribution pays for visits, medication, and follow-ups as intended.",
     category: "Financial integrity",
     icon: "💸",
-    accent: "from-primary/15 via-primary/5 to-accent/15",
-    iconBg: "bg-primary/10 text-primary",
-    indicator: "bg-gradient-to-br from-primary via-accent to-secondary",
+    accent: "from-primary/20 via-primary/10 to-accent/20",
+    iconBg: "bg-primary/12 text-primary",
+    indicator: "bg-gradient-to-br from-primary/90 via-accent/90 to-secondary/90",
     solutionAccent: "text-primary",
     accentDot: "bg-primary",
   },
@@ -15,9 +15,9 @@ const CARE_STEPS = [
     solution: "Concierge Care Coordination schedules appointments, handles logistics, and keeps everyone updated.",
     category: "Care logistics",
     icon: "🧭",
-    accent: "from-accent/20 via-primary/5 to-accent/10",
-    iconBg: "bg-accent/10 text-accent",
-    indicator: "bg-gradient-to-br from-accent via-primary to-secondary",
+    accent: "from-accent/20 via-primary/10 to-accent/15",
+    iconBg: "bg-accent/12 text-accent",
+    indicator: "bg-gradient-to-br from-accent/90 via-primary/90 to-secondary/85",
     solutionAccent: "text-accent",
     accentDot: "bg-accent",
   },
@@ -26,9 +26,9 @@ const CARE_STEPS = [
     solution: "Family Health Wallets let relatives pool funds and approve spend in real time.",
     category: "Smart funding",
     icon: "🪙",
-    accent: "from-secondary/20 via-secondary/10 to-primary/10",
-    iconBg: "bg-secondary/10 text-secondary",
-    indicator: "bg-gradient-to-br from-secondary via-primary to-accent",
+    accent: "from-secondary/18 via-secondary/8 to-primary/12",
+    iconBg: "bg-secondary/12 text-secondary",
+    indicator: "bg-gradient-to-br from-secondary/90 via-primary/85 to-accent/85",
     solutionAccent: "text-secondary",
     accentDot: "bg-secondary",
   },
@@ -37,9 +37,9 @@ const CARE_STEPS = [
     solution: "MD Connect links local providers to international specialists for second opinions and case reviews.",
     category: "Clinical network",
     icon: "🧠",
-    accent: "from-primary/20 via-primary/10 to-foreground/5",
-    iconBg: "bg-primary/10 text-primary",
-    indicator: "bg-gradient-to-br from-primary via-foreground/60 to-primary",
+    accent: "from-primary/18 via-primary/8 to-foreground/8",
+    iconBg: "bg-primary/12 text-primary",
+    indicator: "bg-gradient-to-br from-primary/90 via-foreground/70 to-primary/85",
     solutionAccent: "text-primary",
     accentDot: "bg-primary",
   },
@@ -48,9 +48,9 @@ const CARE_STEPS = [
     solution: "Medication Search surfaces verified pharmacies and tracks fulfillment end-to-end.",
     category: "Verified pharmacy",
     icon: "💊",
-    accent: "from-secondary/15 via-primary/5 to-accent/10",
-    iconBg: "bg-secondary/10 text-secondary",
-    indicator: "bg-gradient-to-br from-secondary via-accent to-primary",
+    accent: "from-secondary/16 via-primary/8 to-accent/14",
+    iconBg: "bg-secondary/12 text-secondary",
+    indicator: "bg-gradient-to-br from-secondary/90 via-accent/90 to-primary/85",
     solutionAccent: "text-secondary",
     accentDot: "bg-secondary",
   },
@@ -59,9 +59,9 @@ const CARE_STEPS = [
     solution: "HPod Diagnostic Kiosks bring reliable testing to trusted community locations.",
     category: "Trusted diagnostics",
     icon: "🔬",
-    accent: "from-accent/15 via-primary/5 to-secondary/15",
-    iconBg: "bg-accent/10 text-accent",
-    indicator: "bg-gradient-to-br from-accent via-primary to-secondary",
+    accent: "from-accent/18 via-primary/8 to-secondary/16",
+    iconBg: "bg-accent/12 text-accent",
+    indicator: "bg-gradient-to-br from-accent/90 via-primary/85 to-secondary/90",
     solutionAccent: "text-accent",
     accentDot: "bg-accent",
   },
@@ -84,8 +84,8 @@ const HomeCareJourney = () => {
       <div className="absolute inset-x-0 top-1/3 -z-10 h-[420px] bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.14),_transparent_68%)]" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.35em] text-primary/80">
-            <span className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-primary to-secondary" />
+          <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary via-accent to-secondary px-5 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-white shadow-lg shadow-primary/30">
+            <span className="h-2.5 w-2.5 rounded-full bg-white/80" />
             DiaspoCare Solutions
           </span>
           <h2 className="mt-6 max-w-3xl bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text font-display text-4xl font-semibold text-transparent sm:text-5xl lg:text-6xl">
@@ -120,7 +120,7 @@ const HomeCareJourney = () => {
                 <div className="flex flex-col gap-6 text-left">
                   <div className="flex items-center gap-4">
                     <span
-                      className={`flex h-12 w-12 items-center justify-center rounded-2xl border border-white/5 text-xl shadow-[0_1.5rem_3rem_-1.5rem_rgba(15,23,42,0.55)] backdrop-blur ${step.iconBg}`}
+                      className={`flex h-12 w-12 items-center justify-center rounded-2xl border border-white/8 text-xl shadow-[0_1.5rem_3rem_-1.5rem_rgba(15,23,42,0.58)] backdrop-blur ${step.iconBg}`}
                     >
                       {step.icon}
                     </span>
@@ -144,13 +144,10 @@ const HomeCareJourney = () => {
                   )}
                 </div>
                 <div className="flex flex-col gap-4 text-left md:text-right">
-                  <div className="flex flex-col gap-1 md:items-end">
-                    <span className={`inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.32em] text-primary/80 ${step.solutionAccent}`}>
-                      <span className={`h-2 w-2 rounded-full ${step.accentDot}`} />
-                      Solution
-                    </span>
-                    <span className="text-sm font-medium uppercase tracking-[0.24em] text-foreground/40">What changes on the ground</span>
-                  </div>
+                  <span className={`inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.32em] text-primary/80 ${step.solutionAccent}`}>
+                    <span className={`h-2 w-2 rounded-full ${step.accentDot}`} />
+                    Solution
+                  </span>
                   <p className="text-lg leading-8 text-foreground/75 sm:text-xl">{step.solution}</p>
                 </div>
               </article>
