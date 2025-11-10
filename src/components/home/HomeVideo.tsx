@@ -1,5 +1,3 @@
-import { Play } from "lucide-react";
-
 const HomeVideo = () => {
   return (
     <section id="how-it-works" className="py-24" data-animate="scale-in">
@@ -12,19 +10,23 @@ const HomeVideo = () => {
           </p>
         </div>
 
-        <div className="relative mx-auto max-w-4xl overflow-hidden rounded-[36px] border border-border/60 bg-background/80 shadow-large backdrop-blur">
-          <div className="relative aspect-video w-full">
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/fOgVaRaVDeg?si=1BgaVmWbeZXcbYLB"
-              title="DiaspoCare overview video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-          <div className="absolute inset-x-6 bottom-6 rounded-3xl bg-background/90 p-4 text-sm font-semibold uppercase tracking-[0.24em] text-foreground/70 backdrop-blur">
-            <div className="flex items-center gap-2">
-              <Play className="h-4 w-4" /> Official DiaspoCare Story — 2:41
+        <div
+          className="relative mx-auto max-w-4xl"
+          data-animate="fade-up"
+        >
+          <div className="group relative overflow-hidden rounded-[36px] border border-border/40 bg-background/80 shadow-large backdrop-blur transition-all duration-700 ease-out hover:-translate-y-1 hover:shadow-3xl">
+            <div className="pointer-events-none absolute -inset-1 rounded-[40px] bg-gradient-to-r from-primary/30 via-accent/20 to-secondary/30 opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-80" aria-hidden />
+            <div className="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-secondary/20 blur-3xl opacity-60 animate-pulse" aria-hidden />
+            <div className="pointer-events-none absolute -bottom-28 -left-24 h-56 w-56 rounded-full bg-primary/20 blur-3xl opacity-70 animate-pulse" aria-hidden />
+
+            <div className="relative aspect-video w-full">
+              <iframe
+                className="absolute inset-0 h-full w-full rounded-[28px] transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+                src="https://www.youtube.com/embed/fOgVaRaVDeg?si=1BgaVmWbeZXcbYLB"
+                title="DiaspoCare overview video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>

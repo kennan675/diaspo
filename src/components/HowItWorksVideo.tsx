@@ -13,7 +13,7 @@ const HowItWorksVideo: React.FC = () => {
           <h2 className="text-4xl sm:text-5xl font-extrabold text-[#3A3F46] tracking-tight">
             Watch How <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">DiaspoCare Works</span>
           </h2>
-          
+
           <p className="text-xl text-[#7A8A9E] max-w-3xl mx-auto">
             See how easy it is to coordinate healthcare for your loved ones - click play to watch
           </p>

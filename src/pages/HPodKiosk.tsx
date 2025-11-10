@@ -73,7 +73,6 @@ const HPodKiosk: React.FC = () => {
             <h2 className="mb-4 text-4xl font-extrabold text-[#3A3F46]">
               Watch How <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">hPod Works</span>
             </h2>
-            <p className="text-xl text-[#7A8A9E]">Transforming healthcare access in underserved communities</p>
           </div>
 
           <YouTubeVideo
