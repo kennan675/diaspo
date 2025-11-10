@@ -145,7 +145,7 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({
   const handlePlayClick = () => {
     setHasInteracted(true);
     setShowOverlay(false);
-    queueOrSendCommand('playVideo');
+    sendPlayerCommand('playVideo');
   };
 
   const overlayLabel = hasInteracted ? 'Resume' : 'Play Story';
