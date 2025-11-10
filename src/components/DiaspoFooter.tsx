@@ -60,14 +60,16 @@ const DiaspoFooter = () => {
               <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#1f2a37]/70">Global footprint</p>
               <p className="mt-2 text-sm text-[#364256]">🇰🇪 Kenya • 🇺🇬 Uganda • 🇬🇭 Ghana • 🇳🇬 Nigeria • 🇺🇸 United States</p>
             </div>
-            <div className="space-y-3 text-[#47556a]/85">
+            <div className="space-y-4 text-[#47556a]/85">
               <div className="flex items-start gap-3">
                 <Phone className="mt-1 h-5 w-5 flex-shrink-0" />
-                <div className="space-y-1.5 text-sm">
-                  <a href="tel:+16124400892" className="block hover:text-[#1a4dab] transition-colors">+1 612 440 0892 (US)</a>
-                  <a href="tel:+254700771125" className="block hover:text-[#1a4dab] transition-colors">+254 700 771 125 (Kenya)</a>
-                  <a href="tel:+233550425321" className="block hover:text-[#1a4dab] transition-colors">+233 55 042 5321 (Ghana)</a>
-                  <a href="tel:+2348058408055" className="block hover:text-[#1a4dab] transition-colors">+234 805 840 8055 (Nigeria)</a>
+                <div className="grid grid-cols-1 gap-1 text-sm sm:grid-cols-2">
+                  <a href="tel:+16124400892" className="hover:text-[#1a4dab] transition-colors">🇺🇸 United States — +1 612 440 0892</a>
+                  <a href="tel:+254700771125" className="hover:text-[#1a4dab] transition-colors">🇰🇪 Kenya — +254 700 771 125</a>
+                  <a href="tel:+254700773074" className="hover:text-[#1a4dab] transition-colors">🇰🇪 Kenya — +254 700 773 074</a>
+                  <a href="tel:+233550425321" className="hover:text-[#1a4dab] transition-colors">🇬🇭 Ghana — +233 55 042 5321</a>
+                  <a href="tel:+2348058408055" className="hover:text-[#1a4dab] transition-colors">🇳🇬 Nigeria — +234 805 840 8055</a>
+                  <a href="tel:+256760380092" className="hover:text-[#1a4dab] transition-colors">🇺🇬 Uganda — +256 760 380 092</a>
                 </div>
               </div>
               <a href="mailto:hello@diaspocare.com" className="flex items-center gap-3 text-sm hover:text-[#1a4dab] transition-colors">

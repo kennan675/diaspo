@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Play } from 'lucide-react';
 
 interface YouTubeVideoProps {
   videoId: string;
@@ -21,8 +20,7 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({
   const [isVisible, setIsVisible] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [playerReady, setPlayerReady] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
-  const [showOverlay, setShowOverlay] = useState(true);
+  const [hasAutoplayStarted, setHasAutoplayStarted] = useState(false);
 
   const postMessageToPlayer = useCallback(
     (message: Record<string, unknown>) => {
@@ -60,10 +58,9 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({
         const shouldBeVisible = ratio >= 0.25;
         setIsVisible(shouldBeVisible);
 
-        if (!shouldBeVisible && hasInteracted) {
+        if (!shouldBeVisible) {
           queueOrSendCommand('pauseVideo');
           setIsPlaying(false);
-          setShowOverlay(true);
         }
       },
       {
@@ -81,7 +78,7 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({
         observer.unobserve(videoRef.current);
       }
     };
-  }, [hasInteracted, queueOrSendCommand]);
+  }, [queueOrSendCommand]);
 
   // Listen for play/pause events from YouTube
   useEffect(() => {
@@ -97,20 +94,10 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({
         }
 
         if (data?.event === 'onStateChange') {
-          switch (data.info) {
-            case 1: // playing
-              setIsPlaying(true);
-              setShowOverlay(false);
-              setHasInteracted(true);
-              break;
-            case 0: // ended
-            case 2: // paused
-            case 5: // cued
-              setIsPlaying(false);
-              setShowOverlay(true);
-              break;
-            default:
-              break;
+          if (data.info === 1) {
+            setIsPlaying(true);
+          } else if (data.info === 0 || data.info === 2 || data.info === 5) {
+            setIsPlaying(false);
           }
         }
       } catch (e) {
@@ -132,8 +119,7 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({
 
   useEffect(() => {
     if (isVisible && autoplay) {
-      setHasInteracted(true);
-      setShowOverlay(false);
+      setHasAutoplayStarted(true);
       queueOrSendCommand('playVideo');
     }
   }, [autoplay, isVisible, queueOrSendCommand]);
@@ -141,14 +127,6 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({
   const origin = typeof window !== 'undefined' ? window.location.origin : undefined;
   const baseSrc = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&enablejsapi=1&playsinline=1${autoplay ? '&autoplay=1' : ''}`;
   const embedSrc = origin ? `${baseSrc}&origin=${encodeURIComponent(origin)}` : baseSrc;
-
-  const handlePlayClick = () => {
-    setHasInteracted(true);
-    setShowOverlay(false);
-    sendPlayerCommand('playVideo');
-  };
-
-  const overlayLabel = hasInteracted ? 'Resume' : 'Play Story';
 
   return (
     <div 
@@ -173,23 +151,11 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({
             if (!autoplay) {
               queueOrSendCommand('pauseVideo');
             }
+            if (autoplay && !hasAutoplayStarted) {
+              queueOrSendCommand('playVideo');
+            }
           }}
         ></iframe>
-        <div
-          className={`pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(15,23,42,0.4),transparent_68%)] transition-opacity duration-700 ${showOverlay ? 'opacity-100' : 'opacity-0'}`}
-          aria-hidden
-        />
-        <button
-          type="button"
-          aria-label={overlayLabel}
-          onClick={handlePlayClick}
-          className={`group absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[linear-gradient(160deg,rgba(15,23,42,0.55),rgba(15,23,42,0.15))] text-white transition-all duration-600 ease-out ${showOverlay ? 'opacity-100 translate-y-0' : 'pointer-events-none opacity-0 translate-y-3'}`}
-        >
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-primary shadow-[0_1.5rem_3.5rem_rgba(15,23,42,0.35)] transition-transform duration-300 group-hover:scale-110">
-            <Play className="h-7 w-7" />
-          </span>
-          <span className="text-xs font-semibold uppercase tracking-[0.4em]">{overlayLabel}</span>
-        </button>
       </div>
     </div>
   );
