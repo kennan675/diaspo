@@ -17,9 +17,10 @@ const HomeHero = () => {
           alt="Warm African caregiving scene"
           className="h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(112deg,rgba(7,14,34,0.94)0%,rgba(16,38,82,0.82)55%,rgba(27,60,123,0.65)100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_-10%,rgba(255,255,255,0.25),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_120%,rgba(255,68,79,0.2),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(112deg,rgba(7,14,34,0.95)0%,rgba(16,38,82,0.87)55%,rgba(27,60,123,0.7)100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_-10%,rgba(255,255,255,0.22),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(7,14,34,0.88),rgba(7,14,34,0.55)45%,transparent_68%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_115%,rgba(255,68,79,0.18),transparent_60%)]" />
       </div>
 
       <div className="container relative z-10 mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
