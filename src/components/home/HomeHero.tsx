@@ -8,7 +8,7 @@ const HomeHero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] overflow-hidden bg-[#0b1a39] py-24 sm:py-28 lg:py-32"
+      className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#0b1a39]"
       data-animate="fade-up"
     >
       <div className="absolute inset-0">
@@ -22,7 +22,7 @@ const HomeHero = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_120%,rgba(255,68,79,0.2),transparent_60%)]" />
       </div>
 
-      <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="container relative z-10 mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.7fr)] lg:items-center">
           <div className="space-y-10 text-white">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-white/90 backdrop-blur">
