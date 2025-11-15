@@ -28,19 +28,20 @@ const HomeHero = () => {
       <div className="container relative z-10 mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.7fr)] lg:items-center">
           <div className="space-y-10 text-white">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-white/90 backdrop-blur">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#1A4DAB]/20 px-6 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-white backdrop-blur">
               <Sparkles className="h-4 w-4" />
               DiaspoCare • Cross-border care infrastructure
             </span>
 
             <div className="space-y-5">
-              <p className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white shadow-[0_12px_35px_-20px_rgba(255,255,255,0.6)]">
+              <p className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-[#1A4DAB] shadow-[0_18px_40px_-28px_rgba(26,77,171,0.8)]">
                 Caring from afar, made simple
               </p>
               <h1 className="font-sans text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.5rem]">
-                Fund, coordinate, and verify healthcare for loved ones back home
+                <span className="block text-white">Fund, coordinate, and verify healthcare</span>
+                <span className="mt-1 block text-[#A9C2FF]">for loved ones back home</span>
               </h1>
-              <p className="max-w-2xl text-lg text-white/80 sm:text-xl">
+              <p className="max-w-2xl text-lg text-white/85 sm:text-xl">
                 DiaspoCare connects diaspora sponsors with vetted hospitals, pharmacies, and clinicians across East and West Africa. Load a secure family wallet, approve care plans, and receive verified updates the moment services are delivered.
               </p>
             </div>
@@ -52,7 +53,7 @@ const HomeHero = () => {
             </div>
 
             <div className="mt-10 space-y-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/80">Download our app</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#C8D8FF]">Download our app</p>
               <div className="flex flex-wrap gap-4">
                 <a
                   href="https://play.google.com/store/apps/details?id=com.diaspocare"
