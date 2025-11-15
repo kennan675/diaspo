@@ -8,7 +8,7 @@ const HomeHero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#0b1a39]"
+      className="relative flex min-h-screen w-full items-center overflow-hidden bg-transparent"
       data-animate="fade-up"
     >
       <div className="absolute inset-0">
@@ -23,7 +23,6 @@ const HomeHero = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(7,14,34,0.88),rgba(7,14,34,0.55)45%,transparent_68%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_115%,rgba(255,68,79,0.18),transparent_60%)]" />
         </div>
-        <div className="absolute inset-0 rounded-[64px] border border-white/10/40" />
       </div>
 
       <div className="container relative z-10 mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
