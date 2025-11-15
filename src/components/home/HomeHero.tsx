@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Shield, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/family-care.jpg";
+import heroImage from "@/assets/home-hero-bbbb.png";
 
 const HomeHero = () => {
   return (
