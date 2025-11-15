@@ -17,16 +17,9 @@ const HomeHero = () => {
           alt="Warm African caregiving scene"
           className="h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(7,14,34,0.92)0%,rgba(14,32,77,0.78)52%,rgba(24,51,112,0.6)100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_-10%,rgba(255,255,255,0.22),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_120%,rgba(255,68,79,0.18),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -top-24 -left-28 h-[320px] w-[320px] rounded-[48px] border border-white/20/50 bg-white/4 blur-3xl" />
-          <div className="absolute bottom-[-18%] right-[-12%] h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(255,68,79,0.28),rgba(255,68,79,0)_68%)] blur-[160px]" />
-          <div className="absolute top-12 right-[18%] h-[420px] w-[420px] rotate-6 rounded-[56px] border border-white/12 bg-white/5 backdrop-blur-xl" />
-          <div className="absolute inset-y-0 left-[52%] hidden w-px bg-gradient-to-b from-white/0 via-white/20 to-white/0 lg:block" />
-          <div className="absolute inset-x-0 bottom-[12%] hidden h-px bg-gradient-to-r from-white/0 via-white/25 to-white/0 lg:block" />
-        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(112deg,rgba(7,14,34,0.94)0%,rgba(16,38,82,0.82)55%,rgba(27,60,123,0.65)100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_-10%,rgba(255,255,255,0.25),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_120%,rgba(255,68,79,0.2),transparent_60%)]" />
       </div>
 
       <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -62,12 +55,17 @@ const HomeHero = () => {
                   href="https://play.google.com/store/apps/details?id=com.diaspocare"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 rounded-2xl bg-[#1a73e8] px-4 py-3 text-white shadow-[0_20px_60px_-35px_rgba(15,23,42,0.85)] ring-1 ring-white/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#1666ce]"
+                  className="flex items-center gap-3 rounded-2xl bg-[#000000] px-4 py-3 text-white shadow-[0_20px_60px_-35px_rgba(15,23,42,0.85)] ring-1 ring-white/15 transition-all duration-300 hover:-translate-y-1 hover:bg-[#111111]"
                 >
-                  <svg className="h-7 w-7" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M325.3 234.3 104.6 13.7C99.3 8.4 93.8 5.4 88.3 5.4c-13.5 0-24.3 13-24.3 32.3v436.6c0 19.3 10.8 32.3 24.3 32.3 5.5 0 11-3 16.3-8.3l220.7-220.6c5-5 7.6-11.7 7.6-19.3 0-7.6-2.6-14.3-7.6-19.1zM371.3 286.2l-38.4-38.4L448 132.6c16-16 33.6-11 33.6 11.2v224.4c0 22.1-17.6 27.2-33.6 11.2z"/></svg>
+                  <svg className="h-7 w-7" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#00A0FF" d="M47.6 4.5C37.2-1.2 28.4.7 28.4 16.7v478.6c0 16 8.8 17.9 19.2 12.2l266.3-153.6-96.6-110.8z" />
+                    <path fill="#00D1FF" d="M406.6 315.6 217.3 242l96.6 110.8 92.7-52.5z" />
+                    <path fill="#FFE45C" d="M217.3 242 47.6 4.5l266.7 156.4 92.3 51.8z" />
+                    <path fill="#FF3A44" d="M406.6 212.7 314.3 160.4 217.3 242l189.3 73.6c25.4-14 25.4-88.9 0-102.9z" />
+                  </svg>
                   <div className="text-left">
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">Get it on</p>
-                    <p className="text-sm font-semibold">Google Play</p>
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-white/60">Get it on</p>
+                    <p className="text-sm font-semibold tracking-wide">Google Play</p>
                   </div>
                 </a>
                 <a
