@@ -17,8 +17,16 @@ const HomeHero = () => {
           alt="Warm African caregiving scene"
           className="h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(11,26,57,0.78)0%,rgba(11,26,57,0.55)48%,rgba(11,26,57,0.45)100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.15),transparent_65%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(7,14,34,0.92)0%,rgba(14,32,77,0.78)52%,rgba(24,51,112,0.6)100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_-10%,rgba(255,255,255,0.22),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_120%,rgba(255,68,79,0.18),transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute -top-24 -left-28 h-[320px] w-[320px] rounded-[48px] border border-white/20/50 bg-white/4 blur-3xl" />
+          <div className="absolute bottom-[-18%] right-[-12%] h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(255,68,79,0.28),rgba(255,68,79,0)_68%)] blur-[160px]" />
+          <div className="absolute top-12 right-[18%] h-[420px] w-[420px] rotate-6 rounded-[56px] border border-white/12 bg-white/5 backdrop-blur-xl" />
+          <div className="absolute inset-y-0 left-[52%] hidden w-px bg-gradient-to-b from-white/0 via-white/20 to-white/0 lg:block" />
+          <div className="absolute inset-x-0 bottom-[12%] hidden h-px bg-gradient-to-r from-white/0 via-white/25 to-white/0 lg:block" />
+        </div>
       </div>
 
       <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -30,7 +38,9 @@ const HomeHero = () => {
             </span>
 
             <div className="space-y-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/70">Caring from afar, made simple</p>
+              <p className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white shadow-[0_12px_35px_-20px_rgba(255,255,255,0.6)]">
+                Caring from afar, made simple
+              </p>
               <h1 className="font-sans text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.5rem]">
                 Fund, coordinate, and verify healthcare for loved ones back home
               </h1>
@@ -43,14 +53,6 @@ const HomeHero = () => {
               <Button asChild variant="hero" size="lg" className="w-full sm:w-auto">
                 <Link to="/care-coordination">Get started</Link>
               </Button>
-              <Button
-                asChild
-                variant="glass"
-                size="lg"
-                className="w-full border border-white/40 text-white hover:border-white hover:text-white sm:w-auto"
-              >
-                <Link to="/contact">Book a demo</Link>
-              </Button>
             </div>
 
             <div className="mt-10 space-y-4">
@@ -60,11 +62,11 @@ const HomeHero = () => {
                   href="https://play.google.com/store/apps/details?id=com.diaspocare"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3 text-white shadow-[0_20px_60px_-35px_rgba(15,23,42,0.75)] ring-1 ring-white/15 transition-all duration-300 hover:-translate-y-1 hover:bg-white/15"
+                  className="flex items-center gap-3 rounded-2xl bg-[#1a73e8] px-4 py-3 text-white shadow-[0_20px_60px_-35px_rgba(15,23,42,0.85)] ring-1 ring-white/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#1666ce]"
                 >
-                  <svg className="h-7 w-7" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M99.9 8.7C89.3 3.2 79.7 0 72.2 0 53.7 0 40 15.9 40 40v432c0 24.1 12.8 40 31.9 40 7.6 0 17.4-3.3 27.9-8.8L337.9 288 99.9 8.7zm270.2 173.5l-81.7 80.6 81.7 80.6L464.6 256 370.1 182.2z"/></svg>
+                  <svg className="h-7 w-7" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M325.3 234.3 104.6 13.7C99.3 8.4 93.8 5.4 88.3 5.4c-13.5 0-24.3 13-24.3 32.3v436.6c0 19.3 10.8 32.3 24.3 32.3 5.5 0 11-3 16.3-8.3l220.7-220.6c5-5 7.6-11.7 7.6-19.3 0-7.6-2.6-14.3-7.6-19.1zM371.3 286.2l-38.4-38.4L448 132.6c16-16 33.6-11 33.6 11.2v224.4c0 22.1-17.6 27.2-33.6 11.2z"/></svg>
                   <div className="text-left">
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-white/60">Get it on</p>
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">Get it on</p>
                     <p className="text-sm font-semibold">Google Play</p>
                   </div>
                 </a>
