@@ -5,10 +5,12 @@ import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import FloatingCTA from "@/components/FloatingCTA";
 import HomeHero from "@/components/home/HomeHero";
-import HomeStats from "@/components/home/HomeStats";
-import HomeVideo from "@/components/home/HomeVideo";
-import HomeCareJourney from "@/components/home/HomeCareJourney";
-import PartnersSection from "@/components/PartnersSection";
+import HomeWhyDiaspoCare from "@/components/home/HomeWhyDiaspoCare";
+import HomeHowItWorks from "@/components/home/HomeHowItWorks";
+import HomeHPodSection from "@/components/home/HomeHPodSection";
+import HomeSecondOpinions from "@/components/home/HomeSecondOpinions";
+import HomeWallets from "@/components/home/HomeWallets";
+import HomeBuiltByDiaspora from "@/components/home/HomeBuiltByDiaspora";
 import TawkWidget from "@/components/TawkWidget";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -27,10 +29,12 @@ const AppLayout = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <HomeHero />
         </div>
-        <HomeStats />
-        <HomeVideo />
-        <HomeCareJourney />
-        <PartnersSection />
+        <HomeWhyDiaspoCare />
+        <HomeHowItWorks />
+        <HomeHPodSection />
+        <HomeSecondOpinions />
+        <HomeWallets />
+        <HomeBuiltByDiaspora />
       </main>
       <Footer />
       <FloatingCTA />
