@@ -19,7 +19,7 @@ const HomeHero = () => {
       data-animate="fade-up"
     >
       <div className="absolute inset-0">
-        <div className="absolute inset-0 overflow-hidden rounded-[64px]">
+        <div className="absolute inset-0 overflow-hidden">
           <img
             src={heroImage}
             alt="Warm African caregiving scene"
