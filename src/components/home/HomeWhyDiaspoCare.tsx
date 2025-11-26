@@ -57,7 +57,7 @@ const HomeWhyDiaspoCare = () => {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[32px] border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-secondary/10 p-10 shadow-large">
+          <div className="relative overflow-hidden rounded-[32px] border border-primary/20 bg-gradient-to-br from-primary/90 via-primary/70 to-[#0A1533] p-10 shadow-large">
             <div className="absolute -top-24 -right-20 h-64 w-64 rounded-full bg-primary/15 blur-3xl" />
             <div className="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-secondary/20 blur-3xl" />
             <div className="relative space-y-6 text-white">
