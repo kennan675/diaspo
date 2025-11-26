@@ -26,9 +26,7 @@ const AppLayout = () => {
       />
       <Navigation />
       <main className="space-y-24 pb-24 pt-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <HomeHero />
-        </div>
+        <HomeHero />
         <HomeWhyDiaspoCare />
         <HomeHowItWorks />
         <HomeHPodSection />
