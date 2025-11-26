@@ -1,4 +1,7 @@
 import { Fingerprint, Hospital, Receipt, ShieldCheck } from "lucide-react";
+import { motion } from "framer-motion";
+
+import { TextReveal } from "@/components/animations/TextReveal";
 
 const STEPS = [
   {
@@ -34,23 +37,43 @@ const HomeHowItWorks = () => {
       <div className="absolute inset-y-0 right-0 h-[520px] w-[520px] translate-x-1/3 rounded-full bg-primary/10 blur-[180px]" />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-[0.32em] text-primary/80">
+        <motion.div
+          className="mx-auto max-w-4xl text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <motion.span
+            className="text-sm font-semibold uppercase tracking-[0.32em] text-primary/80"
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
+          >
             How DiaspoCare Works
-          </span>
-          <h2 className="mt-5 font-display text-4xl font-bold text-foreground sm:text-5xl lg:text-[3.2rem]">
-            Transparent, accountable, immediate care
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-foreground/70 sm:text-xl">
+          </motion.span>
+          <TextReveal text="Transparent, accountable, immediate care" className="mt-5 block font-display text-4xl font-bold text-foreground sm:text-5xl lg:text-[3.2rem]" />
+          <motion.p
+            className="mt-6 text-lg leading-8 text-foreground/70 sm:text-xl"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
             This is diaspora-powered healthcare — documented, direct, and delivered with proof every single time.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2">
           {STEPS.map(({ title, description, icon: Icon }, index) => (
-            <article
+            <motion.article
               key={title}
-              className="group relative overflow-hidden rounded-[28px] border border-border/60 bg-white p-8 shadow-soft transition-transform duration-500 hover:-translate-y-2 hover:shadow-large"
+              className="group relative overflow-hidden rounded-[28px] border border-border/60 bg-white/90 p-8 shadow-soft backdrop-blur transition-transform duration-500 hover:-translate-y-2 hover:shadow-large"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/60 to-secondary/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="relative space-y-5 text-left">
@@ -65,12 +88,20 @@ const HomeHowItWorks = () => {
                     <Icon className="h-6 w-6" />
                   </span>
                   <div className="space-y-3">
-                    <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{title}</h3>
-                    <p className="text-base leading-7 text-foreground/70">{description}</p>
+                    <TextReveal text={title} className="text-xl font-semibold text-foreground sm:text-2xl" />
+                    <motion.p
+                      className="text-base leading-7 text-foreground/70"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.4 }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
+                    >
+                      {description}
+                    </motion.p>
                   </div>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
