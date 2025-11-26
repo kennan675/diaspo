@@ -50,7 +50,7 @@ const HomeHowItWorks = () => {
           {STEPS.map(({ title, description, icon: Icon }, index) => (
             <article
               key={title}
-              className="group relative overflow-hidden rounded-[28px] border border-border/60 bg-white/90 p-8 shadow-soft backdrop-blur transition-transform duration-500 hover:-translate-y-2 hover:shadow-large"
+              className="group relative overflow-hidden rounded-[28px] border border-border/60 bg-white p-8 shadow-soft transition-transform duration-500 hover:-translate-y-2 hover:shadow-large"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/60 to-secondary/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="relative space-y-5 text-left">

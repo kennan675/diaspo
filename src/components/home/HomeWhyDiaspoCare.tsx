@@ -36,7 +36,7 @@ const HomeWhyDiaspoCare = () => {
               </p>
             </div>
 
-            <div className="space-y-5 rounded-[28px] border border-primary/15 bg-white/70 p-8 shadow-soft backdrop-blur">
+            <div className="space-y-5 rounded-[28px] border border-primary/15 bg-white p-8 shadow-soft">
               <div className="flex items-center gap-3 text-primary">
                 <Sparkles className="h-5 w-5" />
                 <p className="text-sm font-semibold uppercase tracking-[0.3em]">The frustrations we fixed</p>
@@ -57,7 +57,7 @@ const HomeWhyDiaspoCare = () => {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[32px] border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-secondary/10 p-10 shadow-large backdrop-blur">
+          <div className="relative overflow-hidden rounded-[32px] border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-secondary/10 p-10 shadow-large">
             <div className="absolute -top-24 -right-20 h-64 w-64 rounded-full bg-primary/15 blur-3xl" />
             <div className="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-secondary/20 blur-3xl" />
             <div className="relative space-y-6 text-white">

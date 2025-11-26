@@ -31,7 +31,7 @@ const HomeSecondOpinions = () => {
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
           <div className="space-y-8">
-            <div className="rounded-[28px] border border-primary/15 bg-white/85 p-8 shadow-soft backdrop-blur">
+            <div className="rounded-[28px] border border-primary/15 bg-white p-8 shadow-soft">
               <div className="flex items-center gap-3 text-primary">
                 <Globe2 className="h-5 w-5" />
                 <p className="text-sm font-semibold uppercase tracking-[0.32em]">Where our clinicians live</p>
@@ -46,7 +46,7 @@ const HomeSecondOpinions = () => {
               </div>
             </div>
 
-            <div className="rounded-[28px] border border-secondary/30 bg-secondary/5 p-8 shadow-soft backdrop-blur-lg">
+            <div className="rounded-[28px] border border-secondary/30 bg-secondary/5 p-8 shadow-soft">
               <div className="flex items-center gap-3 text-secondary">
                 <Microscope className="h-5 w-5" />
                 <p className="text-sm font-semibold uppercase tracking-[0.32em]">What diaspora doctors can do</p>
@@ -63,7 +63,7 @@ const HomeSecondOpinions = () => {
           </div>
 
           <div className="relative overflow-hidden rounded-[36px] border border-primary/20 bg-gradient-to-br from-primary/90 via-primary/70 to-[#0A1533] p-10 text-white shadow-[0_60px_120px_-65px_rgba(7,14,34,0.85)]">
-            <div className="absolute -top-28 -right-20 h-64 w-64 rounded-full bg-white/15 blur-3xl" />
+            <div className="absolute -top-28 -right-20 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
             <div className="absolute -bottom-32 -left-32 h-72 w-72 rounded-full bg-secondary/40 blur-[160px]" />
             <div className="relative space-y-6">
               <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/70">
