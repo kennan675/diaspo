@@ -25,7 +25,7 @@ const AppLayout = () => {
         widgetId={import.meta.env.VITE_TAWK_WIDGET_ID ?? "1j9esftho"}
       />
       <Navigation />
-      <main className="space-y-24 pb-12">
+      <main className="space-y-24 pb-0">
         <HomeHero />
         <HomeWhyDiaspoCare />
         <HomeHowItWorks />
