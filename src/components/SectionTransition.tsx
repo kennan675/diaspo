@@ -6,13 +6,13 @@ type SectionTransitionProps = {
 
 const PALETTES = {
   dark: {
-    base: "bg-gradient-to-b from-[#050c1d] via-[#07122a] to-[#020612]",
-    glow: "bg-[#3c82ff]/25",
-    stroke: "from-white/5 via-white/25 to-white/5",
+    base: "bg-gradient-to-b from-transparent via-[#061534]/15 to-transparent",
+    glow: "bg-[#3c82ff]/15",
+    stroke: "from-white/10 via-white/35 to-white/10",
   },
   light: {
-    base: "bg-gradient-to-b from-transparent via-white/65 to-[#eef2ff]",
-    glow: "bg-[#7f5dff]/20",
+    base: "bg-gradient-to-b from-transparent via-white/50 to-transparent",
+    glow: "bg-[#7f5dff]/10",
     stroke: "from-[#0b1a39]/5 via-[#0b1a39]/20 to-[#0b1a39]/5",
   },
 };
@@ -24,10 +24,10 @@ const SectionTransition = ({ variant = "dark" }: SectionTransitionProps) => {
   return (
     <div className="relative h-24 w-full overflow-hidden" aria-hidden>
       <div className={`absolute inset-0 ${palette.base}`} />
-      <div className={`absolute inset-0 blur-3xl opacity-80 ${palette.glow} animate-[pulse_8s_ease-in-out_infinite]`} />
+      <div className={`absolute inset-0 blur-3xl opacity-60 ${palette.glow} animate-[pulse_8s_ease-in-out_infinite]`} />
 
       <svg
-        className="absolute inset-0 h-full w-full opacity-70"
+        className="absolute inset-0 h-full w-full opacity-60"
         preserveAspectRatio="none"
         viewBox="0 0 1440 320"
       >

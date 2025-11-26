@@ -35,7 +35,6 @@ export const TextReveal = ({ text, className = "", delay = 0 }: TextRevealProps)
 
   return (
     <motion.div
-      style={{ display: "inline-block", whiteSpace: "pre" }}
       variants={container}
       initial="hidden"
       animate="visible"
@@ -53,7 +52,7 @@ export const TextReveal = ({ text, className = "", delay = 0 }: TextRevealProps)
             transition: { duration: 0.3 },
           }}
         >
-          {letter === " " ? "\u00A0" : letter}
+          {letter === " " ? " " : letter}
         </motion.span>
       ))}
     </motion.div>
