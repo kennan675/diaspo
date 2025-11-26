@@ -11,6 +11,7 @@ import HomeHPodSection from "@/components/home/HomeHPodSection";
 import HomeSecondOpinions from "@/components/home/HomeSecondOpinions";
 import HomeWallets from "@/components/home/HomeWallets";
 import HomeBuiltByDiaspora from "@/components/home/HomeBuiltByDiaspora";
+import SectionTransition from "@/components/SectionTransition";
 import TawkWidget from "@/components/TawkWidget";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -25,13 +26,19 @@ const AppLayout = () => {
         widgetId={import.meta.env.VITE_TAWK_WIDGET_ID ?? "1j9esftho"}
       />
       <Navigation />
-      <main className="space-y-24 pb-0">
+      <main className="pb-0">
         <HomeHero />
+        <SectionTransition variant="dark" />
         <HomeWhyDiaspoCare />
+        <SectionTransition variant="light" />
         <HomeHowItWorks />
+        <SectionTransition variant="dark" />
         <HomeHPodSection />
+        <SectionTransition variant="light" />
         <HomeSecondOpinions />
+        <SectionTransition variant="dark" />
         <HomeWallets />
+        <SectionTransition variant="light" />
         <HomeBuiltByDiaspora />
       </main>
       <Footer />
