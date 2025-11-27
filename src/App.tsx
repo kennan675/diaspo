@@ -11,6 +11,7 @@ import InitialLoader from "@/components/InitialLoader";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Impact from "./pages/Impact";
+import Products from "./pages/Products";
 import HPodKiosk from "./pages/HPodKiosk";
 import Contact from "./pages/Contact";
 import CareCoordination from "./pages/CareCoordination";
@@ -48,6 +49,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/products" element={<Products />} />
                 <Route path="/impact" element={<Impact />} />
                 <Route path="/hpod-kiosk" element={<HPodKiosk />} />
                 <Route path="/contact" element={<Contact />} />

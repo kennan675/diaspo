@@ -80,6 +80,10 @@ const Navigation = () => {
               Home
             </Link>
 
+            <Link to="/products" className="text-sm font-semibold text-foreground/80 transition-colors duration-300 hover:text-primary">
+              Products
+            </Link>
+
             <div
               ref={dropdownRef}
               className="relative"
@@ -160,6 +164,10 @@ const Navigation = () => {
             <nav className="space-y-4 px-6 text-sm font-semibold text-foreground/80">
               <Link to="/" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
                 Home
+              </Link>
+
+              <Link to="/products" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
+                Products
               </Link>
 
               <div className="space-y-2">

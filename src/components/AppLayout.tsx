@@ -6,7 +6,6 @@ import BackToTop from "@/components/BackToTop";
 import FloatingCTA from "@/components/FloatingCTA";
 import HomeHero from "@/components/home/HomeHero";
 import HomeWhyDiaspoCare from "@/components/home/HomeWhyDiaspoCare";
-import HomeProductShowcase from "@/components/home/HomeProductShowcase";
 import HomeHowItWorks from "@/components/home/HomeHowItWorks";
 import HomeHPodSection from "@/components/home/HomeHPodSection";
 import HomeSecondOpinions from "@/components/home/HomeSecondOpinions";
@@ -30,19 +29,17 @@ const AppLayout = () => {
       <Navigation />
       <main className="pb-0">
         <HomeHero />
-        <SectionTransition variant="dark" />
-        <HomeProductShowcase />
         <SectionTransition variant="light" />
         <HomeWhyDiaspoCare />
-        <SectionTransition variant="light" />
+        <SectionTransition variant="dark" />
         <HomeHowItWorks />
-        <SectionTransition variant="dark" />
+        <SectionTransition variant="light" />
         <HomeHPodSection />
-        <SectionTransition variant="light" />
-        <HomeSecondOpinions />
         <SectionTransition variant="dark" />
-        <HomeWallets />
+        <HomeSecondOpinions />
         <SectionTransition variant="light" />
+        <HomeWallets />
+        <SectionTransition variant="dark" />
         <HomePricing />
         <SectionTransition variant="light" />
         <HomeBuiltByDiaspora />
