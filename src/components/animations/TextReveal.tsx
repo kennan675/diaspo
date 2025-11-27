@@ -43,16 +43,16 @@ export const TextReveal = ({ text, className = "", delay = 0 }: TextRevealProps)
     >
       {letters.map((letter, index) => (
         <motion.span
-          key={index}
+          key={`${letter}-${index}`}
           variants={child}
-          style={{ display: "inline-block" }}
+          style={{ display: "inline-block", whiteSpace: "pre" }}
           whileHover={{
             scale: 1.2,
             color: "hsl(var(--primary))",
             transition: { duration: 0.3 },
           }}
         >
-          {letter === " " ? " " : letter}
+          {letter === " " ? "\u00A0" : letter}
         </motion.span>
       ))}
     </motion.div>

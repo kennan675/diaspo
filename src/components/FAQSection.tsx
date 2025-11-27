@@ -1,85 +1,83 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
 const FAQS = [
   {
-    question: 'How does DiaspoCare work?',
-    answer: 'DiaspoCare connects you with verified healthcare providers in your family\'s home country. Simply register, tell us your needs, and we match you with the right providers and coordinate all services.',
+    question: "How does DiaspoCare guarantee transparency?",
+    answer: "Bills come directly from providers, and payments go straight to verified clinics or pharmacies. You see the line items before approving anything.",
   },
   {
-    question: 'Which countries do you serve?',
-    answer: 'We currently operate in 15+ countries across Africa, Asia, and Latin America. Our network is constantly expanding to serve more diaspora communities.',
+    question: "What is an hPOD?",
+    answer: "An hPOD is a 15-minute diagnostic pod with onsite labs, digital results, and instant updates to diaspora sponsors.",
   },
   {
-    question: 'How much does it cost?',
-    answer: 'Pricing varies by service and location. We offer transparent pricing with no hidden fees. Contact us for a personalized quote based on your needs.',
+    question: "Can diaspora doctors participate?",
+    answer: "Yes. Through DiaspoCare’s second-opinion network, diaspora clinicians review data, validate care, and guide treatment remotely.",
   },
   {
-    question: 'Is my data secure?',
-    answer: 'Absolutely. We are HIPAA compliant and use bank-level encryption. Your family\'s health information is protected with the highest security standards.',
+    question: "Can I make micropayments?",
+    answer: "Absolutely. Send as little as $1–$5 directly to a provider or fill an invoice in parts without losing visibility.",
   },
   {
-    question: 'Can I track appointments in real-time?',
-    answer: 'Yes! Our platform provides real-time updates on appointments, transportation, and service delivery. You\'ll receive notifications at every step.',
+    question: "What if I support many relatives?",
+    answer: "Create a Family Wallet so siblings contribute together, automate deposits, and keep every expense transparent.",
   },
   {
-    question: 'What if I need emergency care?',
-    answer: 'We offer 24/7 emergency coordination services. Our team can arrange urgent care, ambulance services, and hospital admissions when needed.',
+    question: "How does a Community Wallet work?",
+    answer: "Communities deposit funds, 95% goes to real care, and DiaspoCare issues verifiable impact reports for every disbursement.",
+  },
+  {
+    question: "Where is DiaspoCare available?",
+    answer: "Piloted in Kenya and expanding across Somalia, Ethiopia, Nigeria, and Ghana with diaspora oversight.",
+  },
+  {
+    question: "Do you support chronic care?",
+    answer: "Yes. Condition Wallets bundle medication, diagnostics, and diaspora clinician oversight into predictable monthly plans.",
   },
 ];
 
-const FAQSection: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+const FAQSection = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 px-6 sm:px-12 md:px-20 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
-          <div className="inline-block px-4 py-2 bg-[#007FFF]/10 rounded-full">
-            <span className="text-[#007FFF] font-semibold text-sm">FAQ</span>
-          </div>
-          
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#3A3F46] tracking-tight">
-            Frequently Asked <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">Questions</span>
-          </h2>
-          
-          <p className="text-xl text-[#7A8A9E]">
-            Everything you need to know about DiaspoCare
-          </p>
+    <section id="faq" className="relative overflow-hidden bg-[#f7f8fb] py-24 px-6 sm:px-12 md:px-20" data-animate="fade-up">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,#ffffff,transparent_60%)]" />
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-16 text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#0f172a]/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+            FAQ
+          </span>
+          <h2 className="mt-6 text-4xl font-semibold text-slate-900 sm:text-5xl">Straight answers. Zero fluff.</h2>
+          <p className="mt-4 text-lg text-slate-600">The questions diaspora families ask before trusting a new healthcare system.</p>
         </div>
 
         <div className="space-y-4">
-          {FAQS.map((faq, index) => (
-            <div 
-              key={index}
-              className="rounded-2xl border-2 border-[#007FFF]/10 hover:border-[#007FFF]/30 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden transition-all"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#007FFF]/5 transition-colors"
+          {FAQS.map((faq, index) => {
+            const expanded = openIndex === index;
+            return (
+              <article
+                key={faq.question}
+                className={`rounded-3xl border ${expanded ? "border-[#ff444f] bg-white" : "border-slate-200 bg-white/80"} p-6 shadow-[0_30px_60px_-50px_rgba(15,23,42,0.6)] transition-all`}
               >
-                <span className="text-lg font-bold text-[#3A3F46] pr-4">{faq.question}</span>
-                <svg 
-                  className={`w-6 h-6 text-[#007FFF] transition-transform flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-between gap-6 text-left"
+                  onClick={() => setOpenIndex(expanded ? null : index)}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              {openIndex === index && (
-                <div className="px-6 pb-5 text-[#7A8A9E] leading-relaxed animate-fade-in">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
-          ))}
+                  <span className="text-lg font-semibold text-slate-900">{faq.question}</span>
+                  <span className={`text-2xl font-bold text-[#ff444f] transition-transform ${expanded ? "rotate-45" : ""}`}>+</span>
+                </button>
+                {expanded && <p className="mt-4 text-base text-slate-600">{faq.answer}</p>}
+              </article>
+            );
+          })}
         </div>
 
-        <div className="mt-12 text-center p-8 rounded-2xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5 border border-[#007FFF]/20">
-          <p className="text-lg text-[#3A3F46] mb-4">Still have questions?</p>
-          <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#283692] to-[#007FFF] text-white font-semibold hover:shadow-lg hover:scale-105 transition-all">
+        <div className="mt-12 flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white/90 p-8 text-center shadow-inner sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">Still need clarity?</p>
+            <p className="mt-2 text-lg text-slate-700">Ping our care team and get an answer in minutes.</p>
+          </div>
+          <button className="rounded-2xl border border-[#ff444f] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#ff444f] transition-colors hover:bg-[#ff444f]/10">
             Contact Support →
           </button>
         </div>

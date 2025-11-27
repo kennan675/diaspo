@@ -6,10 +6,12 @@ import BackToTop from "@/components/BackToTop";
 import FloatingCTA from "@/components/FloatingCTA";
 import HomeHero from "@/components/home/HomeHero";
 import HomeWhyDiaspoCare from "@/components/home/HomeWhyDiaspoCare";
+import HomeProductShowcase from "@/components/home/HomeProductShowcase";
 import HomeHowItWorks from "@/components/home/HomeHowItWorks";
 import HomeHPodSection from "@/components/home/HomeHPodSection";
 import HomeSecondOpinions from "@/components/home/HomeSecondOpinions";
 import HomeWallets from "@/components/home/HomeWallets";
+import HomePricing from "@/components/home/HomePricing";
 import HomeBuiltByDiaspora from "@/components/home/HomeBuiltByDiaspora";
 import SectionTransition from "@/components/SectionTransition";
 import TawkWidget from "@/components/TawkWidget";
@@ -29,6 +31,8 @@ const AppLayout = () => {
       <main className="pb-0">
         <HomeHero />
         <SectionTransition variant="dark" />
+        <HomeProductShowcase />
+        <SectionTransition variant="light" />
         <HomeWhyDiaspoCare />
         <SectionTransition variant="light" />
         <HomeHowItWorks />
@@ -38,6 +42,8 @@ const AppLayout = () => {
         <HomeSecondOpinions />
         <SectionTransition variant="dark" />
         <HomeWallets />
+        <SectionTransition variant="light" />
+        <HomePricing />
         <SectionTransition variant="light" />
         <HomeBuiltByDiaspora />
       </main>

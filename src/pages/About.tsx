@@ -1,73 +1,139 @@
-import React from 'react';
-import AboutSection from '@/components/AboutSection';
-import YouTubeVideo from '@/components/YouTubeVideo';
-import PageLayout from '@/components/layouts/PageLayout';
+import { Button } from "@/components/ui/button";
+import PageLayout from "@/components/layouts/PageLayout";
 
-const About: React.FC = () => {
+const SHARED_REALITY = [
+  "“Can you send money?”",
+  "Vague symptoms",
+  "No records",
+  "Unclear diagnoses",
+  "Money disappearing",
+  "Feeling helpless",
+  "Feeling guilty",
+];
+
+const VALUES = ["Transparency", "Dignity", "Community", "Quality", "Accountability", "Innovation"];
+
+const About = () => {
   return (
     <PageLayout>
       <section
-        className="py-16 px-6 sm:px-12 md:px-20 bg-gradient-to-b from-white to-[#283692]/5"
+        className="relative overflow-hidden bg-gradient-to-br from-[#050915] via-[#0b1a33] to-[#091124] py-24 px-6 sm:px-12 md:px-20 text-white"
         data-animate="fade-up"
       >
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-10 text-center">
-            <div className="mb-4 inline-block rounded-full bg-[#283692]/10 px-4 py-2">
-              <span className="text-sm font-semibold text-[#283692]">🎥 WATCH OUR STORY</span>
-            </div>
-            <h2 className="mb-4 text-4xl font-extrabold text-[#3A3F46]">
-              The <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">DiaspoCare Story</span>
-            </h2>
-            <p className="text-xl text-[#7A8A9E]">Discover how we're transforming healthcare for diaspora families</p>
-          </div>
-
-          <YouTubeVideo
-            videoId="ldJ0dD1aqj8"
-            title="The DiaspoCare Story"
-            autoplay={false}
-          />
-        </div>
-      </section>
-
-      <div data-animate="fade-up">
-        <AboutSection />
-      </div>
-
-      <section
-        className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5"
-        data-animate="fade-up"
-      >
-        <div className="mx-auto max-w-7xl">
-          <h2 className="mb-12 text-center text-4xl font-extrabold text-[#3A3F46]">
-            Through the DiaspoCare App
-          </h2>
-          <div className="rounded-3xl bg-white p-12 shadow-xl">
-            <p className="mb-6 text-lg leading-relaxed text-[#7A8A9E]">
-              The African diaspora and individuals living away from their loved ones can connect with the pharmacists and clinicians who look after their loved ones back home, enabling them to pay for the services directly.
-            </p>
-            <p className="text-lg leading-relaxed text-[#7A8A9E]">
-              We continue to leverage technology to deliver effective and seamless healthcare solutions that are of high quality and standard, affordable and cost-effective, built for Africans to address core health issues, and include the uninsured or under-insured populations.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section
-        className="py-20 px-6 sm:px-12 md:px-20 bg-gradient-to-br from-[#283692] to-[#007FFF] text-white"
-        data-animate="fade-up"
-      >
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-6 text-4xl font-extrabold">Ready to Get Started?</h2>
-          <p className="mb-8 text-xl text-white/90">
-            Join thousands of diaspora families who trust DiaspoCare for their loved ones' healthcare needs.
+        <div className="absolute inset-0 opacity-60" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, rgba(255,68,79,0.25), transparent 55%), radial-gradient(circle at 80% 0%, rgba(123,97,255,0.4), transparent 60%)" }} />
+        <div className="relative mx-auto max-w-6xl">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-white/80">
+            Built by the Diaspora. For the Diaspora.
           </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <button className="rounded-2xl bg-white px-8 py-4 text-lg font-bold text-[#283692] transition-all hover:scale-105 hover:bg-white/90">
-              Sign Up as Supporter
-            </button>
-            <button className="rounded-2xl border-2 border-white px-8 py-4 text-lg font-bold text-white transition-all hover:scale-105 hover:bg-white/10">
-              Become a Provider
-            </button>
+          <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="space-y-6">
+              <h1 className="font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-[3.3rem]">
+                We grew up with the same reality. We refused to accept it as the future.
+              </h1>
+              <p className="text-lg text-white/80">
+                DiaspoCare was born from late-night calls, wire transfers, and the fear that love might never reach the clinic door. We built proof-first healthcare so every diaspora family can breathe again.
+              </p>
+              <ul className="grid gap-3 rounded-3xl border border-white/15 bg-white/5 p-6 text-sm text-white/85 sm:grid-cols-2">
+                {SHARED_REALITY.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-[#ff8b9a]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-lg font-semibold text-white">We knew it wasn’t sustainable. So we built DiaspoCare.</p>
+              <Button asChild variant="hero" size="lg" className="w-fit">
+                <a href="#team">Meet the Team</a>
+              </Button>
+            </div>
+
+            <div className="rounded-3xl border border-white/15 bg-white/5 p-8 backdrop-blur">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">Our promise</p>
+              <p className="mt-4 text-2xl font-semibold">Care that delivers proof, not stories.</p>
+              <p className="mt-4 text-base text-white/80">
+                We partner with diaspora-led clinicians, transparent clinics, and modern diagnostic pods (hPODs) to make healthcare verifiable, affordable, and fast for families across Africa.
+              </p>
+              <div className="mt-8 grid gap-4 text-sm text-white/80">
+                <div className="rounded-2xl border border-white/15 bg-white/5 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/60">Mission</p>
+                  <p className="mt-2 text-white">
+                    To make healthcare in Africa transparent, affordable, and accessible — powered by diaspora love and expertise.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-white/15 bg-white/5 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/60">Vision</p>
+                  <p className="mt-2 text-white">
+                    No African family should suffer because healthcare is confusing, opaque, or inaccessible.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 sm:px-12 md:px-20" data-animate="fade-up">
+        <div className="mx-auto max-w-6xl space-y-12">
+          <div className="grid gap-10 rounded-3xl border border-slate-200 bg-white p-10 shadow-xl lg:grid-cols-2">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#ff444f]">Why we exist</p>
+              <h2 className="mt-4 text-3xl font-semibold text-slate-900">Diaspora families deserved proof, not promises.</h2>
+              <p className="mt-4 text-lg text-slate-600">
+                We watched dollars evaporate, diagnoses change with every phone call, and relatives go untreated because we didn’t know what to believe. DiaspoCare delivers receipts, clinical data, and direct payments so every act of care is traceable.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-100 bg-slate-50 p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Our values</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {VALUES.map((value) => (
+                  <span key={value} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600">
+                    {value}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div id="team" className="grid gap-8 rounded-3xl border border-slate-200 bg-slate-50 p-10 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="space-y-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Our team</p>
+              <h3 className="text-2xl font-semibold text-slate-900">Diaspora clinicians, care coordinators, and technologists</h3>
+              <p className="text-base text-slate-600">
+                From Nairobi and Lagos to Minneapolis and London, our team pairs African clinical expertise with diaspora oversight to run hPOD clinics, coordinate complex care, and verify every diagnosis.
+              </p>
+              <Button asChild variant="ghost" size="lg" className="justify-start px-0 text-[#ff444f]">
+                <a href="/contact">Talk to a DiaspoCare leader →</a>
+              </Button>
+            </div>
+            <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Where we operate</p>
+              <div className="grid gap-4 text-center sm:grid-cols-3">
+                {["Kenya", "Somalia", "Nigeria", "Ethiopia", "Ghana", "Diaspora hubs"].map((country) => (
+                  <div key={country} className="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm font-semibold text-slate-700">
+                    {country}
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-slate-500">Pilots active in Kenya with expansion underway across East and West Africa.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 sm:px-12 md:px-20" data-animate="fade-up">
+        <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-[#ff444f] to-[#ff8b5f] p-12 text-white shadow-2xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">Still building forward</p>
+          <h2 className="mt-4 text-3xl font-semibold">We turned guilt into a system that delivers proof.</h2>
+          <p className="mt-4 text-lg text-white/90">
+            Every wallet, hPOD, and second-opinion workflow inside DiaspoCare is run by people who lived the struggle. That’s why we’ll never stop until transparent healthcare is the default for every African family.
+          </p>
+          <div className="mt-6 flex flex-col gap-4 sm:flex-row">
+            <Button asChild variant="hero" size="lg" className="flex-1 justify-center">
+              <a href="/care-coordination">Start coordinating care</a>
+            </Button>
+            <Button asChild variant="glass" size="lg" className="flex-1 justify-center border-white/40 text-white">
+              <a href="/contact">Invest or partner</a>
+            </Button>
           </div>
         </div>
       </section>
