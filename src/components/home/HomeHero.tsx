@@ -56,6 +56,8 @@ const HomeHero = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_-10%,rgba(255,255,255,0.22),transparent_55%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(7,14,34,0.88),rgba(7,14,34,0.55)45%,transparent_68%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_115%,rgba(255,68,79,0.18),transparent_60%)]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
       </motion.div>
 
