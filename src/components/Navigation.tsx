@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { ChevronDown, Menu, X } from "lucide-react";
-
+import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const solutionsLinks = [
@@ -12,11 +13,13 @@ const solutionsLinks = [
 ];
 
 const Navigation = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const closeTimerRef = useRef<number | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -70,142 +73,178 @@ const Navigation = () => {
           <Link to="/" className="group flex items-center gap-3">
             <img
               src="/logo-full.png"
-              alt="DiaspoCare"
-              className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            />
           </Link>
 
-          <div className="hidden items-center gap-8 lg:flex">
-            <Link to="/" className="text-sm font-semibold text-foreground/80 transition-colors duration-300 hover:text-primary">
-              Home
-            </Link>
-
-            <Link to="/products" className="text-sm font-semibold text-foreground/80 transition-colors duration-300 hover:text-primary">
-              Products
-            </Link>
-
-            <div
+          {/* Desktop Navigation */}
+          <div className="hidden items-center space-x-1 md:flex">
+            <div 
+              className="relative group" 
               ref={dropdownRef}
-              className="relative"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               <button
-                onClick={() => setSolutionsOpen((prev) => !prev)}
-                className="flex items-center gap-1 text-sm font-semibold text-foreground/80 transition-colors duration-300 hover:text-primary"
+                className={cn(
+                  'flex items-center space-x-1 rounded-lg px-4 py-2.5 text-sm font-medium transition-all',
+                  'text-gray-700 hover:bg-gray-100/80 hover:text-primary',
+                  'dark:text-gray-200 dark:hover:bg-gray-800/50 dark:hover:text-white',
+                  solutionsOpen && 'text-primary dark:text-white'
+                )}
+                onClick={() => setSolutionsOpen(!solutionsOpen)}
               >
-                Solutions
-                <ChevronDown className={`h-4 w-4 transition-transform ${solutionsOpen ? "rotate-180" : ""}`} />
+                <span>Solutions</span>
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    solutionsOpen ? 'rotate-180' : ''
+                  }`}
+                />
               </button>
 
-              {solutionsOpen && (
-                <div className="absolute left-0 top-full mt-4 w-64 overflow-hidden rounded-2xl border border-border/50 bg-white shadow-large">
-                  <div className="p-2">
+              <AnimatePresence>
+                {solutionsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ type: 'spring', damping: 30, stiffness: 400 }}
+                    className="absolute left-0 mt-2 w-64 origin-top-left rounded-xl bg-white/95 p-2 shadow-2xl ring-1 ring-black/5 backdrop-blur-lg dark:bg-gray-900/95 dark:ring-white/10"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     {solutionsLinks.map((link) => (
                       <Link
                         key={link.to}
                         to={link.to}
-                        className="block rounded-xl px-4 py-3 text-sm font-semibold text-foreground/80 transition-all duration-200 hover:bg-primary/10 hover:text-primary"
+                        className="group flex items-center justify-between rounded-lg px-4 py-3 text-sm transition-all hover:bg-gray-50/80 dark:text-gray-200 dark:hover:bg-gray-800/50"
                         onClick={() => setSolutionsOpen(false)}
                       >
-                        {link.label}
+                        <span>{link.label}</span>
+                        <ArrowRight className="h-3.5 w-3.5 -translate-x-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-60" />
                       </Link>
                     ))}
-                  </div>
-                </div>
-              )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
-            <Link to="/impact" className="text-sm font-semibold text-foreground/80 transition-colors duration-300 hover:text-primary">
-              Our Impact
-            </Link>
-            <Link to="/hpod-kiosk" className="text-sm font-semibold text-foreground/80 transition-colors duration-300 hover:text-primary">
-              hPod Kiosk
-            </Link>
-            <Link to="/about" className="text-sm font-semibold text-foreground/80 transition-colors duration-300 hover:text-primary">
-              About
-            </Link>
-            <Link to="/contact" className="text-sm font-semibold text-foreground/80 transition-colors duration-300 hover:text-primary">
-              Contact
-            </Link>
+            {[/* Add your links here */].map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className={cn(
+                  'rounded-lg px-3 py-2.5 text-sm font-medium transition-all',
+                  'text-gray-700 hover:bg-gray-100/80 hover:text-primary',
+                  'dark:text-gray-200 dark:hover:bg-gray-800/50 dark:hover:text-white',
+                  location.pathname === item.to && 'text-primary dark:text-white'
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
 
-          <div className="hidden items-center gap-4 lg:flex">
-            <Button
-              type="button"
-              variant="glass"
-              size="lg"
-              onClick={openCareSupport}
-              className="text-sm font-semibold text-primary transition-shadow hover:shadow-[0_0_28px_rgba(88,140,255,0.45)] hover:shadow-primary/40"
-            >
-              Talk to Care Support
-            </Button>
-            <Button
+          <div className="hidden items-center space-x-2 md:flex">
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="font-medium text-gray-700 hover:bg-gray-100/80 dark:text-gray-200 dark:hover:bg-gray-800/50"
               asChild
-              variant="hero"
-              size="lg"
-              className="text-sm font-semibold transition-shadow hover:shadow-[0_0_32px_rgba(33,123,255,0.5)] hover:shadow-secondary/40"
             >
-              <Link to="/care-coordination">Get Started</Link>
+              <Link to="/login">Log In</Link>
+            </Button>
+            <Button 
+              size="sm" 
+              className="font-medium"
+              asChild
+            >
+              <Link to="/get-started">Get Started</Link>
             </Button>
           </div>
 
+          {/* Mobile menu button */}
           <button
-            className="rounded-xl border border-border/60 p-2.5 text-foreground transition-all duration-300 hover:border-primary/60 hover:bg-primary/10 hover:text-primary lg:hidden"
-            onClick={() => setIsOpen((prev) => !prev)}
-            aria-label="Toggle menu"
+            className="relative z-50 rounded-lg p-2 text-gray-700 transition-colors hover:bg-gray-100/80 dark:text-gray-200 dark:hover:bg-gray-800/50 md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
-        </div>
+        </nav>
+      </div>
 
+      {/* Mobile menu */}
+      <AnimatePresence>
         {isOpen && (
-          <div className="animate-fade-in rounded-3xl border border-border/60 bg-background/95 py-6 shadow-large backdrop-blur lg:hidden">
-            <nav className="space-y-4 px-6 text-sm font-semibold text-foreground/80">
-              <Link to="/" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
-                Home
-              </Link>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="fixed inset-0 top-16 z-40 h-[calc(100vh-4rem)] overflow-y-auto bg-white/95 backdrop-blur-lg dark:bg-gray-950/95 md:hidden"
+          >
+            <div className="container px-4 py-6">
+              <div className="space-y-1">
+                <button
+                  className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-medium text-gray-900 transition-colors hover:bg-gray-100/80 dark:text-gray-100 dark:hover:bg-gray-800/50"
+                  onClick={() => setSolutionsOpen(!solutionsOpen)}
+                >
+                  <span>Solutions</span>
+                  <ChevronDown
+                    className={`h-5 w-5 transition-transform ${
+                      solutionsOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                
+                <AnimatePresence>
+                  {solutionsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden pl-4"
+                    >
+                      <div className="space-y-1 border-l-2 border-gray-100 pl-4 dark:border-gray-800">
+                        {solutionsLinks.map((link) => (
+                          <Link
+                            key={link.to}
+                            to={link.to}
+                            className="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100/80 dark:text-gray-300 dark:hover:bg-gray-800/50"
+                            onClick={() => {
+                              setIsOpen(false);
+                              setSolutionsOpen(false);
+                            }}
+                          >
+                            {link.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
-              <Link to="/products" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
-                Products
-              </Link>
-
-              <div className="space-y-2">
-                <p className="px-4 text-xs font-semibold uppercase tracking-[0.3em] text-foreground/50">Solutions</p>
-                {solutionsLinks.map((link) => (
+                {[/* Add your links here */].map((item) => (
                   <Link
-                    key={link.to}
-                    to={link.to}
-                    className="block rounded-xl px-4 py-3 text-foreground/70 transition-colors hover:bg-primary/10 hover:text-primary"
+                    key={item.to}
+                    to={item.to}
+                    className="block rounded-xl px-4 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-100/80 dark:text-gray-100 dark:hover:bg-gray-800/50"
                     onClick={() => setIsOpen(false)}
                   >
-                    {link.label}
+                    {item.label}
                   </Link>
                 ))}
               </div>
 
-              <Link to="/impact" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
-                Our Impact
-              </Link>
-              <Link to="/hpod-kiosk" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
-                hPod Kiosk
-              </Link>
-              <Link to="/about" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
-                About
-              </Link>
-              <Link to="/contact" className="block rounded-xl px-4 py-3 hover:bg-primary/10 hover:text-primary" onClick={() => setIsOpen(false)}>
-                Contact
-              </Link>
-
-              <div className="pt-4">
-                <Button
-                  type="button"
-                  variant="glass"
-                  size="lg"
-                  onClick={() => {
-                    openCareSupport();
-                    setIsOpen(false);
-                  }}
+              <div className="mt-6 space-y-3 border-t border-gray-100 pt-6 dark:border-gray-800">
+                <Button variant="outline" className="w-full" asChild>
+                  <Link to="/login" onClick={() => setIsOpen(false)}>
+                    Log In
+                  </Link>
                   className="mb-3 w-full justify-center text-base font-semibold text-primary transition-shadow hover:shadow-[0_0_28px_rgba(88,140,255,0.45)] hover:shadow-primary/40"
                 >
                   Talk to Care Support
