@@ -7,13 +7,18 @@ interface TextRevealProps {
 }
 
 export const TextReveal = ({ text, className = "", delay = 0 }: TextRevealProps) => {
-  const letters = text.split("");
+  // Split text into words and spaces to preserve them
+  const words = text.split(/(\s+)/);
 
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.03, delayChildren: delay },
+      transition: { 
+        staggerChildren: 0.05, 
+        delayChildren: delay,
+        staggerDirection: 1 
+      },
     }),
   };
 
@@ -22,7 +27,7 @@ export const TextReveal = ({ text, className = "", delay = 0 }: TextRevealProps)
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring" as const,
+        type: "spring",
         damping: 12,
         stiffness: 200,
       },
@@ -38,21 +43,23 @@ export const TextReveal = ({ text, className = "", delay = 0 }: TextRevealProps)
       variants={container}
       initial="hidden"
       animate="visible"
-      className={className}
+      className={`inline-flex flex-wrap ${className}`}
       custom={delay}
+      style={{ whiteSpace: 'normal' }}
     >
-      {letters.map((letter, index) => (
+      {words.map((word, index) => (
         <motion.span
-          key={`${letter}-${index}`}
+          key={`word-${index}`}
           variants={child}
-          style={{ display: "inline-block", whiteSpace: "pre" }}
+          className="inline-block"
+          style={{ whiteSpace: 'nowrap', marginRight: '0.25em' }}
           whileHover={{
-            scale: 1.2,
+            scale: 1.1,
             color: "hsl(var(--primary))",
             transition: { duration: 0.3 },
           }}
         >
-          {letter === " " ? "\u00A0" : letter}
+          {word}
         </motion.span>
       ))}
     </motion.div>
