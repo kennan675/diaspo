@@ -45,11 +45,15 @@ const HomeHero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full items-center overflow-hidden bg-transparent"
+      className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#061534] transition-colors duration-500 ease-in-out"
       ref={containerRef}
       data-animate="fade-up"
+      style={{
+        background: 'linear-gradient(180deg, #061534 0%, #0a1a3a 100%)',
+      }}
     >
       <motion.div className="absolute inset-0" style={{ y: parallaxY, scale: backgroundScale }}>
+        <div className="absolute inset-0 -z-10 h-full w-full bg-transparent" />
         <div className="absolute inset-0 overflow-hidden">
           <img src={heroImage} alt="Warm African caregiving scene" className="h-full w-full object-cover object-center" />
           <div className="absolute inset-0 bg-[linear-gradient(112deg,rgba(7,14,34,0.95)0%,rgba(16,38,82,0.87)55%,rgba(27,60,123,0.7)100%)]" />
