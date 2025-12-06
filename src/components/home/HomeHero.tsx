@@ -75,7 +75,7 @@ const HomeHero = () => {
             <div className="space-y-6">
               <div className="space-y-2">
                 <TextReveal text="Care Across Borders." className="block font-display text-4xl font-bold text-white sm:text-5xl lg:text-[3.65rem]" />
-                <TextReveal text="Verified, Fast, and Affordable." delay={0.2} className="block font-display text-4xl font-bold text-white/90 sm:text-5xl lg:text-[3.2rem]" />
+                <TextReveal text="Verified, Fast, and Affordable." delay={0.2} className="block font-display text-4xl font-bold text-white/90 sm:text-5xl lg:text-[3.2rem]" />
               </div>
               <motion.p
                 className="max-w-2xl text-lg text-white/85 sm:text-xl"
@@ -135,7 +135,7 @@ const HomeHero = () => {
                 <div className="space-y-2">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/75">15-Minute hPOD Visits</p>
                   <p className="text-base text-white/85">
-                    High-throughput diagnostic pods deliver rapid vitals, labs, and primary care — with results on your phone before your loved one leaves the clinic.
+                    High-throughput diagnostic kiosks deliver rapid vitals, labs, and primary care — with results on your phone before your loved one leaves the clinic.
                   </p>
                 </div>
               </div>

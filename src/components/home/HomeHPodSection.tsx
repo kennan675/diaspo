@@ -55,7 +55,7 @@ const HomeHPodSection = () => {
             >
               ⚡ The hPOD
             </motion.span>
-            <TextReveal text="15-Minute, all-included primary care that proves what really happened" className="font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-[3.3rem]" />
+            <TextReveal text="15-Minute, all-inclusive primary care that proves what really happened" className="font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-[3.3rem]" />
             <motion.p
               className="text-lg leading-8 text-white/80 sm:text-xl"
               initial={{ opacity: 0, y: 16 }}
@@ -63,7 +63,7 @@ const HomeHPodSection = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              Our flagship high-throughput diagnostic pods deliver modern primary care in minutes. Located in malls, markets, workplaces, and communities – starting in Kenya, expanding to Somalia and beyond.
+              Our flagship high-throughput diagnostic kiosks deliver modern primary care in minutes. Located in malls, markets, workplaces, and communities – starting in Kenya, expanding to Ghana and beyond.
             </motion.p>
             <motion.p
               className="text-base text-white/75"

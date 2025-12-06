@@ -61,7 +61,7 @@ const HomeHowItWorks = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            This is diaspora-powered healthcare — documented, direct, and delivered with proof every single time.
+            This is diaspora-powered healthcare. Documented, direct, and delivered with proof every single time.
           </motion.p>
         </motion.div>
 

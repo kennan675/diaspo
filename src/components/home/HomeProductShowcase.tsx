@@ -1,4 +1,4 @@
-import { CreditCard, HeartHandshake, Hospital, Pill, Shield, Stethoscope, Users } from "lucide-react";
+import { ArrowRight, CreditCard, HeartHandshake, Hospital, Pill, Shield, Stethoscope, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
@@ -210,7 +210,10 @@ const HomeProductShowcase = () => {
 
         <div className="space-y-8">
           {PRODUCT_SECTIONS.map((section) => (
-            <article key={section.id} className="group rounded-[32px] border border-slate-200 bg-white/90 p-8 shadow-[0_30px_80px_-60px_rgba(15,23,42,0.7)] backdrop-blur">
+            <div
+              key={section.id}
+              className="group relative flex flex-col h-full overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-md dark:border-gray-800 dark:bg-gray-950"
+            >
               <div className="flex flex-col gap-6 lg:flex-row">
                 <div className="flex-1 space-y-4">
                   <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
@@ -224,11 +227,16 @@ const HomeProductShowcase = () => {
                     <p className="text-base text-slate-600">{section.description}</p>
                     {section.body && <p className="text-base font-semibold text-slate-800">{section.body}</p>}
                   </div>
-                  {section.cta && (
-                    <Button asChild variant="brand" size="lg" className="w-fit">
-                      <Link to={section.cta.href}>{section.cta.label}</Link>
-                    </Button>
-                  )}
+                  <div className="mt-auto pt-6">
+                    {section.cta && (
+                      <Button asChild className="w-full" size="lg">
+                        <Link to={section.cta.href}>
+                          {section.cta.label}
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    )}
+                  </div>
                 </div>
 
                 {section.highlights && (
@@ -255,7 +263,7 @@ const HomeProductShowcase = () => {
                   </div>
                 )}
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>
