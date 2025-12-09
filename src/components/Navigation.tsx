@@ -163,14 +163,6 @@ const Navigation = () => {
           </div>
 
           <div className="hidden items-center space-x-2 md:flex">
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className="font-medium text-gray-700 hover:bg-gray-100/80 dark:text-gray-200 dark:hover:bg-gray-800/50"
-            >
-              <Link to="/login">Log In</Link>
-            </Button>
             <Button asChild size="sm" className="font-medium">
               <Link to="/get-started">Get Started</Link>
             </Button>
@@ -248,11 +240,6 @@ const Navigation = () => {
               </div>
 
               <div className="mt-6 space-y-3 border-t border-gray-100 pt-6 dark:border-gray-800">
-                <Button variant="outline" className="w-full" asChild>
-                  <Link to="/login" onClick={() => setIsOpen(false)}>
-                    Log In
-                  </Link>
-                </Button>
                 <Button
                   className="w-full justify-center text-base font-semibold text-primary transition-shadow hover:shadow-[0_0_28px_rgba(88,140,255,0.45)] hover:shadow-primary/40"
                   onClick={() => {
