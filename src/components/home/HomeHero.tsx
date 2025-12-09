@@ -77,9 +77,16 @@ const HomeHero = () => {
             </motion.span>
 
             <div className="space-y-6">
-              <div className="space-y-2">
-                <TextReveal text="Care Across Borders." className="block font-display text-4xl font-bold text-white sm:text-5xl lg:text-[3.65rem]" />
-                <TextReveal text="Verified, Fast, and Affordable." delay={0.2} className="block font-display text-4xl font-bold text-white/90 sm:text-5xl lg:text-[3.2rem]" />
+              <div className="space-y-3">
+                <TextReveal
+                  text="Care Across Borders."
+                  className="block max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-[-0.015em] text-white sm:text-5xl lg:text-[3.65rem]"
+                />
+                <TextReveal
+                  text="Verified, fast, and affordable."
+                  delay={0.2}
+                  className="block max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-[-0.01em] text-white/85 sm:text-5xl lg:text-[3.2rem]"
+                />
               </div>
               <motion.p
                 className="max-w-2xl text-lg text-white/85 sm:text-xl"
@@ -119,10 +126,15 @@ const HomeHero = () => {
                 </a>
               </Button>
               <Button asChild variant="secondary" size="lg" className="w-full sm:w-auto bg-white/15 text-white hover:bg-white/25">
-                <Link to="/groups" className="flex items-center gap-2">
+                <a
+                  href="https://diaspocares.netlify.app/family-health-wallet"
+                  className="flex items-center gap-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   For Diaspora Groups
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
