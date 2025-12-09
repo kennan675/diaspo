@@ -126,6 +126,77 @@ const MDConnect: React.FC = () => {
         </div>
       </section>
 
+      {/* User Story Section */}
+      <section
+        className="relative overflow-hidden bg-gradient-to-br from-[#f1f5ff] via-white to-[#e8f2ff] py-24 px-6 sm:px-12 md:px-20"
+        data-animate="fade-up"
+      >
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-20 -right-24 h-64 w-64 rounded-full bg-[#283692]/10 blur-3xl" />
+          <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-[#007FFF]/10 blur-3xl" />
+        </div>
+
+        <div className="relative mx-auto max-w-5xl space-y-12 text-[#1f2a44]">
+          <div className="text-center space-y-5">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#283692] shadow-sm">
+              User Story
+            </span>
+            <h2 className="text-4xl font-extrabold sm:text-5xl">
+              Technology that keeps families connected to expert care
+            </h2>
+            <p className="mx-auto max-w-3xl text-lg text-[#50607b]">
+              Purview highlighted how DiaspoCare extends trusted medical guidance across continents, ensuring diaspora sponsors can collaborate with physicians at home without compromising speed or safety.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="rounded-3xl border border-white/70 bg-white/90 p-8 shadow-[0_35px_60px_-45px_rgba(40,54,146,0.35)]">
+              <h3 className="text-xl font-semibold text-[#283692]">The Challenge</h3>
+              <p className="mt-4 text-base text-[#4c5874]">
+                Families abroad struggle to guarantee funds reach real treatments, while local providers juggle paperwork, limited bandwidth, and counterfeit risks for critical medications.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-white/70 bg-white/90 p-8 shadow-[0_35px_60px_-45px_rgba(40,54,146,0.35)]">
+              <h3 className="text-xl font-semibold text-[#283692]">The Solution</h3>
+              <p className="mt-4 text-base text-[#4c5874]">
+                DiaspoCare MD Connect leverages the Purview Expert View platform to automate eConsults, mobile uploads, and transcription so physicians anywhere can review scans, labs, and histories in minutes.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-white/70 bg-white/90 p-8 shadow-[0_35px_60px_-45px_rgba(40,54,146,0.35)]">
+              <h3 className="text-xl font-semibold text-[#283692]">The Impact</h3>
+              <p className="mt-4 text-base text-[#4c5874]">
+                Diaspora specialists deliver culturally attuned second opinions, reduce documentation overload, and unlock timely, verified care for patients in Kenya, Ghana, Nigeria, and beyond.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-[#283692]/15 bg-white/90 p-10 shadow-[0_40px_80px_-50px_rgba(0,127,255,0.45)]">
+            <blockquote className="space-y-4 text-lg text-[#32405c]">
+              <p className="italic">
+                “We are tapping into the vast knowledge of African physicians practicing outside the continent—eliminating distance and improving access to care.”
+              </p>
+              <footer className="text-sm font-semibold uppercase tracking-[0.25em] text-[#007FFF]">
+                Serge-Alain Wandji, CEO &amp; Co-Founder, DiaspoCare
+              </footer>
+            </blockquote>
+            <div className="mt-6 flex flex-col gap-3 text-sm sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-[#4c5874]">
+                Read the full Purview feature to see how technology keeps families informed at every step of care.
+              </p>
+              <a
+                href="https://www.purview.net/diaspocare-user-story"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#283692]/20 bg-white px-5 py-2.5 text-sm font-semibold text-[#283692] transition-all hover:border-[#283692]/40 hover:shadow-md"
+              >
+                View user story
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="bg-gradient-to-br from-[#F8F9FA] to-white py-24 px-6 sm:px-12 md:px-20" data-animate="fade-up">
         <div className="max-w-5xl mx-auto">
