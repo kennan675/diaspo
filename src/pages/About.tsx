@@ -51,7 +51,7 @@ const About = () => {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">Our promise</p>
               <p className="mt-4 text-2xl font-semibold">Care that delivers proof, not stories.</p>
               <p className="mt-4 text-base text-white/80">
-                We partner with diaspora-led clinicians, transparent clinics, and modern diagnostic pods (hPODs) to make healthcare verifiable, affordable, and fast for families across Africa.
+                We partner with diaspora-led clinicians, transparent clinics, and modern diagnostic pods (hPods) to make healthcare verifiable, affordable, and fast for families across Africa.
               </p>
               <div className="mt-8 grid gap-4 text-sm text-white/80">
                 <div className="rounded-2xl border border-white/15 bg-white/5 p-4">
@@ -99,7 +99,7 @@ const About = () => {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Our team</p>
               <h3 className="text-2xl font-semibold text-slate-900">Diaspora clinicians, care coordinators, and technologists</h3>
               <p className="text-base text-slate-600">
-                From Nairobi and Lagos to Minneapolis and London, our team pairs African clinical expertise with diaspora oversight to run hPOD clinics, coordinate complex care, and verify every diagnosis.
+                From Nairobi and Lagos to Minneapolis and London, our team pairs African clinical expertise with diaspora oversight to run hPod clinics, coordinate complex care, and verify every diagnosis.
               </p>
               <Button asChild variant="ghost" size="lg" className="justify-start px-0 text-[#ff444f]">
                 <a href="/contact">Talk to a DiaspoCare leader →</a>
@@ -125,7 +125,7 @@ const About = () => {
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">Still building forward</p>
           <h2 className="mt-4 text-3xl font-semibold">We turned guilt into a system that delivers proof.</h2>
           <p className="mt-4 text-lg text-white/90">
-            Every wallet, hPOD, and second-opinion workflow inside DiaspoCare is run by people who lived the struggle. That’s why we’ll never stop until transparent healthcare is the default for every African family.
+            Every wallet, hPod, and second-opinion workflow inside DiaspoCare is run by people who lived the struggle. That’s why we’ll never stop until transparent healthcare is the default for every African family.
           </p>
           <div className="mt-6 flex flex-col gap-4 sm:flex-row">
             <Button asChild variant="hero" size="lg" className="flex-1 justify-center">

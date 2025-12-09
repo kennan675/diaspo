@@ -48,7 +48,7 @@ const PRODUCT_SECTIONS: ProductSection[] = [
   },
   {
     id: "hpod",
-    label: "B. hPOD — 15-Minute Primary Care",
+    label: "B. hPod — 15-Minute Primary Care",
     title: "Fast, affordable, accurate care pods",
     description: "Our modern diagnostic pods deliver:",
     highlights: [
@@ -71,7 +71,7 @@ const PRODUCT_SECTIONS: ProductSection[] = [
       },
     ],
     body: "Fast. Affordable. Accurate. Transparent.",
-    cta: { label: "Book an hPOD", href: "/hpod-kiosk" },
+    cta: { label: "Book an hPod", href: "/hpod-kiosk" },
   },
   {
     id: "family-wallet",
@@ -165,7 +165,7 @@ const PRODUCT_SECTIONS: ProductSection[] = [
         title: "Program includes",
         variant: "check",
         items: [
-          "On-site hPOD screenings",
+          "On-site hPod screenings",
           "Fast primary care",
           "Chronic care support",
           "Group wallets",
@@ -204,7 +204,7 @@ const HomeProductShowcase = () => {
             Every solution the diaspora asked for — now verified
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            Mix and match direct payments, smart wallets, hPOD clinics, and diaspora clinical oversight to fit every family, community, or employer.
+            Mix and match direct payments, smart wallets, hPod clinics, and diaspora clinical oversight to fit every family, community, or employer.
           </p>
         </div>
 

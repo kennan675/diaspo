@@ -7,9 +7,16 @@ import { Button } from "@/components/ui/button";
 
 const solutionsLinks = [
   { to: "/care-coordination", label: "Care Coordination" },
-  { to: "/healthcare-financing", label: "Healthcare Financing App" },
+  { to: "/healthcare-financing", label: "Healthcare Financing" },
   { to: "/family-health-wallet", label: "Family Health Wallet" },
   { to: "/md-connect", label: "MD Connect" },
+];
+
+const navLinks = [
+  { to: "/about", label: "About Us" },
+  { to: "/impact", label: "Our Impact" },
+  { to: "/hpod-kiosk", label: "hPod Kiosk" },
+  { to: "/contact", label: "Contact" },
 ];
 
 const Navigation = () => {
@@ -21,11 +28,51 @@ const Navigation = () => {
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const navRef = useRef<HTMLElement>(null);
 
+  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  // Handle dropdown close on outside click
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setSolutionsOpen(false);
+      }
+    };
+
+    if (solutionsOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [solutionsOpen]);
+
+  const handleMouseEnter = () => {
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setSolutionsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimerRef.current = window.setTimeout(() => setSolutionsOpen(false), 200);
+  };
+
+  const openCareSupport = () => {
+    if (window.Tawk_API?.maximize) {
+      window.Tawk_API.maximize();
+    } else {
+      window.location.href = "/contact";
+    }
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -71,8 +118,9 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="group flex items-center gap-3">
-            <img
-              src="/logo-full.png"
+            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+              DiaspoCare
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -246,26 +294,25 @@ const Navigation = () => {
                     Log In
                   </Link>
                   className="mb-3 w-full justify-center text-base font-semibold text-primary transition-shadow hover:shadow-[0_0_28px_rgba(88,140,255,0.45)] hover:shadow-primary/40"
-                >
-                  Talk to Care Support
-                </Button>
-                <Button
-                  asChild
-                  variant="hero"
-                  size="lg"
-                  className="w-full justify-center text-base font-semibold transition-shadow hover:shadow-[0_0_32px_rgba(33,123,255,0.5)] hover:shadow-secondary/40"
-                >
-                  <Link to="/care-coordination" onClick={() => setIsOpen(false)}>
-                    Get Started
-                  </Link>
-                </Button>
-              </div>
-            </nav>
+              onClick={openCareSupport}
+            >
+              Talk to Care Support
+            </Button>
+            <Button
+              asChild
+              variant="hero"
+              size="lg"
+              className="w-full justify-center text-base font-semibold transition-shadow hover:shadow-[0_0_32px_rgba(33,123,255,0.5)] hover:shadow-secondary/40"
+            >
+              <Link to="/care-coordination" onClick={() => setIsOpen(false)}>
+                Get Started
+              </Link>
+            </Button>
           </div>
-        )}
-      </div>
-    </nav>
-  );
-};
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</motion.header>
 
 export default Navigation;

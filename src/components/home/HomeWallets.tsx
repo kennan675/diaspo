@@ -25,7 +25,7 @@ const WALLETS = [
   {
     title: "Employer Wallet",
     description:
-      "Affordable workforce health with hPOD screenings + fast primary care.",
+      "Affordable workforce health with hPod screenings + fast primary care.",
     icon: Building2,
   },
 ];

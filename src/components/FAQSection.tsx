@@ -6,8 +6,8 @@ const FAQS = [
     answer: "Bills come directly from providers, and payments go straight to verified clinics or pharmacies. You see the line items before approving anything.",
   },
   {
-    question: "What is an hPOD?",
-    answer: "An hPOD is a 15-minute diagnostic pod with onsite labs, digital results, and instant updates to diaspora sponsors.",
+    question: "What is an hPod?",
+    answer: "An hPod is a 15-minute diagnostic pod with onsite labs, digital results, and instant updates to diaspora sponsors.",
   },
   {
     question: "Can diaspora doctors participate?",

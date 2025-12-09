@@ -5,7 +5,7 @@ import { TextReveal } from "@/components/animations/TextReveal";
 
 const STEPS = [
   {
-    title: "Your family visits a verified clinic or an hPOD center",
+    title: "Your family visits a verified clinic or an hPod center",
     description: "Fast diagnostics + 15-minute primary care with transparent pricing.",
     icon: Hospital,
   },

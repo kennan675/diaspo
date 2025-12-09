@@ -73,7 +73,7 @@ const HomeHero = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <Sparkles className="h-4 w-4" />
-              hPOD-first, trust-built healthcare
+              hPod-first, trust-built healthcare
             </motion.span>
 
             <div className="space-y-6">
@@ -87,7 +87,7 @@ const HomeHero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
               >
-                DiaspoCare is the first healthcare platform built by the African diaspora to deliver <span className="text-white">real, documented care</span> for your loved ones back home — with <span className="text-white">15-minute hPOD visits</span>, verified diagnostic results, and direct payments to clinics and pharmacies.
+                DiaspoCare is the first healthcare platform built by the African diaspora to deliver <span className="text-white">real, documented care</span> for your loved ones back home. With <span className="text-white">fifteen minute hPod visits</span>, verified diagnostic results, and direct payments to clinics and pharmacies.
               </motion.p>
               <div className="grid gap-3 text-base text-white/80 sm:text-lg">
                 {trustPromises.map((promise) => (
@@ -137,7 +137,7 @@ const HomeHero = () => {
                   <HeartHandshake className="h-6 w-6" />
                 </div>
                 <div className="space-y-2">
-                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/75">15-Minute hPOD Visits</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/75">15-Minute hPod Visits</p>
                   <p className="text-base text-white/85">
                     High-throughput diagnostic kiosks deliver rapid vitals, labs, and primary care — with results on your phone before your loved one leaves the clinic.
                   </p>

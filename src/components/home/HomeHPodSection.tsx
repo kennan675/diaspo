@@ -53,7 +53,7 @@ const HomeHPodSection = () => {
               viewport={{ once: true, amount: 0.7 }}
               transition={{ duration: 0.4, delay: 0.05 }}
             >
-              ⚡ The hPOD
+              ⚡ The hPod
             </motion.span>
             <TextReveal text="15-Minute, all-inclusive primary care that proves what really happened" className="font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-[3.3rem]" />
             <motion.p
@@ -72,7 +72,7 @@ const HomeHPodSection = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              One hPOD can serve 10,000 patients a year. This is healthcare transformed.
+              One hPod can serve 10,000 patients a year. This is healthcare transformed.
             </motion.p>
 
             <div className="grid gap-6 sm:grid-cols-2">
@@ -118,7 +118,7 @@ const HomeHPodSection = () => {
             <div className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-secondary/30 blur-[160px]" />
             <div className="relative space-y-6">
               <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/70">
-                What happens inside an hPOD visit
+                What happens inside an hPod visit
               </p>
               <motion.ul
                 className="space-y-4 text-white/80"
@@ -152,7 +152,7 @@ const HomeHPodSection = () => {
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                Every hPOD is run by licensed clinicians with remote oversight from our diaspora medical board. Compliance, medication supply, and financial flows are monitored 24/7.
+                Every hPod is run by licensed clinicians with remote oversight from our diaspora medical board. Compliance, medication supply, and financial flows are monitored 24/7.
               </motion.p>
             </div>
           </motion.div>

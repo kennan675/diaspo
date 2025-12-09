@@ -7,17 +7,19 @@ interface TextRevealProps {
 }
 
 export const TextReveal = ({ text, className = "", delay = 0 }: TextRevealProps) => {
-  // Split text into words and spaces to preserve them
-  const words = text.split(/(\s+)/);
+  const tokens = text
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
 
   const container = {
     hidden: { opacity: 0 },
-    visible: (i = 1) => ({
+    visible: () => ({
       opacity: 1,
-      transition: { 
-        staggerChildren: 0.05, 
+      transition: {
+        staggerChildren: 0.05,
         delayChildren: delay,
-        staggerDirection: 1 
+        staggerDirection: 1,
       },
     }),
   };
@@ -45,21 +47,15 @@ export const TextReveal = ({ text, className = "", delay = 0 }: TextRevealProps)
       animate="visible"
       className={`inline-flex flex-wrap ${className}`}
       custom={delay}
-      style={{ whiteSpace: 'normal' }}
     >
-      {words.map((word, index) => (
+      {tokens.map((token, index) => (
         <motion.span
           key={`word-${index}`}
           variants={child}
           className="inline-block"
-          style={{ whiteSpace: 'nowrap', marginRight: '0.25em' }}
-          whileHover={{
-            scale: 1.1,
-            color: "hsl(var(--primary))",
-            transition: { duration: 0.3 },
-          }}
+          style={{ marginRight: index === tokens.length - 1 ? 0 : "0.25em" }}
         >
-          {word}
+          {token}
         </motion.span>
       ))}
     </motion.div>

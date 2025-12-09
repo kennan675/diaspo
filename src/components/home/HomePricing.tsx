@@ -51,7 +51,7 @@ const PLANS: PricingPlan[] = [
   {
     name: "Employer Plans",
     price: "$3–$5",
-    subtitle: "Per employee per month · Optional hPOD screening days",
+    subtitle: "Per employee per month · Optional hPod screening days",
     highlights: ["On-site screenings", "Group wallets", "Real-time insights"],
     actionLabel: "Talk to Employer Team",
   },

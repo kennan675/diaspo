@@ -25,8 +25,8 @@ const Products = () => {
               Every product the diaspora asked for — on one proof-first platform.
             </h1>
             <p className="text-lg text-white/85">
-              Mix direct-to-provider payments, smart wallets, hPOD diagnostics, diaspora second opinions, and employer clinics to
-give every family, community, or workforce instant, verified care.
+              Mix direct-to-provider payments, smart wallets, hPod diagnostics, diaspora second opinions, and employer clinics to
+              give every family, community, or workforce instant, verified care.
             </p>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row">
@@ -47,7 +47,7 @@ give every family, community, or workforce instant, verified care.
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Need a custom rollout?</p>
           <h2 className="mt-4 text-3xl font-semibold text-slate-900">Bundle products into a proof stack.</h2>
           <p className="mt-3 text-lg text-slate-600">
-            Our team will map your family, community, or employer needs to the right combination of wallets, hPODs, financing, and diaspora clinical oversight.
+            Our team will map your family, community, or employer needs to the right combination of wallets, hPods, financing, and diaspora clinical oversight.
           </p>
           <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button asChild variant="brand" size="lg" className="justify-center">
