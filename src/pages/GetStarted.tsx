@@ -85,9 +85,15 @@ const GetStarted = () => {
     event.preventDefault();
     setSubmitting(true);
 
+    // Simulate form submission and redirect to web app
     window.setTimeout(() => {
       setSubmitting(false);
       setSubmitted(true);
+      
+      // Redirect to DiaspoCare web app registration after showing success message
+      setTimeout(() => {
+        window.open('https://supporter.diaspocare.com', '_blank');
+      }, 1500);
     }, 900);
   };
 
@@ -262,10 +268,37 @@ const GetStarted = () => {
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#1c7ed6]" />
                       <div>
-                        <p className="font-semibold">Thanks! A DiaspoCare navigator will contact you shortly.</p>
+                        <p className="font-semibold">Thanks! Redirecting you to the DiaspoCare web app...</p>
                         <p className="mt-1 text-xs leading-relaxed">
-                          Check your email for next steps. We’ll align on your loved one’s care plan, required documentation, and clinic preferences within one business day.
+                          Complete your registration in our secure web app where you can manage care coordination, payments, and connect with verified providers. Your account will work across both web and mobile apps.
                         </p>
+                        <div className="mt-4 space-y-3">
+                          <p className="text-xs font-semibold text-[#1f2a44]">Access your account:</p>
+                          <div className="flex flex-col gap-3 sm:flex-row">
+                            <a
+                              href="https://supporter.diaspocare.com"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 rounded-lg border border-[#e3ebff] bg-[#f7f9ff] px-4 py-2 text-sm font-medium text-[#1f2a44] transition-all hover:bg-[#e3ebff] hover:shadow-md"
+                            >
+                              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                              </svg>
+                              Open Web App
+                            </a>
+                            <a
+                              href="https://play.google.com/store/apps/details?id=com.diaspocare.app&hl=en"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 rounded-lg border border-[#e3ebff] bg-[#f7f9ff] px-4 py-2 text-sm font-medium text-[#1f2a44] transition-all hover:bg-[#e3ebff] hover:shadow-md"
+                            >
+                              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                              </svg>
+                              Get Mobile App
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
