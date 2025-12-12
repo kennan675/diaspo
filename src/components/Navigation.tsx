@@ -93,12 +93,26 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="group flex items-center gap-3">
-            <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-2xl font-bold text-transparent">
-              DiaspoCare
-            </span>
+            <img 
+              src="/images/logo.png" 
+              alt="DiaspoCare" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           <div className="hidden items-center space-x-1 md:flex">
+            <Link
+              to="/"
+              className={cn(
+                "rounded-lg px-3 py-2.5 text-sm font-medium transition-all",
+                "text-gray-700 hover:bg-gray-100/80 hover:text-primary",
+                "dark:text-gray-200 dark:hover:bg-gray-800/50 dark:hover:text-white",
+                location.pathname === "/" && "text-primary dark:text-white",
+              )}
+            >
+              Home
+            </Link>
+
             <div
               className="group relative"
               ref={dropdownRef}
@@ -190,6 +204,14 @@ const Navigation = () => {
           >
             <div className="container px-4 py-6">
               <div className="space-y-1">
+                <Link
+                  to="/"
+                  className="block rounded-xl px-4 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-100/80 dark:text-gray-100 dark:hover:bg-gray-800/50"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Home
+                </Link>
+
                 <button
                   className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-medium text-gray-900 transition-colors hover:bg-gray-100/80 dark:text-gray-100 dark:hover:bg-gray-800/50"
                   onClick={() => setSolutionsOpen((prev) => !prev)}
