@@ -113,7 +113,7 @@ const GetStarted = () => {
                     rel="noopener noreferrer"
                     className="group relative flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#0f88ff] to-[#4a5bdc] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl"
                   >
-                    Sign Up in Web App
+                    Sign Up / Login
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </a>
                   
@@ -145,19 +145,6 @@ const GetStarted = () => {
                     </div>
                   </div>
                 </div>
-
-                <div className="rounded-2xl border border-[#dbe7ff] bg-[#f3f7ff] px-4 py-3 text-xs text-[#334266]">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#1c7ed6]" />
-                    <div>
-                      <p className="font-semibold text-[#1f2a44]">Why sign up in the web app?</p>
-                      <p className="mt-1 leading-relaxed text-[#46506a]">
-                        Our web app has full backend integration for secure registration, care coordination, payments, and provider verification - all in one place.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
