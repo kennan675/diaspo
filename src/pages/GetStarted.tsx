@@ -1,31 +1,7 @@
-import { FormEvent, useMemo, useState } from "react";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Globe2,
-  LockKeyhole,
-  Mail,
-  Phone,
-  ShieldCheck,
-  User,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, Globe2, LockKeyhole, ShieldCheck } from "lucide-react";
 
 import PageLayout from "@/components/layouts/PageLayout";
-import { Input } from "@/components/ui/input";
 
-const COUNTRY_OPTIONS = [
-  { name: "United States", iso: "US", dial: "+1" },
-  { name: "United Kingdom", iso: "GB", dial: "+44" },
-  { name: "Canada", iso: "CA", dial: "+1" },
-  { name: "Kenya", iso: "KE", dial: "+254" },
-  { name: "Ghana", iso: "GH", dial: "+233" },
-  { name: "Nigeria", iso: "NG", dial: "+234" },
-  { name: "South Africa", iso: "ZA", dial: "+27" },
-  { name: "France", iso: "FR", dial: "+33" },
-  { name: "Germany", iso: "DE", dial: "+49" },
-  { name: "United Arab Emirates", iso: "AE", dial: "+971" },
-  { name: "Other", iso: "OTHER", dial: "+" },
-];
 
 const OnboardingHighlights = [
   {
@@ -46,57 +22,6 @@ const OnboardingHighlights = [
 ];
 
 const GetStarted = () => {
-  const [formState, setFormState] = useState({
-    fullName: "",
-    email: "",
-    countryIso: "US",
-    dialCode: "+1",
-    phone: "",
-  });
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  const selectedCountry = useMemo(
-    () => COUNTRY_OPTIONS.find((option) => option.iso === formState.countryIso) ?? COUNTRY_OPTIONS[0],
-    [formState.countryIso],
-  );
-
-  const handleChange = (field: "fullName" | "email" | "phone") => (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFormState((previous) => ({
-      ...previous,
-      [field]: event.target.value,
-    }));
-  };
-
-  const handleCountryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const iso = event.target.value;
-    const option = COUNTRY_OPTIONS.find((item) => item.iso === iso) ?? COUNTRY_OPTIONS[0];
-
-    setFormState((previous) => ({
-      ...previous,
-      countryIso: iso,
-      dialCode: option.dial,
-      // Reset phone when changing dial code to reduce user errors
-      phone: "",
-    }));
-  };
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmitting(true);
-
-    // Simulate form submission and redirect to web app
-    window.setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-      
-      // Redirect to DiaspoCare web app registration after showing success message
-      setTimeout(() => {
-        window.open('https://supporter.diaspocare.com', '_blank');
-      }, 1500);
-    }, 900);
-  };
-
   return (
     <PageLayout className="bg-[#f7f9ff]" mainClassName="pt-24 pb-24 space-y-24">
       <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1f2a44] via-[#1c3e73] to-[#0f88ff] px-6 py-24 text-white sm:px-12 md:px-20" data-animate="fade-up">
@@ -169,142 +94,71 @@ const GetStarted = () => {
           </div>
 
           <div>
-            <form
-              className="relative overflow-hidden rounded-4xl border border-white bg-white p-8 shadow-[0_45px_120px_-45px_rgba(14,116,244,0.55)]"
-              onSubmit={handleSubmit}
-            >
+            <div className="relative overflow-hidden rounded-4xl border border-white bg-white p-8 shadow-[0_45px_120px_-45px_rgba(14,116,244,0.55)]">
               <div className="absolute -top-[22%] -right-[18%] h-56 w-56 rounded-full bg-[#0f88ff]/15 blur-3xl" />
               <div className="absolute -bottom-[18%] -left-[12%] h-44 w-44 rounded-full bg-[#4a5bdc]/15 blur-3xl" />
-              <div className="relative space-y-6">
-                <div className="space-y-2 text-center">
+              <div className="relative space-y-6 text-center">
+                <div className="space-y-2">
                   <span className="inline-flex items-center gap-2 rounded-full bg-[#eff4ff] px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-[#3a4d9f]">
-                    Step 1
+                    Get Started
                   </span>
-                  <h3 className="text-2xl font-bold text-[#1f2a44]">Tell us about you</h3>
-                  <p className="text-sm text-[#5a6581]">A DiaspoCare navigator will follow up within one business day.</p>
+                  <h3 className="text-2xl font-bold text-[#1f2a44]">Join DiaspoCare Today</h3>
+                  <p className="text-sm text-[#5a6581]">Sign up directly in our secure web app to start coordinating care for your loved ones.</p>
                 </div>
 
-                <label className="block text-sm font-medium text-[#253250]">
-                  Full name
-                  <div className="mt-2 flex items-center gap-3 rounded-2xl border border-[#e3ebff] bg-[#f7f9ff] px-4 py-3 focus-within:border-[#0f88ff]">
-                    <User className="h-4 w-4 text-[#5a6aa1]" />
-                    <Input
-                      required
-                      value={formState.fullName}
-                      onChange={handleChange("fullName")}
-                      placeholder="e.g. Ama Osei"
-                      className="border-none bg-transparent px-0 text-sm text-[#1f2a44] focus-visible:ring-0"
-                    />
-                  </div>
-                </label>
-
-                <label className="block text-sm font-medium text-[#253250]">
-                  Email address
-                  <div className="mt-2 flex items-center gap-3 rounded-2xl border border-[#e3ebff] bg-[#f7f9ff] px-4 py-3 focus-within:border-[#0f88ff]">
-                    <Mail className="h-4 w-4 text-[#5a6aa1]" />
-                    <Input
-                      required
-                      type="email"
-                      value={formState.email}
-                      onChange={handleChange("email")}
-                      placeholder="you@example.com"
-                      className="border-none bg-transparent px-0 text-sm text-[#1f2a44] focus-visible:ring-0"
-                    />
-                  </div>
-                </label>
-
-                <div className="grid gap-4 sm:grid-cols-[0.75fr_1fr]">
-                  <label className="block text-sm font-medium text-[#253250]">
-                    Country
-                    <div className="mt-2 rounded-2xl border border-[#e3ebff] bg-[#f7f9ff] px-3 py-2 focus-within:border-[#0f88ff]">
-                      <div className="flex items-center gap-2 text-sm text-[#1f2a44]">
-                        <Globe2 className="h-4 w-4 text-[#5a6aa1]" />
-                        <select
-                          required
-                          value={formState.countryIso}
-                          onChange={handleCountryChange}
-                          className="w-full bg-transparent text-sm text-[#1f2a44] outline-none"
-                        >
-                          {COUNTRY_OPTIONS.map((option) => (
-                            <option key={option.iso} value={option.iso}>
-                              {option.name}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
+                <div className="space-y-4">
+                  <a
+                    href="https://supporter.diaspocare.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#0f88ff] to-[#4a5bdc] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl"
+                  >
+                    Sign Up in Web App
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+                  
+                  <div className="text-xs text-[#5a6581]">
+                    Or download our mobile app:
+                    <div className="mt-2 flex justify-center gap-3">
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.diaspocare.app&hl=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 rounded-lg border border-[#e3ebff] bg-[#f7f9ff] px-3 py-1.5 text-xs font-medium text-[#1f2a44] transition-all hover:bg-[#e3ebff] hover:shadow-md"
+                      >
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                        </svg>
+                        Android
+                      </a>
+                      <a
+                        href="https://apps.apple.com/ke/app/diaspocare-supporter/id1578303718"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 rounded-lg border border-[#e3ebff] bg-[#f7f9ff] px-3 py-1.5 text-xs font-medium text-[#1f2a44] transition-all hover:bg-[#e3ebff] hover:shadow-md"
+                      >
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.09997,22C7.78997,22.05 6.79997,20.68 5.95997,19.47C4.24997,16.97 2.93997,12.41 4.69997,9.39C5.56997,7.87 7.12997,6.91 8.81997,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.05 19.56,8.58C19.47,8.63 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
+                        </svg>
+                        iOS
+                      </a>
                     </div>
-                  </label>
-
-                  <label className="block text-sm font-medium text-[#253250]">
-                    Phone number
-                    <div className="mt-2 flex items-center gap-3 rounded-2xl border border-[#e3ebff] bg-[#f7f9ff] px-4 py-3 focus-within:border-[#0f88ff]">
-                      <Phone className="h-4 w-4 text-[#5a6aa1]" />
-                      <span className="font-semibold text-[#1f2a44]">{selectedCountry.dial}</span>
-                      <Input
-                        required
-                        type="tel"
-                        inputMode="tel"
-                        value={formState.phone}
-                        onChange={handleChange("phone")}
-                        placeholder="700 000 000"
-                        className="border-none bg-transparent px-0 text-sm text-[#1f2a44] focus-visible:ring-0"
-                      />
-                    </div>
-                    <p className="mt-2 text-xs text-[#7984a4]">Use the mobile number you will verify during onboarding.</p>
-                  </label>
+                  </div>
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="group relative flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#0f88ff] to-[#4a5bdc] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-70"
-                >
-                  {submitting ? "Submitting..." : "Submit details"}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </button>
-
-                {submitted && (
-                  <div className="rounded-2xl border border-[#dbe7ff] bg-[#f3f7ff] px-4 py-4 text-sm text-[#334266]">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#1c7ed6]" />
-                      <div>
-                        <p className="font-semibold">Thanks! Redirecting you to the DiaspoCare web app...</p>
-                        <p className="mt-1 text-xs leading-relaxed">
-                          Complete your registration in our secure web app where you can manage care coordination, payments, and connect with verified providers. Your account will work across both web and mobile apps.
-                        </p>
-                        <div className="mt-4 space-y-3">
-                          <p className="text-xs font-semibold text-[#1f2a44]">Access your account:</p>
-                          <div className="flex flex-col gap-3 sm:flex-row">
-                            <a
-                              href="https://supporter.diaspocare.com"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 rounded-lg border border-[#e3ebff] bg-[#f7f9ff] px-4 py-2 text-sm font-medium text-[#1f2a44] transition-all hover:bg-[#e3ebff] hover:shadow-md"
-                            >
-                              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                              </svg>
-                              Open Web App
-                            </a>
-                            <a
-                              href="https://play.google.com/store/apps/details?id=com.diaspocare.app&hl=en"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 rounded-lg border border-[#e3ebff] bg-[#f7f9ff] px-4 py-2 text-sm font-medium text-[#1f2a44] transition-all hover:bg-[#e3ebff] hover:shadow-md"
-                            >
-                              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                              </svg>
-                              Get Mobile App
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+                <div className="rounded-2xl border border-[#dbe7ff] bg-[#f3f7ff] px-4 py-3 text-xs text-[#334266]">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#1c7ed6]" />
+                    <div>
+                      <p className="font-semibold text-[#1f2a44]">Why sign up in the web app?</p>
+                      <p className="mt-1 leading-relaxed text-[#46506a]">
+                        Our web app has full backend integration for secure registration, care coordination, payments, and provider verification - all in one place.
+                      </p>
                     </div>
                   </div>
-                )}
+                </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </section>
