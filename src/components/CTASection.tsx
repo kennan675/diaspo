@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const CTASection: React.FC = () => {
   return (
@@ -22,9 +23,12 @@ const CTASection: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <button className="px-8 py-4 rounded-2xl bg-white text-[#283692] font-bold text-lg shadow-[0_4px_30px_rgba(255,255,255,0.3)] hover:shadow-[0_8px_40px_rgba(255,255,255,0.4)] hover:scale-105 transition-all">
+              <Link
+                to="/get-started"
+                className="px-8 py-4 rounded-2xl bg-white text-[#283692] font-bold text-lg shadow-[0_4px_30px_rgba(255,255,255,0.3)] hover:shadow-[0_8px_40px_rgba(255,255,255,0.4)] hover:scale-105 transition-all"
+              >
                 Get Started Today →
-              </button>
+              </Link>
               <button className="px-8 py-4 rounded-2xl border-2 border-white text-white font-bold text-lg hover:bg-white/10 hover:scale-105 transition-all">
                 Schedule a Demo
               </button>

@@ -255,7 +255,7 @@ const Navigation = () => {
                   size="lg"
                   className="w-full justify-center text-base font-semibold transition-shadow hover:shadow-[0_0_32px_rgba(33,123,255,0.5)] hover:shadow-secondary/40"
                 >
-                  <Link to="/care-coordination" onClick={() => setIsOpen(false)}>
+                  <Link to="/get-started" onClick={() => setIsOpen(false)}>
                     Get Started
                   </Link>
                 </Button>

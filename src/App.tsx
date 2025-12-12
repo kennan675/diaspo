@@ -19,6 +19,7 @@ import ProviderRegistration from "./pages/ProviderRegistration";
 import HealthcareFinancing from "./pages/HealthcareFinancing";
 import FamilyHealthWallet from "./pages/FamilyHealthWallet";
 import MDConnect from "./pages/MDConnect";
+import GetStarted from "./pages/GetStarted";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -58,6 +59,7 @@ const App = () => {
                 <Route path="/healthcare-financing" element={<HealthcareFinancing />} />
                 <Route path="/family-health-wallet" element={<FamilyHealthWallet />} />
                 <Route path="/md-connect" element={<MDConnect />} />
+                <Route path="/get-started" element={<GetStarted />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>

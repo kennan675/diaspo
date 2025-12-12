@@ -114,7 +114,7 @@ const HomeHero = () => {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:flex-wrap">
               <Button asChild variant="hero" size="lg" className="w-full sm:w-auto">
-                <Link to="/care-coordination" className="flex items-center gap-2">
+                <Link to="/get-started" className="flex items-center gap-2">
                   Get Started
                   <ArrowRight className="h-4 w-4" />
                 </Link>
