@@ -94,7 +94,7 @@ const Navigation = () => {
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="group flex items-center gap-3">
             <img 
-              src="/images/logo.png" 
+              src="/logo-full.png" 
               alt="DiaspoCare" 
               className="h-8 w-auto"
             />
