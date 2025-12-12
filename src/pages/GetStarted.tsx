@@ -148,6 +148,7 @@ const GetStarted = () => {
             </div>
           </div>
         </div>
+        </div>
       </section>
     </PageLayout>
   );
