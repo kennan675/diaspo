@@ -35,7 +35,10 @@ const FamilyHealthWallet: React.FC = () => {
           </div>
 
           <a
-            href="#create-wallet"
+            <a
+            href="https://supporter.diaspocare.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-[#283692] to-[#007FFF] px-10 py-5 text-lg font-bold text-white shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
           >
             CREATE A FAMILY HEALTH WALLET
@@ -135,7 +138,7 @@ const FamilyHealthWallet: React.FC = () => {
           </p>
 
           <a
-            href="https://diaspocares.netlify.app/family-health-wallet"
+            href="https://supporter.diaspocare.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-[#283692] to-[#007FFF] px-10 py-5 text-lg font-bold text-white shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
