@@ -110,37 +110,12 @@ const About = () => {
                   role: "Chief Technology Officer",
                   bio: "Sean O’Neil leads DiaspoCare’s technology strategy, ensuring our platform delivers world-class transparency, security, and usability. With over 15 years of experience building scalable health-tech platforms, Sean is passionate about using technology to bridge the gap between diaspora families and quality healthcare in Africa.",
                   image: "/team/sean-oneil.jpg"
-                },
-                {
-                  name: "Dr. Charles Njue",
-                  role: "Chief Executive Officer & Co-Founder",
-                  bio: "Dr. Njue brings over 20 years of clinical and leadership experience. A practicing oncologist and hematologist in Minnesota, he understands the critical need for verifiable medical data when treating patients across borders. He founded DiaspoCare to ensure no family has to guess about the health of their loved ones.",
-                  image: "/team/charles-njue.jpg"
-                },
-                {
-                  name: "Dr. Joseph Nyamien",
-                  role: "Chief Medical Officer",
-                  bio: "As Chief Medical Officer, Dr. Nyamien ensures clinical excellence across the DiaspoCare network. His focus is on verifying providers, standardized care protocols, and ensuring every patient interaction meet global standards of care.",
-                  image: "/team/joseph-nyamien.jpg"
-                },
-                {
-                  name: "Njeri Kinyanjui",
-                  role: "Director of Operations",
-                  bio: "Njeri manages the day-to-day operations of DiaspoCare, coordinating our partner clinics, pharmacies, and care coordinators. Her hands-on leadership ensures seamless service delivery for families in the diaspora and their beneficiaries.",
-                  image: "/team/njeri-kinyanjui.jpg"
-                },
-                {
-                  name: "Wanjiru Maina",
-                  role: "Head of Customer Success",
-                  bio: "Wanjiru is the voice of our customers, ensuring every family and provider has a seamless experience. She leads our support team with empathy and a deep understanding of the unique challenges diaspora families face.",
-                  image: "/team/wanjiru-maina.jpg"
                 }
 
               ].map((member) => (
                 <div key={member.name} className="flex flex-col items-center text-center space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
                   <div className="h-32 w-32 overflow-hidden rounded-full bg-slate-200">
-                    {/* Placeholder if image load fails or is missing, ideally we use actual images */}
-                    <img src={member.image} alt={member.name} className="h-full w-full object-cover" onError={(e) => { e.currentTarget.src = `https://ui-avatars.com/api/?name=${member.name}&background=random` }} />
+                    <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-slate-900">{member.name}</h4>
