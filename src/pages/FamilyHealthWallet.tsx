@@ -35,7 +35,6 @@ const FamilyHealthWallet: React.FC = () => {
           </div>
 
           <a
-            <a
             href="https://supporter.diaspocare.com"
             target="_blank"
             rel="noopener noreferrer"
