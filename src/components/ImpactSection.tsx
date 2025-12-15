@@ -1,5 +1,11 @@
 import React from 'react';
-import { TrendingUp, Users, Globe, Heart } from 'lucide-react';
+import { TrendingUp, Globe, Heart } from 'lucide-react';
+
+const STATS = [
+  { value: '2K+', label: 'Healthcare Providers', icon: <Heart className="w-8 h-8 text-white" /> },
+  { value: '4', label: 'Countries', icon: <Globe className="w-8 h-8 text-white" /> },
+  { value: '100%', label: 'Transparent Tracking', icon: <TrendingUp className="w-8 h-8 text-white" /> },
+];
 
 const ImpactSection: React.FC = () => {
   return (
@@ -18,38 +24,16 @@ const ImpactSection: React.FC = () => {
         </div>
 
         {/* By the Numbers */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5 hover:shadow-lg transition-all">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] mb-4">
-              <Users className="w-8 h-8 text-white" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {STATS.map((stat, index) => (
+            <div key={index} className="text-center p-8 rounded-2xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5 hover:shadow-lg transition-all">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] mb-4">
+                {stat.icon}
+              </div>
+              <div className="text-5xl font-extrabold text-[#283692] mb-2">{stat.value}</div>
+              <div className="text-[#7A8A9E] font-medium">{stat.label}</div>
             </div>
-            <div className="text-5xl font-extrabold text-[#283692] mb-2">50K+</div>
-            <div className="text-[#7A8A9E] font-medium">Families Served</div>
-          </div>
-
-          <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5 hover:shadow-lg transition-all">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] mb-4">
-              <Heart className="w-8 h-8 text-white" />
-            </div>
-            <div className="text-5xl font-extrabold text-[#283692] mb-2">2K+</div>
-            <div className="text-[#7A8A9E] font-medium">Healthcare Providers</div>
-          </div>
-
-          <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5 hover:shadow-lg transition-all">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] mb-4">
-              <Globe className="w-8 h-8 text-white" />
-            </div>
-            <div className="text-5xl font-extrabold text-[#283692] mb-2">15+</div>
-            <div className="text-[#7A8A9E] font-medium">Countries</div>
-          </div>
-
-          <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5 hover:shadow-lg transition-all">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] mb-4">
-              <TrendingUp className="w-8 h-8 text-white" />
-            </div>
-            <div className="text-5xl font-extrabold text-[#283692] mb-2">100%</div>
-            <div className="text-[#7A8A9E] font-medium">Transparent Tracking</div>
-          </div>
+          ))}
         </div>
 
         {/* Mission Statement */}
