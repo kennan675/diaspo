@@ -79,11 +79,11 @@ const HomeHero = () => {
             <div className="space-y-6">
               <div className="space-y-3">
                 <TextReveal
-                  text="Care Across Borders."
+                  text="Care Across Borders"
                   className="block max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-[-0.015em] text-white sm:text-5xl lg:text-[3.65rem]"
                 />
                 <TextReveal
-                  text="Verified, fast, and affordable."
+                  text="Verified, fast, and affordable"
                   delay={0.2}
                   className="block max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-[-0.01em] text-white/85 sm:text-5xl lg:text-[3.2rem]"
                 />

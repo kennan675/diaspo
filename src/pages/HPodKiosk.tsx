@@ -34,7 +34,7 @@ const HPodKiosk: React.FC = () => {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <h1 className="mb-8 text-5xl font-extrabold leading-tight sm:text-6xl lg:text-7xl">
-                Healthcare, Anywhere. <span className="text-[#007FFF]">Anytime.</span>
+                Healthcare, Anywhere <span className="text-[#007FFF]">Anytime</span>
               </h1>
 
               <p className="mb-10 text-xl leading-relaxed text-white/90">
@@ -43,7 +43,7 @@ const HPodKiosk: React.FC = () => {
 
               <div className="flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="inline-flex items-center justify-center rounded-xl bg-[#007FFF] px-8 py-4 text-lg font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-[#006FE6]"
                 >
                   Book a Demo
@@ -71,7 +71,7 @@ const HPodKiosk: React.FC = () => {
               <span className="text-sm font-semibold text-[#283692]">🎥 SEE HPOD IN ACTION</span>
             </div>
             <h2 className="mb-4 text-4xl font-extrabold text-[#3A3F46]">
-              Watch How <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">hPod Works</span>
+              Watch How The <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">hPod Works</span>
             </h2>
           </div>
 
@@ -87,16 +87,16 @@ const HPodKiosk: React.FC = () => {
       <section className="py-24 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-8">
-            What is <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">hPod?</span>
+            What is <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">The hPod?</span>
           </h2>
-            
+
           <p className="text-lg text-[#7A8A9E] text-center max-w-5xl mx-auto mb-12 leading-relaxed">
-            hPod is DiaspoCare's breakthrough health kiosk that brings together diagnostics, digital health services, and teleconsultation all under one roof. With hPod, you and your loved ones can get quality healthcare locally, even from remote or underserved communities, with the assurance of transparency, speed, and global standards.
+            The hPod is DiaspoCare's breakthrough health kiosk that brings together diagnostics, digital health services, and teleconsultation all under one roof. With The hPod, you and your loved ones can get quality healthcare locally, even from remote or underserved communities, with the assurance of transparency, speed, and global standards.
           </p>
-            
+
           <div className="bg-gradient-to-br from-[#F8F9FA] to-white rounded-3xl p-8 md:p-12 border-2 border-[#007FFF]/10">
-            <h3 className="text-2xl font-bold text-[#3A3F46] mb-6">How hPod works and why it makes a difference:</h3>
-              
+            <h3 className="text-2xl font-bold text-[#3A3F46] mb-6">How The hPod works and why it makes a difference:</h3>
+
             <ul className="space-y-4 text-[#7A8A9E]">
               <li className="flex items-start gap-3">
                 <span className="text-[#007FFF] text-xl font-bold mt-1">•</span>
@@ -132,7 +132,7 @@ const HPodKiosk: React.FC = () => {
           <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-16">
             Key Features of <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">hPod</span>
           </h2>
-            
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* 50+ Health Parameters */}
             <div className="group bg-white rounded-3xl p-8 border-2 border-[#283692]/10 hover:border-[#283692] hover:shadow-2xl transition-all text-center">
@@ -224,32 +224,32 @@ const HPodKiosk: React.FC = () => {
                 <h4 className="font-bold text-[#3A3F46] mb-2">Vital Signs:</h4>
                 <p className="text-[#7A8A9E]">Weight, Height, BMI, Blood Pressure, Heart Rate, SpO₂, Pulse, Temperature</p>
               </div>
-                
+
               <div>
                 <h4 className="font-bold text-[#3A3F46] mb-2">Body Composition Analysis:</h4>
                 <p className="text-[#7A8A9E]">Percentage Body Fat, Visceral Fat, Skeletal Muscle Mass, Body Cell Mass, Body Fat Mass, Waist to Hip Ratio, Waist to Height Ratio, Minerals, Protein, Bone Mineral Content, ICW, ECW</p>
               </div>
-                
+
               <div>
                 <h4 className="font-bold text-[#3A3F46] mb-2">Lipid Profile:</h4>
                 <p className="text-[#7A8A9E]">Total Cholesterol, LDL, HDL, Triglycerides</p>
               </div>
-                
+
               <div>
                 <h4 className="font-bold text-[#3A3F46] mb-2">Cardiac Health:</h4>
                 <p className="text-[#7A8A9E]">ECG, Troponin</p>
               </div>
-                
+
               <div>
                 <h4 className="font-bold text-[#3A3F46] mb-2">Infectious Diseases:</h4>
                 <p className="text-[#7A8A9E]">Dengue, Malaria, HIV 1&2, Hepatitis B, Hepatitis C, Syphilis, Typhoid</p>
               </div>
-                
+
               <div>
                 <h4 className="font-bold text-[#3A3F46] mb-2">Urinalysis & Kidney Health:</h4>
                 <p className="text-[#7A8A9E]">Protein, pH, Blood, Specific Gravity, Ketone, Glucose, Bilirubin, Urobilinogen, Nitrite, Leukocytes, Bile, U-Albumin</p>
               </div>
-                
+
               <div>
                 <h4 className="font-bold text-[#3A3F46] mb-2">Additional Tests & Tools:</h4>
                 <p className="text-[#7A8A9E]">Blood Glucose, Haemoglobin, Urine Pregnancy Test, Otoscope, Derma Scope, Digital Stethoscope</p>
@@ -265,7 +265,7 @@ const HPodKiosk: React.FC = () => {
           <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-16">
             Where <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">hPod Can Be Used</span>
           </h2>
-            
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Hospitals & Clinics */}
             <div className="bg-white rounded-3xl p-8 border-2 border-[#007FFF]/10 hover:border-[#007FFF] hover:shadow-xl transition-all text-center">

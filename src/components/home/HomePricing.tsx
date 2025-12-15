@@ -80,7 +80,7 @@ const HomePricing = () => {
           {PLANS.map((plan) => (
             <article
               key={plan.name}
-              className="flex flex-col rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_35px_80px_-60px_rgba(15,23,42,0.5)]"
+              className="flex flex-col rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_35px_80px_-60px_rgba(15,23,42,0.5)] h-full"
             >
               <div className="flex items-center justify-between gap-3">
                 <h3 className="text-xl font-semibold text-slate-900">{plan.name}</h3>
@@ -105,7 +105,7 @@ const HomePricing = () => {
                 ))}
               </ul>
 
-              <div className="mt-8">
+              <div className="mt-8 mt-auto">
                 <Button asChild variant="hero" size="lg" className="w-full justify-center">
                   <Link to="/contact">{plan.actionLabel}</Link>
                 </Button>

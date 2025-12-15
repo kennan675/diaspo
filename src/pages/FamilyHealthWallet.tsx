@@ -65,7 +65,7 @@ const FamilyHealthWallet: React.FC = () => {
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#007FFF] to-[#283692] transition-transform group-hover:scale-110">
                 <Settings className="h-8 w-8 text-white" />
               </div>
-              <h3 className="mb-4 text-2xl font-bold text-[#3A3F46]">Auto Approve Transactions</h3>
+              <h3 className="mb-4 text-2xl font-bold text-[#3A3F46]">Auto-Approve Transactions</h3>
               <p className="leading-relaxed text-[#7A8A9E]">
                 With auto approval, you can automate approval of transactions per beneficiary for amounts equal or below their spend limit.
               </p>
@@ -85,7 +85,7 @@ const FamilyHealthWallet: React.FC = () => {
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#007FFF] to-[#283692] transition-transform group-hover:scale-110">
                 <Users2 className="h-8 w-8 text-white" />
               </div>
-              <h3 className="mb-4 text-2xl font-bold text-[#3A3F46]">Invite others to Contribute</h3>
+              <h3 className="mb-4 text-2xl font-bold text-[#3A3F46]">Invite Others to Contribute</h3>
               <p className="leading-relaxed text-[#7A8A9E]">
                 As a supporter, you can invite other family members and friends to contribute to the wallet directly (they don't have to sign up to contribute).
               </p>
@@ -105,7 +105,7 @@ const FamilyHealthWallet: React.FC = () => {
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#007FFF] to-[#283692] transition-transform group-hover:scale-110">
                 <Clock className="h-8 w-8 text-white" />
               </div>
-              <h3 className="mb-4 text-2xl font-bold text-[#3A3F46]">One-time Wallets</h3>
+              <h3 className="mb-4 text-2xl font-bold text-[#3A3F46]">One-Time Wallets</h3>
               <p className="leading-relaxed text-[#7A8A9E]">
                 You can create a temporary wallet (with an expiry date) to allow friends and family to contribute towards a specific use e.g. to raise funds for a loved one who is undergoing an operation.
               </p>
@@ -135,7 +135,9 @@ const FamilyHealthWallet: React.FC = () => {
           </p>
 
           <a
-            href="#create-wallet"
+            href="https://diaspocares.netlify.app/family-health-wallet"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-[#283692] to-[#007FFF] px-10 py-5 text-lg font-bold text-white shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
           >
             CREATE A FAMILY HEALTH WALLET

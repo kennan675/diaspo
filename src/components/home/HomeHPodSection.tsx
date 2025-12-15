@@ -5,28 +5,28 @@ import { TextReveal } from "@/components/animations/TextReveal";
 
 const H_POD_FEATURES = [
   {
-    title: "Rapid diagnostics",
+    title: "Rapid Diagnostics",
     description: "Vital signs, point-of-care labs, and remote consults captured in minutes.",
     icon: Activity,
   },
   {
-    title: "Affordable on-the-spot tests",
+    title: "Affordable On-the-Spot Tests",
     description: "Transparent pricing means every lab and medication is pre-approved before payment.",
     icon: Pill,
   },
   {
-    title: "Digital results",
+    title: "Digital Results",
     description: "Results sync instantly to the shared care record for families and clinicians across continents.",
     icon: ScanEye,
   },
   {
-    title: "Verified medication",
+    title: "Verified Medications",
     description: "Dispensed directly from trusted pharmacies with QR-coded proof and dosage guidance.",
     icon: ShieldCheck,
   },
   {
-    title: "Optional second opinions",
-    description: "Diaspora clinicians can review real medical data, not WhatsApp notes, to guide care.",
+    title: "Optional Second Opinion",
+    description: "Diaspora clinicians can review real medical data – not WhatsApp notes – to guide care.",
     icon: Stethoscope,
   },
 ];

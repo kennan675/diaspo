@@ -93,64 +93,7 @@ const Impact: React.FC = () => {
         <DiaspoCauseSection />
       </div>
 
-      <section className="py-20 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <h2 className="mb-6 text-4xl font-extrabold text-[#3A3F46]">Our Journey</h2>
-            <p className="text-xl text-[#7A8A9E]">Key milestones since 2020</p>
-          </div>
 
-          <div className="relative">
-            <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 transform bg-gradient-to-b from-[#283692] to-[#007FFF]" />
-
-            <div className="space-y-12">
-              <div className="flex items-center gap-8">
-                <div className="flex-1 text-right">
-                  <h3 className="text-2xl font-bold text-[#283692]">2020</h3>
-                  <p className="text-[#7A8A9E]">DiaspoCare Founded</p>
-                </div>
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] shadow-lg">
-                  <TrendingUp className="h-8 w-8 text-white" />
-                </div>
-                <div className="flex-1" />
-              </div>
-
-              <div className="flex items-center gap-8">
-                <div className="flex-1" />
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] shadow-lg">
-                  <Users className="h-8 w-8 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-[#283692]">2021</h3>
-                  <p className="text-[#7A8A9E]">10,000+ Families Served</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-8">
-                <div className="flex-1 text-right">
-                  <h3 className="text-2xl font-bold text-[#283692]">2023</h3>
-                  <p className="text-[#7A8A9E]">Expanded to 15+ Countries</p>
-                </div>
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] shadow-lg">
-                  <Globe className="h-8 w-8 text-white" />
-                </div>
-                <div className="flex-1" />
-              </div>
-
-              <div className="flex items-center gap-8">
-                <div className="flex-1" />
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#283692] to-[#007FFF] shadow-lg">
-                  <Heart className="h-8 w-8 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-[#283692]">2025</h3>
-                  <p className="text-[#7A8A9E]">50,000+ Families & Growing</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </PageLayout>
   );
 };

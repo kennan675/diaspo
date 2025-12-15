@@ -13,7 +13,7 @@ const CareCoordination: React.FC = () => {
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <h1 className="mb-6 text-5xl font-extrabold md:text-6xl">Care Coordination</h1>
-          <p className="mb-4 text-2xl font-semibold">Caring from afar, made simple with DiaspoCare.</p>
+          <p className="mb-4 text-2xl font-semibold">Caring from afar, made simple with DiaspoCare</p>
         </div>
       </section>
 
@@ -74,7 +74,7 @@ const CareCoordination: React.FC = () => {
       >
         <div className="mx-auto max-w-5xl">
           <h2 className="mb-12 text-center text-4xl font-extrabold text-[#3A3F46]">
-            How <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">It Works</span>
+            How <span className="bg-gradient-to-r from-[#283692] to-[#007FFF] bg-clip-text text-transparent">it Works</span>
           </h2>
 
           <div className="space-y-8">

@@ -23,7 +23,7 @@ const DiaspoCauseSection: React.FC = () => {
             <p className="text-lg text-[#7A8A9E] leading-relaxed mb-8">
               <strong className="text-[#283692]">DiaspoCause</strong> is a non-profit initiative created by DiaspoCare to help address this problem. We leverage the state-of-the-art payment system created for DiaspoCare to connect healthcare providers in Africa with charitable organizations, foundations and concerned individuals anywhere in the world.
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-6 mt-8">
               <div className="text-center p-6 rounded-xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5">
                 <Shield className="w-12 h-12 text-[#283692] mx-auto mb-4" />
@@ -53,10 +53,10 @@ const DiaspoCauseSection: React.FC = () => {
           <p className="text-lg text-[#7A8A9E] mb-8">
             And because our platform <strong className="text-[#283692]">minimizes transaction fees</strong>, the impact of funds managed by DiaspoCause is maximized in the communities we serve.
           </p>
-          <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-[#283692] to-[#007FFF] text-white font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+          <a href="mailto:diaspocause@gmail.com" className="inline-block px-8 py-4 rounded-2xl bg-gradient-to-r from-[#283692] to-[#007FFF] text-white font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all">
             <HandHeart className="w-5 h-5 inline mr-2" />
             Support DiaspoCause
-          </button>
+          </a>
         </div>
       </div>
     </section>

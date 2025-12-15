@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="md:col-span-5 space-y-6">
             <img src="/logo-full.png" alt="DiaspoCare" className="h-12 w-auto object-contain" />
             <p className="max-w-md text-base leading-relaxed text-white/75">
-              DiaspoCare connects diaspora families to trusted clinics, pharmacists, and care concierges. Every update, every payment, and every appointment stays transparent.
+              DiaspoCare connects diaspora families to trusted clinics, pharmacists, and care coordinators. Every update, every payment, and every appointment stays transparent.
             </p>
             <a
               href="/about"
@@ -37,30 +37,48 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.32em] text-white/70">Contact</h4>
-            <div className="flex items-center gap-3 text-sm text-white/80">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
-                <Mail className="h-4 w-4" />
+          <div className="md:col-span-3 space-y-6">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.32em] text-white/70">Global Contact</h4>
+            <div className="space-y-4">
+              <div className="flex gap-3 text-sm text-white/80">
+                <span className="text-xl">🇺🇸</span>
+                <div>
+                  <p className="font-semibold text-white">United States</p>
+                  <p className="text-white/60 text-xs">2147 University Avenue West,<br />Suite 105, St. Paul, MN 55114</p>
+                  <a href="tel:+16124400892" className="block mt-1 hover:text-white transition-colors">+1 612 440 0892</a>
+                </div>
               </div>
-              <a href="mailto:hello@diaspocare.com" className="transition-colors hover:text-white">
-                hello@diaspocare.com
-              </a>
-            </div>
-            <div className="flex items-center gap-3 text-sm text-white/80">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
-                <Phone className="h-4 w-4" />
+
+              <div className="flex gap-3 text-sm text-white/80">
+                <span className="text-xl">🇰🇪</span>
+                <div>
+                  <p className="font-semibold text-white">Kenya</p>
+                  <p className="text-white/60 text-xs">Cosy Nook, Muguga Green<br />Westlands, Nairobi</p>
+                  <div className="flex flex-col mt-1">
+                    <a href="tel:+254700771125" className="hover:text-white transition-colors">+254 700 771 125</a>
+                    <a href="tel:+254700773074" className="hover:text-white transition-colors">+254 700 773 074</a>
+                  </div>
+                </div>
               </div>
-              <a href="tel:+16124400892" className="transition-colors hover:text-white">
-                +1 612 440 0892
-              </a>
+
+              <div className="flex gap-3 text-sm text-white/80">
+                <span className="text-xl">🇬🇭</span>
+                <div>
+                  <p className="font-semibold text-white">Ghana</p>
+                  <p className="text-white/60 text-xs">48 IPS Road – East Legon<br />Accra, Ghana</p>
+                  <a href="tel:+233550425321" className="block mt-1 hover:text-white transition-colors">+233 55 042 5321</a>
+                </div>
+              </div>
+
+              <div className="flex gap-3 text-sm text-white/80">
+                <span className="text-xl">🇳🇬</span>
+                <div>
+                  <p className="font-semibold text-white">Nigeria</p>
+                  <p className="text-white/60 text-xs">No. 4 Udosen Uko Street,<br />Uyo, Akwa Ibom State</p>
+                  <a href="tel:+2348058408055" className="block mt-1 hover:text-white transition-colors">+234 805 840 8055</a>
+                </div>
+              </div>
             </div>
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary px-5 py-2 text-sm font-semibold text-white shadow-soft transition-transform duration-300 hover:-translate-y-0.5"
-            >
-              Request Support
-            </a>
           </div>
 
           <div className="md:col-span-4 space-y-4">

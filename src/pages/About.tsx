@@ -94,27 +94,75 @@ const About = () => {
             </div>
           </div>
 
-          <div id="team" className="grid gap-8 rounded-3xl border border-slate-200 bg-slate-50 p-10 lg:grid-cols-[0.8fr_1.2fr]">
-            <div className="space-y-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Our team</p>
-              <h3 className="text-2xl font-semibold text-slate-900">Diaspora clinicians, care coordinators, and technologists</h3>
-              <p className="text-base text-slate-600">
-                From Nairobi and Lagos to Minneapolis and London, our team pairs African clinical expertise with diaspora oversight to run hPod clinics, coordinate complex care, and verify every diagnosis.
+          <div id="team" className="space-y-8 rounded-3xl border border-slate-200 bg-slate-50 p-10">
+            <div className="space-y-4 text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#ff444f]">Our team</p>
+              <h3 className="text-3xl font-semibold text-slate-900">Leadership Team</h3>
+              <p className="mx-auto max-w-2xl text-base text-slate-600">
+                A global team of clinicians, technologists, and operators united by a single mission.
               </p>
-              <Button asChild variant="ghost" size="lg" className="justify-start px-0 text-[#ff444f]">
-                <a href="/contact">Talk to a DiaspoCare leader →</a>
-              </Button>
             </div>
-            <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Where we operate</p>
-              <div className="grid gap-4 text-center sm:grid-cols-3">
-                {["Kenya", "Somalia", "Nigeria", "Ethiopia", "Ghana", "Diaspora hubs"].map((country) => (
-                  <div key={country} className="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm font-semibold text-slate-700">
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  name: "Sean O'Neil",
+                  role: "Chief Technology Officer",
+                  bio: "Sean O’Neil leads DiaspoCare’s technology strategy, ensuring our platform delivers world-class transparency, security, and usability. With over 15 years of experience building scalable health-tech platforms, Sean is passionate about using technology to bridge the gap between diaspora families and quality healthcare in Africa.",
+                  image: "/team/sean-oneil.jpg"
+                },
+                {
+                  name: "Dr. Charles Njue",
+                  role: "Chief Executive Officer & Co-Founder",
+                  bio: "Dr. Njue brings over 20 years of clinical and leadership experience. A practicing oncologist and hematologist in Minnesota, he understands the critical need for verifiable medical data when treating patients across borders. He founded DiaspoCare to ensure no family has to guess about the health of their loved ones.",
+                  image: "/team/charles-njue.jpg"
+                },
+                {
+                  name: "Dr. Joseph Nyamien",
+                  role: "Chief Medical Officer",
+                  bio: "As Chief Medical Officer, Dr. Nyamien ensures clinical excellence across the DiaspoCare network. His focus is on verifying providers, standardized care protocols, and ensuring every patient interaction meet global standards of care.",
+                  image: "/team/joseph-nyamien.jpg"
+                },
+                {
+                  name: "Njeri Kinyanjui",
+                  role: "Director of Operations",
+                  bio: "Njeri manages the day-to-day operations of DiaspoCare, coordinating our partner clinics, pharmacies, and care coordinators. Her hands-on leadership ensures seamless service delivery for families in the diaspora and their beneficiaries.",
+                  image: "/team/njeri-kinyanjui.jpg"
+                },
+                {
+                  name: "Wanjiru Maina",
+                  role: "Head of Customer Success",
+                  bio: "Wanjiru is the voice of our customers, ensuring every family and provider has a seamless experience. She leads our support team with empathy and a deep understanding of the unique challenges diaspora families face.",
+                  image: "/team/wanjiru-maina.jpg"
+                }
+
+              ].map((member) => (
+                <div key={member.name} className="flex flex-col items-center text-center space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
+                  <div className="h-32 w-32 overflow-hidden rounded-full bg-slate-200">
+                    {/* Placeholder if image load fails or is missing, ideally we use actual images */}
+                    <img src={member.image} alt={member.name} className="h-full w-full object-cover" onError={(e) => { e.currentTarget.src = `https://ui-avatars.com/api/?name=${member.name}&background=random` }} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-slate-900">{member.name}</h4>
+                    <p className="text-sm font-medium text-[#007FFF]">{member.role}</p>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed text-left">
+                    {member.bio}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-4 pt-10 border-t border-slate-200">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 text-center">Where we operate</p>
+              <div className="flex flex-wrap justify-center gap-4">
+                {["Kenya", "Nigeria", "Ghana", "USA", "Canada", "UK"].map((country) => (
+                  <div key={country} className="rounded-2xl border border-slate-100 bg-white p-4 text-sm font-semibold text-slate-700 shadow-sm">
                     {country}
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-slate-500">Pilots active in Kenya with expansion underway across East and West Africa.</p>
+              <p className="text-sm text-slate-500 text-center">Pilots active in Kenya with expansion underway across East and West Africa.</p>
             </div>
           </div>
         </div>

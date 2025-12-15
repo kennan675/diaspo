@@ -1,9 +1,8 @@
 import React from 'react';
 
 const STATS = [
-  { value: '50,000+', label: 'Families Served', icon: '👨‍👩‍👧‍👦' },
   { value: '2,000+', label: 'Healthcare Providers', icon: '⚕️' },
-  { value: '15+', label: 'Countries', icon: '🌍' },
+  { value: '4', label: 'Countries', icon: '🌍' },
   { value: '98%', label: 'Satisfaction Rate', icon: '⭐' },
   { value: '24/7', label: 'Support Available', icon: '💬' },
   { value: '100K+', label: 'Appointments Booked', icon: '📅' },
@@ -22,7 +21,7 @@ const StatsSection: React.FC = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {STATS.map((stat, index) => (
-            <div 
+            <div
               key={index}
               className="p-6 rounded-2xl bg-gradient-to-br from-[#283692]/5 to-[#007FFF]/5 border border-[#007FFF]/10 hover:border-[#007FFF]/30 hover:shadow-lg transition-all text-center"
             >
