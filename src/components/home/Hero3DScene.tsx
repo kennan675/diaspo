@@ -29,14 +29,14 @@ const GlobePoints = (props: any) => {
 
             // Color gradient based on interaction or just cool blue/teal
             if (Math.random() > 0.5) {
-                color.setById("0x007FFF"); // Blue
+                color.set("#007FFF"); // Blue
             } else {
-                color.setById("0x283692"); // Dark Blue
+                color.set("#283692"); // Dark Blue
             }
 
             // Add some white highlights
             if (Math.random() > 0.9) {
-                color.setById("0xffffff");
+                color.set("#ffffff");
             }
 
             colors[i * 3] = color.r;
