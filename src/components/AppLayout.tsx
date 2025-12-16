@@ -3,7 +3,6 @@ import { useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import FloatingCTA from "@/components/FloatingCTA";
 import HomeHero from "@/components/home/HomeHero";
 import HomeWhyDiaspoCare from "@/components/home/HomeWhyDiaspoCare";
 import HomeHowItWorks from "@/components/home/HomeHowItWorks";
@@ -42,7 +41,6 @@ const AppLayout = () => {
         <HomeBuiltByDiaspora />
       </main>
       <Footer />
-      <FloatingCTA />
       <BackToTop />
     </div>
   );

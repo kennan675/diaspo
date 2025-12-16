@@ -109,23 +109,31 @@ const ChatBot = () => {
                         >
                             <Button
                                 onClick={() => setIsOpen(true)}
-                                className="h-14 w-14 rounded-full bg-gradient-to-r from-[#283692] to-[#007FFF] text-white shadow-xl transition-transform hover:scale-110 hover:shadow-2xl"
+                                className="group flex h-14 items-center gap-3 rounded-full bg-gradient-to-r from-[#283692] to-[#007FFF] px-6 text-white shadow-xl transition-transform hover:scale-105 hover:shadow-2xl"
                             >
                                 <div className="relative">
-                                    <MessageCircle className="h-7 w-7" />
-                                    <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                                    <MessageCircle className="h-6 w-6" />
+                                    <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-500"></span>
                                     </span>
                                 </div>
+                                <span className="text-base font-semibold">Talk to DiaspoCare AI</span>
                             </Button>
                         </motion.div>
                     )}
                 </AnimatePresence>
             </div>
 
-            <AnimatePresence>
-                {isOpen && (
+            {isOpen && (
+                <>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+                        onClick={() => setIsOpen(false)}
+                    />
                     <motion.div
                         initial={{ opacity: 0, y: 20, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -161,7 +169,7 @@ const ChatBot = () => {
                         {/* Chat Area */}
                         <div
                             ref={scrollRef}
-                            className="h-[400px] overflow-y-auto bg-gray-50 p-4 space-y-4 dark:bg-gray-800/50 scroll-smooth"
+                            className="h-[350px] overflow-y-auto bg-gray-50 p-4 space-y-4 dark:bg-gray-800/50 scroll-smooth"
                         >
                             {messages.map((msg) => (
                                 <div
@@ -227,13 +235,22 @@ const ChatBot = () => {
                                     <Send className="h-4 w-4 text-white" />
                                 </Button>
                             </div>
-                            <div className="mt-2 text-center text-[10px] text-gray-400">
-                                Powered by DiaspoCare AI
+                            <div className="mt-2 flex items-center justify-between px-1">
+                                <button
+                                    onClick={() => setIsOpen(false)}
+                                    className="text-[10px] text-gray-400 hover:text-red-500 transition-colors flex items-center gap-1"
+                                >
+                                    <X className="h-3 w-3" /> End Chat
+                                </button>
+                                <div className="text-[10px] text-gray-400">
+                                    Powered by DiaspoCare AI
+                                </div>
                             </div>
                         </div>
                     </motion.div>
-                )}
-            </AnimatePresence>
+                </>
+            )}
+        </AnimatePresence >
         </>
     );
 };
