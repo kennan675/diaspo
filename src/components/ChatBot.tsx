@@ -125,132 +125,133 @@ const ChatBot = () => {
                 </AnimatePresence>
             </div>
 
-            {isOpen && (
-                <>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
-                        onClick={() => setIsOpen(false)}
-                    />
-                    <motion.div
-                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 20, scale: 0.95 }}
-                        className="fixed bottom-24 right-6 z-50 w-[90vw] max-w-[400px] overflow-hidden rounded-2xl border border-white/20 bg-white/95 shadow-2xl backdrop-blur-xl sm:bottom-24 sm:right-6 dark:bg-gray-900/95"
-                    >
-                        {/* Header */}
-                        <div className="bg-gradient-to-r from-[#283692] to-[#007FFF] p-4 text-white">
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-                                        <Bot className="h-5 w-5" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-bold text-sm">DiaspoCare Assistant</h3>
-                                        <p className="text-xs text-blue-100 flex items-center gap-1">
-                                            <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-                                            Online Now
-                                        </p>
-                                    </div>
-                                </div>
-                                <Button
-                                    size="icon"
-                                    variant="ghost"
-                                    className="h-8 w-8 text-white hover:bg-white/20"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    <X className="h-5 w-5" />
-                                </Button>
-                            </div>
-                        </div>
-
-                        {/* Chat Area */}
-                        <div
-                            ref={scrollRef}
-                            className="h-[350px] overflow-y-auto bg-gray-50 p-4 space-y-4 dark:bg-gray-800/50 scroll-smooth"
+            <AnimatePresence>
+                {isOpen && (
+                    <>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+                            onClick={() => setIsOpen(false)}
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                            className="fixed bottom-24 right-6 z-50 w-[90vw] max-w-[400px] overflow-hidden rounded-2xl border border-white/20 bg-white/95 shadow-2xl backdrop-blur-xl sm:bottom-24 sm:right-6 dark:bg-gray-900/95"
                         >
-                            {messages.map((msg) => (
-                                <div
-                                    key={msg.id}
-                                    className={cn(
-                                        "flex w-full",
-                                        msg.sender === "user" ? "justify-end" : "justify-start"
-                                    )}
-                                >
-                                    <div className="flex max-w-[80%] items-end gap-2">
-                                        {msg.sender === "bot" && (
+                            {/* Header */}
+                            <div className="bg-gradient-to-r from-[#283692] to-[#007FFF] p-4 text-white">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-2">
+                                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+                                            <Bot className="h-5 w-5" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-sm">DiaspoCare Assistant</h3>
+                                            <p className="text-xs text-blue-100 flex items-center gap-1">
+                                                <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
+                                                Online Now
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <Button
+                                        size="icon"
+                                        variant="ghost"
+                                        className="h-8 w-8 text-white hover:bg-white/20"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        <X className="h-5 w-5" />
+                                    </Button>
+                                </div>
+                            </div>
+
+                            {/* Chat Area */}
+                            <div
+                                ref={scrollRef}
+                                className="h-[350px] overflow-y-auto bg-gray-50 p-4 space-y-4 dark:bg-gray-800/50 scroll-smooth"
+                            >
+                                {messages.map((msg) => (
+                                    <div
+                                        key={msg.id}
+                                        className={cn(
+                                            "flex w-full",
+                                            msg.sender === "user" ? "justify-end" : "justify-start"
+                                        )}
+                                    >
+                                        <div className="flex max-w-[80%] items-end gap-2">
+                                            {msg.sender === "bot" && (
+                                                <div className="h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+                                                    <Bot className="h-4 w-4 text-blue-600" />
+                                                </div>
+                                            )}
+                                            <div
+                                                className={cn(
+                                                    "rounded-2xl px-4 py-2 text-sm shadow-sm",
+                                                    msg.sender === "user"
+                                                        ? "bg-[#007FFF] text-white rounded-br-none"
+                                                        : "bg-white text-gray-800 border border-gray-100 dark:bg-gray-700 dark:text-gray-100 rounded-bl-none"
+                                                )}
+                                            >
+                                                {msg.text}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                                {isTyping && (
+                                    <div className="flex w-full justify-start">
+                                        <div className="flex max-w-[80%] items-end gap-2">
                                             <div className="h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
                                                 <Bot className="h-4 w-4 text-blue-600" />
                                             </div>
-                                        )}
-                                        <div
-                                            className={cn(
-                                                "rounded-2xl px-4 py-2 text-sm shadow-sm",
-                                                msg.sender === "user"
-                                                    ? "bg-[#007FFF] text-white rounded-br-none"
-                                                    : "bg-white text-gray-800 border border-gray-100 dark:bg-gray-700 dark:text-gray-100 rounded-bl-none"
-                                            )}
-                                        >
-                                            {msg.text}
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                            {isTyping && (
-                                <div className="flex w-full justify-start">
-                                    <div className="flex max-w-[80%] items-end gap-2">
-                                        <div className="h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
-                                            <Bot className="h-4 w-4 text-blue-600" />
-                                        </div>
-                                        <div className="rounded-2xl rounded-bl-none bg-white p-3 text-gray-400 border border-gray-100 shadow-sm dark:bg-gray-700">
-                                            <div className="flex gap-1">
-                                                <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400 [animation-delay:-0.3s]" />
-                                                <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400 [animation-delay:-0.15s]" />
-                                                <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400" />
+                                            <div className="rounded-2xl rounded-bl-none bg-white p-3 text-gray-400 border border-gray-100 shadow-sm dark:bg-gray-700">
+                                                <div className="flex gap-1">
+                                                    <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400 [animation-delay:-0.3s]" />
+                                                    <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400 [animation-delay:-0.15s]" />
+                                                    <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400" />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            )}
-                        </div>
+                                )}
+                            </div>
 
-                        {/* Input Area */}
-                        <div className="border-t border-gray-200 bg-white p-3 dark:border-gray-700 dark:bg-gray-900">
-                            <div className="relative flex items-center">
-                                <input
-                                    type="text"
-                                    placeholder="Ask a question..."
-                                    className="w-full rounded-full border border-gray-200 bg-gray-50 py-3 pl-4 pr-12 text-sm outline-none focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600"
-                                    value={inputValue}
-                                    onChange={(e) => setInputValue(e.target.value)}
-                                    onKeyDown={handleKeyDown}
-                                />
-                                <Button
-                                    size="icon"
-                                    className="absolute right-1 h-8 w-8 rounded-full bg-[#007FFF] hover:bg-[#0066cc]"
-                                    onClick={handleSend}
-                                >
-                                    <Send className="h-4 w-4 text-white" />
-                                </Button>
-                            </div>
-                            <div className="mt-2 flex items-center justify-between px-1">
-                                <button
-                                    onClick={() => setIsOpen(false)}
-                                    className="text-[10px] text-gray-400 hover:text-red-500 transition-colors flex items-center gap-1"
-                                >
-                                    <X className="h-3 w-3" /> End Chat
-                                </button>
-                                <div className="text-[10px] text-gray-400">
-                                    Powered by DiaspoCare AI
+                            {/* Input Area */}
+                            <div className="border-t border-gray-200 bg-white p-3 dark:border-gray-700 dark:bg-gray-900">
+                                <div className="relative flex items-center">
+                                    <input
+                                        type="text"
+                                        placeholder="Ask a question..."
+                                        className="w-full rounded-full border border-gray-200 bg-gray-50 py-3 pl-4 pr-12 text-sm outline-none focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600"
+                                        value={inputValue}
+                                        onChange={(e) => setInputValue(e.target.value)}
+                                        onKeyDown={handleKeyDown}
+                                    />
+                                    <Button
+                                        size="icon"
+                                        className="absolute right-1 h-8 w-8 rounded-full bg-[#007FFF] hover:bg-[#0066cc]"
+                                        onClick={handleSend}
+                                    >
+                                        <Send className="h-4 w-4 text-white" />
+                                    </Button>
+                                </div>
+                                <div className="mt-2 flex items-center justify-between px-1">
+                                    <button
+                                        onClick={() => setIsOpen(false)}
+                                        className="text-[10px] text-gray-400 hover:text-red-500 transition-colors flex items-center gap-1"
+                                    >
+                                        <X className="h-3 w-3" /> End Chat
+                                    </button>
+                                    <div className="text-[10px] text-gray-400">
+                                        Powered by DiaspoCare AI
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </motion.div>
-                </>
-            )}
-        </AnimatePresence >
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence >
         </>
     );
 };
