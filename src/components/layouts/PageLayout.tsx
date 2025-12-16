@@ -2,7 +2,7 @@ import { ReactNode, useRef } from "react";
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import FloatingCTA from "@/components/FloatingCTA";
+import ChatBot from "@/components/ChatBot";
 import BackToTop from "@/components/BackToTop";
 import ScrollProgress from "@/components/ScrollProgress";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -33,7 +33,7 @@ const PageLayout = ({
       <Navigation />
       <main className={combinedMainClass}>{children}</main>
       <Footer />
-      <FloatingCTA />
+      <ChatBot />
       <BackToTop />
     </div>
   );
