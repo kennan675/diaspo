@@ -1,11 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, HeartHandshake, ShieldCheck, Sparkles } from "lucide-react";
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/home-hero-bbbb.png";
 import { TextReveal } from "@/components/animations/TextReveal";
+import Hero3DScene from "./Hero3DScene";
 
 const HomeHero = () => {
   const trustPromises = [
@@ -55,11 +55,16 @@ const HomeHero = () => {
       <motion.div className="absolute inset-0" style={{ y: parallaxY, scale: backgroundScale }}>
         <div className="absolute inset-0 -z-10 h-full w-full bg-transparent" />
         <div className="absolute inset-0 overflow-hidden">
-          <img src={heroImage} alt="Warm African caregiving scene" className="h-full w-full object-cover object-center" />
+          {/* <img src={heroImage} alt="Warm African caregiving scene" className="h-full w-full object-cover object-center opacity-30 mix-blend-overlay" /> */}
           <div className="absolute inset-0 bg-[linear-gradient(112deg,rgba(7,14,34,0.95)0%,rgba(16,38,82,0.87)55%,rgba(27,60,123,0.7)100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_-10%,rgba(255,255,255,0.22),transparent_55%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(7,14,34,0.88),rgba(7,14,34,0.55)45%,transparent_68%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_115%,rgba(255,68,79,0.18),transparent_60%)]" />
+
+          {/* 3D Scene Integration */}
+          <Suspense fallback={null}>
+            <Hero3DScene />
+          </Suspense>
         </div>
       </motion.div>
 
