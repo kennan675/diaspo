@@ -13,7 +13,7 @@ import HomeWallets from "@/components/home/HomeWallets";
 import HomePricing from "@/components/home/HomePricing";
 import HomeBuiltByDiaspora from "@/components/home/HomeBuiltByDiaspora";
 import SectionTransition from "@/components/SectionTransition";
-import TawkWidget from "@/components/TawkWidget";
+import ChatBot from "@/components/ChatBot";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const AppLayout = () => {
@@ -22,10 +22,7 @@ const AppLayout = () => {
 
   return (
     <div ref={scope} className="relative min-h-screen bg-background text-foreground">
-      <TawkWidget
-        propertyId={import.meta.env.VITE_TAWK_PROPERTY_ID ?? "690dc49843ae26195bde4df6"}
-        widgetId={import.meta.env.VITE_TAWK_WIDGET_ID ?? "1j9esftho"}
-      />
+      <ChatBot />
       <Navigation />
       <main className="pb-0">
         <HomeHero />

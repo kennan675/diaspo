@@ -6,14 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-declare global {
-  interface Window {
-    Tawk_API?: {
-      maximize?: () => void;
-    };
-  }
-}
-
 const solutionsLinks = [
   { to: "/care-coordination", label: "Care Coordination" },
   { to: "/healthcare-financing", label: "Healthcare Financing" },
@@ -76,11 +68,7 @@ const Navigation = () => {
   };
 
   const openCareSupport = useCallback(() => {
-    if (window.Tawk_API?.maximize) {
-      window.Tawk_API.maximize();
-    } else {
-      window.location.href = "/contact";
-    }
+    window.dispatchEvent(new Event("open-diaspocare-chat"));
   }, []);
 
   return (
