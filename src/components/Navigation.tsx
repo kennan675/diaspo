@@ -28,6 +28,8 @@ const navLinks = [
   { to: "/contact", label: "Contact" },
 ];
 
+import logoFull from "@/assets/logo-full.png";
+
 const Navigation = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
@@ -93,9 +95,9 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="group flex items-center gap-3">
-            <img 
-              src="/logo-full.png" 
-              alt="DiaspoCare" 
+            <img
+              src={logoFull}
+              alt="DiaspoCare"
               className="h-8 w-auto"
             />
           </Link>
@@ -130,7 +132,7 @@ const Navigation = () => {
                 type="button"
               >
                 <span>Solutions</span>
-                <ChevronDown className={cn("h-4 w-4 transition-transform", solutionsOpen && "rotate-180")}/> 
+                <ChevronDown className={cn("h-4 w-4 transition-transform", solutionsOpen && "rotate-180")} />
               </button>
 
               <AnimatePresence>
