@@ -21,9 +21,14 @@ const HomeBuiltByDiaspora = () => {
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
         >
-          🌍 Built by the Diaspora, for the Diaspora
+          🌍 Built by the Diaspora
         </motion.span>
-        <TextReveal text="Every founder, advisor, and clinical partner has lived this reality" className="mt-8 block font-display text-4xl font-semibold leading-[1.15] sm:text-5xl" />
+
+        <TextReveal
+          text="We've lived this problem."
+          className="mt-8 block font-display text-4xl font-semibold leading-[1.15] sm:text-5xl"
+        />
+
         <motion.div
           className="mt-8 space-y-5 text-lg leading-8 text-white/85 sm:text-xl"
           initial={{ opacity: 0, y: 24 }}
@@ -31,11 +36,32 @@ const HomeBuiltByDiaspora = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p>The guilt. The pressure. The fear. The uncertainty. The frustration of not knowing the truth.</p>
           <p>
-            DiaspoCare changes that — with <span className="text-white">verified care</span>, <span className="text-white">transparent billing</span>, and
-            <span className="text-white"> modern clinics powered by diaspora love and expertise.</span>
+            DiaspoCare was founded by <span className="text-white font-medium">African diaspora professionals</span> who know the guilt, stress, and uncertainty of caring from afar — and decided to build something better.
           </p>
+        </motion.div>
+
+        <motion.div
+          className="mt-10 rounded-[28px] border border-white/15 bg-white/10 p-8 backdrop-blur"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <div className="grid gap-6 text-left sm:grid-cols-3">
+            <div className="space-y-2">
+              <p className="text-3xl font-bold text-white">Verified</p>
+              <p className="text-white/70">Every visit, every bill, every outcome — documented and transparent.</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-3xl font-bold text-white">Direct</p>
+              <p className="text-white/70">Payments go straight to clinics and pharmacies. No middlemen.</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-3xl font-bold text-[#ff444f]">Trusted</p>
+              <p className="text-white/70">Built by people who understand what it means to care from afar.</p>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -46,7 +72,7 @@ const HomeBuiltByDiaspora = () => {
           transition={{ duration: 0.5, delay: 0.15 }}
         >
           <Button asChild variant="hero" size="lg" className="inline-flex items-center gap-2">
-            <Link to="/join">
+            <Link to="/get-started">
               Join DiaspoCare Today
               <ArrowRight className="h-4 w-4" />
             </Link>

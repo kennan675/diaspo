@@ -1,32 +1,30 @@
-import { Building2, Coins, HeartHandshake, ShieldCheck, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Heart, Users, Wallet, Shield, HandHeart } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { Button } from "@/components/ui/button";
 import { TextReveal } from "@/components/animations/TextReveal";
 
-const WALLETS = [
+const BENEFITS = [
   {
-    title: "Family Wallet",
-    description:
-      "Siblings contribute small monthly amounts → shared responsibility, no drama, full transparency.",
-    icon: HeartHandshake,
-  },
-  {
-    title: "Community Wallet",
-    description:
-      "Mosques, churches, associations, philanthropists → 95% goes directly to verifiable care.",
+    text: "Share responsibility",
     icon: Users,
   },
   {
-    title: "Condition Wallet",
-    description:
-      "Predictable monthly care for diabetes, hypertension, asthma, and more — with growing discounts as more users join.",
-    icon: ShieldCheck,
+    text: "Contribute small monthly amounts",
+    icon: Wallet,
   },
   {
-    title: "Employer Wallet",
-    description:
-      "Affordable workforce health with hPod screenings + fast primary care.",
-    icon: Building2,
+    text: "Cover more loved ones",
+    icon: Heart,
+  },
+  {
+    text: "Avoid family conflict",
+    icon: Shield,
+  },
+  {
+    text: "Eliminate guilt and guesswork",
+    icon: HandHeart,
   },
 ];
 
@@ -37,65 +35,145 @@ const HomeWallets = () => {
       <div className="absolute inset-x-0 top-10 -z-10 h-64 bg-gradient-to-b from-secondary/15 via-transparent to-transparent" />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="mx-auto max-w-4xl text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <motion.span
-            className="inline-flex items-center gap-3 rounded-full border border-secondary/20 bg-secondary/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-secondary"
-            initial={{ opacity: 0, y: -8 }}
+        <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center">
+          {/* Left Content */}
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.8 }}
-            transition={{ duration: 0.4, delay: 0.05 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <Coins className="h-4 w-4" />
-            Wallets That Build Trust
-          </motion.span>
-          <TextReveal text="Every contribution is ring-fenced for real care" className="mt-6 block font-display text-4xl font-semibold text-foreground sm:text-5xl" />
-          <motion.p
-            className="mt-6 text-lg leading-8 text-foreground/70 sm:text-xl"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-          >
-            The diaspora can finally fund healthcare without conflict, guilt, or guesswork. Choose wallets that match the way your family, community, or organisation supports care.
-          </motion.p>
-        </motion.div>
-
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
-          {WALLETS.map(({ title, description, icon: Icon }, index) => (
-            <motion.article
-              key={title}
-              className="group relative overflow-hidden rounded-[28px] border border-border/60 bg-white p-8 shadow-soft"
-              initial={{ opacity: 0, y: 24 }}
+            <motion.span
+              className="inline-flex items-center gap-3 rounded-full border border-secondary/20 bg-secondary/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-secondary"
+              initial={{ opacity: 0, y: -8 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.45, delay: 0.08 * index }}
-              whileHover={{ y: -10, rotateX: 3, rotateY: -3, boxShadow: "0 30px 80px -50px rgba(19,36,70,0.65)" }}
-              style={{ transformPerspective: 800 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.4, delay: 0.05 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-background to-primary/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              <div className="relative space-y-4 text-left">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
-                  <Icon className="h-6 w-6" />
-                </span>
-                <TextReveal text={title} className="text-xl font-semibold text-foreground sm:text-2xl" />
-                <motion.p
-                  className="text-base leading-7 text-foreground/75"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.4, delay: 0.15 }}
+              <Wallet className="h-4 w-4" />
+              Family Wallet
+            </motion.span>
+
+            <div className="space-y-4">
+              <TextReveal
+                text="The Smartest Way to Care"
+                className="font-display text-4xl font-semibold text-foreground sm:text-5xl"
+              />
+              <motion.p
+                className="text-xl font-medium text-foreground/80"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                Stop carrying the burden alone.
+              </motion.p>
+              <motion.p
+                className="text-lg leading-8 text-foreground/70"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+              >
+                The Family Wallet lets siblings and relatives support care together — transparently and peacefully.
+              </motion.p>
+            </div>
+
+            <div className="space-y-4">
+              {BENEFITS.map(({ text, icon: Icon }, index) => (
+                <motion.div
+                  key={text}
+                  className="flex items-center gap-4 rounded-2xl bg-white/80 px-5 py-4 shadow-soft"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.4, delay: 0.1 * index }}
+                  whileHover={{ x: 8, boxShadow: "0 20px 50px -25px rgba(19,36,70,0.5)" }}
                 >
-                  {description}
-                </motion.p>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <span className="text-lg font-medium text-foreground">{text}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              className="rounded-2xl border border-primary/20 bg-primary/5 p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <p className="text-lg text-foreground/80">
+                <span className="font-semibold text-foreground">Imagine everyone giving $10–$20/month.</span>
+                <br />
+                Now the whole family gets covered.
+              </p>
+            </motion.div>
+
+            <Button asChild variant="hero" size="lg" className="w-full sm:w-auto">
+              <Link to="/family-health-wallet" className="flex items-center gap-2">
+                Create a Family Wallet
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </motion.div>
+
+          {/* Right Card */}
+          <motion.div
+            className="relative overflow-hidden rounded-[32px] border border-secondary/20 bg-gradient-to-br from-secondary/90 via-secondary/70 to-[#0A1533] p-10 text-white shadow-large"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="absolute -top-24 -right-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
+            <div className="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-primary/20 blur-3xl" />
+
+            <div className="relative space-y-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/60">
+                How It Works
+              </p>
+
+              <div className="space-y-5">
+                {[
+                  "Create a Family Wallet",
+                  "Invite siblings or relatives",
+                  "Set small monthly contributions",
+                  "Pay clinics and pharmacies directly",
+                  "See every bill and every outcome",
+                ].map((step, index) => (
+                  <motion.div
+                    key={step}
+                    className="flex items-center gap-4"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ duration: 0.4, delay: 0.1 * index }}
+                  >
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-sm font-semibold">
+                      {index + 1}
+                    </span>
+                    <span className="text-white/90">{step}</span>
+                  </motion.div>
+                ))}
               </div>
-            </motion.article>
-          ))}
+
+              <div className="mt-8 space-y-3 rounded-2xl bg-white/10 p-6">
+                <p className="text-lg font-semibold text-white">The result?</p>
+                <div className="space-y-2 text-white/80">
+                  <p>✓ No cash-outs</p>
+                  <p>✓ No arguments</p>
+                  <p>✓ No guilt</p>
+                </div>
+                <p className="mt-4 text-lg font-medium text-white">
+                  Care feels lighter when it's shared.
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

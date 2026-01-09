@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { TextReveal } from "@/components/animations/TextReveal";
 
 const PAIN_POINTS = [
-  "Sending $100–$200 \u201cjust to be safe\u201d",
-  "Not knowing the real diagnosis",
-  "Money being diverted",
+  "Sending $100–$200 'just in case'",
+  "Not knowing the real cost of care",
+  "Funds being diverted or misused",
   "Feeling guilty when many relatives need help",
   "Being blamed if something goes wrong",
-  "Not trusting the local healthcare system",
+  "Not trusting the quality of care back home",
 ];
 
 const HomeWhyDiaspoCare = () => {
@@ -43,7 +43,7 @@ const HomeWhyDiaspoCare = () => {
             </motion.span>
 
             <div className="space-y-6">
-              <TextReveal text="Diaspora families deserve verified healthcare, not stories" className="font-display text-4xl font-semibold text-foreground sm:text-5xl" />
+              <TextReveal text="If you're part of the African diaspora, you already know the pain" className="font-display text-4xl font-semibold text-foreground sm:text-5xl" />
               <motion.p
                 className="text-lg leading-8 text-foreground/75 sm:text-xl"
                 initial={{ opacity: 0, y: 18 }}
@@ -51,7 +51,7 @@ const HomeWhyDiaspoCare = () => {
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                If you're part of the African diaspora, you already know the pain.
+                The worry. The uncertainty. The guilt. We've lived it too.
               </motion.p>
             </div>
 
@@ -100,7 +100,7 @@ const HomeWhyDiaspoCare = () => {
               <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/70">
                 Built from lived experience
               </p>
-              <TextReveal text="We lived these frustrations ourselves. So we built the fix." className="text-2xl font-semibold leading-9 text-white" />
+              <TextReveal text="DiaspoCare was built by the diaspora to fix this — transparently." className="text-2xl font-semibold leading-9 text-white" />
               <motion.p
                 className="text-lg leading-8 text-white/85"
                 initial={{ opacity: 0, y: 16 }}
@@ -110,15 +110,31 @@ const HomeWhyDiaspoCare = () => {
               >
                 Every workflow, partnership, and wallet inside DiaspoCare is designed to keep families informed, clinics accountable, and care fully verifiable across borders.
               </motion.p>
-              <motion.p
-                className="text-lg font-semibold text-white"
+              <motion.div
+                className="space-y-3 rounded-2xl bg-white/10 p-6"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.6, delay: 0.18 }}
               >
-                DiaspoCare gives you verified healthcare, not stories.
-              </motion.p>
+                <p className="text-lg font-semibold text-white">
+                  With DiaspoCare, you get:
+                </p>
+                <ul className="space-y-2 text-white/90">
+                  <li className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#ff444f]" />
+                    Verified healthcare, not stories
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#ff444f]" />
+                    Real bills, not estimates
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#ff444f]" />
+                    Direct payments, not cash-outs
+                  </li>
+                </ul>
+              </motion.div>
             </div>
           </motion.div>
         </div>

@@ -1,33 +1,33 @@
-import { Activity, Pill, ScanEye, ShieldCheck, Stethoscope } from "lucide-react";
+import { Activity, MonitorSmartphone, DollarSign, Video, Bell } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { TextReveal } from "@/components/animations/TextReveal";
 
 const H_POD_FEATURES = [
   {
-    title: "Rapid Diagnostics",
-    description: "Vital signs, point-of-care labs, and remote consults captured in minutes.",
+    title: "Rapid Screening & Diagnostics",
+    description: "Vital signs, point-of-care labs, and screenings in minutes.",
     icon: Activity,
   },
   {
-    title: "Affordable On-the-Spot Tests",
-    description: "Transparent pricing means every lab and medication is pre-approved before payment.",
-    icon: Pill,
-  },
-  {
     title: "Digital Results",
-    description: "Results sync instantly to the shared care record for families and clinicians across continents.",
-    icon: ScanEye,
+    description: "Results sync instantly to shared care records for families across continents.",
+    icon: MonitorSmartphone,
   },
   {
-    title: "Verified Medications",
-    description: "Dispensed directly from trusted pharmacies with QR-coded proof and dosage guidance.",
-    icon: ShieldCheck,
+    title: "Transparent Pricing",
+    description: "Every service and medication priced upfront. No surprises.",
+    icon: DollarSign,
   },
   {
-    title: "Optional Second Opinion",
-    description: "Diaspora clinicians can review real medical data – not WhatsApp notes – to guide care.",
-    icon: Stethoscope,
+    title: "Optional Teleconsultations",
+    description: "Connect with diaspora clinicians for remote guidance when needed.",
+    icon: Video,
+  },
+  {
+    title: "Real-Time Diaspora Notifications",
+    description: "Get instant updates when your family receives care.",
+    icon: Bell,
   },
 ];
 
@@ -53,9 +53,9 @@ const HomeHPodSection = () => {
               viewport={{ once: true, amount: 0.7 }}
               transition={{ duration: 0.4, delay: 0.05 }}
             >
-              ⚡ The hPod
+              ⚡ hPOD
             </motion.span>
-            <TextReveal text="15-Minute, all-inclusive primary care that proves what really happened" className="font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-[3.3rem]" />
+            <TextReveal text="Fast Care, Where People Already Are" className="font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-[3.3rem]" />
             <motion.p
               className="text-lg leading-8 text-white/80 sm:text-xl"
               initial={{ opacity: 0, y: 16 }}
@@ -63,37 +63,28 @@ const HomeHPodSection = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              Our flagship high-throughput diagnostic kiosks deliver modern primary care in minutes. Located in malls, markets, workplaces, and communities – starting in Kenya, expanding to Ghana and beyond.
-            </motion.p>
-            <motion.p
-              className="text-base text-white/75"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              One hPod can serve 10,000 patients a year. This is healthcare transformed.
+              Our hPODs are modern, walk-in care points that deliver accessible, quality healthcare right where your family lives.
             </motion.p>
 
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-5 sm:grid-cols-2">
               {H_POD_FEATURES.map(({ title, description, icon: Icon }, index) => (
                 <motion.article
                   key={title}
-                  className="group relative overflow-hidden rounded-[26px] border border-white/15 bg-white/10 p-6 shadow-[0_45px_120px_-60px_rgba(0,0,0,0.8)] backdrop-blur"
+                  className="group relative overflow-hidden rounded-[22px] border border-white/15 bg-white/10 p-5 shadow-[0_45px_120px_-60px_rgba(0,0,0,0.8)] backdrop-blur"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.45, delay: 0.08 * index }}
-                  whileHover={{ y: -8, scale: 1.01 }}
+                  whileHover={{ y: -6, scale: 1.01 }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-secondary/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative space-y-3">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-white">
-                      <Icon className="h-6 w-6" />
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 text-white">
+                      <Icon className="h-5 w-5" />
                     </span>
-                    <TextReveal text={title} className="text-xl font-semibold text-white" />
+                    <TextReveal text={title} className="text-lg font-semibold text-white" />
                     <motion.p
-                      className="text-sm leading-6 text-white/75"
+                      className="text-sm leading-6 text-white/70"
                       initial={{ opacity: 0, y: 8 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.4 }}
@@ -117,43 +108,47 @@ const HomeHPodSection = () => {
             <div className="absolute -top-24 -right-20 h-72 w-72 rounded-full bg-white/15 blur-3xl" />
             <div className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-secondary/30 blur-[160px]" />
             <div className="relative space-y-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/70">
-                What happens inside an hPod visit
-              </p>
-              <motion.ul
-                className="space-y-4 text-white/80"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}
-                variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
-              >
-                {["01.", "02.", "03.", "04."].map((step, idx) => (
-                  <motion.li
-                    key={step}
-                    className="flex items-start gap-3"
-                    variants={{ hidden: { opacity: 0, x: 20 }, visible: { opacity: 1, x: 0 } }}
-                  >
-                    <span className="font-semibold text-white">{step}</span>
-                    <span className="text-white/80">
-                      {[
-                        "Intake, vitals, and history captured digitally.",
-                        "Diagnostics and labs processed on the spot.",
-                        "Prescriptions filled or referrals issued instantly.",
-                        "Diaspora sponsors receive proof-of-care receipts and data in real time.",
-                      ][idx]}
-                    </span>
-                  </motion.li>
-                ))}
-              </motion.ul>
-              <motion.p
-                className="rounded-3xl border border-white/25 bg-white/10 px-6 py-5 text-sm text-white/75"
+              <div className="space-y-4">
+                <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/60">
+                  Pilot Status
+                </p>
+                <div className="rounded-2xl bg-white/10 px-6 py-4">
+                  <p className="text-lg text-white/90">
+                    Currently live at <span className="font-semibold text-white">select pilot locations in Kenya</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/60">
+                  Our Vision
+                </p>
+                <p className="text-lg leading-8 text-white/85">
+                  As we scale, hPODs become the <span className="font-semibold text-white">front door to affordable, preventive care</span> for communities across Africa.
+                </p>
+              </div>
+
+              <motion.div
+                className="rounded-3xl border border-white/25 bg-white/10 px-6 py-5"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                Every hPod is run by licensed clinicians with remote oversight from our diaspora medical board. Compliance, medication supply, and financial flows are monitored 24/7.
-              </motion.p>
+                <p className="text-sm font-semibold uppercase tracking-wider text-white/60 mb-3">
+                  Growth Roadmap
+                </p>
+                <div className="flex items-center gap-3 text-white">
+                  <span className="text-2xl font-bold">2</span>
+                  <span className="text-white/40">→</span>
+                  <span className="text-2xl font-bold">5</span>
+                  <span className="text-white/40">→</span>
+                  <span className="text-2xl font-bold">10</span>
+                  <span className="text-white/40">→</span>
+                  <span className="text-2xl font-bold text-[#ff444f]">20</span>
+                </div>
+                <p className="mt-2 text-sm text-white/60">hPOD locations by December 2026</p>
+              </motion.div>
             </div>
           </motion.div>
         </div>

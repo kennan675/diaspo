@@ -1,59 +1,121 @@
 import { Link } from "react-router-dom";
+import { Check, ArrowRight, Users, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
+import { TextReveal } from "@/components/animations/TextReveal";
 
-type PricingPlan = {
+type WalletPlan = {
   name: string;
   price: string;
+  period: string;
   subtitle: string;
   highlights: string[];
   badge?: string;
+  recommended?: string;
   actionLabel: string;
+  variant: "default" | "featured" | "premium";
 };
 
-const PLANS: PricingPlan[] = [
+const WALLET_PLANS: WalletPlan[] = [
   {
-    name: "Pay-As-You-Go",
+    name: "Free Wallet",
     price: "$0",
-    subtitle: "Just pay transaction fees · Best for new users",
-    highlights: ["Direct-to-provider payments", "Micropayments from $1"],
-    actionLabel: "Start for Free",
+    period: "/month",
+    subtitle: "For getting started",
+    highlights: [
+      "No cross-border transaction fees",
+      "Pay clinics and pharmacies directly",
+      "View verified bills and receipts",
+      "Pay only when care is needed",
+    ],
+    recommended: "Best for first-time users",
+    actionLabel: "Start Free",
+    variant: "default",
   },
   {
-    name: "Family Wallet — Bronze",
+    name: "Bronze",
     price: "$9.99",
-    subtitle: "Up to 3 dependents",
-    highlights: ["Direct-to-provider payments", "Verified bills"],
+    period: "/month",
+    subtitle: "For regular supporters",
+    highlights: [
+      "Unlimited micropayments",
+      "Up to 3 patients",
+      "Covers cross-border payment fees",
+      "Full transaction transparency",
+      "No cash diversion",
+    ],
+    badge: "Most Popular",
+    recommended: "Most popular starting plan",
     actionLabel: "Choose Bronze",
+    variant: "featured",
   },
   {
-    name: "Family Wallet — Silver",
+    name: "Silver",
     price: "$19.99",
-    subtitle: "Up to 6 dependents",
-    highlights: ["Quarterly second opinion", "Care coordination Lite", "Diagnostic discounts"],
+    period: "/month",
+    subtitle: "For families managing ongoing care",
+    highlights: [
+      "Everything in Bronze",
+      "Up to 6 dependents",
+      "Care Coordination Lite included",
+      "Medication reminders",
+      "Appointment follow-ups",
+    ],
+    recommended: "Ideal for elders or recurring care",
     actionLabel: "Choose Silver",
+    variant: "default",
   },
   {
-    name: "Family Wallet — Gold",
+    name: "Gold",
     price: "$39.99",
-    subtitle: "Unlimited dependents",
-    highlights: ["Unlimited second opinions", "Chronic care support", "Priority coordination", "Full visibility"],
+    period: "/month",
+    subtitle: "For peace of mind",
+    highlights: [
+      "Everything in Silver",
+      "Unlimited dependents",
+      "Care Coordination Plus included",
+      "Proactive case tracking",
+      "Priority response",
+    ],
     badge: "Peace of Mind",
+    recommended: "Best value for complex family situations",
     actionLabel: "Get Gold",
+    variant: "premium",
+  },
+];
+
+const COMMUNITY_WALLET = {
+  name: "Community Wallet",
+  price: "$99",
+  period: "/month",
+  subtitle: "For mosques, churches, associations, and community groups",
+  highlights: [
+    "Unlimited contributors",
+    "95%+ of funds go directly to care",
+    "Transparency reports",
+    "Verified clinics & pharmacies",
+  ],
+};
+
+const CARE_COORDINATION = [
+  {
+    name: "Care Coordination Lite",
+    price: "$9.99/month",
+    included: "Included with Silver & Gold wallets",
+    features: ["Care reminders and follow-ups", "Medication tracking", "Basic care navigation"],
   },
   {
-    name: "Community Wallet",
-    price: "$99",
-    subtitle: "+ 95% direct impact · For mosques, churches, diaspora groups",
-    highlights: ["Full transparency", "Verifiable impact reports"],
-    actionLabel: "Launch Community Wallet",
+    name: "Care Coordination Plus",
+    price: "$29.99/month",
+    included: "Included with Gold wallet",
+    features: ["Dedicated care coordinator", "Multi-provider coordination", "Chronic care tracking", "Diaspora family updates"],
   },
   {
-    name: "Employer Plans",
-    price: "$3–$5",
-    subtitle: "Per employee per month · Optional hPod screening days",
-    highlights: ["On-site screenings", "Group wallets", "Real-time insights"],
-    actionLabel: "Talk to Employer Team",
+    name: "Advanced Care Coordination",
+    price: "$79–$149/month",
+    included: "Case-based pricing",
+    features: ["Home care coordination", "Hospital discharge planning", "Palliative or multi-specialty care", "Custom care plans"],
   },
 ];
 
@@ -61,68 +123,209 @@ const HomePricing = () => {
   return (
     <section id="pricing" className="relative overflow-hidden py-24" data-animate="fade-up">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#fdfcff] via-white to-[#f4f7fb]" />
-      <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-gradient-to-b from-[#ff444f]/15 via-transparent to-transparent" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-gradient-to-b from-[#ff444f]/10 via-transparent to-transparent" />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        {/* Header */}
+        <motion.div
+          className="mx-auto mb-16 max-w-3xl text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+        >
           <span className="inline-flex items-center gap-2 rounded-full border border-[#0f172a]/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-slate-500">
             Pricing
           </span>
-          <h2 className="mt-6 font-display text-4xl font-semibold text-slate-900 sm:text-5xl">
-            Simple. Transparent. Built for every family.
-          </h2>
-          <p className="mt-4 text-lg text-slate-600">
-            Pick the wallet that matches how your family, community, or workplace supports care.
-          </p>
-        </div>
+          <TextReveal
+            text="Pricing That Grows With Your Family's Needs"
+            className="mt-6 font-display text-4xl font-semibold text-slate-900 sm:text-5xl"
+          />
+          <motion.p
+            className="mt-4 text-lg text-slate-600"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            Start simple. Upgrade only when care gets complex.
+          </motion.p>
+        </motion.div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {PLANS.map((plan) => (
-            <article
+        {/* Wallet Plans Grid */}
+        <div className="grid gap-6 lg:grid-cols-4">
+          {WALLET_PLANS.map((plan, index) => (
+            <motion.article
               key={plan.name}
-              className="flex flex-col rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_35px_80px_-60px_rgba(15,23,42,0.5)] h-full"
+              className={`relative flex flex-col rounded-3xl border p-6 h-full ${plan.variant === "featured"
+                  ? "border-[#ff444f]/30 bg-gradient-to-b from-[#ff444f]/5 to-white shadow-[0_35px_80px_-40px_rgba(255,68,79,0.3)]"
+                  : plan.variant === "premium"
+                    ? "border-primary/30 bg-gradient-to-b from-primary/5 to-white shadow-[0_35px_80px_-40px_rgba(40,54,146,0.3)]"
+                    : "border-slate-200 bg-white shadow-[0_35px_80px_-60px_rgba(15,23,42,0.4)]"
+                }`}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.08 * index }}
             >
-              <div className="flex items-center justify-between gap-3">
+              {plan.badge && (
+                <span className="absolute -top-3 left-6 rounded-full bg-[#ff444f] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+                  {plan.badge}
+                </span>
+              )}
+              <div className="mb-4">
                 <h3 className="text-xl font-semibold text-slate-900">{plan.name}</h3>
-                {plan.badge && (
-                  <span className="rounded-full bg-[#ff444f]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#ff444f]">
-                    {plan.badge}
-                  </span>
-                )}
+                <p className="mt-1 text-sm text-slate-500">{plan.subtitle}</p>
               </div>
-              <p className="mt-2 text-sm text-slate-500">{plan.subtitle}</p>
-              <p className="mt-6 text-4xl font-bold text-slate-900">
+              <p className="text-4xl font-bold text-slate-900">
                 {plan.price}
-                <span className="text-base font-medium text-slate-500">/month</span>
+                <span className="text-base font-medium text-slate-500">{plan.period}</span>
               </p>
 
-              <ul className="mt-6 space-y-3 text-sm text-slate-600">
+              <ul className="mt-6 flex-1 space-y-3 text-sm text-slate-600">
                 {plan.highlights.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-[#ff444f]" />
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#ff444f]" />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-8 mt-auto">
-                <Button asChild variant="hero" size="lg" className="w-full justify-center">
-                  <Link to="/contact">{plan.actionLabel}</Link>
+              {plan.recommended && (
+                <p className="mt-4 text-xs text-slate-500">👉 {plan.recommended}</p>
+              )}
+
+              <div className="mt-6">
+                <Button
+                  asChild
+                  variant={plan.variant === "featured" ? "hero" : "glass"}
+                  size="lg"
+                  className="w-full justify-center"
+                >
+                  <Link to="/get-started">{plan.actionLabel}</Link>
                 </Button>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white/70 p-8 text-center shadow-inner sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">Need help choosing?</p>
-            <p className="mt-2 text-lg text-slate-700">Talk to a DiaspoCare coordinator about the right wallet mix.</p>
+        {/* Community Wallet */}
+        <motion.div
+          className="mt-12 rounded-3xl border border-secondary/20 bg-gradient-to-r from-secondary/5 to-primary/5 p-8"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex-1">
+              <div className="flex items-center gap-3">
+                <Users className="h-6 w-6 text-secondary" />
+                <h3 className="text-2xl font-semibold text-slate-900">{COMMUNITY_WALLET.name}</h3>
+              </div>
+              <p className="mt-2 text-slate-600">{COMMUNITY_WALLET.subtitle}</p>
+              <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                {COMMUNITY_WALLET.highlights.map((feature) => (
+                  <li key={feature} className="flex items-center gap-2 text-sm text-slate-600">
+                    <Check className="h-4 w-4 text-secondary" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="text-center lg:text-right">
+              <p className="text-4xl font-bold text-slate-900">
+                {COMMUNITY_WALLET.price}
+                <span className="text-base font-medium text-slate-500">{COMMUNITY_WALLET.period}</span>
+              </p>
+              <Button asChild variant="glass" size="lg" className="mt-4">
+                <Link to="/contact">Launch Community Wallet</Link>
+              </Button>
+            </div>
           </div>
-          <Button asChild variant="glass" size="lg" className="w-full sm:w-auto">
-            <Link to="/contact">Chat with Care Support</Link>
-          </Button>
-        </div>
+        </motion.div>
+
+        {/* Care Coordination Section */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-slate-500">
+              <Sparkles className="h-4 w-4" />
+              Care Coordination
+            </span>
+            <h3 className="mt-4 text-2xl font-semibold text-slate-900">Add when care becomes complex</h3>
+            <p className="mt-2 text-slate-600">A real human helping manage care across clinics, pharmacies, and providers.</p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {CARE_COORDINATION.map((tier, index) => (
+              <motion.article
+                key={tier.name}
+                className="rounded-2xl border border-slate-200 bg-white p-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4, delay: 0.1 * index }}
+              >
+                <h4 className="text-lg font-semibold text-slate-900">{tier.name}</h4>
+                <p className="mt-1 text-2xl font-bold text-slate-900">{tier.price}</p>
+                <p className="text-xs text-slate-500">{tier.included}</p>
+                <ul className="mt-4 space-y-2">
+                  {tier.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2 text-sm text-slate-600">
+                      <Check className="mt-0.5 h-4 w-4 text-primary" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </motion.article>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Second Opinions Note */}
+        <motion.div
+          className="mt-12 rounded-2xl border border-primary/15 bg-primary/5 p-6 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h4 className="text-lg font-semibold text-slate-900">🩺 Diaspora Second Opinions</h4>
+          <p className="mt-2 text-slate-600">
+            Specialists set their own fees. Wallet members receive preferred access and discounts. Pay only per case — no subscriptions.
+          </p>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          className="mt-16 flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white/70 p-8 text-center shadow-inner sm:flex-row sm:items-center sm:justify-between"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="text-left">
+            <p className="text-lg font-semibold text-slate-900">Start with a Family Wallet.</p>
+            <p className="mt-1 text-slate-600">Upgrade only when care gets complex.</p>
+          </div>
+          <div className="flex gap-3">
+            <Button asChild variant="hero" size="lg">
+              <Link to="/get-started" className="flex items-center gap-2">
+                Get Started
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="glass" size="lg">
+              <a href="#how-diaspocare-works">How It Works</a>
+            </Button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

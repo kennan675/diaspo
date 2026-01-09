@@ -1,28 +1,28 @@
-import { Fingerprint, Hospital, Receipt, ShieldCheck } from "lucide-react";
+import { Building2, Receipt, CreditCard, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { TextReveal } from "@/components/animations/TextReveal";
 
 const STEPS = [
   {
-    title: "Your family visits a verified clinic or an hPod center",
-    description: "Fast diagnostics + 15-minute primary care with transparent pricing.",
-    icon: Hospital,
+    title: "Care happens at a verified clinic or hPOD",
+    description: "Your family receives care at a clinic, pharmacy, or one of our pilot hPOD locations. 15-minute visits. Diagnostics. Digital records.",
+    icon: Building2,
   },
   {
-    title: "You receive a real, itemized digital bill instantly",
-    description: "Direct from clinics or pharmacies. Zero middlemen.",
+    title: "You receive a real, itemized bill",
+    description: "Sent directly from the provider — not through relatives. You see exactly what's needed before you pay.",
     icon: Receipt,
   },
   {
-    title: "Pay only what’s real",
-    description: "$1–$5 micropayments or full bills — fully verified.",
-    icon: ShieldCheck,
+    title: "You pay exactly what the care costs",
+    description: "Pay as little as $1–$5 directly to clinics or pharmacies. No inflation. No diversion. No shame.",
+    icon: CreditCard,
   },
   {
-    title: "Care delivered with proof",
-    description: "You see exactly what was done, which tests were run, and what medications were dispensed.",
-    icon: Fingerprint,
+    title: "Care is delivered and verified",
+    description: "You see what was done, what medicines were given, and what comes next. Full transparency, every time.",
+    icon: ShieldCheck,
   },
 ];
 
