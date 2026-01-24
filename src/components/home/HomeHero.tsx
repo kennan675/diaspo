@@ -1,11 +1,11 @@
-import { useEffect, useRef, Suspense } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, MapPin, TrendingUp } from "lucide-react";
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { TextReveal } from "@/components/animations/TextReveal";
-import Hero3DScene from "./Hero3DScene";
+// import Hero3DScene from "./Hero3DScene"; // Removed
 import heroPerson from "@/assets/images/hero-person.png";
 
 const HomeHero = () => {
@@ -55,13 +55,10 @@ const HomeHero = () => {
       <motion.div className="absolute inset-0" style={{ y: parallaxY, scale: backgroundScale }}>
         <div className="absolute inset-0 -z-10 h-full w-full bg-transparent" />
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(112deg,rgba(255,255,255,0.95)0%,rgba(240,244,255,0.87)55%,rgba(225,235,255,0.7)100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_-10%,rgba(0,0,0,0.05),transparent_55%)]" />
-
-          {/* 3D Scene Integration */}
-          <Suspense fallback={null}>
-            <Hero3DScene />
-          </Suspense>
+          // 3D Scene Removed for performance and aesthetic preference
+          <div className="absolute inset-0 bg-[linear-gradient(112deg,rgba(255,255,255,0.98)0%,rgba(240,248,255,0.9)55%,rgba(230,240,255,0.8)100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_-10%,rgba(40,54,146,0.03),transparent_55%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_110%,rgba(0,127,255,0.04),transparent_55%)]" />
         </div>
       </motion.div>
 
