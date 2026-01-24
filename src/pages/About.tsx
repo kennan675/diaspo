@@ -20,7 +20,7 @@ const About = () => {
         className="relative overflow-hidden bg-gradient-to-br from-[#050915] via-[#0b1a33] to-[#091124] py-24 px-6 sm:px-12 md:px-20 text-white"
         data-animate="fade-up"
       >
-        <div className="absolute inset-0 opacity-60" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, rgba(255,68,79,0.25), transparent 55%), radial-gradient(circle at 80% 0%, rgba(123,97,255,0.4), transparent 60%)" }} />
+        <div className="absolute inset-0 opacity-60" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, rgba(0,127,255,0.25), transparent 55%), radial-gradient(circle at 80% 0%, rgba(40,54,146,0.4), transparent 60%)" }} />
         <div className="relative mx-auto max-w-6xl">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-white/80">
             Built by the Diaspora. For the Diaspora.
@@ -36,7 +36,7 @@ const About = () => {
               <ul className="grid gap-3 rounded-3xl border border-white/15 bg-white/5 p-6 text-sm text-white/85 sm:grid-cols-2">
                 {SHARED_REALITY.map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-[#ff8b9a]" />
+                    <span className="mt-1 h-2 w-2 rounded-full bg-[#60a5fa]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -76,7 +76,7 @@ const About = () => {
         <div className="mx-auto max-w-6xl space-y-12">
           <div className="grid gap-10 rounded-3xl border border-slate-200 bg-white p-10 shadow-xl lg:grid-cols-2">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#ff444f]">Why we exist</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#007fff]">Why we exist</p>
               <h2 className="mt-4 text-3xl font-semibold text-slate-900">Diaspora families deserved proof, not promises.</h2>
               <p className="mt-4 text-lg text-slate-600">
                 We watched dollars evaporate, diagnoses change with every phone call, and relatives go untreated because we didn’t know what to believe. DiaspoCare delivers receipts, clinical data, and direct payments so every act of care is traceable.
@@ -96,7 +96,7 @@ const About = () => {
 
           <div id="team" className="space-y-8 rounded-3xl border border-slate-200 bg-slate-50 p-10">
             <div className="space-y-4 text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#ff444f]">Our team</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#007fff]">Our team</p>
               <h3 className="text-3xl font-semibold text-slate-900">Leadership Team</h3>
               <p className="mx-auto max-w-2xl text-base text-slate-600">
                 A global team of clinicians, technologists, and operators united by a single mission.
@@ -150,7 +150,7 @@ const About = () => {
       </section>
 
       <section className="py-20 px-6 sm:px-12 md:px-20" data-animate="fade-up">
-        <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-[#ff444f] to-[#ff8b5f] p-12 text-white shadow-2xl">
+        <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-[#283692] to-[#007fff] p-12 text-white shadow-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">Still building forward</p>
           <h2 className="mt-4 text-3xl font-semibold">We turned guilt into a system that delivers proof.</h2>
           <p className="mt-4 text-lg text-white/90">

@@ -121,15 +121,15 @@ const HomeWhyDiaspoCare = () => {
                 </p>
                 <ul className="space-y-2 text-white/90">
                   <li className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#ff444f]" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#007fff]" />
                     Verified healthcare, not stories
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#ff444f]" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#007fff]" />
                     Real bills, not estimates
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#ff444f]" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#007fff]" />
                     Direct payments, not cash-outs
                   </li>
                 </ul>

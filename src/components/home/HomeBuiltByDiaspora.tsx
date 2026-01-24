@@ -58,7 +58,7 @@ const HomeBuiltByDiaspora = () => {
               <p className="text-slate-600">Payments go straight to clinics and pharmacies. No middlemen.</p>
             </div>
             <div className="space-y-2">
-              <p className="text-3xl font-bold text-[#ff444f]">Trusted</p>
+              <p className="text-3xl font-bold text-[#007fff]">Trusted</p>
               <p className="text-slate-600">Built by people who understand what it means to care from afar.</p>
             </div>
           </div>

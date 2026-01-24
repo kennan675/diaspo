@@ -126,7 +126,7 @@ const HomePricing = () => {
   return (
     <section id="pricing" className="relative overflow-hidden py-24" data-animate="fade-up">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#fdfcff] via-white to-[#f4f7fb]" />
-      <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-gradient-to-b from-[#ff444f]/10 via-transparent to-transparent" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-gradient-to-b from-[#007fff]/10 via-transparent to-transparent" />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -161,7 +161,7 @@ const HomePricing = () => {
             <motion.article
               key={plan.name}
               className={`relative flex flex-col rounded-3xl border p-6 h-full ${plan.variant === "featured"
-                ? "border-[#ff444f]/30 bg-gradient-to-b from-[#ff444f]/5 to-white shadow-[0_35px_80px_-40px_rgba(255,68,79,0.3)]"
+                ? "border-[#007fff]/30 bg-gradient-to-b from-[#007fff]/5 to-white shadow-[0_35px_80px_-40px_rgba(0,127,255,0.3)]"
                 : plan.variant === "premium"
                   ? "border-primary/30 bg-gradient-to-b from-primary/5 to-white shadow-[0_35px_80px_-40px_rgba(40,54,146,0.3)]"
                   : "border-slate-200 bg-white shadow-[0_35px_80px_-60px_rgba(15,23,42,0.4)]"
@@ -172,7 +172,7 @@ const HomePricing = () => {
               transition={{ duration: 0.5, delay: 0.08 * index }}
             >
               {plan.badge && (
-                <span className="absolute -top-3 left-6 rounded-full bg-[#ff444f] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+                <span className="absolute -top-3 left-6 rounded-full bg-[#007fff] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
                   {plan.badge}
                 </span>
               )}
@@ -188,7 +188,7 @@ const HomePricing = () => {
               <ul className="mt-6 flex-1 space-y-3 text-sm text-slate-600">
                 {plan.highlights.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#ff444f]" />
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#007fff]" />
                     <span>{feature}</span>
                   </li>
                 ))}

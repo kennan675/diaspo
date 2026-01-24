@@ -239,7 +239,7 @@ const ChatBot = () => {
                                 <div className="mt-2 flex items-center justify-between px-1">
                                     <button
                                         onClick={() => setIsOpen(false)}
-                                        className="text-[10px] text-gray-400 hover:text-red-500 transition-colors flex items-center gap-1"
+                                        className="text-[10px] text-gray-400 hover:text-slate-900 transition-colors flex items-center gap-1"
                                     >
                                         <X className="h-3 w-3" /> End Chat
                                     </button>

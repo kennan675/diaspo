@@ -56,7 +56,7 @@ const FAQSection = () => {
             return (
               <article
                 key={faq.question}
-                className={`rounded-3xl border ${expanded ? "border-[#ff444f] bg-white" : "border-slate-200 bg-white/80"} p-6 shadow-[0_30px_60px_-50px_rgba(15,23,42,0.6)] transition-all`}
+                className={`rounded-3xl border ${expanded ? "border-[#007fff] bg-white" : "border-slate-200 bg-white/80"} p-6 shadow-[0_30px_60px_-50px_rgba(15,23,42,0.6)] transition-all`}
               >
                 <button
                   type="button"
@@ -64,7 +64,7 @@ const FAQSection = () => {
                   onClick={() => setOpenIndex(expanded ? null : index)}
                 >
                   <span className="text-lg font-semibold text-slate-900">{faq.question}</span>
-                  <span className={`text-2xl font-bold text-[#ff444f] transition-transform ${expanded ? "rotate-45" : ""}`}>+</span>
+                  <span className={`text-2xl font-bold text-[#007fff] transition-transform ${expanded ? "rotate-45" : ""}`}>+</span>
                 </button>
                 {expanded && <p className="mt-4 text-base text-slate-600">{faq.answer}</p>}
               </article>
@@ -77,7 +77,7 @@ const FAQSection = () => {
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">Still need clarity?</p>
             <p className="mt-2 text-lg text-slate-700">Ping our care team and get an answer in minutes.</p>
           </div>
-          <button className="rounded-2xl border border-[#ff444f] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#ff444f] transition-colors hover:bg-[#ff444f]/10">
+          <button className="rounded-2xl border border-[#007fff] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#007fff] transition-colors hover:bg-[#007fff]/10">
             Contact Support →
           </button>
         </div>

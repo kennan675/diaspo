@@ -193,11 +193,11 @@ const HomeProductShowcase = () => {
   return (
     <section id="products" className="relative overflow-hidden py-24" data-animate="fade-up">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-[#f8fafc] to-[#eef2ff]" />
-      <div className="absolute inset-x-0 top-10 -z-10 h-64 bg-gradient-to-b from-[#ff444f]/10 via-transparent to-transparent" />
+      <div className="absolute inset-x-0 top-10 -z-10 h-64 bg-gradient-to-b from-[#007fff]/10 via-transparent to-transparent" />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#ff444f]/30 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#ff444f]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#007fff]/30 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#007fff]">
             Product suite
           </span>
           <h2 className="mt-6 font-display text-4xl font-semibold text-slate-900 sm:text-5xl">
@@ -218,7 +218,7 @@ const HomeProductShowcase = () => {
                 <div className="flex-1 space-y-4">
                   <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
                     <span>{section.label}</span>
-                    <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[#ff444f]/10 text-[#ff444f]">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[#007fff]/10 text-[#007fff]">
                       {ICON_MAP[section.id]}
                     </span>
                   </div>
@@ -248,7 +248,7 @@ const HomeProductShowcase = () => {
                           {highlight.items.map((item) => (
                             <li key={item} className="flex items-start gap-2">
                               {highlight.variant === "check" ? (
-                                <span className="mt-0.5 inline-flex h-4 w-4 items-center justify-center rounded-full bg-[#ff444f]/10 text-[#ff444f]">
+                                <span className="mt-0.5 inline-flex h-4 w-4 items-center justify-center rounded-full bg-[#007fff]/10 text-[#007fff]">
                                   ✓
                                 </span>
                               ) : (

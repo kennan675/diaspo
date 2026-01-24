@@ -145,7 +145,7 @@ const HomeHPodSection = () => {
                   <span className="text-slate-400">→</span>
                   <span className="text-2xl font-bold">10</span>
                   <span className="text-slate-400">→</span>
-                  <span className="text-2xl font-bold text-[#ff444f]">20</span>
+                  <span className="text-2xl font-bold text-[#007fff]">20</span>
                 </div>
                 <p className="mt-2 text-sm text-slate-600">hPod locations by December 2026</p>
               </motion.div>

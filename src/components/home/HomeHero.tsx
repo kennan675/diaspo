@@ -76,7 +76,7 @@ const HomeHero = () => {
                 <TextReveal
                   text="Verifiably."
                   delay={0.2}
-                  className="block max-w-3xl font-display text-4xl font-bold leading-[1.08] tracking-[-0.01em] text-[#ff444f] sm:text-5xl lg:text-[3.65rem]"
+                  className="block max-w-3xl font-display text-4xl font-bold leading-[1.08] tracking-[-0.01em] text-[#007fff] sm:text-5xl lg:text-[3.65rem]"
                 />
               </div>
               <motion.p
@@ -98,7 +98,7 @@ const HomeHero = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: 0.35 + index * 0.1 }}
                   >
-                    <Check className="h-4 w-4 text-[#ff444f]" />
+                    <Check className="h-4 w-4 text-[#007fff]" />
                     {point}
                   </motion.span>
                 ))}
