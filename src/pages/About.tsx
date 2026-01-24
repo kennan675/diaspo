@@ -109,7 +109,7 @@ const About = () => {
                   name: "Serge-Alain Wandji",
                   role: "CEO & Co-Founder",
                   bio: "Serge-Alain Wandji is the CEO and Co-Founder of DiaspoCare. Committed to eliminating distance as a barrier to care, he leads the mission to provide African diaspora families with verifiable, direct, and transparent healthcare solutions for their loved ones back home.",
-                  image: "/team/serge-alain.jpg"
+                  image: "/team/serge-alain.png"
                 },
                 {
                   name: "Sean O'Neil",
