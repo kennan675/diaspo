@@ -104,18 +104,21 @@ const CARE_COORDINATION = [
     price: "$9.99/month",
     included: "Included with Silver & Gold wallets",
     features: ["Care reminders and follow-ups", "Medication tracking", "Basic care navigation"],
+    actionLabel: "Choose Lite",
   },
   {
     name: "Care Coordination Plus",
     price: "$29.99/month",
     included: "Included with Gold wallet",
     features: ["Dedicated care coordinator", "Multi-provider coordination", "Chronic care tracking", "Diaspora family updates"],
+    actionLabel: "Choose Plus",
   },
   {
     name: "Advanced Care Coordination",
     price: "$79–$149/month",
     included: "Case-based pricing",
     features: ["Home care coordination", "Hospital discharge planning", "Palliative or multi-specialty care", "Custom care plans"],
+    actionLabel: "Choose Advanced",
   },
 ];
 
@@ -134,12 +137,12 @@ const HomePricing = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#0f172a]/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-slate-500">
+          <h2 className="font-display text-4xl font-semibold text-slate-900 sm:text-5xl">
             Pricing
-          </span>
+          </h2>
           <TextReveal
             text="Pricing That Grows With Your Family's Needs"
-            className="mt-6 font-display text-4xl font-semibold text-slate-900 sm:text-5xl"
+            className="mt-6 text-xl font-medium text-slate-600 sm:text-2xl"
           />
           <motion.p
             className="mt-4 text-lg text-slate-600"
@@ -158,10 +161,10 @@ const HomePricing = () => {
             <motion.article
               key={plan.name}
               className={`relative flex flex-col rounded-3xl border p-6 h-full ${plan.variant === "featured"
-                  ? "border-[#ff444f]/30 bg-gradient-to-b from-[#ff444f]/5 to-white shadow-[0_35px_80px_-40px_rgba(255,68,79,0.3)]"
-                  : plan.variant === "premium"
-                    ? "border-primary/30 bg-gradient-to-b from-primary/5 to-white shadow-[0_35px_80px_-40px_rgba(40,54,146,0.3)]"
-                    : "border-slate-200 bg-white shadow-[0_35px_80px_-60px_rgba(15,23,42,0.4)]"
+                ? "border-[#ff444f]/30 bg-gradient-to-b from-[#ff444f]/5 to-white shadow-[0_35px_80px_-40px_rgba(255,68,79,0.3)]"
+                : plan.variant === "premium"
+                  ? "border-primary/30 bg-gradient-to-b from-primary/5 to-white shadow-[0_35px_80px_-40px_rgba(40,54,146,0.3)]"
+                  : "border-slate-200 bg-white shadow-[0_35px_80px_-60px_rgba(15,23,42,0.4)]"
                 }`}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -254,28 +257,26 @@ const HomePricing = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-10">
-            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-slate-500">
-              <Sparkles className="h-4 w-4" />
-              Care Coordination
-            </span>
-            <h3 className="mt-4 text-2xl font-semibold text-slate-900">Add when care becomes complex</h3>
-            <p className="mt-2 text-slate-600">A real human helping manage care across clinics, pharmacies, and providers.</p>
+            <h3 className="text-3xl font-semibold text-slate-900">Care Coordination</h3>
+            <p className="mt-4 text-lg text-slate-600">Add when care becomes complex. A real human helping manage care across clinics, pharmacies, and providers.</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             {CARE_COORDINATION.map((tier, index) => (
               <motion.article
                 key={tier.name}
-                className="rounded-2xl border border-slate-200 bg-white p-6"
+                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.4, delay: 0.1 * index }}
               >
-                <h4 className="text-lg font-semibold text-slate-900">{tier.name}</h4>
-                <p className="mt-1 text-2xl font-bold text-slate-900">{tier.price}</p>
-                <p className="text-xs text-slate-500">{tier.included}</p>
-                <ul className="mt-4 space-y-2">
+                <div className="mb-4">
+                  <h4 className="text-lg font-semibold text-slate-900">{tier.name}</h4>
+                  <p className="mt-1 text-2xl font-bold text-slate-900">{tier.price}</p>
+                  <p className="text-xs text-slate-500">{tier.included}</p>
+                </div>
+                <ul className="mb-6 flex-1 space-y-2">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2 text-sm text-slate-600">
                       <Check className="mt-0.5 h-4 w-4 text-primary" />
@@ -283,47 +284,11 @@ const HomePricing = () => {
                     </li>
                   ))}
                 </ul>
+                <Button asChild variant="outline" className="w-full">
+                  <Link to="/get-started">{tier.actionLabel}</Link>
+                </Button>
               </motion.article>
             ))}
-          </div>
-        </motion.div>
-
-        {/* Second Opinions Note */}
-        <motion.div
-          className="mt-12 rounded-2xl border border-primary/15 bg-primary/5 p-6 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h4 className="text-lg font-semibold text-slate-900">🩺 Diaspora Second Opinions</h4>
-          <p className="mt-2 text-slate-600">
-            Specialists set their own fees. Wallet members receive preferred access and discounts. Pay only per case — no subscriptions.
-          </p>
-        </motion.div>
-
-        {/* CTA Section */}
-        <motion.div
-          className="mt-16 flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white/70 p-8 text-center shadow-inner sm:flex-row sm:items-center sm:justify-between"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="text-left">
-            <p className="text-lg font-semibold text-slate-900">Start with a Family Wallet.</p>
-            <p className="mt-1 text-slate-600">Upgrade only when care gets complex.</p>
-          </div>
-          <div className="flex gap-3">
-            <Button asChild variant="hero" size="lg">
-              <Link to="/get-started" className="flex items-center gap-2">
-                Get Started
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="glass" size="lg">
-              <a href="#how-diaspocare-works">How It Works</a>
-            </Button>
           </div>
         </motion.div>
       </div>

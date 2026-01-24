@@ -5,8 +5,8 @@ import { TextReveal } from "@/components/animations/TextReveal";
 
 const STEPS = [
   {
-    title: "Care happens at a verified clinic or hPOD",
-    description: "Your family receives care at a clinic, pharmacy, or one of our pilot hPOD locations. 15-minute visits. Diagnostics. Digital records.",
+    title: "Care happens at a verified clinic or hPod",
+    description: "Your family receives care at a clinic, pharmacy, or one of our pilot hPod locations. 15-minute visits. Diagnostics. Digital records.",
     icon: Building2,
   },
   {
@@ -44,16 +44,16 @@ const HomeHowItWorks = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <motion.span
-            className="text-sm font-semibold uppercase tracking-[0.32em] text-primary/80"
+          <motion.h2
+            className="font-display text-4xl font-bold text-foreground sm:text-5xl lg:text-[3.2rem]"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.4, delay: 0.05 }}
           >
             How DiaspoCare Works
-          </motion.span>
-          <TextReveal text="Transparent, accountable, immediate care" className="mt-5 block font-display text-4xl font-bold text-foreground sm:text-5xl lg:text-[3.2rem]" />
+          </motion.h2>
+          <TextReveal text="Transparent, accountable, immediate care" className="mt-5 block text-xl font-medium text-foreground/80 sm:text-2xl" />
           <motion.p
             className="mt-6 text-lg leading-8 text-foreground/70 sm:text-xl"
             initial={{ opacity: 0, y: 15 }}

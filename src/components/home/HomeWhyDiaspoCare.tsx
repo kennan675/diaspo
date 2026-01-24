@@ -31,21 +31,20 @@ const HomeWhyDiaspoCare = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <motion.span
-              className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-primary"
+            <motion.h2
+              className="font-display text-4xl font-bold tracking-[-0.015em] text-foreground sm:text-5xl"
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.4, delay: 0.05 }}
             >
-              <HeartPulse className="h-4 w-4" />
               Why DiaspoCare Exists
-            </motion.span>
+            </motion.h2>
 
             <div className="space-y-6">
-              <TextReveal text="If you're part of the African diaspora, you already know the pain" className="font-display text-4xl font-semibold text-foreground sm:text-5xl" />
+              <TextReveal text="If you're part of the African diaspora, you already know the pain" className="text-xl font-medium text-foreground/80 sm:text-2xl" />
               <motion.p
-                className="text-lg leading-8 text-foreground/75 sm:text-xl"
+                className="text-base leading-7 text-foreground/75 sm:text-lg"
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}

@@ -24,13 +24,13 @@ const FamilyHealthWallet: React.FC = () => {
 
           <div className="mx-auto mb-10 max-w-4xl space-y-6 text-lg leading-relaxed text-[#7A8A9E]">
             <p className="text-xl">
-              Family health wallet enable a supporter to deposit funds in advance to be used for their beneficiaries' medical care.
+              A shared wallet where siblings, cousins, and the whole family pool funds together to support loved ones back home.
             </p>
             <p>
-              When you live away from your loved ones, they may need urgent medical care at a time you are unreachable due to unavoidable engagements or differences in time zones.
+              Caring for parents or relatives shouldn't be a burden on just one person. With a Family Health Wallet, the entire extended family can contribute to a single, dedicated health fund.
             </p>
             <p>
-              With a family health wallet and auto-approved payments, they can get the medical attention they require exactly when they need it, even without your approval.
+              Ensure funds are always available for check-ups, medication, and emergencies — transparently and securely.
             </p>
           </div>
 

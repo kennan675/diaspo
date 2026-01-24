@@ -45,10 +45,10 @@ const HealthcareFinancing: React.FC = () => {
           <p className="text-lg text-[#3A3F46] leading-relaxed mb-12 text-center">
             Whether you are separated from loved ones by thousands of miles or are living in another city in your home country, you will have peace of mind from knowing that your funds are strictly used as intended and they deliver quality health care for your loved ones.
           </p>
-          
+
           {/* Video */}
           <div className="max-w-4xl mx-auto">
-            <YouTubeVideo 
+            <YouTubeVideo
               videoId="X5bQ8kANiEg"
               title="GoodLife Pharmacy - DiaspoCare Partnership"
               autoplay={false}
@@ -66,7 +66,7 @@ const HealthcareFinancing: React.FC = () => {
           <h2 className="text-4xl font-extrabold text-[#283692] mb-12 text-center">
             HOW DIASPOCARE GUARANTEES QUALITY HEALTHCARE FOR YOUR LOVED ONES
           </h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Feature 1 */}
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
@@ -140,9 +140,9 @@ const HealthcareFinancing: React.FC = () => {
       {/* Part of the Benefits */}
       <section className="py-16 px-6 sm:px-12 md:px-20 bg-white" data-animate="fade-up">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#283692] mb-6">Part of the benefits</h2>
+          <h2 className="text-3xl font-bold text-[#283692] mb-6">Pooling Resources for Better Care</h2>
           <p className="text-lg text-[#3A3F46] leading-relaxed mb-4">
-            Would you like to auto-approve transactions so that even when you are not reachable your loved ones can still get timely medical care?Or would you like to ask friends and family to contribute towards your loved one's medical bill? The Family Health Wallet enables you to this and much more.
+            Caring for loved ones back home is often a shared responsibility. The Family Health Wallet makes it easy for siblings, cousins, and extended family to pool funds into one dedicated account, ensuring your loved ones always have access to the care they need, when they need it.
           </p>
           <Link to="/family-health-wallet" className="inline-flex items-center gap-2 text-[#0066FF] font-bold text-lg hover:underline">
             LEARN MORE ABOUT FAMILY HEALTH WALLETS
@@ -222,7 +222,7 @@ const HealthcareFinancing: React.FC = () => {
           <h2 className="text-3xl font-extrabold text-[#283692] mb-12 text-center">
             SOME KEY HEALTH SERVICES & PACKAGES AVAILABLE THROUGH THE APP
           </h2>
-          
+
           <div className="grid md:grid-cols-3 gap-x-12 gap-y-4">
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-[#3A3F46]">
@@ -292,7 +292,7 @@ const HealthcareFinancing: React.FC = () => {
             SOME OF OUR PARTNERS YOU CAN ACCESS THROUGH THE APP
           </h2>
           <p className="text-lg text-[#3A3F46] mb-8">Over 1900 Partners</p>
-          
+
           <PartnersCarousel />
 
           <div className="mt-8">
@@ -314,7 +314,7 @@ const HealthcareFinancing: React.FC = () => {
               </p>
             </div>
             <div>
-              <YouTubeVideo 
+              <YouTubeVideo
                 videoId="SdQ5xnvFeGw"
                 title="Peris Moraa Testimonial"
                 autoplay={false}
@@ -325,7 +325,7 @@ const HealthcareFinancing: React.FC = () => {
           {/* Testimonial 2 - David */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1">
-              <YouTubeVideo 
+              <YouTubeVideo
                 videoId="q6QJd6MCowM"
                 title="David Mukaria - How to Care for your Sick Mom"
                 autoplay={false}

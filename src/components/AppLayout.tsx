@@ -32,8 +32,6 @@ const AppLayout = () => {
         <SectionTransition variant="light" />
         <HomeHPodSection />
         <SectionTransition variant="dark" />
-        <HomeSecondOpinions />
-        <SectionTransition variant="light" />
         <HomeWallets />
         <SectionTransition variant="dark" />
         <HomePricing />
