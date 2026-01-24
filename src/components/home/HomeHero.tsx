@@ -55,7 +55,7 @@ const HomeHero = () => {
       <motion.div className="absolute inset-0" style={{ y: parallaxY, scale: backgroundScale }}>
         <div className="absolute inset-0 -z-10 h-full w-full bg-transparent" />
         <div className="absolute inset-0 overflow-hidden">
-          // 3D Scene Removed for performance and aesthetic preference
+
           <div className="absolute inset-0 bg-[linear-gradient(112deg,rgba(255,255,255,0.98)0%,rgba(240,248,255,0.9)55%,rgba(230,240,255,0.8)100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_-10%,rgba(40,54,146,0.03),transparent_55%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_110%,rgba(0,127,255,0.04),transparent_55%)]" />
