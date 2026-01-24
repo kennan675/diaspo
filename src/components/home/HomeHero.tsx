@@ -65,16 +65,7 @@ const HomeHero = () => {
       <div className="container relative z-10 mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.75fr)] lg:items-center">
           <div className="space-y-10 text-slate-900">
-            {/* Location Badge */}
-            <motion.span
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/50 px-6 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-slate-600 backdrop-blur"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <MapPin className="h-4 w-4" />
-              Live in Kenya. Scaling with purpose.
-            </motion.span>
+
 
             <div className="space-y-6">
               <div className="space-y-3">
