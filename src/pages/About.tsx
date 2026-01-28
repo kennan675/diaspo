@@ -123,6 +123,12 @@ const About = () => {
                   name: "Jote Tadesse, MSE",
                   role: "CIO, COO & Co-Founder",
                   image: "/team/jote-tadesse.png"
+                },
+
+                {
+                  name: "Dr. Edwin Bogonko, MD MBA",
+                  role: "Chief Medical Officer",
+                  image: "/team/edwin-bogonko.png"
                 }
               ].map((member) => (
                 <div key={member.name} className="flex flex-col items-center text-center space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
