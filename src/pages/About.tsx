@@ -105,66 +105,68 @@ const About = () => {
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  name: "Serge-Alain Wandji",
-                  role: "CEO & Co-Founder",
-                  image: "/team/serge-alain.png"
-                },
-                {
-                  name: "Sean O'Neil",
-                  role: "Chief Technology Officer",
-                  image: "/team/sean-oneil.jpg"
-                },
+              {(
+                [
+                  {
+                    name: "Serge-Alain Wandji",
+                    role: "CEO & Co-Founder",
+                    image: "/team/serge-alain.png"
+                  },
+                  {
+                    name: "Sean O'Neil",
+                    role: "Chief Technology Officer",
+                    image: "/team/sean-oneil.jpg"
+                  },
 
-                {
-                  name: "Jote Tadesse, MSE",
-                  role: "CIO, COO & Co-Founder",
-                  image: "/team/jote-tadesse.png"
-                },
+                  {
+                    name: "Jote Tadesse, MSE",
+                    role: "CIO, COO & Co-Founder",
+                    image: "/team/jote-tadesse.png"
+                  },
 
-                {
-                  name: "Dr. Edwin Bogonko, MD MBA",
-                  role: "Chief Medical Officer",
-                  image: "/team/edwin-bogonko.png"
-                },
+                  {
+                    name: "Dr. Edwin Bogonko, MD MBA",
+                    role: "Chief Medical Officer",
+                    image: "/team/edwin-bogonko.png"
+                  },
 
-                {
-                  name: "Mike Essien, J.D",
-                  role: "Chief Legal Counsel & Co-Founder",
-                  image: "/team/mike-essien.png"
-                },
+                  {
+                    name: "Mike Essien, J.D",
+                    role: "Chief Legal Counsel & Co-Founder",
+                    image: "/team/mike-essien.png"
+                  },
 
-                {
-                  name: "Brittany Drury",
-                  role: "VP Product Experience",
-                  image: "/team/brittany-drury.png"
-                },
+                  {
+                    name: "Brittany Drury",
+                    role: "VP Product Experience",
+                    image: "/team/brittany-drury.png"
+                  },
 
-                {
-                  name: "Kellen Kebaara",
-                  role: "Country Director, Kenya",
-                  image: "/team/kellen-kebaara.png"
-                },
+                  {
+                    name: "Kellen Kebaara",
+                    role: "Country Director, Kenya",
+                    image: "/team/kellen-kebaara.png"
+                  },
 
-                {
-                  name: "Peter Kamunyu",
-                  role: "Business Development Lead, Kenya",
-                  image: "/team/peter-kamunyu.png"
-                },
+                  {
+                    name: "Peter Kamunyu",
+                    role: "Business Development Lead, Kenya",
+                    image: "/team/peter-kamunyu.png"
+                  },
 
-                {
-                  name: "Jemima Prempeh",
-                  role: "DiaspoCare Partner, Ghana",
-                  image: "/team/jemima-prempeh.png"
-                },
+                  {
+                    name: "Jemima Prempeh",
+                    role: "DiaspoCare Partner, Ghana",
+                    image: "/team/jemima-prempeh.png"
+                  },
 
-                {
-                  name: "Doreen Awuku-Agyeman",
-                  role: "Business Development, Ghana",
-                  image: "/team/doreen-awuku-agyeman.png"
-                }
-              ].map((member) => (
+                  {
+                    name: "Doreen Awuku-Agyeman",
+                    role: "Business Development, Ghana",
+                    image: "/team/doreen-awuku-agyeman.png"
+                  }
+                ] as Array<{ name: string; role: string; image: string; bio?: string }>
+              ).map((member) => (
                 <div key={member.name} className="flex flex-col items-center text-center space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
                   <div className="h-32 w-32 overflow-hidden rounded-full bg-slate-200">
                     <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
