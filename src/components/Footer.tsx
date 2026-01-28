@@ -1,13 +1,12 @@
-import { Facebook, Instagram, Linkedin, Mail, Phone, Twitter } from "lucide-react";
+import { Facebook, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/diaspocare" },
-    { icon: Twitter, label: "Twitter", href: "https://twitter.com/diaspocare" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/diaspocare" },
-    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/diaspocare" },
+    { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/profile.php?id=100063836178715" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/diaspocarellc" },
+    { icon: Twitter, label: "Twitter", href: "https://x.com/diaspocare" },
   ];
 
   return (
