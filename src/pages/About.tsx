@@ -117,8 +117,13 @@ const About = () => {
                   role: "Chief Technology Officer",
                   bio: "Sean O’Neil leads DiaspoCare’s technology strategy, ensuring our platform delivers world-class transparency, security, and usability. With over 15 years of experience building scalable health-tech platforms, Sean is passionate about using technology to bridge the gap between diaspora families and quality healthcare in Africa.",
                   image: "/team/sean-oneil.jpg"
-                }
+                },
 
+                {
+                  name: "Jote Tadesse, MSE",
+                  role: "",
+                  image: "/team/jote-tadesse.png"
+                }
               ].map((member) => (
                 <div key={member.name} className="flex flex-col items-center text-center space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
                   <div className="h-32 w-32 overflow-hidden rounded-full bg-slate-200">
@@ -126,11 +131,13 @@ const About = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-slate-900">{member.name}</h4>
-                    <p className="text-sm font-medium text-[#007FFF]">{member.role}</p>
+                    {member.role && <p className="text-sm font-medium text-[#007FFF]">{member.role}</p>}
                   </div>
-                  <p className="text-sm text-slate-600 leading-relaxed text-left">
-                    {member.bio}
-                  </p>
+                  {member.bio && (
+                    <p className="text-sm text-slate-600 leading-relaxed text-left">
+                      {member.bio}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
