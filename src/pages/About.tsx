@@ -121,7 +121,7 @@ const About = () => {
 
                 {
                   name: "Jote Tadesse, MSE",
-                  role: "",
+                  role: "CIO, COO & Co-Founder",
                   image: "/team/jote-tadesse.png"
                 }
               ].map((member) => (
