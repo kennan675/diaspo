@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layouts/PageLayout";
 
@@ -157,11 +158,11 @@ const About = () => {
             Every wallet, hPod, and second-opinion workflow inside DiaspoCare is run by people who lived the struggle. That’s why we’ll never stop until transparent healthcare is the default for every African family.
           </p>
           <div className="mt-6 flex flex-col gap-4 sm:flex-row">
-            <Button asChild variant="hero" size="lg" className="flex-1 justify-center">
-              <a href="/care-coordination">Start coordinating care</a>
+            <Button asChild size="lg" className="flex-1 justify-center bg-white text-[#283692] hover:bg-white/90">
+              <Link to="/care-coordination">Start coordinating care</Link>
             </Button>
-            <Button asChild variant="glass" size="lg" className="flex-1 justify-center border-white/40 text-white">
-              <a href="/contact">Invest or partner</a>
+            <Button asChild variant="outline" size="lg" className="flex-1 justify-center border-white text-white hover:bg-white/10 hover:text-white bg-transparent">
+              <Link to="/contact">Invest or partner</Link>
             </Button>
           </div>
         </div>
