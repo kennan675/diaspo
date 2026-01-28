@@ -135,6 +135,12 @@ const About = () => {
                   name: "Mike Essien, J.D",
                   role: "Chief Legal Counsel & Co-Founder",
                   image: "/team/mike-essien.png"
+                },
+
+                {
+                  name: "Brittany Drury",
+                  role: "VP Product Experience",
+                  image: "/team/brittany-drury.png"
                 }
               ].map((member) => (
                 <div key={member.name} className="flex flex-col items-center text-center space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
