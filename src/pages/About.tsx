@@ -147,6 +147,12 @@ const About = () => {
                   name: "Kellen Kebaara",
                   role: "Country Director, Kenya",
                   image: "/team/kellen-kebaara.png"
+                },
+
+                {
+                  name: "Peter Kamunyu",
+                  role: "Business Development Lead, Kenya",
+                  image: "/team/peter-kamunyu.png"
                 }
               ].map((member) => (
                 <div key={member.name} className="flex flex-col items-center text-center space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
