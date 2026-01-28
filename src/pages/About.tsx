@@ -159,6 +159,12 @@ const About = () => {
                   name: "Jemima Prempeh",
                   role: "DiaspoCare Partner, Ghana",
                   image: "/team/jemima-prempeh.png"
+                },
+
+                {
+                  name: "Doreen Awuku-Agyeman",
+                  role: "Business Development, Ghana",
+                  image: "/team/doreen-awuku-agyeman.png"
                 }
               ].map((member) => (
                 <div key={member.name} className="flex flex-col items-center text-center space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
