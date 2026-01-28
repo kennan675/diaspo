@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import { UserPlus, FileText, Upload, MessageSquare, Shield, HelpCircle, Heart, Pill, Scan, ClipboardList, ArrowRight } from 'lucide-react';
 import PageLayout from '@/components/layouts/PageLayout';
 
@@ -257,19 +258,17 @@ const MDConnect: React.FC = () => {
             Connect your loved one's care team with world-class specialists for better diagnosis and treatment decisions.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-2xl bg-white px-10 py-5 text-lg font-bold text-[#283692] shadow-xl transition-all hover:scale-105 hover:bg-white/90"
-            >
-              Request a Consultation
-              <ArrowRight className="h-6 w-6" />
-            </Link>
-            <a
-              href="#learn-more"
-              className="inline-flex items-center gap-2 rounded-2xl border-2 border-white px-10 py-5 text-lg font-bold text-white transition-all hover:scale-105 hover:bg-white/10 cursor-pointer"
-            >
-              Learn More
-            </a>
+            <Button asChild size="lg" className="h-14 rounded-2xl bg-white px-8 text-lg font-bold text-[#283692] shadow-xl hover:bg-white/90 hover:scale-105 transition-all">
+              <Link to="/contact">
+                Request a Consultation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="h-14 rounded-2xl border-2 border-white px-8 text-lg font-bold text-white bg-transparent hover:bg-white/10 hover:text-white hover:scale-105 transition-all">
+              <a href="#learn-more">
+                Learn More
+              </a>
+            </Button>
           </div>
         </div>
       </section>
