@@ -153,6 +153,12 @@ const About = () => {
                   name: "Peter Kamunyu",
                   role: "Business Development Lead, Kenya",
                   image: "/team/peter-kamunyu.png"
+                },
+
+                {
+                  name: "Jemima Prempeh",
+                  role: "DiaspoCare Partner, Ghana",
+                  image: "/team/jemima-prempeh.png"
                 }
               ].map((member) => (
                 <div key={member.name} className="flex flex-col items-center text-center space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
