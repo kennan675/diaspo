@@ -141,6 +141,12 @@ const About = () => {
                   name: "Brittany Drury",
                   role: "VP Product Experience",
                   image: "/team/brittany-drury.png"
+                },
+
+                {
+                  name: "Kellen Kebaara",
+                  role: "Country Director, Kenya",
+                  image: "/team/kellen-kebaara.png"
                 }
               ].map((member) => (
                 <div key={member.name} className="flex flex-col items-center text-center space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
