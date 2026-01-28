@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { UserPlus, FileText, Upload, MessageSquare, Shield, HelpCircle, Heart, Pill, Scan, ClipboardList, ArrowRight } from 'lucide-react';
 import PageLayout from '@/components/layouts/PageLayout';
 
@@ -256,16 +257,16 @@ const MDConnect: React.FC = () => {
             Connect your loved one's care team with world-class specialists for better diagnosis and treatment decisions.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 rounded-2xl bg-white px-10 py-5 text-lg font-bold text-[#283692] shadow-xl transition-all hover:scale-105 hover:bg-white/90"
             >
               Request a Consultation
               <ArrowRight className="h-6 w-6" />
-            </a>
+            </Link>
             <a
               href="#learn-more"
-              className="inline-flex items-center gap-2 rounded-2xl border-2 border-white px-10 py-5 text-lg font-bold text-white transition-all hover:scale-105 hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-2xl border-2 border-white px-10 py-5 text-lg font-bold text-white transition-all hover:scale-105 hover:bg-white/10 cursor-pointer"
             >
               Learn More
             </a>
