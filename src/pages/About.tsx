@@ -109,13 +109,11 @@ const About = () => {
                 {
                   name: "Serge-Alain Wandji",
                   role: "CEO & Co-Founder",
-                  bio: "Serge-Alain Wandji is the CEO and Co-Founder of DiaspoCare. Committed to eliminating distance as a barrier to care, he leads the mission to provide African diaspora families with verifiable, direct, and transparent healthcare solutions for their loved ones back home.",
                   image: "/team/serge-alain.png"
                 },
                 {
                   name: "Sean O'Neil",
                   role: "Chief Technology Officer",
-                  bio: "Sean O’Neil leads DiaspoCare’s technology strategy, ensuring our platform delivers world-class transparency, security, and usability. With over 15 years of experience building scalable health-tech platforms, Sean is passionate about using technology to bridge the gap between diaspora families and quality healthcare in Africa.",
                   image: "/team/sean-oneil.jpg"
                 },
 
