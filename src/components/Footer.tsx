@@ -1,4 +1,5 @@
 import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,12 +29,12 @@ const Footer = () => {
             <p className="max-w-md text-base leading-relaxed text-white/75">
               DiaspoCare connects diaspora families to trusted clinics, pharmacists, and care coordinators. Every update, every payment, and every appointment stays transparent.
             </p>
-            <a
-              href="/about"
+            <Link
+              to="/about"
               className="inline-flex items-center justify-center rounded-full bg-white/10 px-5 py-2 text-sm font-semibold text-white/85 transition-all duration-300 hover:bg-white/20"
             >
               Learn More
-            </a>
+            </Link>
           </div>
 
           <div className="md:col-span-3 space-y-6">
